@@ -89,6 +89,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\buttons.dataTables.min.css" />
+    <Content Include="Content\css\fichaIndividual.css" />
     <Content Include="Content\css\select2.css" />
     <Content Include="Content\css\select2.min.css" />
     <Content Include="Content\datatables.css" />
@@ -266,6 +267,7 @@
     <Content Include="images\lupa13x13.png" />
     <Content Include="images\lupa28x28.png" />
     <Content Include="images\nextstep.png" />
+    <Content Include="images\pregunta_12png.png" />
     <Content Include="images\quitar.png" />
     <Content Include="images\searchblue.png" />
     <Content Include="images\speech-bubble.png" />
@@ -383,6 +385,7 @@
     <Content Include="Scripts\datepicker\datepicker.js" />
     <Content Include="Scripts\datepicker\datepicker.min.css" />
     <Content Include="Scripts\datepicker\datepicker.min.js" />
+    <Content Include="Scripts\fichaIndividual.js" />
     <Content Include="Scripts\ficha\antecedentes_alimentacion.js" />
     <Content Include="Scripts\ficha\antecedentes_comparativas.js" />
     <Content Include="Scripts\ficha\antecedentes_dotacion_personal.js" />
