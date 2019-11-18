@@ -19,17 +19,20 @@
         <title>FICHA RESIDENCIAL  :: Senainfo :: Servicio Nacional de Menores</title>
 
         <!-- DESARROLLO -->
-        <script src="../Scripts/jquery-3.2.1.min.js"></script>
+<%--        <script src="../Scripts/jquery-3.2.1.min.js"></script>
 
         <link href="../Content/bootstrap.min.css" rel="stylesheet" />
         <link href="../Content/theme.css" rel="stylesheet" />
         <link href="../Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
         <link href="../Content/select2-bootstrap.min.css" rel="stylesheet" />
+
         <link href="../Content/ficha_residencia.css" rel="stylesheet" />
 
         <link href="../Content/timelineficha.css" rel="stylesheet" />
         <link href="../Scripts/jquery.fileupload.css" rel="stylesheet" />
         <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+
+            
 
         <script src="../Scripts/bootstrap.min.js"></script>
         <script src="../Scripts/jquery.floatThead.js"></script>
@@ -43,13 +46,12 @@
         <script src="../Scripts/jquery.ui.widget.js"></script>
         <script src="../Scripts/jquery.iframe-transport.js"></script>
 
-
-<%--              <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
+    <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
         <script src="../Scripts/datepicker/datepicker.js"></script>
         <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>--%>
 
         <%--PRODUCCIÓN--%>
-      <%-- 
+       
         <script src="../js/jquery-3.2.1.min.js"></script>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
@@ -73,8 +75,10 @@
         <script src="scripts/ficha/progressbar.min.js"></script>
         <script src="scripts/jquery.ui.widget.js"></script>
         <script src="scripts/jquery.iframe-transport.js"></script>       
-          --%>
-        
+          
+         <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
+        <script src="Scripts/datepicker/datepicker.js"></script>
+        <script src="Scripts/datepicker/datepicker.es-ES.js"></script>
     </head>
 <body>
 <div class="container">
@@ -149,7 +153,7 @@
                                 var diaActual = dia + '/' + mes + '/' + d.getFullYear();
                                 var tokensUsr = document.getElementById("tokensUsr").value;
                                
-                                if (tokensUsr.indexOf("D5CF4DE5-5EFA-4EDD-AD65-5BED3AD9482A") != -1) {
+                              //  if (tokensUsr.indexOf("D5CF4DE5-5EFA-4EDD-AD65-5BED3AD9482A") != -1) {
                                     $('#fechaaplicacionRegistro').datepicker({
                                         autoHide: true,
                                         zIndex: 2048,
@@ -157,7 +161,7 @@
                                         format: 'dd/mm/yyyy',
                                         endDate: diaActual
                                     });
-                                }
+                             //   }
                                 $('#fechaaplicacionRegistro').html(diaActual);                       
 
 

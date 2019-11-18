@@ -24,34 +24,29 @@ Spint 2.1
 
 
         <!-- DESARROLLO-->
-        <script src="../Scripts/jquery-3.2.1.min.js"></script>
+<%--        <script src="../Scripts/jquery-3.2.1.min.js"></script>
        
         <link href="../Content/bootstrap.min.css" rel="stylesheet" />
         <link href="../Content/theme.css" rel="stylesheet" />
         <link href="../Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
         <link href="../Content/select2-bootstrap.min.css" rel="stylesheet" />
-        <link href="../Content/ficha_residencia.css" rel="stylesheet" />
-        
+        <link href="../Content/ficha_residencia.css" rel="stylesheet" />  
         <script src="../Scripts/bootstrap.min.js"></script>
         <script src="../Scripts/select2.min.js"></script>
-   
         <script src="../Scripts/sweetalert2/sweetalert2.all.min.js"></script>
-
         <script src="../Scripts/ficha/progressbar.min.js"></script>
-
         <link href="../Content/font-awesome.min.css" rel="stylesheet" />
         <script src='../Scripts/pdfmake/pdfmake.min.js'></script>
  	    <script src='../Scripts/pdfmake/vfs_fonts.js'></script>
-
         <link href="../Scripts/icheck/skins/all.css" rel="stylesheet" />
         <script src="../Scripts/icheck/icheck.min.js"></script>
 
         <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
         <script src="../Scripts/datepicker/datepicker.js"></script>
-        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>
+        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>--%>
       
 
-      <!-- PRODUCCION
+      <!-- PRODUCCION -->
         <script src="../js/jquery-3.2.1.min.js"></script>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
@@ -75,7 +70,7 @@ Spint 2.1
         <link rel="stylesheet" href="scripts/datepicker/datepicker.css" />
         <script src="scripts/datepicker/datepicker.js"></script>
         <script src="scripts/datepicker/datepicker.es-ES.js"></script>
-      -->
+    
     </head>
 <body>
 
