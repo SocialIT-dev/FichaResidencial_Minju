@@ -1,11 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaResidencial.aspx.cs" Inherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial.FichaResidencial" %>
 
-<%-- DESCOMENTAR ESTA DOS LINEAS PARA SU VERSIÓN EN SENAINFO
+ DESCOMENTAR ESTA DOS LINEAS PARA SU VERSIÓN EN SENAINFO
     
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
     
---%>
+
 
 <!--
 Autor: Luis Danilo Espinoza, SOCIAL-IT
@@ -77,7 +77,7 @@ Spint 2.1
 <div class="container">
     <form id="form1" runat="server">
         <%--DESCOMENTAR SIGUIENTE LINEA PARA SU VERSIÓN EN SENAINFO --%>
-        <%--<uc2:menu_colgante runat="server" ID="menu_colgante" />--%>
+        <uc2:menu_colgante runat="server" ID="menu_colgante" />
         <asp:HiddenField ID="idusuario_conect" runat="server" />
         <asp:HiddenField ID="tokensUsr" runat="server" />
     </form>
@@ -1458,17 +1458,32 @@ Spint 2.1
         $(document).ready(function () {
             var d = new Date();
 
-            importarScript("../Scripts/ficha/antecedentes_generales.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_poblacion_capacidad.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_dotacion_personal.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_infraestructura.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_seguridad.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_salud.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_educacion.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_alimentacion.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_alimentacion.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_gestion_residencia.js?" + d.getTime());
-            importarScript("../Scripts/ficha/residencia1.js?" + d.getTime());
+            // DESARROLLO
+            //importarScript("../Scripts/ficha/antecedentes_generales.js?" + d.getTime());
+            //importarScript("../Scripts/ficha/antecedentes_poblacion_capacidad.js?" + d.getTime());
+            //importarScript("../Scripts/ficha/antecedentes_dotacion_personal.js?" + d.getTime());
+            //importarScript("../Scripts/ficha/antecedentes_infraestructura.js?" + d.getTime());
+            //importarScript("../Scripts/ficha/antecedentes_seguridad.js?" + d.getTime());
+            //importarScript("../Scripts/ficha/antecedentes_salud.js?" + d.getTime());
+            //importarScript("../Scripts/ficha/antecedentes_educacion.js?" + d.getTime());
+            //importarScript("../Scripts/ficha/antecedentes_alimentacion.js?" + d.getTime());
+            //importarScript("../Scripts/ficha/antecedentes_alimentacion.js?" + d.getTime());
+            //importarScript("../Scripts/ficha/antecedentes_gestion_residencia.js?" + d.getTime());
+            //importarScript("../Scripts/ficha/residencia1.js?" + d.getTime());
+
+            //PRODUCCION
+            importarScript("scripts/ficha/antecedentes_generales.js?" + d.getTime());
+            importarScript("scripts/ficha/antecedentes_poblacion_capacidad.js?" + d.getTime());
+            importarScript("scripts/ficha/antecedentes_dotacion_personal.js?" + d.getTime());
+            importarScript("scripts/ficha/antecedentes_infraestructura.js?" + d.getTime());
+            importarScript("scripts/ficha/antecedentes_seguridad.js?" + d.getTime());
+            importarScript("scripts/ficha/antecedentes_salud.js?" + d.getTime());
+            importarScript("scripts/ficha/antecedentes_educacion.js?" + d.getTime());
+            importarScript("scripts/ficha/antecedentes_alimentacion.js?" + d.getTime());
+            importarScript("scripts/ficha/antecedentes_gestion_residencia.js?" + d.getTime());
+            importarScript("scripts/ficha/residencia1.js?" + d.getTime());
+
+
         });
 
         /*
