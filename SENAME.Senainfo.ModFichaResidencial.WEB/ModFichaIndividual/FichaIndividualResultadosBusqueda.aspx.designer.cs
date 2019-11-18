@@ -10,6 +10,6 @@
 namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaIndividual {
     
     
-    public partial class FichaIndividualBuscador {
+    public partial class FichaIndividualResultadosBusqueda {
     }
 }

@@ -1,0 +1,1200 @@
+﻿h1, h2, h3, h4, h5, h6, p, span, button, input {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+}
+
+
+/*Comentarios y descripción de clases
+
+  .yellow-border = Borde Amarillo de los Contenedores.
+  .color-word-form = Color de letras, gris.
+  .mytop1 = margin top, margin bottom a 1rem.
+  .ntop1 = margin top a 1rem.
+  .ntop2 = margin top a 2 rem.
+  .nbottom1 = margin bottom a 1 rem.
+  .diflex = Le agrega display flex a los div.
+  .textauto = Centrar los textos al centro.
+  .mright2 = Margin right a 2 rem.
+  .mensajeform = Estilo del mensaje bajo del formulario.
+  .botonw = Tamaño de los botones del formulario.
+  .mrlauto = Margin left, right auto para centrar.
+  .btn-narj = Color boton naranja.
+  .mytop1y = margin top a 3rem.
+  .colnombre = Clase de columna del nombre en los resultados de la busqueda.
+  .colnombreinput = Clase para la columna del input del nombre, en los resultados de la busqueda.
+  .inputnombre = Clase para el input del nombre, en los resultados de la busqueda.
+  .colrun = Clase de columna del rut en los resultados de la busqueda.
+  .colruninput = Clase para la columna del input del nombre, en los resultados de la busqueda.
+  .inputrun = Clase para la columna del input del nombre, en los resultados de la busqueda.
+  .colboton = Clase de columna del boton en los resultados de la busqueda.
+  .botonform = Forma del boton de resultados de busqueda.
+  .mlficha = Margin left auto ficha.
+  .botonw2 = Tamaño de botones ficha.
+  .hcol = Alto de columnas de ficha.
+  .colmidgene = Estilo de columnas con fondo azul sin bordes.
+  .colgeneralesmidtop = Estilo de columnas de los input con borde en la esquina superior derecha.
+  .colgeneralesmid = Estilo de columnas de los input sin borde.
+  .colmidgenebot = Estilo de columnas con fondo azul con borde en la esquina inferior izquierda.
+  .colgeneralesmidmbot = Estilo de columnas de los input con borde en la esquina inferior derecha.
+  .colnacionalidad = Estilo de columnas con fondo azul con borde en las esquinas superior e inferior izquierda.
+  .colcodnino = Estilo de columnas de los input con borde en las esquinas superior e inferior derecha.
+  
+  Comentarios y descripción de clases*/
+
+.color-word-form {
+    color: #919191;
+}
+
+.mytop1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ntop1 {
+    margin-top: 1rem;
+}
+
+.ntop2 {
+    margin-top: 2rem;
+}
+
+.nbottom1 {
+    margin-bottom: 1rem;
+}
+
+.diflex {
+    display: flex !important;
+}
+
+.mrlautoinput {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.mrlauto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.maxleft {
+    margin-left: auto !important;
+}
+
+
+.maxright {
+    margin-left: auto !important;
+}
+
+.mrlauto3 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+
+.mright2 {
+    margin-right: 2rem !important;
+}
+
+.mrlautor8 {
+    margin-right: 16rem !important;
+}
+
+.aligncenter {
+    align-items: center !important;
+}
+
+.btn-narj {
+    color: #fff;
+    background-color: #F59806 !important;
+}
+
+.bgcontainerfluid {
+    background: #F8F8F8;
+}
+
+.ctop {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.mensajeform {
+    background: white;
+    color: #337AB7;
+    font-weight: 600;
+    border: 1px solid #F59806;
+}
+
+.botonw {
+    width: 300px;
+}
+
+.botonw2 {
+    width: 150px;
+}
+
+.hrmin {
+    border-top: 1px solid #cccccc;
+}
+
+
+.textauto {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+/* desktop */
+@media (min-width: 992px) {
+
+
+    /* calendario */
+    .calendariowidth {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        padding-left: 5rem;
+        padding-right: 12rem;
+    }
+
+    .col-feb {
+        border-top: 1px solid #E1E1E1;
+    }
+
+    .col-abr {
+        border-top: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+        border-radius: 0px 5px 0px 0px;
+    }
+
+    .col-jun {
+        border-top: 1px solid #E1E1E1;
+    }
+
+    .col-ago {
+        border-top: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .col-oct {
+        border-top: 1px solid #E1E1E1;
+        border-bottom: 1px solid #E1E1E1;
+    }
+
+    .col-dic {
+        border-top: 1px solid #E1E1E1;
+        border-bottom: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+        border-radius: 0px 0px 5px 0px;
+    }
+
+    .col-total {
+        color: white;
+        border: 1px solid #B2B2B2;
+        border-radius: 5px 5px 0px 0px;
+        padding-right: 4px;
+    }
+
+    .col-ene1 {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        border-radius: 5px 5px 0px 0px;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    .col-nov1 {
+        border-radius: 0px 0px 0px 0px !important;
+    }
+    /* calendario */
+
+
+    /* boton detalles */
+    .botondetallesform {
+        height: 22px !important;
+        left: -3px !important;
+        top: -1px !important;
+        border-radius: 0px 5px 5px 0px !important;
+    }
+
+    .botondetalles {
+        margin-top: -5px !important;
+    }
+
+
+    .mlficha2 {
+        margin-right: 0 !important;
+        margin-left: auto !important;
+    }
+
+    .ntop2 {
+        margin-top: 2rem !important;
+    }
+
+    /* resultcoincidencias */
+
+    .mytop1y {
+        margin-top: 0rem !important;
+    }
+
+    .colnombre {
+        max-height: 38px !important;
+        padding-top: 4px;
+        background: #B2B2B2 0% 0% no-repeat padding-box;
+        border-radius: 5px 0px 0px 5px !important;
+        opacity: 1;
+        color: white;
+        height: 34px !important;
+    }
+
+    .colhoravisita {
+        padding-top: 4px;
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+    }
+
+    /* columnas gruesas */
+
+    .inputfichaante2 {
+        border: 1px solid #CFCFCF;
+        border-radius: 5px;
+        padding-left: 5px;
+        background: #E9E9E9 !important;
+    }
+
+    .colgeneralesmid2 {
+        padding-top: .6rem;
+        padding-bottom: .6rem;
+        border: 1px solid #E1E1E1 !important;
+        background: #F8F8F8 !important;
+    }
+
+    .colgeneralesmid2fin {
+        padding-top: .6rem;
+        padding-bottom: .6rem;
+        border: 1px solid #E1E1E1 !important;
+        background: #F8F8F8 !important;
+        border-radius: 0px 5px 0px 0px;
+    }
+
+    .colfechavisita2 {
+        padding-top: 4px;
+        background: #337AB7 0% 0% no-repeat padding-box;
+        border-radius: 5px 0px 0px 0px;
+        opacity: 1;
+        color: white;
+        line-height: 1;
+    }
+
+    .colfechavisita2mid {
+        padding-top: 4px;
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        line-height: 1;
+    }
+    /* columnas gruesas */
+
+    .coljuezvisita {
+        margin-top: 1px;
+        padding-top: 4px;
+        background: #337AB7 0% 0% no-repeat padding-box;
+        border-radius: 0px 0px 0px 5px;
+        opacity: 1;
+        color: white;
+    }
+
+    .colconsejero {
+        margin-top: 1px;
+        padding-top: 4px;
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        padding-right: 4px;
+    }
+
+    .colfechavisita {
+        padding-top: 4px;
+        background: #337AB7 0% 0% no-repeat padding-box;
+        border-radius: 5px 0px 0px 0px;
+        opacity: 1;
+        color: white;
+    }
+
+    .colnombreinput {
+        max-height: 34px !important;
+        border-top: 1px solid #B2B2B2;
+        border-bottom: 1px solid #B2B2B2;
+        padding-top: 0px !important;
+    }
+
+    .colruninput {
+        max-height: 34px !important;
+        border-top: 1px solid #B2B2B2;
+        border-bottom: 1px solid #B2B2B2;
+        border-radius: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    .inputnombre {
+        background: rgb(224, 223, 223);
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 7px;
+        height: 22px !important;
+    }
+
+    .mrlautoinput {
+        margin-left: auto !important;
+        text-align: center !important;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .inputrun {
+        background: rgb(224, 223, 223);
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 7px;
+        height: 22px !important;
+    }
+
+    .colrun {
+        background: #B2B2B2;
+        color: #FFFFFF;
+        padding-top: 4px;
+        height: 34px;
+    }
+
+    .colboton {
+        max-height: 88px !important;
+        padding-left: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    .botonform {
+        border-radius: 0px 5px 5px 0px !important;
+    }
+
+    /* ficha */
+
+    .mlficha {
+        margin-right: 0 !important;
+        margin-left: auto !important;
+    }
+
+    .hcol {
+        min-height: 35px;
+        height: 35px;
+        max-height: 35px;
+    }
+
+    .colptecnico {
+        border: 1px solid #E1E1E1;
+        border-radius: 0px 0px 5px 0px !important;
+        background: #F8F8F8 !important;
+    }
+
+    .colpjuez {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+    }
+
+    .colphora {
+        border: 1px solid #E1E1E1;
+        border-radius: 0px 5px 0px 0px;
+        background: #F8F8F8 !important;
+    }
+
+    .colpfecha {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+    }
+
+
+    .inputficha {
+        border: 1px solid #CFCFCF !important;
+        border-radius: 5px !important;
+        background: #E9E9E9 !important;
+        padding-left: 20px !important;
+    }
+
+    .inputficha2 {
+        border: 1px solid #CFCFCF !important;
+        border-radius: 5px !important;
+        background: #E9E9E9 !important;
+        padding-left: 20px !important;
+    }
+
+
+    .colhoravisita {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    .coljuezvisita {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    .colconsejero {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    .colfechavisita {
+        background: #337AB7 0% 0% no-repeat padding-box !important;
+        border-radius: 5px 0px 0px 0px !important;
+        opacity: 1 !important;
+        color: white !important;
+        border: 1px solid #B2B2B2 !important;
+        padding-right: 4px;
+    }
+
+    /* antecedentes generales del niño */
+
+    .colgeneralesmid {
+        border: 1px solid #E1E1E1 !important;
+        background: #F8F8F8 !important;
+    }
+
+    .colgeneralesmidtop {
+        border: 1px solid #E1E1E1 !important;
+        background: #F8F8F8 !important;
+        border-radius: 0px 5px 0px 0px;
+    }
+
+    .colcodnino {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+        border-radius: 0px 5px 5px 0px !important;
+    }
+
+    .colmidgene {
+        background: #337AB7 0% 0% no-repeat padding-box !important;
+        opacity: 1 !important;
+        color: white !important;
+        border: 1px solid #B2B2B2 !important;
+        padding-right: 4px;
+    }
+
+    .colnacionalidad {
+        background: #337AB7 0% 0% no-repeat padding-box !important;
+        opacity: 1 !important;
+        color: white !important;
+        border: 1px solid #B2B2B2 !important;
+        border-radius: 5px 0px 0px 5px !important;
+        padding-right: 4px !important;
+    }
+
+    .colmidgenebot {
+        background: #337AB7 0% 0% no-repeat padding-box !important;
+        opacity: 1 !important;
+        color: white !important;
+        border: 1px solid #B2B2B2 !important;
+        border-radius: 0px 0px 0px 5px !important;
+        padding-right: 4px;
+    }
+
+    .colgeneralesmidmid {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+    }
+
+
+    .colgeneralesmidmbot {
+        border: 1px solid #E1E1E1 !important;
+        background: #F8F8F8 !important;
+        border-radius: 0px 0px 5px 0px !important;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) {
+
+    .hcol {
+        min-height: 34px;
+        height: 34px;
+        max-height: 35px;
+    }
+
+    .yellow-border {
+        box-shadow: 0 0rem .5rem rgba(255, 137, 2, 1) !important;
+        padding: 8rem;
+    }
+
+    .yellow-border2 {
+        box-shadow: 0 0rem .5rem rgba(255, 137, 2, 1) !important;
+        padding: 3rem 5rem 3rem 5rem;
+    }
+
+    .yellow-border3 {
+        box-shadow: 0 0rem .5rem rgba(255, 137, 2, 1) !important;
+        padding: 3rem 5rem 3rem 5rem;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+
+    /* calendario */
+    .calendariowidth {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        padding-left: 5rem;
+        padding-right: 12rem;
+    }
+
+    .col-feb {
+        border-top: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+        border-radius: 0px 5px 0px 0px;
+    }
+
+    .col-abr {
+        border-top: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .col-jun {
+        border-top: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .col-ago {
+        border-top: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .col-oct {
+        border-top: 1px solid #E1E1E1;
+        border-bottom: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .col-dic {
+        border-top: 1px solid #E1E1E1;
+        border-bottom: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+        border-radius: 0px 0px 5px 0px;
+    }
+
+    .ntop3 {
+        margin-top: 2rem !important;
+    }
+
+    .col-total {
+        color: white;
+        border: 1px solid #B2B2B2;
+        border-radius: 5px 0px 0px 5px;
+        padding-right: 4px;
+    }
+
+    .col-nov1 {
+        border-radius: 0px 0px 0px 5px;
+    }
+
+    .col-ene1 {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        border-radius: 5px 0px 0px 0px;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+    /* calendario */
+
+    /* boton detalles */
+    .botondetallesform {
+        height: 22px;
+        left: -3px;
+        top: 0px;
+        border-radius: 0px 5px 5px 0px !important;
+    }
+
+    .botondetalles {
+        margin-top: -5px !important;
+    }
+
+    /* ficha */
+
+    .yellow-border3 {
+        padding: 3rem;
+    }
+
+    .mlficha {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .colhoravisita {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    .coljuezvisita {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    .colconsejero {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    .colfechavisita {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        border-radius: 5px 5px 0px 0px;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    p {
+        margin: 0 0 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .colptecnico {
+        background: #E9E9E9;
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+        border-bottom: 1px solid #B2B2B2;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    .colpjuez {
+        background: #E9E9E9;
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+    }
+
+    .colphora {
+        background: #E9E9E9;
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+    }
+
+    .colpfecha {
+        background: #E9E9E9;
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+    }
+
+    .inputficha {
+        margin-top: .8rem;
+        margin-bottom: .8rem;
+        border: 1px solid #CFCFCF;
+        border-radius: 5px;
+        background: #E9E9E9;
+        padding-left: 20px;
+    }
+
+    .inputficha2 {
+        padding-left: 5px;
+    }
+
+
+    /* antecedentes generales */
+
+    .colgeneralesmid {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+    }
+
+    .inputfichaante {
+        margin-top: .8rem;
+        margin-bottom: .8rem;
+        border: 1px solid #CFCFCF;
+        border-radius: 5px;
+        padding-left: 5px;
+        background: #E9E9E9 !important;
+    }
+
+    .colmidgene {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+        padding-right: 4px;
+    }
+
+    .colmidgenebot {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+        border-radius: 0px 0px 0px 0px;
+        padding-right: 4px;
+    }
+
+    .colgeneralesmidmid {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+    }
+
+    .colgeneralesmidmbot {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    .colgeneralesmidtop {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+    }
+
+    .ntop2 {
+        margin-top: 0;
+    }
+
+    .nt3 {
+        margin-top: 2rem;
+    }
+
+
+    .colnacionalidad {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+        border-radius: 5px 5px 0px 0px;
+        padding-right: 4px;
+    }
+
+    .colcodnino {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+
+    .mlficha2 {
+        margin-right: auto;
+        padding-left: 0px !important;
+    }
+
+    /* resultcoincidencias */
+
+    .colboton {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .colnombre {
+        background: #B2B2B2 0% 0% no-repeat padding-box;
+        border-radius: 5px 5px 0px 0px;
+        opacity: 1;
+        color: white;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .colnombreinput {
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+    }
+
+    .colruninput {
+        border-bottom: 1px solid #B2B2B2;
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    .maxbotauto {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+
+    .mytop1 {
+        margin-top: .0rem;
+        margin-bottom: .0rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .mytop1y {
+        margin-top: 3rem;
+    }
+
+    .inputnombre {
+        background: rgb(224, 223, 223);
+        border-radius: 7px;
+        height: 22px !important;
+    }
+
+    .colrun {
+        background: #B2B2B2;
+        color: #FFFFFF;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .botonform {
+        border-radius: 5px 5px 5px 5px;
+        width: 100%;
+    }
+
+    .inputrun {
+        background: rgb(224, 223, 223);
+        border-radius: 7px;
+        height: 22px !important;
+    }
+
+    .mrlautoinput {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+    }
+
+
+    .hrmin {
+        border-top: 1px solid rgb(175, 175, 175);
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+/* telefono */
+
+@media (max-width: 767px) {
+
+
+    .hcol {
+        min-height: 34px;
+        height: 34px;
+        max-height: 35px;
+    }
+
+
+
+    /* calendario */
+    .calendariowidth {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        padding-left: 5rem;
+        padding-right: 4rem;
+    }
+
+    .col-feb {
+        border-top: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+        border-radius: 0px 5px 0px 0px;
+    }
+
+    .col-abr {
+        border-top: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .col-jun {
+        border-top: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .col-ago {
+        border-top: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .col-oct {
+        border-top: 1px solid #E1E1E1;
+        border-bottom: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .col-dic {
+        border-top: 1px solid #E1E1E1;
+        border-bottom: 1px solid #E1E1E1;
+        border-right: 1px solid #E1E1E1;
+        border-radius: 0px 0px 5px 0px;
+    }
+
+    .ntop3 {
+        margin-top: 2rem !important;
+    }
+
+    .col-total {
+        color: white;
+        border: 1px solid #B2B2B2;
+        border-radius: 5px 0px 0px 5px;
+        padding-right: 4px;
+    }
+
+    .col-nov1 {
+        border-radius: 0px 0px 0px 5px;
+    }
+
+    .col-ene1 {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        border-radius: 5px 0px 0px 0px;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+    /* calendario */
+
+
+    /* boton detalles */
+    .botondetallesform {
+        height: 22px;
+        left: -3px;
+        top: 0px;
+        border-radius: 0px 5px 5px 0px !important;
+    }
+
+    .botondetalles {
+        margin-top: -5px;
+    }
+
+    /* resultcoincidencias */
+
+    .colboton {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .colnombre {
+        background: #B2B2B2 0% 0% no-repeat padding-box;
+        border-radius: 5px 5px 0px 0px;
+        opacity: 1;
+        color: white;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .colnombreinput {
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+    }
+
+    .colruninput {
+        border-bottom: 1px solid #B2B2B2;
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    .maxbotauto {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+
+    .mytop1 {
+        margin-top: .0rem;
+        margin-bottom: .0rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .mytop1y {
+        margin-top: 3rem;
+    }
+
+    .inputnombre {
+        background: rgb(224, 223, 223);
+        border-radius: 7px;
+        height: 22px !important;
+    }
+
+    .colrun {
+        background: #B2B2B2;
+        color: #FFFFFF;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .botonform {
+        border-radius: 5px 5px 5px 5px;
+        width: 100%;
+    }
+
+    .inputrun {
+        background: rgb(224, 223, 223);
+        border-radius: 7px;
+        height: 22px !important;
+    }
+
+    .mrlautoinput {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+    }
+
+
+    .hrmin {
+        border-top: 1px solid rgb(175, 175, 175);
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* ficha */
+
+    .yellow-border3 {
+        padding: 3rem;
+    }
+
+    .mlficha {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .colhoravisita {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    .coljuezvisita {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    .colconsejero {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    .colfechavisita {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        border-radius: 5px 5px 0px 0px;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+    }
+
+    p {
+        margin: 0 0 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .colptecnico {
+        background: #E9E9E9;
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+        border-bottom: 1px solid #B2B2B2;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    .colpjuez {
+        background: #E9E9E9;
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+    }
+
+    .colphora {
+        background: #E9E9E9;
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+    }
+
+    .colpfecha {
+        background: #E9E9E9;
+        border-left: 1px solid #B2B2B2;
+        border-right: 1px solid #B2B2B2;
+    }
+
+    .inputficha {
+        margin-top: .8rem;
+        margin-bottom: .8rem;
+        border: 1px solid #CFCFCF;
+        border-radius: 5px;
+        background: #E9E9E9;
+        padding-left: 20px;
+    }
+
+    .inputficha2 {
+        padding-left: 5px;
+    }
+
+    /* antecedentes generales */
+
+    .colgeneralesmid {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+    }
+
+    .inputfichaante {
+        margin-top: .8rem;
+        margin-bottom: .8rem;
+        border: 1px solid #CFCFCF;
+        border-radius: 5px;
+        padding-left: 5px;
+        background: #E9E9E9 !important;
+    }
+
+    .colmidgene {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+        padding-right: 4px;
+    }
+
+    .colmidgenebot {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+        border-radius: 0px 0px 0px 0px;
+        padding-right: 4px;
+    }
+
+    .colgeneralesmidmid {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+    }
+
+    .colgeneralesmidmbot {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    .colgeneralesmidtop {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+    }
+
+    .ntop2 {
+        margin-top: 0;
+    }
+
+    .nt3 {
+        margin-top: 2rem;
+    }
+
+
+    .colnacionalidad {
+        background: #337AB7 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: white;
+        border: 1px solid #B2B2B2;
+        border-radius: 5px 5px 0px 0px;
+        padding-right: 4px;
+    }
+
+    .colcodnino {
+        border: 1px solid #E1E1E1;
+        background: #F8F8F8 !important;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+
+    .mlficha2 {
+        margin-right: auto !important;
+        padding-left: 0px !important;
+    }
+}
