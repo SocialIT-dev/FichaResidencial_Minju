@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="True" CodeBehind="Senainfo2016.Master.cs" Inherits="SenainfoSdk.UI.Senainfo2015" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Src="C_menu_colgante.ascx" TagPrefix="uc1" TagName="menu_colgante" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+        <asp:ContentPlaceHolder ID="TitleHead" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server"></asp:ContentPlaceHolder>
+
+
+</head>
+<body role="document">
+
+    <script src='<%=this.ResolveUrl("~/js/jquery-2.1.4.min.js") %>'></script>
+    <link href='<%=this.ResolveUrl("~/css/jquery-ui.css") %>' rel="stylesheet" />
+    <script src='<%=this.ResolveUrl("~/js/jquery-ui.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/js/bootstrap.min.js") %>'></script>
+    <link href='<%=this.ResolveUrl("~/css/bootstrap.min.css") %>' rel="stylesheet" />
+    <link href='<%=this.ResolveUrl("~/css/bootstrap-theme.min.css") %>' rel="stylesheet" />
+    <link href='<%=this.ResolveUrl("~/css/theme.css") %>' rel="stylesheet" />
+    <script src='<%=this.ResolveUrl("~/js/ie-emulation-modes-warning.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/Script/jquery.mousewheel-3.0.4.pack.js") %>'></script>
+
+    <script src='<%=this.ResolveUrl("~/js/senainfoTools.js") %>'></script>
+    <link href='<%=this.ResolveUrl("~/css/summernote.css") %>' rel="stylesheet" />
+    <script src='<%=this.ResolveUrl("~/js/summernote.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/js/jquery.Rut.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/css/lang/summernote-es-ES.js") %>'></script>
+    <link href='<%=this.ResolveUrl("~/css/style_fichaunica.css") %>' rel="stylesheet" />
+
+    
+
+    <form id="form1" runat="server">
+        <div>
+            <uc1:menu_colgante ID="menu_colgante" runat="server" />
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+            <div class="container theme-showcase" role="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+            <ProgressTemplate>
+                <div id="divProgress" class="ajax_cargando">
+                    <img alt="Cargando" src="../images/Cursors/ajax-loader.gif" />
+                    Cargando...       
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+
+    </form>
+    <footer class="footer" aria-hidden="False" style="position:relative">
+        <div class="container">
+            <p>
+                Para tus dudas y consultas, escribe a:
+                <br />
+                mesadeayuda@sename.cl
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

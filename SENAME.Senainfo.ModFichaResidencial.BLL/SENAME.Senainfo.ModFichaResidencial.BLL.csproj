@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6EC73F2E-31A5-445E-ABCF-DB0A1C177A05}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SENAME.Senainfo.ModFichaResidencial.BLL</RootNamespace>
+    <AssemblyName>SENAME.Senainfo.ModFichaResidencial.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\AntecedentesAlimentacionDto.cs" />
+    <Compile Include="DTO\AntecedentesEducacionDto.cs" />
+    <Compile Include="DTO\AntecedentesGeneralesDto.cs" />
+    <Compile Include="DTO\AntecedentesInfraestructuraDto.cs" />
+    <Compile Include="DTO\AntecedentesResidenciaDto.cs" />
+    <Compile Include="DTO\AntecedentesSaludDto.cs" />
+    <Compile Include="DTO\AntecedentesSeguridadDto.cs" />
+    <Compile Include="DTO\HistorialDto.cs" />
+    <Compile Include="DTO\ObservacionesDto.cs" />
+    <Compile Include="DTO\ReportesDto.cs" />
+    <Compile Include="DTO\RespuestasDto.cs" />
+    <Compile Include="Impl\AntecedentesAlimentacionImpl.cs" />
+    <Compile Include="Impl\AntecedentesInfraestructuraImpl.cs" />
+    <Compile Include="DTO\AntecedentesPoblacionDto.cs" />
+    <Compile Include="DTO\DotacionPersonalDto.cs" />
+    <Compile Include="Impl\AntecedentesGeneralesImpl.cs" />
+    <Compile Include="Impl\AntecedentesPoblacionImpl.cs" />
+    <Compile Include="Impl\AntecedentesEducacionImpl.cs" />
+    <Compile Include="Impl\AntecedentesResidenciaImpl.cs" />
+    <Compile Include="Impl\AntecedentesSaludImpl.cs" />
+    <Compile Include="Impl\AntecedentesSeguridadImpl.cs" />
+    <Compile Include="Impl\DotacionPersonalImpl.cs" />
+    <Compile Include="Impl\HistorialImpl.cs" />
+    <Compile Include="Impl\ObservacionesImpl.cs" />
+    <Compile Include="Impl\ReportesImpl.cs" />
+    <Compile Include="Impl\RespuestasImpl.cs" />
+    <Compile Include="Interfaces\AntecedentesAlimentacionInterface.cs" />
+    <Compile Include="Interfaces\AntecedentesGeneralesInterface.cs" />
+    <Compile Include="Interfaces\AntecedentesInfraestructuraInterface.cs" />
+    <Compile Include="Interfaces\AntecedentesPoblacionInterface.cs" />
+    <Compile Include="Interfaces\AntecedentesEducacionInterface.cs" />
+    <Compile Include="Interfaces\AntecedentesResidenciaInterface.cs" />
+    <Compile Include="Interfaces\AntecedentesSaludInterface.cs" />
+    <Compile Include="Interfaces\AntecedentesSeguridadInterface.cs" />
+    <Compile Include="Interfaces\DotacionPersonalInterface.cs" />
+    <Compile Include="Interfaces\HistorialInterface.cs" />
+    <Compile Include="Interfaces\IReportes.cs" />
+    <Compile Include="Interfaces\ObservacionesInterface.cs" />
+    <Compile Include="Interfaces\ResupestasInterface.cs" />
+    <Compile Include="Mapper\AntecedentesAlimentacionMapper.cs" />
+    <Compile Include="Mapper\AntecedentesGeneralesMapper.cs" />
+    <Compile Include="Mapper\AntecedentesInfraestructuraMapper.cs" />
+    <Compile Include="Mapper\AntecedentesPoblacionMapper.cs" />
+    <Compile Include="Mapper\AntecedentesEducacionMapper.cs" />
+    <Compile Include="Mapper\AntecedentesResidenciaMapper.cs" />
+    <Compile Include="Mapper\AntecedentesSaludMapper.cs" />
+    <Compile Include="Mapper\AntecedentesSeguridadMapper.cs" />
+    <Compile Include="Mapper\DotacionPersonalMapper.cs" />
+    <Compile Include="Mapper\HistorialMapper.cs" />
+    <Compile Include="Mapper\ObservacionesMapper.cs" />
+    <Compile Include="Mapper\ReportesMapper.cs" />
+    <Compile Include="Mapper\RespuestasMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SENAME.Senainfo.ModFichaResidencial.DAL\SENAME.Senainfo.ModFichaResidencial.DAL.csproj">
+      <Project>{0867e0b9-d5d8-4896-a56a-37dc4e20686a}</Project>
+      <Name>SENAME.Senainfo.ModFichaResidencial.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

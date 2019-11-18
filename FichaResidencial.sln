@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. DAL", "1. DAL", "{4FBA5971-5651-461E-8DFE-E88EDFB1EB11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. BLL", "2. BLL", "{581CC483-4A3F-4EEB-8FA1-8C8480C97891}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. UI", "3. UI", "{92A8B945-E77C-423E-949A-9A881BC3CD02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{51A27FFB-8909-497F-B47E-174B4757C11D}"
+	ProjectSection(SolutionItems) = preProject
+		lib\AjaxControlToolkit.dll = lib\AjaxControlToolkit.dll
+		lib\AJAXExtensionsToolbox.dll = lib\AJAXExtensionsToolbox.dll
+		lib\Elmah.dll = lib\Elmah.dll
+		lib\SenainfoSdk.Kernel.dll = lib\SenainfoSdk.Kernel.dll
+		lib\SenainfoSdk.UI.dll = lib\SenainfoSdk.UI.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SENAME.Senainfo.ModFichaResidencial.DAL", "SENAME.Senainfo.ModFichaResidencial.DAL\SENAME.Senainfo.ModFichaResidencial.DAL.csproj", "{0867E0B9-D5D8-4896-A56A-37DC4E20686A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SENAME.Senainfo.ModFichaResidencial.WEB", "SENAME.Senainfo.ModFichaResidencial.WEB\SENAME.Senainfo.ModFichaResidencial.WEB.csproj", "{929667A7-C298-4549-95FD-5B9EDEB5459B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SENAME.Senainfo.ModFichaResidencial.BLL", "SENAME.Senainfo.ModFichaResidencial.BLL\SENAME.Senainfo.ModFichaResidencial.BLL.csproj", "{6EC73F2E-31A5-445E-ABCF-DB0A1C177A05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0867E0B9-D5D8-4896-A56A-37DC4E20686A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0867E0B9-D5D8-4896-A56A-37DC4E20686A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0867E0B9-D5D8-4896-A56A-37DC4E20686A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0867E0B9-D5D8-4896-A56A-37DC4E20686A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{929667A7-C298-4549-95FD-5B9EDEB5459B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{929667A7-C298-4549-95FD-5B9EDEB5459B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{929667A7-C298-4549-95FD-5B9EDEB5459B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{929667A7-C298-4549-95FD-5B9EDEB5459B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC73F2E-31A5-445E-ABCF-DB0A1C177A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC73F2E-31A5-445E-ABCF-DB0A1C177A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC73F2E-31A5-445E-ABCF-DB0A1C177A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC73F2E-31A5-445E-ABCF-DB0A1C177A05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0867E0B9-D5D8-4896-A56A-37DC4E20686A} = {4FBA5971-5651-461E-8DFE-E88EDFB1EB11}
+		{929667A7-C298-4549-95FD-5B9EDEB5459B} = {92A8B945-E77C-423E-949A-9A881BC3CD02}
+		{6EC73F2E-31A5-445E-ABCF-DB0A1C177A05} = {581CC483-4A3F-4EEB-8FA1-8C8480C97891}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADC356E3-122E-415B-9458-CC85007E6BE1}
+	EndGlobalSection
+EndGlobal
