@@ -17,7 +17,7 @@ function CargaInicial() {
          GenerarReporte();
     });
 
-    // gc09422
+    /* Spring 4.2 - 20191118 - gcastro */
     $(document).on('click', '#btnLimpiar', function () {
             LimpiarFormularioReportes();
     });

@@ -129,7 +129,7 @@
                                 </select>
                             </td>
                         </tr>
-                    <%--    <tr>
+                        <tr>
                             <th>
                                 <label for="">Periodo:</label>
                             </th>
@@ -163,13 +163,13 @@
 
                             });
 
-                        </script> --%>   
+                        </script>   
                         <tr>
                             <td></td>
                             <td>
                                 <div>
                                     <button id="btnGenerarReporte" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" ><span class="glyphicon glyphicon-zoom-in"></span>&nbsp;Generar</button>
-                                   <%-- <button id="btnLimpiar" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" ><span class="	glyphicon glyphicon-trash"></span>&nbsp;Limpiar</button>--%>
+                                    <button id="btnLimpiar" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" ><span class="	glyphicon glyphicon-trash"></span>&nbsp;Limpiar</button>
                                 </div>
                             </td>
                         </tr>
