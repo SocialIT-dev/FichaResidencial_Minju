@@ -24,7 +24,7 @@ Spint 2.1
 
 
         <!-- DESARROLLO-->
-<%--        <script src="../Scripts/jquery-3.2.1.min.js"></script>
+        <script src="../Scripts/jquery-3.2.1.min.js"></script>
        
         <link href="../Content/bootstrap.min.css" rel="stylesheet" />
         <link href="../Content/theme.css" rel="stylesheet" />
@@ -43,11 +43,11 @@ Spint 2.1
 
         <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
         <script src="../Scripts/datepicker/datepicker.js"></script>
-        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>--%>
+        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>
       
 
       <!-- PRODUCCION -->
-        <script src="../js/jquery-3.2.1.min.js"></script>
+<%--        <script src="../js/jquery-3.2.1.min.js"></script>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
@@ -69,7 +69,7 @@ Spint 2.1
 
         <link rel="stylesheet" href="scripts/datepicker/datepicker.css" />
         <script src="scripts/datepicker/datepicker.js"></script>
-        <script src="scripts/datepicker/datepicker.es-ES.js"></script>
+        <script src="scripts/datepicker/datepicker.es-ES.js"></script>--%>
     
     </head>
 <body>
