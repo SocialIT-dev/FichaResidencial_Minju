@@ -22,7 +22,6 @@ Spint 2.1
 
         <title>FICHA RESIDENCIAL  :: Senainfo :: Servicio Nacional de Menores</title>
 
-
         <!-- DESARROLLO-->
         <script src="../Scripts/jquery-3.2.1.min.js"></script>
        
