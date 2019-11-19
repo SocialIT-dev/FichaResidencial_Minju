@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaResidencial.aspx.cs" Inherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial.FichaResidencial" %>
     
+<%-- DESCOMENTAR ESTA DOS LINEAS PARA SU VERSIÓN EN SENAINFO  --%>
+    
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
     
@@ -45,7 +47,7 @@ Spint 2.1
       
 
       <!-- PRODUCCION -->
-        <script src="../js/jquery-3.2.1.min.js"></script>
+      <script src="../js/jquery-3.2.1.min.js"></script>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
@@ -74,8 +76,10 @@ Spint 2.1
 
 <div class="container">
     <form id="form1" runat="server">
+
         <%--DESCOMENTAR SIGUIENTE LINEA PARA SU VERSIÓN EN SENAINFO --%>
-        <uc2:menu_colgante runat="server" ID="menu_colgante" />
+       <uc2:menu_colgante runat="server" ID="menu_colgante" />
+
         <asp:HiddenField ID="idusuario_conect" runat="server" />
         <asp:HiddenField ID="tokensUsr" runat="server" />
     </form>

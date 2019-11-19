@@ -336,7 +336,6 @@ function CargaParValores1()
     var x = document.getElementsByClassName("dllSiNo");
     x.selectedIndex = 0;
     x.disabled = true;
-
     $.ajax({
         type: "POST",
         url: "FichaResidencial.aspx/ObtenerParValores",

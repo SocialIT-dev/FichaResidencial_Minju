@@ -19,7 +19,7 @@
         <title>FICHA RESIDENCIAL  :: Senainfo :: Servicio Nacional de Menores</title>
 
         <!-- DESARROLLO -->
-<%--        <script src="../Scripts/jquery-3.2.1.min.js"></script>
+       <script src="../Scripts/jquery-3.2.1.min.js"></script>
 
         <link href="../Content/bootstrap.min.css" rel="stylesheet" />
         <link href="../Content/theme.css" rel="stylesheet" />
@@ -48,11 +48,11 @@
 
     <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
         <script src="../Scripts/datepicker/datepicker.js"></script>
-        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>--%>
+        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>
 
         <%--PRODUCCIÓN--%>
        
-        <script src="../js/jquery-3.2.1.min.js"></script>
+<%--        <script src="../js/jquery-3.2.1.min.js"></script>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
@@ -78,7 +78,7 @@
           
          <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
         <script src="Scripts/datepicker/datepicker.js"></script>
-        <script src="Scripts/datepicker/datepicker.es-ES.js"></script>
+        <script src="Scripts/datepicker/datepicker.es-ES.js"></script>--%>
     </head>
 <body>
 <div class="container">
@@ -227,9 +227,12 @@
     }
     $(document).ready(function () {
         var d = new Date();
-        importarScript("../Scripts/ficha/reportes.js?" + d.getTime());
 
-        //importarScript("scripts/ficha/reportes.js?" + d.getTime());   
+        // DESARROLLO
+       // importarScript("../Scripts/ficha/reportes.js?" + d.getTime());
+
+        // PRODUCCION
+        importarScript("scripts/ficha/reportes.js?" + d.getTime());   
     });
     /*
     NOTA: cuando se integra en SENAINFO la ruta de las librería javascript deben comenzar con:
