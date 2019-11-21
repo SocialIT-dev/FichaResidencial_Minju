@@ -83,8 +83,10 @@
 <body>
 <div class="container">
     <form id="form2" runat="server">
+
         <%--DESCOMENTAR SIGUIENTE LINEA PARA SU VERSIÓN EN SENAINFO --%>
         <%--<uc2:menu_colgante runat="server" ID="menu_colgante" />--%>
+
         <asp:HiddenField ID="idusuario_conect" runat="server" />
         <asp:HiddenField ID="tokensUsr" runat="server" />
         
@@ -125,6 +127,40 @@
                         </tr>
                         <tr>
                             <th>
+                                <label for="">Periodo:</label>
+                            </th>
+                             <td style="border-bottom: 1px #B2B2B2 solid;">
+                                <span class="form-control" style="width:100px;cursor:pointer;float:left;" 
+                                    title="Para modificar has clic y selecciona una nueva fecha" id="fechaPeriodoReporte"> </span>
+                            </td>
+                        </tr>
+                            <!-- Spring 4 - 20191115 - gcastro -->
+                             <script>
+                            //$(document).ready(function () {
+                            //    var d = new Date();
+                            //    var dia = d.getDate();
+                            //    var mes = d.getMonth() + 1;
+                            //    if (dia < 10) dia = "0" + dia;
+                            //    if (mes < 10) mes = "0" + mes;
+                            //    var diaActual = dia + '/' + mes + '/' + d.getFullYear();
+                            //    var tokensUsr = document.getElementById("tokensUsr").value;
+                               
+                            //  //  if (tokensUsr.indexOf("D5CF4DE5-5EFA-4EDD-AD65-5BED3AD9482A") != -1) {
+                            //        $('#fechaPeriodoReporte').datepicker({
+                            //            autoHide: true,
+                            //            zIndex: 2048,
+                            //            language: 'es-ES',
+                            //            format: 'dd/mm/yyyy',
+                            //            endDate: diaActual
+                            //        });
+                            // //   }
+                            //    $('#fechaPeriodoReporte').html(diaActual);                       
+                            //});
+
+                        </script>  
+
+                        <tr>
+                            <th>
                                 <label for="">Reporte:</label>
                             </th>
                             <td>
@@ -133,42 +169,7 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <th>
-                                <label for="">Periodo:</label>
-                            </th>
-                             <td style="border-bottom: 1px #B2B2B2 solid;">
-                                <span class="form-control" style="width:100px;cursor:pointer;float:left;" 
-                                    title="Para modificar has clic y selecciona una nueva fecha" id="fechaaplicacionRegistro"> </span>
-                            </td>
-                        </tr>
-                            <!-- Spring 4 - 20191115 - gcastro -->
-                             <script>
-                            $(document).ready(function () {
-                                var d = new Date();
-                                var dia = d.getDate();
-                                var mes = d.getMonth() + 1;
-                                if (dia < 10) dia = "0" + dia;
-                                if (mes < 10) mes = "0" + mes;
-                                var diaActual = dia + '/' + mes + '/' + d.getFullYear();
-                                var tokensUsr = document.getElementById("tokensUsr").value;
-                               
-                              //  if (tokensUsr.indexOf("D5CF4DE5-5EFA-4EDD-AD65-5BED3AD9482A") != -1) {
-                                    $('#fechaaplicacionRegistro').datepicker({
-                                        autoHide: true,
-                                        zIndex: 2048,
-                                        language: 'es-ES',
-                                        format: 'dd/mm/yyyy',
-                                        endDate: diaActual
-                                    });
-                             //   }
-                                $('#fechaaplicacionRegistro').html(diaActual);                       
-
-
-                            });
-
-                        </script>   
-                        <tr>
+                            <tr>
                             <td></td>
                             <td>
                                 <div>
@@ -229,10 +230,10 @@
         var d = new Date();
 
         // DESARROLLO
-       // importarScript("../Scripts/ficha/reportes.js?" + d.getTime());
+        importarScript("../Scripts/ficha/reportes.js?" + d.getTime());
 
         // PRODUCCION
-        importarScript("scripts/ficha/reportes.js?" + d.getTime());   
+       // importarScript("scripts/ficha/reportes.js?" + d.getTime());   
     });
     /*
     NOTA: cuando se integra en SENAINFO la ruta de las librería javascript deben comenzar con:

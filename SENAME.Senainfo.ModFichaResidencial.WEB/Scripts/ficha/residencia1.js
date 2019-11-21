@@ -766,9 +766,10 @@ function GrabarAntecedentes(opc) {
 function GrabarFechaAplicacionFicha() {
     
     if (CodFicha != "" && CodFicha != "0") {
-        FechaAplicacion = $('#fechaaplicacionRegistro').html();
-        alert('GrabarFechaAplicacionFicha');
-        alert(FechaAplicacion);
+       // FechaAplicacion = $('#fechaaplicacionRegistro').html();
+        /* remplazado por  */
+        var FechaAplicacion = $('#ifechaaplicacionRegistro').val().toString();
+
         FechaAplicacion = FechaAplicacion.substring(6, 10) + FechaAplicacion.substring(3, 5) + FechaAplicacion.substring(0, 2);
         $.ajax({
             type: "POST",

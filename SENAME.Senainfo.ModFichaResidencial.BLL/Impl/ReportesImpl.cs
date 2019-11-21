@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using SENAME.Senainfo.ModFichaResidencial.BLL.DTO;
 using SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces;
@@ -22,15 +23,33 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Impl
             return ReportesMapper.ToListarReportesDto(result);
         }
         
-        public List<Reporte01FichasPorPeriodoDto> Reporte01FichasPorPeriodo(int idUsuario)
+        /* SE COMENTA PORQUE NO ES LLAMADA  */
+        //public List<Reporte01FichasPorPeriodoDto> Reporte01FichasPorPeriodo(int idUsuario)
+        //{
+        //    var result =  _reportesDao.Reporte01FichasPorPeriodo(idUsuario);
+        //    return ReportesMapper.ToReporte01Dto(result);
+        //}
+
+        /// <summary>
+        /// Método que lista reporte segun tipo de Reporte. Los filtros son opcionales
+        /// Sprint 4 - 2019120 - gcastro
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <param name="codInstitucion"></param>
+        /// <param name="codProyecto"></param>
+        /// <param name="codReporte"></param>
+        /// <param name="periodo"></param>
+        /// <returns>Lista</returns>
+        public DataTable Reporte01FichasPorPeriodoDt(int idUsuario, int codInstitucion, int codProyecto, int codReporte, string periodo)
         {
-            var result =  _reportesDao.Reporte01FichasPorPeriodo(idUsuario);
-            return ReportesMapper.ToReporte01Dto(result);
+            
+                return _reportesDao.Reporte01PorSituacionFichaResidencial(idUsuario, codInstitucion, codProyecto, codReporte, periodo); 
+
         }
 
-        public DataTable Reporte01FichasPorPeriodoDt(int idUsuario)
+        public DataTable Reporte01FichaResidencial(int idusuario, int codInstitucion, int codProyecto, int codReporte, string periodo)
         {
-            return _reportesDao.Reporte01FichasPorPeriodo(idUsuario); 
+              return _reportesDao.Reporte01PorFichaResidencial(idusuario, codInstitucion, codProyecto, codReporte, periodo);
         }
     }
 }

@@ -6,7 +6,7 @@
 <%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
     
 
-
+    
 <!--
 Autor: Luis Danilo Espinoza, SOCIAL-IT
 07/11/2019
@@ -24,7 +24,7 @@ Spint 2.1
 
 
         <!-- DESARROLLO-->
-<%--        <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <%--   <script src="../Scripts/jquery-3.2.1.min.js"></script>
        
         <link href="../Content/bootstrap.min.css" rel="stylesheet" />
         <link href="../Content/theme.css" rel="stylesheet" />
@@ -135,8 +135,8 @@ Spint 2.1
                                         endDate: diaActual
                                     });
                                     }
-
-                            document.getElementById("ifechaaplicacionRegistro").setAttribute('value', diaActual);
+                            // gcastro
+                            document.getElementById("ifechaaplicacionRegistro").setAttribute('value', diaActual.toString());
                          </script>
 
                         <!-- Spint 2.1 NEW End-->
@@ -1459,6 +1459,7 @@ Spint 2.1
         }
         $(document).ready(function () {
             var d = new Date();
+
 
             // DESARROLLO
             //importarScript("../Scripts/ficha/antecedentes_generales.js?" + d.getTime());

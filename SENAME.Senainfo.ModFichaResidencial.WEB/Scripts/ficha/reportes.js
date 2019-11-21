@@ -1,20 +1,51 @@
 ﻿var IdUsuarioActualizacion;
 var reportesData;
-
+var cabmodal = "SENAINFO ";
+var mensaje_ = "";
 
 $(document).ready(function () {
     CargaInicial();
-    
+  
+
+});
+
+
+function showPicker()
+{
+    var d = new Date();
+    var dia = d.getDate();
+    var mes = d.getMonth() + 1;
+    if (dia < 10) dia = "0" + dia;
+    if (mes < 10) mes = "0" + mes;
+    var diaActual = dia + '/' + mes + '/' + d.getFullYear();
+    var tokensUsr = document.getElementById("tokensUsr").value;
+
+    //  if (tokensUsr.indexOf("D5CF4DE5-5EFA-4EDD-AD65-5BED3AD9482A") != -1) {
+    $('#fechaPeriodoReporte').datepicker({
+        autoHide: true,
+        zIndex: 2048,
+        language: 'es-ES',
+        format: 'dd/mm/yyyy',
+        endDate: diaActual
     });
+    //   }
+    $('#fechaPeriodoReporte').val(diaActual).toString();
+}
+
+
 
 function CargaInicial() {
     IdUsuarioActualizacion = $("#idusuario_conect").val();
     CargaDatosReportes();
     CargaDatosInstitucionesUsuario();
+    showPicker();
 
+    /* Sprint 4 - 20191121 - gcastro */
     $(document).on('click', '#btnGenerarReporte', function () {
-        if ($("#cmbReporte").val() != 0)
-         GenerarReporte();
+        if ($("#cmbReporte").val() == 0) 
+            MensajeINFO("Debe seleccionar un Reporte");
+        else   
+            GenerarReporte();
     });
 
     /* Spring 4.2 - 20191118 - gcastro */
@@ -23,8 +54,9 @@ function CargaInicial() {
     });
 
     $("#cmbReporte")
-        .change(function () {
-            
+        .change(function ()
+        {
+
             var infoReporte = reportesData.find(sel => sel.CodReporte == $(this).val().toString());
             var infoRequerida = $("#infoRequerida");
 
@@ -46,6 +78,12 @@ function CargaInicial() {
 
         });
 
+    $("#fechaPeriodoReporte")
+        .change(function () {
+        var aux = $(this).val().toString();
+    alert(aux);
+    });
+    
 }
 
 ///////////////////
@@ -181,20 +219,56 @@ function CargaDatosReportes() {
     });
 }
 
-function GenerarReporte() {
-
+/* Sprint 4 - 20191121 - gcastro */
+function GenerarReporte()
+{
+    if ($("#cmbReporte").val() == 2)
+    {
+        if ($("#fechaPeriodoReporte").val() == "") {
+            MensajeINFO("Debe seleccionar al menos el periodo");
+            return;
+        } 
+    }
+    var periodo = $("#fechaPeriodoReporte").val();
     var idusuario = IdUsuarioActualizacion;
-    var codproyecto = $("#cmbProyecto").val();
-    var codreporte = $("#cmbReporte").val();
+    var codInstitucion = $("#cmbInstitucion").val();
+    var codProyecto = $("#cmbProyecto").val();
+    var codReporte = $("#cmbReporte").val();
+    return;
 
-    window.location = "FichaResidencialReporteHandler.ashx?idusuario=" + idusuario + "&codreporte=" + codreporte + "&codproyecto=" + codproyecto;
-
+    window.location = "FichaResidencialReporteHandler.ashx?idusuario=" + idusuario +
+        "&codInstitucion=" + codInstitucion +
+        "&codProyecto=" + codProyecto +
+        "&codReporte=" + codReporte +
+        "&periodo=" + periodo;
 }
 
-// gc09422
+
+/* Sprint 4 - 20191120 - gcastro */
 function LimpiarFormularioReportes() {
     document.getElementById("cmbInstitucion").selectedIndex = 0;          
     document.getElementById("cmbProyecto").selectedIndex = 0; 
     document.getElementById("cmbReporte").selectedIndex = 0; 
+}
+
+/* Sprint 4 - 20191120 - gcastro */
+// FUNCIONES GENÉRICAS
+function MensajeINFO(mensaje_) {
+    var d = new Date();
+    swal({
+        title: "<table style='margin:auto;font-size:18px;'>" +
+            "<tr>" +
+            "<td style='font-size:24px;color:#0F68B1;'>" + cabmodal + " " + d.getFullYear() + "</td>" +
+            "</tr>" +
+            "</table>",
+        html: "<span style='color:#0F68B1;text-align:justify;'>" + mensaje_ + "<span>",
+        type: "info",
+        allowOutsideClick: true,
+        showCancelButton: false,
+        showConfirmButton: true,
+        confirmButtonText: "cerrar",
+        confirmButtonColor: "#0F68B1"
+    });
+    mensaje_ = "";
 }
 
