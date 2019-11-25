@@ -1050,11 +1050,11 @@ function ResetearFormulario() {
         }
     );
     var arrVariablesDotacionPersonal_3 = [
-        "dotacion_001_sel_director_existe","dotacion_005_sel_asistente_existe","dotacion_009_sel_psicologo_existe","dotacion_013_sel_enfermero_existe","dotacion_017_sel_auxenfermero_existe",
-        "dotacion_021_sel_medico_existe","dotacion_025_sel_psiquiatra_existe","dotacion_029_sel_terapeuta_ocup_existe","dotacion_033_sel_kinesiologo_existe","dotacion_037_sel_nutricionista_existe",
-        "dotacion_041_sel_fonoaudiologo_existe","dotacion_045_sel_profesorEducaFisica_existe","dotacion_049_sel_psicopedagogo_existe","dotacion_053_sel_educadoraParvulos_existe","dotacion_057_sel_educadoraTratoDirecto_existe",
-        "dotacion_061_sel_manipuladorAlimentos_existe","dotacion_065_sel_apoyoAdministrativo_existe","dotacion_069_sel_personalAseo_existe","dotacion_073_sel_personalLavanderia_existe","dotacion_077_sel_monitoresTalleristas_existe",
-        "dotacion_081_sel_alumnosPractica_existe","dotacion_085_sel_apoyoVoluntario_existe","dotacion_089_sel_Otros_existe","dotacion_093_sel_PersonalLicenciaMedica_existe","dotacion_097_sel_PersonalLicenciaMedicaConSuplente_existe"
+        "dotacion_001_sel_director_existe", "dotacion_005_sel_asistente_existe", "dotacion_009_sel_psicologo_existe", "dotacion_013_sel_enfermero_existe", "dotacion_017_sel_auxenfermero_existe",
+        "dotacion_021_sel_medico_existe", "dotacion_025_sel_psiquiatra_existe", "dotacion_029_sel_terapeuta_ocup_existe", "dotacion_033_sel_kinesiologo_existe", "dotacion_037_sel_nutricionista_existe",
+        "dotacion_041_sel_fonoaudiologo_existe", "dotacion_045_sel_profesorEducaFisica_existe", "dotacion_049_sel_psicopedagogo_existe", "dotacion_053_sel_educadoraParvulos_existe", "dotacion_057_sel_educadoraTratoDirecto_existe",
+        "dotacion_061_sel_manipuladorAlimentos_existe", "dotacion_065_sel_apoyoAdministrativo_existe", "dotacion_069_sel_personalAseo_existe", "dotacion_073_sel_personalLavanderia_existe", "dotacion_077_sel_monitoresTalleristas_existe",
+        "dotacion_081_sel_alumnosPractica_existe", "dotacion_085_sel_apoyoVoluntario_existe", "dotacion_089_sel_Otros_existe", "dotacion_093_sel_PersonalLicenciaMedica_existe", "dotacion_097_sel_PersonalLicenciaMedicaConSuplente_existe"
     ];
     arrVariablesDotacionPersonal_3.forEach(
         function (currentValue, index) {
@@ -3356,8 +3356,6 @@ function CargaInicial() {
     document.getElementById("general_001_sel_proyecto").disabled = true;
     CargaDatosInstitucionesUsuario();
 
-    // Sprint 3 - 20191113 - gcastro
-    CargaParValores1(); 
 
     myVar = setInterval(CargaDatosProyectosUsuario2, 10000);
 

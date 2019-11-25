@@ -14,8 +14,8 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.DTO
         public int Periodo { get; set; }
         public int SubvencionSename  { get; set; }
 		public int SexoAtiende  { get; set; }
-		public int RangoEtareo  { get; set; }
-		public int PoblacionVigente  { get; set; }
+		public int IdRangoEtareo { get; set; } /* Sprint 3 - 20191125 - se cambio RangoEtareo por IdRangoEtareo*/
+        public int PoblacionVigente  { get; set; }
 		public string TipoVulneracion  { get; set; }
 		public int ProgramaApadrinamiento  { get; set; }
 		public DateTime FechaActualizacion { get; set; }

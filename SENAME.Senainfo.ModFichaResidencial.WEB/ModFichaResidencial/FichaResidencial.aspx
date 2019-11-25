@@ -24,7 +24,7 @@ Spint 2.1
 
 
         <!-- DESARROLLO-->
-    <%--   <script src="../Scripts/jquery-3.2.1.min.js"></script>
+     <%--  <script src="../Scripts/jquery-3.2.1.min.js"></script>
        
         <link href="../Content/bootstrap.min.css" rel="stylesheet" />
         <link href="../Content/theme.css" rel="stylesheet" />
@@ -43,11 +43,11 @@ Spint 2.1
 
         <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
         <script src="../Scripts/datepicker/datepicker.js"></script>
-        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>--%>
-      
+        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>
+      --%>
 
       <!-- PRODUCCION -->
-      <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
@@ -70,7 +70,7 @@ Spint 2.1
         <link rel="stylesheet" href="scripts/datepicker/datepicker.css" />
         <script src="scripts/datepicker/datepicker.js"></script>
         <script src="scripts/datepicker/datepicker.es-ES.js"></script>
-    
+   
     </head>
 <body>
 
@@ -425,15 +425,19 @@ Spint 2.1
                         </tr>
                         <tr>
                             <td class="etiqCampo">Sexo que atiende la Residencia</td>
-                            <td style="border-bottom: 1px #B2B2B2 solid;"><select id="poblacion_002_sel_sexo_atendidos" class="form-control textCampo"><option value="0"></option><option value="1">Femenino</option><option value="2">Masculino</option><option value="3">Mixto</option></select></td>
+                            <td style="border-bottom: 1px #B2B2B2 solid;"><select id="poblacion_002_sel_sexo_atendidos" class="form-control textCampo">
+                                <option value="0"></option><option value="1">Femenino</option><option value="2">Masculino</option><option value="3">Mixto</option></select></td>
                         </tr> 
                         <tr>
                             <td class="etiqCampo">Rango etáreo de Atención</td>
-                            <td style="border-bottom: 1px #B2B2B2 solid;"><select id="poblacion_003_sel_rango_etareo_predomina" class="form-control textCampo"><option value="0"></option><option value="1">0 a 6</option><option value="2">0 a 18</option><option value="3">6 a 12</option><option value="4">6 a 18</option><option value="5">12 a 18</option><option value="6">Más de 18</option></select></td>
+                            <td style="border-bottom: 1px #B2B2B2 solid;"><select id="poblacion_003_sel_rango_etareo_predomina" class="form-control textCampo">
+                               </select></td>
                         </tr> 
                         <tr>
-                            <td class="etiqCampo">Rango etáreo Predominante</td>
-                            <td style="border-bottom: 1px #B2B2B2 solid;"><select id="poblacion_004_poblacion_vigente" class="form-control textCampo"><option value="0"></option><option value="1">0 a 6</option><option value="2">6 a 12</option><option value="3">12 a 18</option><option value="4">Más de 18</option></select></td>
+                            <td class="etiqCampo">Rango etáreo Predominante </td>
+                            <td style="border-bottom: 1px #B2B2B2 solid;">
+                                <select id="poblacion_004_poblacion_vigente" class="form-control textCampo">
+                                    <option value="0"></option><option value="1">0 a 6</option><option value="2">6 a 12</option><option value="3">12 a 18</option><option value="4">Más de 18</option></select></td>
                         </tr> 
                         <tr>
                             <td class="etiqCampo">Tipo de Vulneración más Frecuente</td>

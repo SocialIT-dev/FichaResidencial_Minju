@@ -1,6 +1,7 @@
 ﻿////++++++++++++++++++++++
 //FUNCIONES ACCESO BACKEND
-function GrabarAntecedentesPoblacionCapacidad() {
+function GrabarAntecedentesPoblacionCapacidad()
+{
     var CodEstadoFicha = 1;
 
     var CodProyecto = $("#general_001_sel_proyecto").val();
@@ -8,7 +9,18 @@ function GrabarAntecedentesPoblacionCapacidad() {
 
     var SubvencionSename = $("#poblacion_001_sel_reside_con_subven").val();
     var SexoAtiende = $("#poblacion_002_sel_sexo_atendidos").val();
-    var RangoEtareo = $("#poblacion_003_sel_rango_etareo_predomina").val();  // aqui no
+
+    var RangoEtareo = $("#poblacion_003_sel_rango_etareo_predomina").val();  
+
+    /* Sprint 3 - 20191125 - gcastro - valida que un RangoEtareo este selecionado */
+    if ((RangoEtareo == "") || (RangoEtareo == null))
+    {
+        var mensaje = "Debe seleccionar una opción de 'Rango etáreo de Atención'";
+        MensajeERROR_App_Critico(mensaje);
+        $("#btn_antecedentesPoblacionCapacidad").attr({ "disabled": false });
+        return;
+    }
+
     var PoblacionVigente = $("#poblacion_004_poblacion_vigente").val();
     var TipoVulneracion = $("#poblacion_005_tipo_vulneracion_mas_frecuente").val();
     var ProgramaApadrinamiento = $("#poblacion_006_programa_apadrinimiento").val();
@@ -89,24 +101,25 @@ function ObtenerAntecedentesPoblacionCapacidad(CodFicha) {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (r) {
-            // Ajax OK !                   
+            // Ajax OK !  
         },
         error: function (r) {
             DesplegarExcepcionCriticaApp(r.responseText);
         }
-    }).then(function (r) {
+    }).then(function (r)
+    {
         $.each(r.d,
             function () {
                 $("#poblacion_001_sel_reside_con_subven").val(this.SubvencionSename);
                 $("#poblacion_002_sel_sexo_atendidos").val(this.SexoAtiende);
-              // $("#poblacion_003_sel_rango_etareo_predomina").val(this.RangoEtareo); // comentado - Spring 3 - 20191112 - gcastro 
-                $("#poblacion_004_poblacion_vigente").val(this.PoblacionVigente);
-                $("#poblacion_005_tipo_vulneracion_mas_frecuente").val(this.TipoVulneracion);
-                $("#poblacion_006_programa_apadrinimiento").val(this.ProgramaApadrinamiento);
-
-                CargaRangoEtareoAtencion1();
+                $("#poblacion_003_sel_rango_etareo_predomina").val(this.IdRangoEtareo); /* - Spring 3 - 20191112 - gcastro - RangoEtareo es remplazado por IdRangoEtareo*/
+              $("#poblacion_004_poblacion_vigente").val(this.PoblacionVigente);
+               $("#poblacion_005_tipo_vulneracion_mas_frecuente").val(this.TipoVulneracion);
+               $("#poblacion_006_programa_apadrinimiento").val(this.ProgramaApadrinamiento);
+                
             }
         );
+      
         if (opcioncarga == "GESTIONOBSERVACIONES" || opcioncarga == "GESTIONHISTORIAL") {
             //CONTROL DESBLOQUEO ZONA CARGA
             ctrl_ObtenerAntecedentesPoblacionCapacidad = true;
@@ -116,7 +129,6 @@ function ObtenerAntecedentesPoblacionCapacidad(CodFicha) {
             poblacionCapacidad_residencia = true;
             if (opcioncarga == "GESTIONOBSERVACIONES") CargaCamposComparativa2();
         }
-       
     });
 }
 
@@ -202,8 +214,8 @@ function ObtenerAntecedentesPoblacionCapacidad_Compare(CodFichaCompare, bloqueDa
     });
 }
 
-// spring 3 - 20191113 - gcastro
 function CargaRangoEtareoAtencion1() {
+
     document.getElementById("poblacion_003_sel_rango_etareo_predomina").selectedIndex = 0;
     document.getElementById("poblacion_003_sel_rango_etareo_predomina").disabled = true;
 
@@ -212,6 +224,7 @@ function CargaRangoEtareoAtencion1() {
         url: "FichaResidencial.aspx/ObtenerRangoEtareoAtencion",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
+        async: false,
         success: function (r) {
             // Ajax OK !                   
         },
@@ -235,8 +248,8 @@ function CargaRangoEtareoAtencion1() {
                     }
                 );
                 document.getElementById("poblacion_003_sel_rango_etareo_predomina").disabled = false;
-                if (r.d.length == 1) {
-                    //alert(r.d.length);
+                if (r.d.length == 1)
+                {
                     $("#poblacion_003_sel_rango_etareo_predomina").prop('selectedIndex', 1);
                     CargaRangoEtareoAtencion2($("#poblacion_003_sel_rango_etareo_predomina").val());
                 }
@@ -248,9 +261,8 @@ function CargaRangoEtareoAtencion1() {
 
             DesplegarExcepcionCriticaApp(r.d[0].error);
         }
-        });
+    });
 }
-
 // spring 3 - 20191113 - gcastro
 function CargaRangoEtareoAtencion2(idRangoEtareo) 
 {
@@ -285,3 +297,4 @@ function CargaRangoEtareoAtencion2(idRangoEtareo)
 
     }
 }
+

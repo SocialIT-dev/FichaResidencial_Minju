@@ -16,7 +16,7 @@ namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //<<== DESBLOQUEAR EN PRODUCCION/CERTIFICACIÓN EL SIGUIENTE BLOQUEO LINEAS EN PRODUCCION
+            //<<== DESBLOQUEAR EN PRODUCCION/ CERTIFICACIÓN EL SIGUIENTE BLOQUEO LINEAS EN PRODUCCION
             if (Session["tokens"] == null || ((DataSet)Session["tokens"]).Tables[0].Rows.Count == 0)
             {
                 Response.Redirect("~/logout.aspx");

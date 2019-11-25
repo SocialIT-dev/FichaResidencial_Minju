@@ -27,9 +27,9 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Mapper
                     dto.CodEstadoFicha = (int)dr["CodEstadoFicha"];
                     dto.CodProyecto = (int)dr["CodProyecto"];
                     dto.Periodo = (int)dr["Periodo"];
-                    dto.SubvencionSename = (int)dr["SubvencionSename"];
+                    dto.SubvencionSename = (int)dr["SubvencionSename"]; 
                     dto.SexoAtiende = (int)dr["SexoAtiende"];
-                    dto.RangoEtareo = (int)dr["RangoEtareo"];
+                    dto.IdRangoEtareo = (int)dr["IdRangoEtareo"]; /* Sprint 3 - 20191122 -  se cambio RangoEtareo */
                     dto.PoblacionVigente = (int)dr["PoblacionVigente"];
                     dto.TipoVulneracion = dr["TipoVulneracion"].ToString();
                     dto.ProgramaApadrinamiento = (int)dr["ProgramaApadrinamiento"];

@@ -182,6 +182,16 @@ function GrabarAntecedentesInfraestructura() {
 
     });
 }
+/* VALORES  EN LOS COMBOS ANTES DE MOSTRARLOS DINÁMICAMENTE
+ 
+ ANTES : val("1") = "SI"
+	val("0") = "NO"
+	val("-1") = ""
+
+AHORA : val("1") = "SI"
+	val("2") = "NO"
+	val("-1") = NO EXISTE ESTE VALOR
+ */
 function ObtenerAntecedentesInfraestructura(CodFicha) {
     $("#labelCaracteres_ObsInfra").html("");
     $.ajax({
@@ -217,20 +227,46 @@ function ObtenerAntecedentesInfraestructura(CodFicha) {
                 $("#Infraest_032_closetLocker_cantidad").val(this.CantidadColsetLockers);
                 $("#Infraest_034_banosPublico_cantidad").val(this.CantidadBañosPublicos);
 
+                /*Inicio - Valido si viene valor  en los combos individuales*/               
+                if (this.AmbienteAcorde == 0) $("#Infraest_039_ambientacionAcorde_existe").val(2); // val(2) = NO val(1) = SI  s
+                   else $("#Infraest_039_ambientacionAcorde_existe").val(1);
+                
+                if (this.VestuarioAdecuado == 0) $("#Infraest_040_vestuarioAdecuado_existe").val(2);  
+                else $("#Infraest_040_vestuarioAdecuado_existe").val(1);
 
-                $("#Infraest_039_ambientacionAcorde_existe").val(this.AmbienteAcorde);
-                $("#Infraest_040_vestuarioAdecuado_existe").val(this.VestuarioAdecuado);
-                $("#Infraest_041_utilesAseoPersonalNNA_existe").val(this.UtilesAseo);
-                $("#Infraest_042_aguaCaliente_existe").val(this.AguaCaliente);
-                $("#Infraest_043_estadoCalefonLlavesGas_existe").val(this.CalefonGas);
-                $("#Infraest_044_sistemaCalefaccion_existe").val(this.SistemaCalefacion);
-                $("#Infraest_045_ventilacionAdecuada_existe").val(this.Ventilacion);
-                $("#Infraest_046_AccesoDiscapacitados_existe").val(this.AccesoDiscapacitados);
-                $("#Infraest_047_InstalacionesHabilitadasDiscapacitados_existe").val(this.HabilitaDiscapacitados);
+                if (this.UtilesAseo == 0) $("#Infraest_041_utilesAseoPersonalNNA_existe").val("2"); 
+                else $("#Infraest_041_utilesAseoPersonalNNA_existe").val("1");
+
+                if (this.AguaCaliente == 0) $("#Infraest_042_aguaCaliente_existe").val("2"); 
+                else $("#Infraest_042_aguaCaliente_existe").val("1");
+
+                if (this.CalefonGas == 0) $("#Infraest_043_estadoCalefonLlavesGas_existe").val("2");
+                else $("#Infraest_043_estadoCalefonLlavesGas_existe").val("1");
+
+                if (this.SistemaCalefacion == 0) $("#Infraest_044_sistemaCalefaccion_existe").val("2"); 
+                else $("#Infraest_044_sistemaCalefaccion_existe").val("1");
+
+                if (this.Ventilacion == 0) $("#Infraest_045_ventilacionAdecuada_existe").val("2"); 
+                else $("#Infraest_045_ventilacionAdecuada_existe").val("1"); 
+
+                if (this.AccesoDiscapacitados == 0) $("#Infraest_046_AccesoDiscapacitados_existe").val("2");
+                else $("#Infraest_046_AccesoDiscapacitados_existe").val("1"); 
+
+                if (this.HabilitaDiscapacitados == 0) $("#Infraest_047_InstalacionesHabilitadasDiscapacitados_existe").val("2"); 
+                else $("#Infraest_047_InstalacionesHabilitadasDiscapacitados_existe").val("1");
+
+                if (this.CalefonNormativa == 0) $("#Infraest_043_CumpleNormaCalefon").val("2"); 
+                else $("#Infraest_043_CumpleNormaCalefon").val("1");
+                
+                if (this.LlaveGasNormativa == 0) $("#Infraest_043_CumpleNormaLlaveGas").val("2"); 
+                else $("#Infraest_043_CumpleNormaLlaveGas").val("1"); 
+
+                if (this.VestuarioPersonalizadoNNA == 0) $("#Infraest_040_vestuarioPersonalizado_existe").val("2"); 
+                else $("#Infraest_040_vestuarioPersonalizado_existe").val("1");  
+                /* Fin */
 
                 $("#Infraest_036_banosNNAadecuados_cantidad").val(this.CantidadBañosNNA);
                 $("#Infraest_038_duchasNNA_cantidad").val(this.CantidadDuchasNNA);
-
 
                 $("#Infraest_035_banosNNA_Funcionamiento_cant").val(this.CantidadBañosNNAFuncionamiento);
                 $("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val(this.CantidadBañosNNANormativa);
@@ -244,30 +280,34 @@ function ObtenerAntecedentesInfraestructura(CodFicha) {
                 $("#Infraest_037_duchasNNA_mujeres_cant").val(this.CantidadDuchasNNAMujeres);
                 $("#Infraest_037_duchasNNA_mixtos_cant").val(this.CantidadDuchasNNAMixtas);
 
-                if ($("#Infraest_035_banosNNA_Funcionamiento_cant").val() != "0") { $("#Infraest_035_banosNNA_Funcionamiento_existe").val(1); document.getElementById("Infraest_035_banosNNA_AcuerdoNormativa_cant").disabled = false;}
+                if ($("#Infraest_035_banosNNA_Funcionamiento_cant").val() != "0")// probablemente hay que cambiar a 2
+                {
+                    $("#Infraest_035_banosNNA_Funcionamiento_existe").val("1");
+                    document.getElementById("Infraest_035_banosNNA_AcuerdoNormativa_cant").disabled = false;
+                }
+
                 if ($("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val() != "0") $("#Infraest_035_banosNNA_AcuerdoNormativa_existe").val(1);
                 if ($("#Infraest_035_banosNNA_Hombre_cant").val() != "0") $("#Infraest_035_banosNNA_Hombre_existe").val(1);
                 if ($("#Infraest_035_banosNNA_Mujer_cant").val() != "0") $("#Infraest_035_banosNNA_Mujer_existe").val(1);
                 if ($("#Infraest_035_banosNNA_mixto_cant").val() != "0") $("#Infraest_035_banosNNA_mixto_existe").val(1);
 
-                if ($("#Infraest_037_duchasNNA_funcionamiento_cant").val() != "0") { $("#Infraest_037_duchasNNA_funcionamiento_existe").val(1); document.getElementById("Infraest_037_duchasNNA_normativa_cant").disabled = false;}
+                if ($("#Infraest_037_duchasNNA_funcionamiento_cant").val() != "0")
+                {
+                    $("#Infraest_037_duchasNNA_funcionamiento_existe").val(1);
+                    document.getElementById("Infraest_037_duchasNNA_normativa_cant").disabled = false;
+                }
                 if ($("#Infraest_037_duchasNNA_normativa_cant").val() != "0") $("#Infraest_037_duchasNNA_normativa_existe").val(1);
                 if ($("#Infraest_037_duchasNNA_hombres_cant").val() != "0") $("#Infraest_037_duchasNNA_hombres_existe").val(1);
                 if ($("#Infraest_037_duchasNNA_mujeres_cant").val() != "0") $("#Infraest_037_duchasNNA_mujeres_existe").val(1);
                 if ($("#Infraest_037_duchasNNA_mixtos_cant").val() != "0") $("#Infraest_037_duchasNNA_mixtos_existe").val(1);
-
-                $("#Infraest_043_CumpleNormaCalefon").val(this.CalefonNormativa);
-                $("#Infraest_043_CumpleNormaLlaveGas").val(this.LlaveGasNormativa);
-                $("#Infraest_040_vestuarioPersonalizado_existe").val(this.VestuarioPersonalizadoNNA);
                 
                 document.getElementById("Infraest_049_observaciones").value = this.Observaciones;
                 ContadorCaracter(document.getElementById("Infraest_049_observaciones"), "labelCaracteres_ObsInfra");
 
-                if($("#Infraest_002_ofi_admin_cantidad").val()!="0")
-                    $("#Infraest_001_ofi_admin_existe").val(1);
+                if ($("#Infraest_002_ofi_admin_cantidad").val() != "0") $("#Infraest_001_ofi_admin_existe").val(1);
 
-                if ($("#Infraest_004_salaReuniones_cantidad").val() != "0")
-                    $("#Infraest_003_salaReuniones_existe").val(1);
+                if ($("#Infraest_004_salaReuniones_cantidad").val() != "0") $("#Infraest_003_salaReuniones_existe").val(1);
+                
 
                 if ($("#Infraest_006_salaRecepcion_cantidad").val() != "0")
                     $("#Infraest_005_salaRecepcion_existe").val(1);
@@ -612,7 +652,7 @@ function ObtenerAntecedentesInfraestructura_Compare(codFichaPadre, bloqueDatos) 
                 else
                     $("#Infraest_043_CumpleNormaCalefon"+ sufijo).val(0);
 
-                if (this.LlaveGasNormativa != "0" && this.LlaveGasNormativa != "-1")
+                if (this.LlaveGasNormativa != "0" && this.LlaveGasNormativa != "-1") // revisar cambiar 0 por 2
                     $("#Infraest_043_CumpleNormaLlaveGas" + sufijo).val(1);
                 else
                     $("#Infraest_043_CumpleNormaLlaveGas" + sufijo).val(0);
@@ -1103,7 +1143,7 @@ function EvaluaCumpleNormaCalefonLlaveGas() {
     if ($("#Infraest_043_CumpleNormaCalefon").val() == "1" && $("#Infraest_043_CumpleNormaLlaveGas").val() == "1")
         $("#Infraest_043_estadoCalefonLlavesGas_existe").val(1);
     else
-        $("#Infraest_043_estadoCalefonLlavesGas_existe").val(0);
+        $("#Infraest_043_estadoCalefonLlavesGas_existe").val(2);/* gcastro - se cambio 0 por 2 */
     
 }
 
