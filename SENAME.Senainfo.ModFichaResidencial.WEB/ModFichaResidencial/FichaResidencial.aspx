@@ -1,10 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaResidencial.aspx.cs" Inherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial.FichaResidencial" %>
     
 <%-- DESCOMENTAR ESTA DOS LINEAS PARA SU VERSIÓN EN SENAINFO  --%>
-    
+<%--    
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
-    
+    --%>
 
     
 <!--
@@ -24,7 +24,7 @@ Spint 2.1
 
 
         <!-- DESARROLLO-->
-     <%--  <script src="../Scripts/jquery-3.2.1.min.js"></script>
+<%--       <script src="../Scripts/jquery-3.2.1.min.js"></script>
        
         <link href="../Content/bootstrap.min.css" rel="stylesheet" />
         <link href="../Content/theme.css" rel="stylesheet" />
@@ -43,8 +43,8 @@ Spint 2.1
 
         <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
         <script src="../Scripts/datepicker/datepicker.js"></script>
-        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>
-      --%>
+        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>--%>
+      
 
       <!-- PRODUCCION -->
     <script src="../js/jquery-3.2.1.min.js"></script>

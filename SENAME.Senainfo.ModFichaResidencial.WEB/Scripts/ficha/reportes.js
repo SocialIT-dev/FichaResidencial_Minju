@@ -10,35 +10,10 @@ $(document).ready(function () {
 });
 
 
-function showPicker()
-{
-    var d = new Date();
-    var dia = d.getDate();
-    var mes = d.getMonth() + 1;
-    if (dia < 10) dia = "0" + dia;
-    if (mes < 10) mes = "0" + mes;
-    var diaActual = dia + '/' + mes + '/' + d.getFullYear();
-    var tokensUsr = document.getElementById("tokensUsr").value;
-
-    //  if (tokensUsr.indexOf("D5CF4DE5-5EFA-4EDD-AD65-5BED3AD9482A") != -1) {
-    $('#fechaPeriodoReporte').datepicker({
-        autoHide: true,
-        zIndex: 2048,
-        language: 'es-ES',
-        format: 'dd/mm/yyyy',
-        endDate: diaActual
-    });
-    //   }
-    $('#fechaPeriodoReporte').val(diaActual).toString();
-}
-
-
-
 function CargaInicial() {
     IdUsuarioActualizacion = $("#idusuario_conect").val();
     CargaDatosReportes();
     CargaDatosInstitucionesUsuario();
-    showPicker();
 
     /* Sprint 4 - 20191121 - gcastro */
     $(document).on('click', '#btnGenerarReporte', function () {
@@ -248,7 +223,15 @@ function GenerarReporte()
 function LimpiarFormularioReportes() {
     document.getElementById("cmbInstitucion").selectedIndex = 0;          
     document.getElementById("cmbProyecto").selectedIndex = 0; 
-    document.getElementById("cmbReporte").selectedIndex = 0; 
+    document.getElementById("cmbReporte").selectedIndex = 0;
+
+    var d = new Date();
+    var dia = d.getDate();
+    var mes = d.getMonth() + 1;
+    if (dia < 10) dia = "0" + dia;
+    if (mes < 10) mes = "0" + mes;
+    var diaActual = dia + '/' + mes + '/' + d.getFullYear();
+    document.getElementById('fechaPeriodoReporte').innerHTML = diaActual; 
 }
 
 /* Sprint 4 - 20191120 - gcastro */

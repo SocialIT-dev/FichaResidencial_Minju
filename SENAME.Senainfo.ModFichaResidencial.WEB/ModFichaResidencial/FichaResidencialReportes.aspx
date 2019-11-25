@@ -1,11 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaResidencialReportes.aspx.cs" Inherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial.FichaResidencialReportes" %>
 
 <%-- DESCOMENTAR ESTA DOS LINEAS PARA SU VERSIÓN EN SENAINFO--%>
-    <%--
+    
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
     
-        --%>
+        
 
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
         <title>FICHA RESIDENCIAL  :: Senainfo :: Servicio Nacional de Menores</title>
 
         <!-- DESARROLLO -->
-       <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <%--   <script src="../Scripts/jquery-3.2.1.min.js"></script>
 
         <link href="../Content/bootstrap.min.css" rel="stylesheet" />
         <link href="../Content/theme.css" rel="stylesheet" />
@@ -31,8 +31,6 @@
         <link href="../Content/timelineficha.css" rel="stylesheet" />
         <link href="../Scripts/jquery.fileupload.css" rel="stylesheet" />
         <link href="../Content/font-awesome.min.css" rel="stylesheet" />
-
-            
 
         <script src="../Scripts/bootstrap.min.js"></script>
         <script src="../Scripts/jquery.floatThead.js"></script>
@@ -48,11 +46,11 @@
 
     <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
         <script src="../Scripts/datepicker/datepicker.js"></script>
-        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>
+        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>--%>
 
         <%--PRODUCCIÓN--%>
        
-<%--        <script src="../js/jquery-3.2.1.min.js"></script>
+        <script src="../js/jquery-3.2.1.min.js"></script>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
@@ -78,14 +76,14 @@
           
          <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
         <script src="Scripts/datepicker/datepicker.js"></script>
-        <script src="Scripts/datepicker/datepicker.es-ES.js"></script>--%>
+        <script src="Scripts/datepicker/datepicker.es-ES.js"></script>
     </head>
 <body>
 <div class="container">
     <form id="form2" runat="server">
 
         <%--DESCOMENTAR SIGUIENTE LINEA PARA SU VERSIÓN EN SENAINFO --%>
-        <%--<uc2:menu_colgante runat="server" ID="menu_colgante" />--%>
+        <uc2:menu_colgante runat="server" ID="menu_colgante" />
 
         <asp:HiddenField ID="idusuario_conect" runat="server" />
         <asp:HiddenField ID="tokensUsr" runat="server" />
@@ -136,26 +134,26 @@
                         </tr>
                             <!-- Spring 4 - 20191115 - gcastro -->
                              <script>
-                            //$(document).ready(function () {
-                            //    var d = new Date();
-                            //    var dia = d.getDate();
-                            //    var mes = d.getMonth() + 1;
-                            //    if (dia < 10) dia = "0" + dia;
-                            //    if (mes < 10) mes = "0" + mes;
-                            //    var diaActual = dia + '/' + mes + '/' + d.getFullYear();
-                            //    var tokensUsr = document.getElementById("tokensUsr").value;
+                            $(document).ready(function () {
+                                var d = new Date();
+                                var dia = d.getDate();
+                                var mes = d.getMonth() + 1;
+                                if (dia < 10) dia = "0" + dia;
+                                if (mes < 10) mes = "0" + mes;
+                                var diaActual = dia + '/' + mes + '/' + d.getFullYear();
+                                var tokensUsr = document.getElementById("tokensUsr").value;
                                
-                            //  //  if (tokensUsr.indexOf("D5CF4DE5-5EFA-4EDD-AD65-5BED3AD9482A") != -1) {
-                            //        $('#fechaPeriodoReporte').datepicker({
-                            //            autoHide: true,
-                            //            zIndex: 2048,
-                            //            language: 'es-ES',
-                            //            format: 'dd/mm/yyyy',
-                            //            endDate: diaActual
-                            //        });
-                            // //   }
-                            //    $('#fechaPeriodoReporte').html(diaActual);                       
-                            //});
+                              //  if (tokensUsr.indexOf("D5CF4DE5-5EFA-4EDD-AD65-5BED3AD9482A") != -1) {
+                                    $('#fechaPeriodoReporte').datepicker({
+                                        autoHide: true,
+                                        zIndex: 2048,
+                                        language: 'es-ES',
+                                        format: 'dd/mm/yyyy',
+                                        endDate: diaActual
+                                    });
+                             //   }
+                                $('#fechaPeriodoReporte').html(diaActual);                       
+                            });
 
                         </script>  
 
@@ -230,10 +228,10 @@
         var d = new Date();
 
         // DESARROLLO
-        importarScript("../Scripts/ficha/reportes.js?" + d.getTime());
+       // importarScript("../Scripts/ficha/reportes.js?" + d.getTime());
 
         // PRODUCCION
-       // importarScript("scripts/ficha/reportes.js?" + d.getTime());   
+       importarScript("scripts/ficha/reportes.js?" + d.getTime());   
     });
     /*
     NOTA: cuando se integra en SENAINFO la ruta de las librería javascript deben comenzar con:
