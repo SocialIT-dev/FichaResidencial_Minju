@@ -1524,6 +1524,7 @@ Spint 2.1
             importarScript("scripts/ficha/antecedentes_gestion_residencia.js?" + d.getTime());
             importarScript("scripts/ficha/residencia1.js?" + d.getTime());
         */
+
     </script>
 </body>
 </html>
