@@ -74,7 +74,7 @@
         <script src="scripts/jquery.ui.widget.js"></script>
         <script src="scripts/jquery.iframe-transport.js"></script>       
           
-         <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
+         <link rel="stylesheet" href="/Scripts/datepicker/datepicker.css" />
         <script src="Scripts/datepicker/datepicker.js"></script>
         <script src="Scripts/datepicker/datepicker.es-ES.js"></script>
     </head>
