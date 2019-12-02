@@ -5,9 +5,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
     
-        
-
-
+       
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,7 +17,7 @@
         <title>FICHA RESIDENCIAL  :: Senainfo :: Servicio Nacional de Menores</title>
 
         <!-- DESARROLLO -->
-    <%--   <script src="../Scripts/jquery-3.2.1.min.js"></script>
+   <%--    <script src="../Scripts/jquery-3.2.1.min.js"></script>
 
         <link href="../Content/bootstrap.min.css" rel="stylesheet" />
         <link href="../Content/theme.css" rel="stylesheet" />
@@ -51,7 +49,6 @@
         <%--PRODUCCIÓN--%>
        
         <script src="../js/jquery-3.2.1.min.js"></script>
-
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
         <link href="scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
@@ -74,7 +71,7 @@
         <script src="scripts/jquery.ui.widget.js"></script>
         <script src="scripts/jquery.iframe-transport.js"></script>       
           
-         <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
+         <link rel="stylesheet" href="Scripts/datepicker/datepicker.css" />
         <script src="Scripts/datepicker/datepicker.js"></script>
         <script src="Scripts/datepicker/datepicker.es-ES.js"></script>
     </head>
@@ -129,7 +126,7 @@
                             </th>
                              <td style="border-bottom: 1px #B2B2B2 solid;">
                                 <span class="form-control" style="width:100px;cursor:pointer;float:left;" 
-                                    title="Para modificar has clic y selecciona una nueva fecha" id="fechaPeriodoReporte"> </span>
+                                    title="Para modificar has clic y selecciona una nueva fecha" id="fechaPeriodoReporte"> </span>                           
                             </td>
                         </tr>
                             <!-- Spring 4 - 20191115 - gcastro -->
@@ -140,20 +137,21 @@
                                 var mes = d.getMonth() + 1;
                                 if (dia < 10) dia = "0" + dia;
                                 if (mes < 10) mes = "0" + mes;
-                                var diaActual = dia + '/' + mes + '/' + d.getFullYear();
-                                var tokensUsr = document.getElementById("tokensUsr").value;
-                               
-                              //  if (tokensUsr.indexOf("D5CF4DE5-5EFA-4EDD-AD65-5BED3AD9482A") != -1) {
-                                    $('#fechaPeriodoReporte').datepicker({
+                                var diaActual = mes + '/' + d.getFullYear();
+
+                                $('#fechaPeriodoReporte').datepicker({
                                         autoHide: true,
                                         zIndex: 2048,
                                         language: 'es-ES',
-                                        format: 'dd/mm/yyyy',
-                                        endDate: diaActual
+                                    format: 'mm/yyyy',
+                                        minDate: diaActual
                                     });
-                             //   }
+                       
                                 $('#fechaPeriodoReporte').html(diaActual);                       
-                            });
+                                 });
+
+                           
+   
 
                         </script>  
 
@@ -228,7 +226,7 @@
         var d = new Date();
 
         // DESARROLLO
-       // importarScript("../Scripts/ficha/reportes.js?" + d.getTime());
+      //  importarScript("../Scripts/ficha/reportes.js?" + d.getTime());
 
         // PRODUCCION
        importarScript("scripts/ficha/reportes.js?" + d.getTime());   

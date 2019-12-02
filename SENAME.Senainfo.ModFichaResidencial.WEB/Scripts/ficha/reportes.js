@@ -197,27 +197,38 @@ function CargaDatosReportes() {
 /* Sprint 4 - 20191121 - gcastro */
 function GenerarReporte()
 {
-    if ($("#cmbReporte").val() == 2)
-    {
-        if ($("#fechaPeriodoReporte").val() == "") {
-            MensajeINFO("Debe seleccionar al menos el periodo");
-            return;
-        } 
-    }
-    var periodo = $("#fechaPeriodoReporte").val();
+    var periodoSeleccionado = document.getElementById("fechaPeriodoReporte").innerHTML;
+
+    var d = new Date();
+    var dia = d.getDate();
+    var mes = d.getMonth() + 1;
+    if (mes < 10) mes = "0" + mes;
+    var periodoActual = mes + '/' + d.getFullYear();
+
+    if (periodoSeleccionado == periodoActual)
+        MensajeINFO("Se generará el Reporte en base al periodo actual", "GeneraReporte01();", "CancelarEnvio();")
+    else
+        GeneraReporte01()
+}
+
+function GeneraReporte01()
+{
+    var periodoSeleccionado = document.getElementById("fechaPeriodoReporte").innerHTML;
     var idusuario = IdUsuarioActualizacion;
     var codInstitucion = $("#cmbInstitucion").val();
     var codProyecto = $("#cmbProyecto").val();
     var codReporte = $("#cmbReporte").val();
-    return;
 
     window.location = "FichaResidencialReporteHandler.ashx?idusuario=" + idusuario +
         "&codInstitucion=" + codInstitucion +
         "&codProyecto=" + codProyecto +
         "&codReporte=" + codReporte +
-        "&periodo=" + periodo;
+        "&periodo=" + periodoSeleccionado;
 }
 
+function CancelarEnvio() {
+    return;
+}
 
 /* Sprint 4 - 20191120 - gcastro */
 function LimpiarFormularioReportes() {
@@ -228,15 +239,15 @@ function LimpiarFormularioReportes() {
     var d = new Date();
     var dia = d.getDate();
     var mes = d.getMonth() + 1;
-    if (dia < 10) dia = "0" + dia;
+    //if (dia < 10) dia = "0" + dia;
     if (mes < 10) mes = "0" + mes;
-    var diaActual = dia + '/' + mes + '/' + d.getFullYear();
+    var diaActual =  mes + '/' + d.getFullYear();
     document.getElementById('fechaPeriodoReporte').innerHTML = diaActual; 
 }
 
 /* Sprint 4 - 20191120 - gcastro */
 // FUNCIONES GENÉRICAS
-function MensajeINFO(mensaje_) {
+function MensajeINFO(mensaje_, fx_aceptar, fx_cancelar) {
     var d = new Date();
     swal({
         title: "<table style='margin:auto;font-size:18px;'>" +
@@ -244,13 +255,29 @@ function MensajeINFO(mensaje_) {
             "<td style='font-size:24px;color:#0F68B1;'>" + cabmodal + " " + d.getFullYear() + "</td>" +
             "</tr>" +
             "</table>",
-        html: "<span style='color:#0F68B1;text-align:justify;'>" + mensaje_ + "<span>",
-        type: "info",
-        allowOutsideClick: true,
+        html: "<span style='color:#0F68B1;text-align:left;'>" + mensaje_ + "<span>" +
+            "<div style='text-align:center;'>" +
+            "<br />" +
+            "<button id='btn_warning_aceptar' class='btn btn-primary' style='cursor: pointer;font-size:15px;font-weight:normal;width:150px;' title=''><i class='fa fa-thumbs-up'></i>&nbsp;Aceptar</button>&nbsp;<button id='btn_warning_cancelar' class='btn ' style='cursor: pointer;font-size:15px;font-weight:normal;width:150px;background:#A4A4A4;color:#FFF;' title=''><i class='fa fa-times'></i>&nbsp;Cancelar</button>" +
+            "</div>",
+        type: "warning",
+        allowOutsideClick: false,
         showCancelButton: false,
-        showConfirmButton: true,
-        confirmButtonText: "cerrar",
-        confirmButtonColor: "#0F68B1"
+        showConfirmButton: false,
+        cancelButtonText: "cancelar",
+        confirmButtonText: "aceptar",
+        confirmButtonColor: "#0F68B1",
+        cancelButtonColor: "#A4A4A4"
+    });
+    jQuery('#btn_warning_aceptar').bind('click', function () {
+        swal.clickCancel();
+        if (fx_aceptar != "")
+            eval(fx_aceptar);
+    });
+    jQuery('#btn_warning_cancelar').bind('click', function () {
+        swal.clickCancel();
+        if (fx_cancelar != "")
+            eval(fx_cancelar);
     });
     mensaje_ = "";
 }

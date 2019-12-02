@@ -42,14 +42,16 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Impl
         /// <returns>Lista</returns>
         public DataTable Reporte01FichasPorPeriodoDt(int idUsuario, int codInstitucion, int codProyecto, int codReporte, string periodo)
         {
-            
-                return _reportesDao.Reporte01PorSituacionFichaResidencial(idUsuario, codInstitucion, codProyecto, codReporte, periodo); 
+            string nuevoPeriodo = "01/" + periodo;
+              return _reportesDao.Reporte01PorSituacionFichaResidencial(idUsuario, codInstitucion, codProyecto, codReporte, nuevoPeriodo);
+            //return _reportesDao.Reporte01PorSituacionFichaResidencial(idUsuario);
 
         }
 
         public DataTable Reporte01FichaResidencial(int idusuario, int codInstitucion, int codProyecto, int codReporte, string periodo)
         {
-              return _reportesDao.Reporte01PorFichaResidencial(idusuario, codInstitucion, codProyecto, codReporte, periodo);
+            string nuevoPeriodo = "01/" + periodo;
+            return _reportesDao.Reporte01PorFichaResidencial(idusuario, codInstitucion, codProyecto, codReporte, periodo);
         }
     }
 }

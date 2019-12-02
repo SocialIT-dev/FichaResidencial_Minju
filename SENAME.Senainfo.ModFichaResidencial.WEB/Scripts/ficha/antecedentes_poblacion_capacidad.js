@@ -13,9 +13,9 @@ function GrabarAntecedentesPoblacionCapacidad()
     var RangoEtareo = $("#poblacion_003_sel_rango_etareo_predomina").val();  
 
     /* Sprint 3 - 20191125 - gcastro - valida que un RangoEtareo este selecionado */
-    if ((RangoEtareo == "") || (RangoEtareo == null))
+    if ((RangoEtareo == "") || (RangoEtareo == null) || (RangoEtareo == 0))
     {
-        var mensaje = "Debe seleccionar una opción de 'Rango etáreo de Atención'";
+        var mensaje = "Debe seleccionar una opción de Rango etáreo Atención";
         MensajeERROR_App_Critico(mensaje);
         $("#btn_antecedentesPoblacionCapacidad").attr({ "disabled": false });
         return;

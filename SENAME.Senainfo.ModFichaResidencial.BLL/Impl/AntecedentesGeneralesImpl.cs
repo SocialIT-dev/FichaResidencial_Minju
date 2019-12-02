@@ -209,7 +209,7 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Impl
 
         public List<InstitucionesUsuarioDto> ObtenerInstitucionesUsuario(int? IdUsuario)
         {
-            var result = _institucionesUsuarioDao.ObtenerInstitucionesUsuario(IdUsuario);
+            var result = _institucionesUsuarioDao.ObtenerInstitucionesUsuario(IdUsuario); 
             return InstitucionesUsuarioMapper.ToDto(result);
         }
     }
