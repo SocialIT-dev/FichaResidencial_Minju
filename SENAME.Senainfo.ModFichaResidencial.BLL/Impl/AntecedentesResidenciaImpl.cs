@@ -11,6 +11,21 @@ using SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces;
 
 namespace SENAME.Senainfo.ModFichaResidencial.BLL.Impl
 {
+    public class GetParGestionResidenciaImpl : IGetParGestionResidencia
+    {
+        private readonly GetAntecedentesResidenciaDao _getParAntecedentesResidencial;
+        public GetParGestionResidenciaImpl()
+        {
+            _getParAntecedentesResidencial = new GetAntecedentesResidenciaDao();
+        }
+
+        public List<GetParGestionResidenciaDto> ObtenerParAntecedentesGestionResidencia()
+        {
+            var result = _getParAntecedentesResidencial.ObtenerParAntecedentesResidencia();
+            return GetAntecedentesResidenciaMapper.ToDtoParGestionResidencia(result);
+        }
+    }
+
     public class GetAntecedentesResidenciaImpl : IGetAntecedentesResidencia
     {
         private readonly GetAntecedentesResidenciaDao _getAntecedentesResidenciaDao;

@@ -83,7 +83,7 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                             ObtenerAntecedentesGenerales(CodFichaAUX);
                             ObtenerNnaAbandonoDetalle(CodFichaAUX);
                             ObtenerNnaAdolescenteConHijosDetalle(CodFichaAUX);
-                            /* Sprint 3 - 20191120 - gcastro - se agrega la lalmada a function CargaRangoEtareoAtencion1(); */
+                            /* Sprint 3 - 20191120  - se agrega la llamada a function CargaRangoEtareoAtencion1(); */
                             CargaRangoEtareoAtencion1();
                             ObtenerAntecedentesPoblacionCapacidad(CodFichaAUX);
                             ObtenerAntecedentesDotacionPersonal(CodFichaAUX);
@@ -91,11 +91,14 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                   
                             ObtenerAntecedentesInfraestructura(CodFichaAUX);
                             
-
                             ObtenerAntecedentesSeguridad(CodFichaAUX);
                             ObtenerAntecedentesSalud(CodFichaAUX);
                             ObtenerAntecedentesEducacion(CodFichaAUX);
                             ObtenerAntecedentesAlimentacion(CodFichaAUX);
+
+                            /* Sprint 6 - 20191203 - gcastro */
+                            CargaParGestionResidencia(); 
+                            CargaParValores1();
                             ObtenerAntecedentesGestionResidencia(CodFichaAUX);
 
                             //alert(tokensUsr);

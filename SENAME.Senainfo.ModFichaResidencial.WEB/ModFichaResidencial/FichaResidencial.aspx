@@ -40,14 +40,19 @@ Spint 2.1
  	    <script src='../Scripts/pdfmake/vfs_fonts.js'></script>
         <link href="../Scripts/icheck/skins/all.css" rel="stylesheet" />
         <script src="../Scripts/icheck/icheck.min.js"></script>
+        
+        <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
 
         <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
         <script src="../Scripts/datepicker/datepicker.js"></script>
         <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>--%>
-      
+
+
+ 
 
       <!-- PRODUCCION -->
-    <script src="../js/jquery-3.2.1.min.js"></script>
+ <script src="../js/jquery-3.2.1.min.js"></script>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
@@ -66,6 +71,11 @@ Spint 2.1
 
         <link href="scripts/icheck/skins/all.css" rel="stylesheet" />
         <script src="scripts/icheck/icheck.min.js"></script>
+
+     <%-- Archivos agregados --%>
+        <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
+     <%-- ----%>
 
         <link rel="stylesheet" href="scripts/datepicker/datepicker.css" />
         <script src="scripts/datepicker/datepicker.js"></script>
@@ -1313,138 +1323,75 @@ Spint 2.1
             </div>   
 
              <div role="tabpanel" class="tab-pane fade in" id="gestion_residencia">
-                        <table class="table">
-                            <tr>
-                                <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes de Gestión de Residencia</span></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3" style="width:100%;">Cuenta con catastro de redes</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_001_sel_catastroRedes_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr style="display:none;">
-                                <td class="etiqCampo3">Existe Protocolo y/o Registro de Visitas</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_002_sel_protocoloVisitas_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr>
-                                <td class="etiqCampo3">Existe Protocolo de Visitas</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_002_sel_protoVisitas_existe" class="form-control textCampoSel1" onchange="EvaluaProtocoloyRegistroVisitas();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr>
-                                <td class="etiqCampo3">Existe Registro de Visitas</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_002_sel_regisVisitas_existe" class="form-control textCampoSel1" onchange="EvaluaProtocoloyRegistroVisitas();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            
-                            <tr>
-                                <td class="etiqCampo3">Cuenta con Protocolo de Acogida del NNA</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_003_sel_protocoloAcogida_NNA_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr>
-                                <td class="etiqCampo3">Existen Actividades de Autocuidado para el Equipo</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_004_sel_activi_autocuidadoEquipo_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr>
-                                <td class="etiqCampo3">Cuenta con Protocolo de Actuación de Intervención en Crisis</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_005_sel_protocoloActua_intervencionCrisis_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-
-                            <tr>
-                                <td class="etiqCampo3">Existe Protocolo de Información para NNA sobre la Normativa de Residencia</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_006_sel_activi_protocolo_InfoNormativa_x_NNA_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Existe Protocolo de Convivencia</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_007_sel_protocoloConvivencia_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Existe Protocolo de Presentación de Reclamos y Quejas</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_008_sel_protocolo_PresentaReclamo_existe"class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Existe Protocolo y Espacios para la escucha de los NNA</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_009_sel_protocoloEspacioEscucha_NNA_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Vinculación entre Residencias (para hermanos)</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_010_sel_vinculacionResidencias_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Cuenta con Proceso de Formación Permanente para el personal</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_011_sel_ProcesoFormacion_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Existe Protocolo de Apadrinamiento</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_012_sel_protocoloApadrinamiento_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Existe Protocolo de Derivación o Traslado a Residencia</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_013_sel_protocoloTrasladoResid_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Existe Protocolo de para el Egreso del NNA (Sistema Residencial)</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_014_sel_protocoloEgreso_NNA_existe"  class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Existe Protocolo para Derivación a Red Salud</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_015_sel_protocolo_derivacion_RedSalud_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr style="display:none;">
-                                <td class="etiqCampo3">Actividades de Habilitación Laboral y Preparación para la Vida Independiente</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_016_sel_activi_habilitacionLaboral_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">¿Existen Actividades de Habilitación Laboral?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_016_sel_activi_habilitaLaboral" class="form-control textCampoSel1" onchange="EvaluaActividadHabilitaLaboralyVidaIndependiente();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">¿Existe proceso para la vida independiente?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_016_sel_activi_vidaInpendiente" class="form-control textCampoSel1" onchange="EvaluaActividadHabilitaLaboralyVidaIndependiente();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-
-                            <tr>
-                                <td colspan="2" class="etiqCampo3">Observaciones</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="border-bottom: 1px #B2B2B2 solid;"><textarea id="gestionResid_017_observaciones" class="form-control textCampo3" placeholder="Sin observaciones." style="width:99%;height:150px;text-align:left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsGestionRes');" maxlength="4000"></textarea>
+                 <table class="table">
+                        <tr>
+                            <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes de Gestión de Residencia</span></td>
+                        </tr>   
+                        <tr style="display:none;">
+                            <td class="etiqCampo3">Existe Protocolo y/o Registro de Visitas</td>
+                            <td style="border-bottom: 1px #B2B2B2 solid;">
+                                <select id="gestionResid_002_sel_protocoloVisitas_existe" class="form-control textCampoSel1 dllSiNo">
+                                    <option value="1">SI</option><option value="2">NO</option>
+                                    </select></td>
+                        </tr>  
+                        <tr style="display:none;">
+                            <td class="etiqCampo3">Actividades de Habilitación Laboral y Preparación para la Vida Independiente</td>
+                            <td style="border-bottom: 1px #B2B2B2 solid;">
+                                <select id="gestionResid_016_sel_activi_habilitacionLaboral_existe" class="form-control textCampoSel1">
+                                    <option value="1">SI</option><option value="2">NO</option></select></td>
+                        </tr>
+                    </table>
+                 <style>
+                     .dataTables_filter, .dataTables_info { display: none;}
+                     .dataTables_wrapper table thead{display:none;}
+                   
+                    #gridGestionResidencia > table {
+                        table-layout:fixed;
+                    }
+                   
+                    #gridGestionResidencia, table.dataTable tbody th, table.dataTable tbody td{
+                        padding: 8px 10px;
+                        width: 100%;
+                    }
+                   table.dataTable.no-footer{
+                           border-bottom: 1px solid rgba(255,255,255,0.9) !important;
+                              background-color: rgba(255,255,255,0.9);
+                   }
+                 </style>
+                 <table id="gridGestionResidencia" class="table table-bordered table-condensed" cellspacing="0" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th class="titulo-tabla invisible">Id</th>
+                                    <th class="titulo-tabla">Nombre</th>
+                                    <th class="titulo-tabla">Rut</th>
+                                     <th class="titulo-tabla"></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                 <table class="table table-bordered table-condensed" cellspacing="0" style="width:100%;">
+                            <tbody>
+                                 <tr>
+                                <td>
+                               <input type='text' value="Observaciones" class='form-control etiqCampo3'/>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    <textarea id="gestionResid_017_observaciones" class="form-control" placeholder="Sin observaciones." style="width:99%;height:150px;text-align:left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsGestionRes');" maxlength="4000"></textarea>
                                     <span id="labelCaracteres_ObsGestionRes" class="lblrestoIngreso"></span>
                                 </td>
-                            </tr>
-                            <!--
-                            <tr>
-                                <td colspan="2" class="etiqCampo3">Observación Población de NNA que se encontraba  a la hora de la visita</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="border-bottom: 1px #B2B2B2 solid;"><textarea id="gestionResid_018_observaciones_pobla_NNA_visita" class="form-control textCampo3" placeholder="" style="width:99%;height:150px;text-align:left;"></textarea></td>
-                            </tr>    
-                        
-                            <tr>
-                                <td class="etiqCampo3">¿Algún NNA manifestó voluntad de conversar con juez?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_019_sel_manifiesta_NNA_conversarJuez_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Se entrevistó a NNA de forma reservada?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="gestionResid_020_sel_entrevisto_NNA_reservada_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            -->
-                        </table>
-                        <!--
-                        <table id="tbl_detalle_NNA_entrevistados" class="table">
-                            <tr>
-                                <td colspan="5" style="padding: 10px;border-bottom: 1px #B2B2B2 solid;"><span class="titsec2">Detalle de NNA Entrevistados</span></td>
-                        
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo2" style="width: 20px;">N°</td>
-                                <td class="etiqCampo2" style="width: 50px;">RUT</td>
-                                <td class="etiqCampo2">NNA</td>
-                                <td class="etiqCampo2">RIT</td>
-                                <td class="etiqCampo2">TRIBUNAL</td>
-                            </tr>  
-                        </table>
-                        <div style="text-align:center;"><button class="btn btn-primary" style="cursor: pointer;font-weight:normal;" title="haga clic para agregar detalle de NNA en abandono" onclick="AgregarNNA_en_Residencia(3);">Agregar</button></div><br />
-                        -->
-                        <div style="text-align:center;"><button id="btn_antecedentesGestionResidencia" class="btn btn-primary" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar los antecedentes de Gestión de Residencia" onclick="GrabarAntecedentes(9);">Grabar Antecedente de Gestión de Residencia</button>&nbsp;<button id="btn_FichaGenera_09" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></div><br />
-            </div>   
-        </div>
+                              </tr>
+                            </tbody>
+                          </table>
+            </div>
+
+        <div style="text-align:center;">
+            <button id="btn_antecedentesGestionResidencia" class="btn btn-primary" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar los antecedentes de Gestión de Residencia" onclick="GrabarAntecedentes(9);">Grabar Antecedente de Gestión de Residencia</button>&nbsp;<button id="btn_FichaGenera_09" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button>
+
+        </div><br />
+     </div>   
+       
 
         </div>
         <div id="frmMsg" style="display:none;">

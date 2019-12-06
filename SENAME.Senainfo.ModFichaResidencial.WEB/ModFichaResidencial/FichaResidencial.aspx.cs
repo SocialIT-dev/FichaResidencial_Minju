@@ -874,6 +874,15 @@ namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial
 
         #region Antecedentes Gestión Residencica
         [WebMethod]
+        public static List<GetParGestionResidenciaDto> ObtenerParAntecedentesGestionResidencia()
+        {
+            GetParGestionResidenciaImpl _GestionResidenciaImpl = new GetParGestionResidenciaImpl();
+            var result = _GestionResidenciaImpl.ObtenerParAntecedentesGestionResidencia();
+            return result;
+        }
+
+
+        [WebMethod]
         public static List<ResultadoOperacionResidenciaDto> GrabarAntecedentesGestionResidencia(
                                                             int CodProyecto,
                                                             int CodFicha,

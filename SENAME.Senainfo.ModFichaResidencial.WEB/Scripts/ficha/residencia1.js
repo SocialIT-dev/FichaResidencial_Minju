@@ -1305,28 +1305,30 @@ function ResetearFormulario() {
 
     //Reseteamos TAB  Gestion Residencia
     var arrVariablesGestionResidencia_1 = [
-        "gestionResid_001_sel_catastroRedes_existe",
         "gestionResid_002_sel_protocoloVisitas_existe",
-        "gestionResid_003_sel_protocoloAcogida_NNA_existe",
-        "gestionResid_004_sel_activi_autocuidadoEquipo_existe",
-        "gestionResid_005_sel_protocoloActua_intervencionCrisis_existe",
-        "gestionResid_006_sel_activi_protocolo_InfoNormativa_x_NNA_existe",
-        "gestionResid_007_sel_protocoloConvivencia_existe",
-        "gestionResid_008_sel_protocolo_PresentaReclamo_existe",
-        "gestionResid_009_sel_protocoloEspacioEscucha_NNA_existe",
-        "gestionResid_010_sel_vinculacionResidencias_existe",
-        "gestionResid_011_sel_ProcesoFormacion_existe",
-        "gestionResid_012_sel_protocoloApadrinamiento_existe",
-        "gestionResid_013_sel_protocoloTrasladoResid_existe",
-        "gestionResid_014_sel_protocoloEgreso_NNA_existe",
-        "gestionResid_015_sel_protocolo_derivacion_RedSalud_existe",
+
+        /* "gestionResid_001_sel_catastroRedes_existe"
+        //"gestionResid_002_sel_protoVisitas_existe"
+        // "gestionResid_002_sel_regisVisitas_existe"
+        // "gestionResid_003_sel_protocoloAcogida_NNA_existe",
+        // "gestionResid_004_sel_activi_autocuidadoEquipo_existe"
+        //"gestionResid_005_sel_protocoloActua_intervencionCrisis_existe",
+        // "gestionResid_007_sel_protocoloConvivencia_existe",
+        //"gestionResid_008_sel_protocolo_PresentaReclamo_existe",
+        // "gestionResid_009_sel_protocoloEspacioEscucha_NNA_existe",
+        //"gestionResid_010_sel_vinculacionResidencias_existe",
+        //"gestionResid_011_sel_ProcesoFormacion_existe",
+        //"gestionResid_012_sel_protocoloApadrinamiento_existe",
+        //"gestionResid_014_sel_protocoloEgreso_NNA_existe
+        //"gestionResid_015_sel_protocolo_derivacion_RedSalud_existe",
+        //  "gestionResid_016_sel_activi_habilitaLaboral",
+        // "gestionResid_016_sel_activi_vidaInpendiente"
+        // "gestionResid_006_sel_activi_protocolo_InfoNormativa_x_NNA_existe",
+        //  "gestionResid_004_sel_activi_autocuidadoEquipo_existe",
+        // "gestionResid_013_sel_protocoloTrasladoResid_existe", */
+       
         "gestionResid_016_sel_activi_habilitacionLaboral_existe",
-
-        "gestionResid_002_sel_protoVisitas_existe",
-        "gestionResid_002_sel_regisVisitas_existe",
-
-        "gestionResid_016_sel_activi_habilitaLaboral",
-        "gestionResid_016_sel_activi_vidaInpendiente"
+       
         //"gestionResid_019_sel_manifiesta_NNA_conversarJuez_existe",
         //"gestionResid_020_sel_entrevisto_NNA_reservada_existe"  
     ];
@@ -1571,21 +1573,21 @@ function ActivaCamposFichaResidenciaXProyecto(valueCbmProyecto) {
     "alimentacion_008_comidas_sabado_domingo_fest_cantidad",
     "alimentacion_009_observacion",
 
-    "gestionResid_001_sel_catastroRedes_existe",
+    "idParGestionResidencia_1",
     "gestionResid_002_sel_protocoloVisitas_existe",
-    "gestionResid_003_sel_protocoloAcogida_NNA_existe",
-    "gestionResid_004_sel_activi_autocuidadoEquipo_existe",
-    "gestionResid_005_sel_protocoloActua_intervencionCrisis_existe",
-    "gestionResid_006_sel_activi_protocolo_InfoNormativa_x_NNA_existe",
-    "gestionResid_007_sel_protocoloConvivencia_existe",
-    "gestionResid_008_sel_protocolo_PresentaReclamo_existe",
-    "gestionResid_009_sel_protocoloEspacioEscucha_NNA_existe",
-    "gestionResid_010_sel_vinculacionResidencias_existe",
-    "gestionResid_011_sel_ProcesoFormacion_existe",
-    "gestionResid_012_sel_protocoloApadrinamiento_existe",
-    "gestionResid_013_sel_protocoloTrasladoResid_existe",
-    "gestionResid_014_sel_protocoloEgreso_NNA_existe",
-    "gestionResid_015_sel_protocolo_derivacion_RedSalud_existe",
+    "idParGestionResidencia_4",
+    "idParGestionResidencia_5",
+    "idParGestionResidencia_6",
+    "idParGestionResidencia_7",
+    "idParGestionResidencia_8",
+    "idParGestionResidencia_9",
+    "idParGestionResidencia_10",
+    "idParGestionResidencia_11",
+    "idParGestionResidencia_12",
+    "idParGestionResidencia_13",
+    "idParGestionResidencia_14",
+    "idParGestionResidencia_15",
+    "idParGestionResidencia_16",
     "gestionResid_016_sel_activi_habilitacionLaboral_existe",
     "gestionResid_017_observaciones",
 
@@ -1630,11 +1632,11 @@ function ActivaCamposFichaResidenciaXProyecto(valueCbmProyecto) {
     "alimentacion_006_sel_AlmacenaAlimento_existe",
     "alimentacion_006_sel_EstadoConserva_existe",
 
-    "gestionResid_002_sel_protoVisitas_existe",
-    "gestionResid_002_sel_regisVisitas_existe",
+    "idParGestionResidencia_2",
+    "idParGestionResidencia_3",
+    "idParGestionResidencia_17",
 
-    "gestionResid_016_sel_activi_habilitaLaboral",
-    "gestionResid_016_sel_activi_vidaInpendiente"
+    "idParGestionResidencia_18"
     //FIN CAMPOS NUEVOS
 
 
@@ -1678,8 +1680,8 @@ function StopValidaConexion() {
     clearInterval(myVar);
 }
 $(document).ready(function () {
+  
     CargaInicial();
-
     opcioncarga = "REGISTROFICHARESIDENCIAL";
 
     $(document).keypress(function (event) {
@@ -2329,29 +2331,29 @@ function GrabarFichaCompleta() {
     ////----------------------------------------------------------------
     //PASO 1.9 RESCATO DATOS ANTECDENTES GESTION RESIDENCIA Y VALIDO
     bValidar = false;
-    var CatastroRedes = $("#gestionResid_001_sel_catastroRedes_existe").val();
+    var CatastroRedes = $("#idParGestionResidencia_1").val();
 
     var RegistroVisitas = $("#gestionResid_002_sel_protocoloVisitas_existe").val();
-    var protoVisitas = $("#gestionResid_002_sel_protoVisitas_existe").val();
-    var regisVisitas = $("#gestionResid_002_sel_regisVisitas_existe").val();
+    var protoVisitas = $("#idParGestionResidencia_2").val();
+    var regisVisitas = $("#idParGestionResidencia_3").val();
 
-    var ProtocoloAcogida = $("#gestionResid_003_sel_protocoloAcogida_NNA_existe").val();
-    var AutocuidadoEquipo = $("#gestionResid_004_sel_activi_autocuidadoEquipo_existe").val();
-    var IntervencionCrisis = $("#gestionResid_005_sel_protocoloActua_intervencionCrisis_existe").val();
-    var InformacionNormativa = $("#gestionResid_006_sel_activi_protocolo_InfoNormativa_x_NNA_existe").val();
-    var ProtocoloConvivencia = $("#gestionResid_007_sel_protocoloConvivencia_existe").val();
-    var ProtocoloReclamos = $("#gestionResid_008_sel_protocolo_PresentaReclamo_existe").val();
-    var ProtocoloEscucha = $("#gestionResid_009_sel_protocoloEspacioEscucha_NNA_existe").val();
-    var VinculacionResidencias = $("#gestionResid_010_sel_vinculacionResidencias_existe").val();
-    var ProcesosFormacion = $("#gestionResid_011_sel_ProcesoFormacion_existe").val();
-    var ProtocoloApadrinamiento = $("#gestionResid_012_sel_protocoloApadrinamiento_existe").val();
-    var ProtocoloTraslado = $("#gestionResid_013_sel_protocoloTrasladoResid_existe").val();
-    var ProtocoloEgreso = $("#gestionResid_014_sel_protocoloEgreso_NNA_existe").val();
-    var ProtocoloRedSalud = $("#gestionResid_015_sel_protocolo_derivacion_RedSalud_existe").val();
+    var ProtocoloAcogida = $("#idParGestionResidencia_4").val();
+    var AutocuidadoEquipo = $("#idParGestionResidencia_5").val();
+    var IntervencionCrisis = $("#idParGestionResidencia_6").val();
+    var InformacionNormativa = $("#idParGestionResidencia_7").val();
+    var ProtocoloConvivencia = $("#idParGestionResidencia_8").val();
+    var ProtocoloReclamos = $("#idParGestionResidencia_9").val();
+    var ProtocoloEscucha = $("#idParGestionResidencia_10").val();
+    var VinculacionResidencias = $("#idParGestionResidencia_11").val();
+    var ProcesosFormacion = $("#idParGestionResidencia_12").val();
+    var ProtocoloApadrinamiento = $("#idParGestionResidencia_13").val();
+    var ProtocoloTraslado = $("#idParGestionResidencia_14").val();
+    var ProtocoloEgreso = $("#idParGestionResidencia_15").val();
+    var ProtocoloRedSalud = $("#idParGestionResidencia_16").val();
 
     var HabilitacionLaboral = $("#gestionResid_016_sel_activi_habilitacionLaboral_existe").val();
-    var actividadHabilitacionLaboral = $("#gestionResid_016_sel_activi_habilitaLaboral").val();
-    var actividadVidaIndependiente = $("#gestionResid_016_sel_activi_vidaInpendiente").val();
+    var actividadHabilitacionLaboral = $("#idParGestionResidencia_17").val();
+    var actividadVidaIndependiente = $("#idParGestionResidencia_18").val();
 
     var ObservacionesResidencia = replaceAll(EliminaEspacios(document.getElementById("gestionResid_017_observaciones").value), "'", "");
     
@@ -4107,24 +4109,24 @@ function GenerarFormularioPDF_FR(opc) {
     var alimentacion_009_observacion = "";
 
     //variables antecedentes residencia-------------
-    var gestionResid_001_sel_catastroRedes_existe = "";
-    var gestionResid_002_sel_protoVisitas_existe = "";
-    var gestionResid_002_sel_regisVisitas_existe = "";
-    var gestionResid_003_sel_protocoloAcogida_NNA_existe = "";
-    var gestionResid_004_sel_activi_autocuidadoEquipo_existe = "";
-    var gestionResid_005_sel_protocoloActua_intervencionCrisis_existe = "";
-    var gestionResid_006_sel_activi_protocolo_InfoNormativa_x_NNA_existe = "";
-    var gestionResid_007_sel_protocoloConvivencia_existe = "";
-    var gestionResid_008_sel_protocolo_PresentaReclamo_existe = "";
-    var gestionResid_009_sel_protocoloEspacioEscucha_NNA_existe = "";
-    var gestionResid_010_sel_vinculacionResidencias_existe = "";
-    var gestionResid_011_sel_ProcesoFormacion_existe = "";
-    var gestionResid_012_sel_protocoloApadrinamiento_existe = "";
-    var gestionResid_013_sel_protocoloTrasladoResid_existe = "";
-    var gestionResid_014_sel_protocoloEgreso_NNA_existe = "";
-    var gestionResid_015_sel_protocolo_derivacion_RedSalud_existe = "";
-    var gestionResid_016_sel_activi_habilitaLaboral = "";
-    var gestionResid_016_sel_activi_vidaInpendiente = "";
+    var idParGestionResidencia_1 = "";
+    var idParGestionResidencia_2 = "";
+    var idParGestionResidencia_3 = "";
+    var idParGestionResidencia_4 = "";
+    var idParGestionResidencia_5 = "";
+    var idParGestionResidencia_6 = "";
+    var idParGestionResidencia_7 = "";
+    var idParGestionResidencia_8 = "";
+    var idParGestionResidencia_9 = "";
+    var idParGestionResidencia_10 = "";
+    var idParGestionResidencia_11 = "";
+    var idParGestionResidencia_12 = "";
+    var idParGestionResidencia_13 = "";
+    var idParGestionResidencia_14 = "";
+    var idParGestionResidencia_15 = "";
+    var idParGestionResidencia_16 = "";
+    var idParGestionResidencia_17 = "";
+    var idParGestionResidencia_18 = "";
     var gestionResid_017_observaciones = "";
 
     //Rescato los datos de todos los campos he imprimo los valores en PDF si se ha solicitado por el usuario:
@@ -4422,24 +4424,24 @@ function GenerarFormularioPDF_FR(opc) {
         alimentacion_009_observacion = $("#alimentacion_009_observacion").val();
 
         //variables antecedentes residencia-------------
-        gestionResid_001_sel_catastroRedes_existe = $("#gestionResid_001_sel_catastroRedes_existe option:selected").text();
-        gestionResid_002_sel_protoVisitas_existe = $("#gestionResid_002_sel_protoVisitas_existe option:selected").text();
-        gestionResid_002_sel_regisVisitas_existe = $("#gestionResid_002_sel_regisVisitas_existe option:selected").text();
-        gestionResid_003_sel_protocoloAcogida_NNA_existe = $("#gestionResid_003_sel_protocoloAcogida_NNA_existe option:selected").text();
-        gestionResid_004_sel_activi_autocuidadoEquipo_existe = $("#gestionResid_004_sel_activi_autocuidadoEquipo_existe option:selected").text();
-        gestionResid_005_sel_protocoloActua_intervencionCrisis_existe = $("#gestionResid_005_sel_protocoloActua_intervencionCrisis_existe option:selected").text();
-        gestionResid_006_sel_activi_protocolo_InfoNormativa_x_NNA_existe = $("#gestionResid_006_sel_activi_protocolo_InfoNormativa_x_NNA_existe option:selected").text();
-        gestionResid_007_sel_protocoloConvivencia_existe = $("#gestionResid_007_sel_protocoloConvivencia_existe option:selected").text();
-        gestionResid_008_sel_protocolo_PresentaReclamo_existe = $("#gestionResid_008_sel_protocolo_PresentaReclamo_existe option:selected").text();
-        gestionResid_009_sel_protocoloEspacioEscucha_NNA_existe = $("#gestionResid_009_sel_protocoloEspacioEscucha_NNA_existe option:selected").text();
-        gestionResid_010_sel_vinculacionResidencias_existe = $("#gestionResid_010_sel_vinculacionResidencias_existe option:selected").text();
-        gestionResid_011_sel_ProcesoFormacion_existe = $("#gestionResid_011_sel_ProcesoFormacion_existe option:selected").text();
-        gestionResid_012_sel_protocoloApadrinamiento_existe = $("#gestionResid_012_sel_protocoloApadrinamiento_existe option:selected").text();
-        gestionResid_013_sel_protocoloTrasladoResid_existe = $("#gestionResid_013_sel_protocoloTrasladoResid_existe option:selected").text();
-        gestionResid_014_sel_protocoloEgreso_NNA_existe = $("#gestionResid_014_sel_protocoloEgreso_NNA_existe option:selected").text();
-        gestionResid_015_sel_protocolo_derivacion_RedSalud_existe = $("#gestionResid_015_sel_protocolo_derivacion_RedSalud_existe option:selected").text();
-        gestionResid_016_sel_activi_habilitaLaboral = $("#gestionResid_016_sel_activi_habilitaLaboral option:selected").text();
-        gestionResid_016_sel_activi_vidaInpendiente = $("#gestionResid_016_sel_activi_vidaInpendiente option:selected").text();
+        idParGestionResidencia_1 = $("#idParGestionResidencia_1 option:selected").text();
+        idParGestionResidencia_2 = $("#idParGestionResidencia_2 option:selected").text();
+        idParGestionResidencia_3 = $("#idParGestionResidencia_3 option:selected").text();
+        idParGestionResidencia_4 = $("#idParGestionResidencia_4 option:selected").text();
+        idParGestionResidencia_5 = $("#idParGestionResidencia_5 option:selected").text();
+        idParGestionResidencia_6 = $("#idParGestionResidencia_6 option:selected").text();
+        idParGestionResidencia_7 = $("#idParGestionResidencia_7 option:selected").text();
+        idParGestionResidencia_8 = $("#idParGestionResidencia_8 option:selected").text();
+        idParGestionResidencia_9 = $("#idParGestionResidencia_9 option:selected").text();
+        idParGestionResidencia_10 = $("#idParGestionResidencia_10 option:selected").text();
+        idParGestionResidencia_11 = $("#idParGestionResidencia_11 option:selected").text();
+        idParGestionResidencia_12 = $("#idParGestionResidencia_12 option:selected").text();
+        idParGestionResidencia_13 = $("#idParGestionResidencia_13 option:selected").text();
+        idParGestionResidencia_14 = $("#idParGestionResidencia_14 option:selected").text();
+        idParGestionResidencia_15 = $("#idParGestionResidencia_15 option:selected").text();
+        idParGestionResidencia_16 = $("#idParGestionResidencia_16 option:selected").text();
+        idParGestionResidencia_17 = $("#idParGestionResidencia_17 option:selected").text();
+        idParGestionResidencia_18 = $("#idParGestionResidencia_18 option:selected").text();
         gestionResid_017_observaciones = $("#gestionResid_017_observaciones").val();
     }
 
@@ -4792,24 +4794,24 @@ function GenerarFormularioPDF_FR(opc) {
                     body: [
                             [{ text: 'ANTECEDENTES DE GESTIÓN DE RESIDENCIA', style: 'header2', colSpan: 2 }, {}],
                             [{}, { text: 'EXISTE', style: 'text2' }],
-                            [{ text: 'Cuenta con catastro de redes', style: 'text1' },{ text: gestionResid_001_sel_catastroRedes_existe, style: 'text2' }],
-                            [{ text: 'Existe Protocolo de Visitas', style: 'text1' },{ text: gestionResid_002_sel_protoVisitas_existe, style: 'text2' }],
-                            [{ text: 'Existe Registro de Visitas', style: 'text1' },{ text: gestionResid_002_sel_regisVisitas_existe, style: 'text2' }],
-                            [{ text: 'Cuenta con Protocolo de Acogida del NNA', style: 'text1' },{ text: gestionResid_003_sel_protocoloAcogida_NNA_existe, style: 'text2' }],
-                            [{ text: 'Existen Actividades de Autocuidado para el Equipo', style: 'text1' },{ text: gestionResid_004_sel_activi_autocuidadoEquipo_existe, style: 'text2' }],
-                            [{ text: 'Cuenta con Protocolo de Actuación de Intervención en Crisis', style: 'text1' },{ text: gestionResid_005_sel_protocoloActua_intervencionCrisis_existe, style: 'text2' }],
-                            [{ text: 'Existe Protocolo de Información para NNA sobre la Normativa de Residencia', style: 'text1' },{ text: gestionResid_006_sel_activi_protocolo_InfoNormativa_x_NNA_existe, style: 'text2' }],
-                            [{ text: 'Existe Protocolo de Convivencia', style: 'text1' },{ text: gestionResid_007_sel_protocoloConvivencia_existe, style: 'text2' }],
-                            [{ text: 'Existe Protocolo de Presentación de Reclamos y Quejas', style: 'text1' },{ text: gestionResid_008_sel_protocolo_PresentaReclamo_existe, style: 'text2' }],
-                            [{ text: 'Existe Protocolo y Espacios para la escucha de los NNA', style: 'text1' },{ text: gestionResid_009_sel_protocoloEspacioEscucha_NNA_existe, style: 'text2' }],
-                            [{ text: 'Vinculación entre Residencias (para hermanos)', style: 'text1' },{ text: gestionResid_010_sel_vinculacionResidencias_existe, style: 'text2' }],
-                            [{ text: 'Cuenta con Proceso de Formación Permanente para el personal', style: 'text1' },{ text: gestionResid_011_sel_ProcesoFormacion_existe, style: 'text2' }],
-                            [{ text: 'Existe Protocolo de Apadrinamiento ', style: 'text1' },{ text: gestionResid_012_sel_protocoloApadrinamiento_existe, style: 'text2' }],
-                            [{ text: 'Existe Protocolo de Derivación o Traslado a Residencia', style: 'text1' },{ text: gestionResid_013_sel_protocoloTrasladoResid_existe, style: 'text2' }],
-                            [{ text: 'Existe Protocolo de para el Egreso del NNA (Sistema Residencial)', style: 'text1' },{ text: gestionResid_014_sel_protocoloEgreso_NNA_existe, style: 'text2' }],
-                            [{ text: 'Existe Protocolo para Derivación a Red Salud ', style: 'text1' },{ text: gestionResid_015_sel_protocolo_derivacion_RedSalud_existe, style: 'text2' }],
-                            [{ text: '¿Existen Actividades de Habilitación Laboral?', style: 'text1' },{ text: gestionResid_016_sel_activi_habilitaLaboral, style: 'text2' }],
-                            [{ text: '¿Existe proceso para la vida independiente?', style: 'text1' }, { text: gestionResid_016_sel_activi_vidaInpendiente, style: 'text2' }],
+                        [{ text: 'Cuenta con catastro de redes', style: 'text1' }, { text: idParGestionResidencia_1, style: 'text2' }],
+                        [{ text: 'Existe Protocolo de Visitas', style: 'text1' }, { text: idParGestionResidencia_2, style: 'text2' }],
+                        [{ text: 'Existe Registro de Visitas', style: 'text1' }, { text: idParGestionResidencia_3, style: 'text2' }],
+                        [{ text: 'Cuenta con Protocolo de Acogida del NNA', style: 'text1' }, { text: idParGestionResidencia_4, style: 'text2' }],
+                        [{ text: 'Existen Actividades de Autocuidado para el Equipo', style: 'text1' }, { text: idParGestionResidencia_5, style: 'text2' }],
+                        [{ text: 'Cuenta con Protocolo de Actuación de Intervención en Crisis', style: 'text1' }, { text: idParGestionResidencia_6, style: 'text2' }],
+                        [{ text: 'Existe Protocolo de Información para NNA sobre la Normativa de Residencia', style: 'text1' }, { text: idParGestionResidencia_7, style: 'text2' }],
+                        [{ text: 'Existe Protocolo de Convivencia', style: 'text1' }, { text: idParGestionResidencia_8, style: 'text2' }],
+                        [{ text: 'Existe Protocolo de Presentación de Reclamos y Quejas', style: 'text1' }, { text: idParGestionResidencia_9, style: 'text2' }],
+                        [{ text: 'Existe Protocolo y Espacios para la escucha de los NNA', style: 'text1' }, { text: idParGestionResidencia_10, style: 'text2' }],
+                        [{ text: 'Vinculación entre Residencias (para hermanos)', style: 'text1' }, { text: idParGestionResidencia_11, style: 'text2' }],
+                        [{ text: 'Cuenta con Proceso de Formación Permanente para el personal', style: 'text1' }, { text: idParGestionResidencia_12, style: 'text2' }],
+                        [{ text: 'Existe Protocolo de Apadrinamiento ', style: 'text1' }, { text: idParGestionResidencia_13, style: 'text2' }],
+                        [{ text: 'Existe Protocolo de Derivación o Traslado a Residencia', style: 'text1' }, { text: idParGestionResidencia_14, style: 'text2' }],
+                        [{ text: 'Existe Protocolo de para el Egreso del NNA (Sistema Residencial)', style: 'text1' }, { text: idParGestionResidencia_15, style: 'text2' }],
+                        [{ text: 'Existe Protocolo para Derivación a Red Salud ', style: 'text1' }, { text: idParGestionResidencia_16, style: 'text2' }],
+                        [{ text: '¿Existen Actividades de Habilitación Laboral?', style: 'text1' }, { text: idParGestionResidencia_17, style: 'text2' }],
+                        [{ text: '¿Existe proceso para la vida independiente?', style: 'text1' }, { text: idParGestionResidencia_18, style: 'text2' }],
                             [{ text: 'OBSERVACIONES', style: 'text1', colSpan: 2 }, {}],
                             [{ text: gestionResid_017_observaciones, style: 'text1', colSpan: 2 }, {}]
                     ]

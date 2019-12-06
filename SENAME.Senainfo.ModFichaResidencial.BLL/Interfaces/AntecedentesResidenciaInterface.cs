@@ -6,6 +6,11 @@ using System.Text;
 
 namespace SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces
 {
+    public interface IGetParGestionResidencia
+    {
+        List<DTO.GetParGestionResidenciaDto> ObtenerParAntecedentesGestionResidencia();
+    }
+
     public interface IGetAntecedentesResidencia
     {
         List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.GetAntecedentesResidenciaDto> ObtenerAntecedentesResidencia(int? CodFicha);

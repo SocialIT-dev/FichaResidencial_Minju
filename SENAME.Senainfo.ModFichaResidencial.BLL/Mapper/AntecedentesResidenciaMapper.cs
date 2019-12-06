@@ -55,6 +55,28 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Mapper
             }
             return list;
         }
+
+        public static List<GetParGestionResidenciaDto> ToDtoParGestionResidencia(DataTable dt)
+        {
+            List<GetParGestionResidenciaDto> list = new List<GetParGestionResidenciaDto>();
+            GetParGestionResidenciaDto dto = new GetParGestionResidenciaDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new GetParGestionResidenciaDto();
+                dto.error = dr["error"].ToString();
+
+                if (dto.error == "")
+                {
+                    dto.IdParGestionResi = (int)dr["IdParGestionResi"];
+                    dto.NombreGestion = dr["NombreGestion"].ToString();
+                    dto.VariableCuantitativa = (Boolean)dr["VariableCuantitativa"];
+                    dto.IndVigencia = dr["IndVigencia"].ToString();
+                }
+                list.Add(dto);
+            }
+            return list;
+        }
     }
 
     public class ResultadoOperacionResidenciaMapper
