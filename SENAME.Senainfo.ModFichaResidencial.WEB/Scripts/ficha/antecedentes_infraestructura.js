@@ -510,6 +510,7 @@ function ObtenerAntecedentesInfraestructura(CodFicha) {
         }
     });
 }
+
 // Sprint 3 - 20191113 - gcastro
 function CargaParValores1()
 {
