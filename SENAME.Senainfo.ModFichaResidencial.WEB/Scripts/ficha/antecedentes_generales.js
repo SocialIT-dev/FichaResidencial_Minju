@@ -2,10 +2,8 @@
 //FUNCIONES ACCESO BACKEND
 function CargaDatosGeneralesDDL2(CodProyecto) {
     ResetearFormulario();
-
     // Sprint 3 - 20191113 - gcastro
     CargaParValores1();
-
     var CodFichaAUX;
     var CodFicha2;
     var tokensUsr = document.getElementById("tokensUsr").value;
@@ -88,7 +86,7 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                             ObtenerAntecedentesPoblacionCapacidad(CodFichaAUX);
                             ObtenerAntecedentesDotacionPersonal(CodFichaAUX);
 
-                  
+                            
                             ObtenerAntecedentesInfraestructura(CodFichaAUX);
                             
                             ObtenerAntecedentesSeguridad(CodFichaAUX);
@@ -98,7 +96,6 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
 
                             /* Sprint 6 - 20191203 - gcastro */
                             CargaParGestionResidencia(); 
-                            CargaParValores1();
                             ObtenerAntecedentesGestionResidencia(CodFichaAUX);
 
                             //alert(tokensUsr);

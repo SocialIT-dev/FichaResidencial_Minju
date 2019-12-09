@@ -114,7 +114,9 @@ function GrabarAntecedentesGestionResidencia() {
     });
 }
 /* Sprint 6 - 20191204 - gcastro - */
+
 function ObtenerAntecedentesGestionResidencia(CodFicha) {
+   
     $("#labelCaracteres_ObsGestionRes").html("");
     $.ajax({
         type: "POST",
@@ -134,78 +136,78 @@ function ObtenerAntecedentesGestionResidencia(CodFicha) {
         $.each(r.d,
             function () {
                 /* 1- Cuenta con catastro de redes */ /*gestionResid_001_sel_catastroRedes_existe*/
-                if (this.CatastroRedes != "0" && this.CatastroRedes != "-1") $("#idParGestionResidencia_1").val(1); 
-                else $("#idParGestionResidencia_1").val(2);
+                if (this.CatastroRedes != 0 && this.CatastroRedes != -1) $("#idParGestionResidencia_1").val("1"); 
+                else $("#idParGestionResidencia_1").val("0");
 
                 /* eL id "gestionResid_002_sel_protocoloVisitas_existe" NO eliminar de la tabla original*/
            
                  /* 2- Existe Protocolo de Visitas  */ /*gestionResid_002_sel_protoVisitas_existe*/
-                if (this.RESProtocoloVisitas != "0" && this.RESProtocoloVisitas != "-1") $("#idParGestionResidencia_2").val(1);
-                else $("#idParGestionResidencia_2").val(2);
+                if (this.RESProtocoloVisitas != 0 && this.RESProtocoloVisitas != -1) $("#idParGestionResidencia_2").val("1");
+                else $("#idParGestionResidencia_2").val("0");
 
                 /* 3- Existe Registro de Visitas */  /*gestionResid_002_sel_regisVisitas_existe*/
-                if (this.RESRegistroVisitas != "0" && this.RESRegistroVisitas != "-1") $("#idParGestionResidencia_3").val(1);
-                else $("#idParGestionResidencia_3").val(2);
+                if (this.RESRegistroVisitas != 0 && this.RESRegistroVisitas != -1) $("#idParGestionResidencia_3").val("1");
+                else $("#idParGestionResidencia_3").val("0");
 
                 /* 4- Cuenta con Protocolo de Acogida del NNA */ /* gestionResid_003_sel_protocoloAcogida_NNA_existe */
-                if (this.ProtocoloAcogida != "0" && this.ProtocoloAcogida != "-1") $("#idParGestionResidencia_4").val(1);
-                else $("#idParGestionResidencia_4").val(2);
+                if (this.ProtocoloAcogida != 0 && this.ProtocoloAcogida != -1) $("#idParGestionResidencia_4").val("1");
+                else $("#idParGestionResidencia_4").val("0");
 
                 /* 5- Existen Actividades de Autocuidado para el Equipo */  /* gestionResid_004_sel_activi_autocuidadoEquipo_existe */
-                if (this.AutocuidadoEquipo != "0" && this.AutocuidadoEquipo != "-1") $("#idParGestionResidencia_5").val(1); 
-                else $("#idParGestionResidencia_5").val(2);
+                if (this.AutocuidadoEquipo != 0 && this.AutocuidadoEquipo != 1) $("#idParGestionResidencia_5").val("1"); 
+                else $("#idParGestionResidencia_5").val("0");
 
                  /* 6- Cuenta con Protocolo de Actuación de Intervención en Crisis *//* gestionResid_005_sel_protocoloActua_intervencionCrisis_existe*/
-                if (this.IntervencionCrisis != "0" && this.IntervencionCrisis != "-1") $("#idParGestionResidencia_6").val(1);
-                else $("#idParGestionResidencia_6").val(2);
+                if (this.IntervencionCrisis != 0 && this.IntervencionCrisis != -1) $("#idParGestionResidencia_6").val("1");
+                else $("#idParGestionResidencia_6").val("0");
 
                  /* 7- Existe Protocolo de Información para NNA sobre la Normativa de Residencia */ /* gestionResid_006_sel_activi_protocolo_InfoNormativa_x_NNA_existe */
-                if (this.InformacionNormativa != "0" && this.InformacionNormativa != "-1") $("#idParGestionResidencia_7").val(1);
-                else $("#idParGestionResidencia_7").val(2); // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx FALTA
+                if (this.InformacionNormativa != 0 && this.InformacionNormativa != -1) $("#idParGestionResidencia_7").val("1");
+                else $("#idParGestionResidencia_7").val("0"); 
 
                  /* 8- Existe Protocolo de Convivencia *//*gestionResid_007_sel_protocoloConvivencia_existe*/
-                if (this.ProtocoloConvivencia != "0" && this.ProtocoloConvivencia != "-1") $("#idParGestionResidencia_8").val(1);
-                else $("#idParGestionResidencia_8").val(2);
+                if (this.ProtocoloConvivencia != 0 && this.ProtocoloConvivencia != -1) $("#idParGestionResidencia_8").val("1");
+                else $("#idParGestionResidencia_8").val("0");
 
                 /* 9- Existe Protocolo de Presentación de Reclamos y Quejas *//* gestionResid_008_sel_protocolo_PresentaReclamo_existe*/
-                if (this.ProtocoloReclamos != "0" && this.ProtocoloReclamos != "-1") $("#idParGestionResidencia_9").val(1);
-                else $("#idParGestionResidencia_9").val(2);
+                if (this.ProtocoloReclamos != 0 && this.ProtocoloReclamos != -1) $("#idParGestionResidencia_9").val("1");
+                else $("#idParGestionResidencia_9").val("0");
 
                 /* 10- Existe Protocolo y Espacios para la escucha de los NNA *//* gestionResid_009_sel_protocoloEspacioEscucha_NNA_existe */
-                if (this.ProtocoloEscucha != "0" && this.ProtocoloEscucha != "-1") $("#idParGestionResidencia_10").val(1);
-                else $("#idParGestionResidencia_10").val(2);
+                if (this.ProtocoloEscucha != 0 && this.ProtocoloEscucha != -1) $("#idParGestionResidencia_10").val("1");
+                else $("#idParGestionResidencia_10").val("0");
 
                 /* 11- Vinculación entre Residencias (para hermanos) *//*gestionResid_010_sel_vinculacionResidencias_existe*/
-                if (this.VinculacionResidencias != "0" && this.VinculacionResidencias != "-1") $("#idParGestionResidencia_11").val(1);
-                else $("#idParGestionResidencia_11").val(2);
+                if (this.VinculacionResidencias != 0 && this.VinculacionResidencias != -1) $("#idParGestionResidencia_11").val("1");
+                else $("#idParGestionResidencia_11").val("0");
 
                 /* 12- Cuenta con Proceso de Formación Permanente para el personal *//*gestionResid_011_sel_ProcesoFormacion_existe*/
-                if (this.ProcesosFormacion != "0" && this.ProcesosFormacion != "-1") $("#idParGestionResidencia_12").val(1);
-                else $("#idParGestionResidencia_12").val(2);
+                if (this.ProcesosFormacion != 0 || this.ProcesosFormacion != -1) $("#idParGestionResidencia_12").val("1");
+                else $("#idParGestionResidencia_12").val("0");
 
                  /* 13- Existe Protocolo de Apadrinamiento *//*gestionResid_012_sel_protocoloApadrinamiento_existe*/
-                if (this.ProtocoloApadrinamiento != "0" && this.ProtocoloApadrinamiento != "-1") $("#idParGestionResidencia_13").val(1);
-                else $("#idParGestionResidencia_13").val(2);
+                if (this.ProtocoloApadrinamiento != 0 && this.ProtocoloApadrinamiento != -1) $("#idParGestionResidencia_13").val("1");
+                else $("#idParGestionResidencia_13").val("0");
 
                /* 14- Existe Protocolo de Derivación o Traslado a Residencia *//*gestionResid_013_sel_protocoloTrasladoResid_existe*/
-                if (this.ProtocoloTraslado != "0" && this.ProtocoloTraslado != "-1") $("#idParGestionResidencia_14").val(1);
-                else $("#idParGestionResidencia_14").val(2);
+                if (this.ProtocoloTraslado != 0 && this.ProtocoloTraslado != -1) $("#idParGestionResidencia_14").val("1");
+                else $("#idParGestionResidencia_14").val("0");
 
                 /* 15- Existe Protocolo de para el Egreso del NNA (Sistema Residencial)*//*gestionResid_014_sel_protocoloEgreso_NNA_existe*/
-                if (this.ProtocoloEgreso != "0" && this.ProtocoloEgreso != "-1") $("#idParGestionResidencia_15").val(1);
-                else $("#idParGestionResidencia_15").val(2);
+                if (this.ProtocoloEgreso != 0 && this.ProtocoloEgreso != -1) $("#idParGestionResidencia_15").val("1");
+                else $("#idParGestionResidencia_15").val("0");
 
                 /* 16- Existe Protocolo para Derivación a Red Salud */ /*gestionResid_015_sel_protocolo_derivacion_RedSalud_existe*/
-                if (this.HabilitacionLaboral != "0" && this.HabilitacionLaboral != "-1") $("#idParGestionResidencia_16").val(1);
-                else $("#idParGestionResidencia_16").val(2);
+                if (this.HabilitacionLaboral != 0 && this.HabilitacionLaboral != -1) $("#idParGestionResidencia_16").val("1");
+                else $("#idParGestionResidencia_16").val("0");
 
                 /* 17- ¿Existen Actividades de Habilitación Laboral? */ /*gestionResid_016_sel_activi_habilitaLaboral*/
-                if (this.RESHabilitacionLaboral != "0" && this.RESHabilitacionLaboral != "-1") $("#idParGestionResidencia_17").val(1);
-                else $("#idParGestionResidencia_17").val(2);
+                if (this.RESHabilitacionLaboral != 0 && this.RESHabilitacionLaboral != -1) $("#idParGestionResidencia_17").val("1");
+                else $("#idParGestionResidencia_17").val("0");
 
                  /* 18- ¿Existe proceso para la vida independiente? */  /*gestionResid_016_sel_activi_vidaInpendiente*/
-                if (this.RESVidaIndependiente != "0" && this.RESVidaIndependiente != "-1") $("#idParGestionResidencia_18").val(1);
-                else $("#idParGestionResidencia_18").val(2);
+                if (this.RESVidaIndependiente != 0 && this.RESVidaIndependiente != -1) $("#idParGestionResidencia_18").val("1");
+                else $("#idParGestionResidencia_18").val("0");
 
                 document.getElementById("gestionResid_017_observaciones").value = this.Observaciones;
                 ContadorCaracter(document.getElementById("gestionResid_017_observaciones"), "labelCaracteres_ObsGestionRes");
@@ -471,102 +473,102 @@ function ObtenerAntecedentesGestionResidencia_Compare(codFichaPadre, bloqueDatos
                 if (this.CatastroRedes != "0" && this.CatastroRedes != "-1")
                     $("#idParGestionResidencia_1" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_1" + sufijo).val(2);
+                    $("#idParGestionResidencia_1" + sufijo).val(0);
 
                 if (this.RegistroVisitas != "0" && this.RegistroVisitas != "-1")
                     $("#gestionResid_002_sel_protocoloVisitas_existe" + sufijo).val(1);
                 else
-                    $("#gestionResid_002_sel_protocoloVisitas_existe" + sufijo).val(2);
+                    $("#gestionResid_002_sel_protocoloVisitas_existe" + sufijo).val(0);
 
                 if (this.ProtocoloAcogida != "0" && this.ProtocoloAcogida != "-1")
                     $("#idParGestionResidencia_4" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_4" + sufijo).val(2);
+                    $("#idParGestionResidencia_4" + sufijo).val(0);
 
                 if (this.AutocuidadoEquipo != "0" && this.AutocuidadoEquipo != "-1")
                     $("#idParGestionResidencia_5" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_5" + sufijo).val(2);
+                    $("#idParGestionResidencia_5" + sufijo).val(0);
 
                 if (this.IntervencionCrisis != "0" && this.IntervencionCrisis != "-1")
                     $("#idParGestionResidencia_6" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_6" + sufijo).val(2);
+                    $("#idParGestionResidencia_6" + sufijo).val(0);
 
                 if (this.InformacionNormativa != "0" && this.InformacionNormativa != "-1")
                     $("#idParGestionResidencia_7" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_7" + sufijo).val(2);
+                    $("#idParGestionResidencia_7" + sufijo).val(0);
 
                 if (this.ProtocoloConvivencia != "0" && this.ProtocoloConvivencia != "-1")
                     $("#idParGestionResidencia_8" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_8" + sufijo).val(2);
+                    $("#idParGestionResidencia_8" + sufijo).val(0);
 
                 if (this.ProtocoloReclamos != "0" && this.ProtocoloReclamos != "-1")
                     $("#idParGestionResidencia_9" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_9" + sufijo).val(2);
+                    $("#idParGestionResidencia_9" + sufijo).val(0);
 
                 if (this.ProtocoloEscucha != "0" && this.ProtocoloEscucha != "-1")
                     $("#idParGestionResidencia_10" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_10" + sufijo).val(2);
+                    $("#idParGestionResidencia_10" + sufijo).val(0);
 
                 if (this.VinculacionResidencias != "0" && this.VinculacionResidencias != "-1")
                     $("#idParGestionResidencia_11" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_11" + sufijo).val(2);
+                    $("#idParGestionResidencia_11" + sufijo).val(0);
 
                 if (this.ProcesosFormacion != "0" && this.ProcesosFormacion != "-1")
                     $("#idParGestionResidencia_12" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_12" + sufijo).val(2);
+                    $("#idParGestionResidencia_12" + sufijo).val(0);
 
                 if (this.ProtocoloApadrinamiento != "0" && this.ProtocoloApadrinamiento != "-1")
                     $("#idParGestionResidencia_13" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_13" + sufijo).val(2);
+                    $("#idParGestionResidencia_13" + sufijo).val(0);
 
                 if (this.ProtocoloTraslado != "0" && this.ProtocoloTraslado != "-1")
                     $("#idParGestionResidencia_14" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_14" + sufijo).val(2);
+                    $("#idParGestionResidencia_14" + sufijo).val(0);
 
                 if (this.ProtocoloEgreso != "0" && this.ProtocoloEgreso != "-1")
                     $("#idParGestionResidencia_15" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_15" + sufijo).val(2);
+                    $("#idParGestionResidencia_15" + sufijo).val(0);
 
                 if (this.ProtocoloRedSalud != "0" && this.ProtocoloRedSalud != "-1")
                     $("#idParGestionResidencia_16" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_16" + sufijo).val(2);
+                    $("#idParGestionResidencia_16" + sufijo).val(0);
 
                 if (this.HabilitacionLaboral != "0" && this.HabilitacionLaboral != "-1")
                     $("#gestionResid_016_sel_activi_habilitacionLaboral_existe" + sufijo).val(1);
                 else
-                    $("#gestionResid_016_sel_activi_habilitacionLaboral_existe" + sufijo).val(2);
+                    $("#gestionResid_016_sel_activi_habilitacionLaboral_existe" + sufijo).val(0);
 
                 if (this.RESProtocoloVisitas != "0" && this.RESProtocoloVisitas != "-1")
                     $("#idParGestionResidencia_2" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_2" + sufijo).val(2);
+                    $("#idParGestionResidencia_2" + sufijo).val(0);
 
                 if (this.RESRegistroVisitas != "0" && this.RESRegistroVisitas != "-1")
                     $("#idParGestionResidencia_3" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_3" + sufijo).val(2);
+                    $("#idParGestionResidencia_3" + sufijo).val(0);
 
                 if (this.RESHabilitacionLaboral != "0" && this.RESHabilitacionLaboral != "-1")
                     $("#idParGestionResidencia_17" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_17" + sufijo).val(2);
+                    $("#idParGestionResidencia_17" + sufijo).val(0);
 
                 if (this.RESVidaIndependiente != "0" && this.RESVidaIndependiente != "-1")
                     $("#idParGestionResidencia_18" + sufijo).val(1);
                 else
-                    $("#idParGestionResidencia_18" + sufijo).val(2);
+                    $("#idParGestionResidencia_18" + sufijo).val(0);
 
                 document.getElementById("gestionResid_017_observaciones" + sufijo).value = this.Observaciones;
             }
@@ -588,7 +590,7 @@ function ObtenerAntecedentesGestionResidencia_Compare(codFichaPadre, bloqueDatos
     });
 }
 
-var ParValores = { 1: "SI", 2: "NO" };
+var ParValores = { 0: "NO", 1: "SI" };
 //  1. carga de la tabla ParGestionResidencia
 function CargaParGestionResidencia() {
     $('#gridGestionResidencia').dataTable({
@@ -719,7 +721,7 @@ function EvaluaProtocoloyRegistroVisitas(){
         $("#idParGestionResidencia_3").val() == "1" )
         $("#gestionResid_002_sel_protocoloVisitas_existe").val(1);
     else
-        $("#gestionResid_002_sel_protocoloVisitas_existe").val(2);
+        $("#gestionResid_002_sel_protocoloVisitas_existe").val(0);
 }
 function EvaluaActividadHabilitaLaboralyVidaIndependiente(){
     if(
@@ -727,6 +729,6 @@ function EvaluaActividadHabilitaLaboralyVidaIndependiente(){
         $("#idParGestionResidencia_18").val() == "1")
         $("#gestionResid_016_sel_activi_habilitacionLaboral_existe").val(1);
     else
-        $("#gestionResid_016_sel_activi_habilitacionLaboral_existe").val(2);
+        $("#gestionResid_016_sel_activi_habilitacionLaboral_existe").val(0);
 }
 
