@@ -92,9 +92,12 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                             ObtenerAntecedentesSeguridad(CodFichaAUX);
                             ObtenerAntecedentesSalud(CodFichaAUX);
                             ObtenerAntecedentesEducacion(CodFichaAUX);
-                            ObtenerAntecedentesAlimentacion(CodFichaAUX);
 
-                            /* Sprint 6 - 20191203 - gcastro */
+                            CargaParAlimentacion();
+                            ObtenerAntecedentesAlimentacion(CodFichaAUX);
+                          
+                            ObtenerAntecedentesAlimentacion_ensayo(CodFichaAUX);
+
                             CargaParGestionResidencia(); 
                             ObtenerAntecedentesGestionResidencia(CodFichaAUX);
 

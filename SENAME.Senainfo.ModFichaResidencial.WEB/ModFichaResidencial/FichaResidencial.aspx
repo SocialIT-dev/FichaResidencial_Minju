@@ -5,7 +5,6 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
     
-
     
 <!--
 Autor: Luis Danilo Espinoza, SOCIAL-IT
@@ -23,36 +22,8 @@ Spint 2.1
         <title>FICHA RESIDENCIAL  :: Senainfo :: Servicio Nacional de Menores</title>
 
 
-        <!-- DESARROLLO-->
-  <%--     <script src="../Scripts/jquery-3.2.1.min.js"></script>
-       
-        <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-        <link href="../Content/theme.css" rel="stylesheet" />
-        <link href="../Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
-        <link href="../Content/select2-bootstrap.min.css" rel="stylesheet" />
-        <link href="../Content/ficha_residencia.css" rel="stylesheet" />  
-        <script src="../Scripts/bootstrap.min.js"></script>
-        <script src="../Scripts/select2.min.js"></script>
-        <script src="../Scripts/sweetalert2/sweetalert2.all.min.js"></script>
-        <script src="../Scripts/ficha/progressbar.min.js"></script>
-        <link href="../Content/font-awesome.min.css" rel="stylesheet" />
-        <script src='../Scripts/pdfmake/pdfmake.min.js'></script>
- 	    <script src='../Scripts/pdfmake/vfs_fonts.js'></script>
-        <link href="../Scripts/icheck/skins/all.css" rel="stylesheet" />
-        <script src="../Scripts/icheck/icheck.min.js"></script>
-        
-        <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
-        <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
-
-        <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
-        <script src="../Scripts/datepicker/datepicker.js"></script>
-        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>--%>
-
-
- 
-
       <!-- PRODUCCION -->
- <script src="../js/jquery-3.2.1.min.js"></script>
+        <script src="../js/jquery-3.2.1.min.js"></script>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
@@ -71,11 +42,9 @@ Spint 2.1
 
         <link href="scripts/icheck/skins/all.css" rel="stylesheet" />
         <script src="scripts/icheck/icheck.min.js"></script>
-
     
-        <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
-        <script src="../Scripts/DataTables/jquery.dataTables.min.js"></script>
-  
+        <link href="Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <script src="Scripts/DataTables/jquery.dataTables.min.js"></script>
 
         <link rel="stylesheet" href="scripts/datepicker/datepicker.css" />
         <script src="scripts/datepicker/datepicker.js"></script>
@@ -117,7 +86,6 @@ Spint 2.1
                             <td colspan="2" style="padding: 10px;border-bottom: 1px #B2B2B2 solid;"><span class="titsec2">Antecedentes Generales</span></td>
                         
                         </tr>
-
 
                                                 <!-- Spint 2.1 NEW Start-->
                         <tr>
@@ -460,6 +428,7 @@ Spint 2.1
                         <tr><td colspan="2" style="text-align:center;"><button id="btn_antecedentesPoblacionCapacidad" class="btn btn-primary" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar los antecedentes de Poblacion y Capacidad " onclick="GrabarAntecedentes(2);">Grabar Antecedente de Poblacion y Capacidad</button>&nbsp;<button id="btn_FichaGenera_02" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></td></tr>
                     </table>
             </div>
+
              <div role="tabpanel" class="tab-pane fade in" id="dotacion">
                         <table class="table">
                             <tr>
@@ -1018,331 +987,528 @@ Spint 2.1
                 </table>
             </div>         
 
-             <div role="tabpanel" class="tab-pane fade in" id="seguridad">
-                        <table class="table">
-                            <tr>
-                                <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes Seguridad</span></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3" style="width:100%">Plan de Emergencia</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_001_planEmergencia_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Simulacro Emergencia (Último Cuatrimestre)</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_002_simulacroEmergencia_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Plan de Emergencia ¿Visado por personal calificado?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_003_planEmergenciaVisado_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Extintores</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_004_extintores_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Señalética</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_005_senaletica_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Vías de Evacuación</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_006_viaEvacuacion_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr style="display:none;">
-                                <td class="etiqCampo3">Capacitación Personal en Emergencia y Primeros Auxilios</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_007_capacitacionPersonal_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Capacitación Personal en Emergencia</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_007_capacitacionPersonalemergencia" class="form-control textCampoSel1" onchange="EvaluaCapacitacionPersonalEmergenciaPrimerAux();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Capacitación Personal en Primeros Auxilios</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_007_capacitacionPersonalprimerosAux" class="form-control textCampoSel1" onchange="EvaluaCapacitacionPersonalEmergenciaPrimerAux();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            
-                            <tr style="display:none;">
-                                <td class="etiqCampo3">Sanitización, Desratización y Fumigación</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_008_sanitizacion_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Sanitización</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_008_sanitizacion_" class="form-control textCampoSel1" onchange="EvaluaSanitizacion();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Desratización</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_008_sanitizacion_desratizacion" class="form-control textCampoSel1" onchange="EvaluaSanitizacion();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Fumigación</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_008_sanitizacion_fumigacion" class="form-control textCampoSel1" onchange="EvaluaSanitizacion();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
+            <div role="tabpanel" class="tab-pane fade in" id="seguridad">
+                <table class="table">
+                    <tr>
+                        <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes Seguridad</span></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3" style="width: 100%">Plan de Emergencia</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_001_planEmergencia_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Simulacro Emergencia (Último Cuatrimestre)</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_002_simulacroEmergencia_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Plan de Emergencia ¿Visado por personal calificado?</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_003_planEmergenciaVisado_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Extintores</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_004_extintores_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Señalética</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_005_senaletica_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Vías de Evacuación</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_006_viaEvacuacion_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td class="etiqCampo3">Capacitación Personal en Emergencia y Primeros Auxilios</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_007_capacitacionPersonal_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Capacitación Personal en Emergencia</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_007_capacitacionPersonalemergencia" class="form-control textCampoSel1" onchange="EvaluaCapacitacionPersonalEmergenciaPrimerAux();">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Capacitación Personal en Primeros Auxilios</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_007_capacitacionPersonalprimerosAux" class="form-control textCampoSel1" onchange="EvaluaCapacitacionPersonalEmergenciaPrimerAux();">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
 
-                            <tr>
-                                <td class="etiqCampo3">Sistema Eléctrico</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_009_sistemaElectrico_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Zona de Seguridad Demarcada</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="seguridad_010_zonaSeguridad_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="etiqCampo3">Observaciones</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="border-bottom: 1px #B2B2B2 solid;"><textarea id="seguridad_011_observaciones" class="form-control textCampo3" placeholder="Sin observaciones." style="width:99%;height:150px;text-align:left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsSeguridad');" maxlength="4000"></textarea>
-                                    <span id="labelCaracteres_ObsSeguridad" class="lblrestoIngreso"></span>
-                                </td>
-                            </tr>
-                            <tr><td colspan="2" style="text-align:center;"><button id="btn_antecedentesSeguridad" class="btn btn-primary" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar los antecedentes de Seguridad" onclick="GrabarAntecedentes(5);">Grabar Antecedente de Seguridad</button>&nbsp;<button id="btn_FichaGenera_05" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></td></tr>
-                        </table>
+                    <tr style="display: none;">
+                        <td class="etiqCampo3">Sanitización, Desratización y Fumigación</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_008_sanitizacion_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Sanitización</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_008_sanitizacion_" class="form-control textCampoSel1" onchange="EvaluaSanitizacion();">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Desratización</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_008_sanitizacion_desratizacion" class="form-control textCampoSel1" onchange="EvaluaSanitizacion();">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Fumigación</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_008_sanitizacion_fumigacion" class="form-control textCampoSel1" onchange="EvaluaSanitizacion();">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+
+                    <tr>
+                        <td class="etiqCampo3">Sistema Eléctrico</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_009_sistemaElectrico_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Zona de Seguridad Demarcada</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="seguridad_010_zonaSeguridad_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="etiqCampo3">Observaciones</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="border-bottom: 1px #B2B2B2 solid;">
+                            <textarea id="seguridad_011_observaciones" class="form-control textCampo3" placeholder="Sin observaciones." style="width: 99%; height: 150px; text-align: left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsSeguridad');" maxlength="4000"></textarea>
+                            <span id="labelCaracteres_ObsSeguridad" class="lblrestoIngreso"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button id="btn_antecedentesSeguridad" class="btn btn-primary" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar los antecedentes de Seguridad" onclick="GrabarAntecedentes(5);">Grabar Antecedente de Seguridad</button>&nbsp;
+                            <button id="btn_FichaGenera_05" class="btn btn-warning" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></td>
+                    </tr>
+                </table>
             </div>   
 
-             <div role="tabpanel" class="tab-pane fade in" id="salud">
-                        <table class="table">
-                            <tr>
-                                <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes Salud</span></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td class="etiqCampo2">ESPECIFICAR</td>
-                            </tr>                        
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA Inscritos en CESFAM</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_001_NNA_inscritosCESFAM" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA con Problemática de Salud Mental con Diagnóstico</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_002_NNA_problematicaSaludMental" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA con Problemática de Salud Mental sin Diagnóstico</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_003_NNA_problematicaSaludMentalsinDiag" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA Inscritos con Enfermedad Crónica</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_004_NNA_inscritosEnferCronica" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA a la espera de Trasplante</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_015_NNA_EsperaTransplantes" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA Trasplantados</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_016_NNA_Transplantados" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
+            <div role="tabpanel" class="tab-pane fade in" id="salud">
+                <table class="table">
+                    <tr>
+                        <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes Salud</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="etiqCampo2">ESPECIFICAR</td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA Inscritos en CESFAM</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_001_NNA_inscritosCESFAM" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA con Problemática de Salud Mental con Diagnóstico</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_002_NNA_problematicaSaludMental" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA con Problemática de Salud Mental sin Diagnóstico</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_003_NNA_problematicaSaludMentalsinDiag" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA Inscritos con Enfermedad Crónica</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_004_NNA_inscritosEnferCronica" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA a la espera de Trasplante</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_015_NNA_EsperaTransplantes" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA Trasplantados</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_016_NNA_Transplantados" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
 
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA Inscritos con Situación de Discapacidad</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_005_NNA_Discapacidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA recibiendo tratamiento farmacológico</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_006_NNA_inscritosProblemSaludRecibeMedica" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA con Problemática de Salud en Tratamiento</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_007_NNA_problematicaSaludenTratamiento" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA con Consumo sólo de Drogas</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_008_NNA_consumoDrogas" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA con consumo sólo de Alcohol</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_008_NNA_consumoAlcohol" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA con consumo de Alcohol y Drogas</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="salud_017_consumoDrogasyAlcohol" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                                                        
-                            <tr>
-                                <td class="etiqCampo3">¿Cuenta con espacio adecuado para el resguardo de medicamentos?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="salud_009_sel_resguardoMedicamentos" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>                    
-                            <tr>
-                                <td class="etiqCampo3">¿Cuenta con inventario de medicamentos?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="salud_009_sel_inventarioMedicamentos" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">¿Cuenta con Registro de Medicamentos Administrados a los NNA?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="salud_009_sel_registroMedicamentoAdmin_a_NNA" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">¿Cuenta con Protocolo para la Administración de Medicamentos a los NNA?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="salud_010_sel_protocoloAdmin_Medica_a_NNA"class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">¿Cuenta con control al día de Niño Sano?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="salud_011_sel_control_nino_sano"class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">¿Cuenta con control al día de Adolescente Sano?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="salud_011_sel_control_adolescente_sano"class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA Inscritos con Situación de Discapacidad</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_005_NNA_Discapacidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA recibiendo tratamiento farmacológico</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_006_NNA_inscritosProblemSaludRecibeMedica" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA con Problemática de Salud en Tratamiento</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_007_NNA_problematicaSaludenTratamiento" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA con Consumo sólo de Drogas</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_008_NNA_consumoDrogas" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA con consumo sólo de Alcohol</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_008_NNA_consumoAlcohol" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA con consumo de Alcohol y Drogas</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="salud_017_consumoDrogasyAlcohol" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
 
-                            <tr>
-                                <td class="etiqCampo3">¿Existe Control Anual Ginecológico en los Adolescentes?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="salud_011_sel_control_ginecologicoAdolescente" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">¿Existen adolescentes que se hayan negado a Control Ginecológico?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="salud_012_sel_adolescenteNiegaControlGineco" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Adolescentes Embarazadas</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="salud_013_sel_adolescenteEmbarazada" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">En caso de Pertenecer a Residencia Adolescentes Embarazadas, ¿Tienen controles médicos al día?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid; white-space: nowrap;"><select id="salud_014_sel_adolescenteEmbarazadaControlalDia" disabled="disabled" class="textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0" selected="selected">NO</option></select> - CU&Aacute;NTAS:&nbsp;<input id="salud_015_adolescenteEmbarazadaControlalDia_cantidad" type="text" class="textCampo3" maxlength="3" placeholder="" onkeyup="EvaluaCuantasAdolescentesControlAldia(this);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="etiqCampo3">Observaciones</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="border-bottom: 1px #B2B2B2 solid;"><textarea id="salud_016_observaciones" class="form-control textCampo3" placeholder="Sin observaciones." style="width:99%;height:150px;text-align:left;" maxlength="4000" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsSalud');"></textarea>
-                                    <span id="labelCaracteres_ObsSalud" class="lblrestoIngreso"></span>
-                                </td>
-                            </tr>
-                            <tr><td colspan="2" style="text-align:center;"><button id="btn_antecedentesSalud" class="btn btn-primary" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar los antecedentes de Salud" onclick="GrabarAntecedentes(6);">Grabar Antecedente de Salud</button>&nbsp;<button id="btn_FichaGenera_06" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></td></tr>
-                        </table>
+                    <tr>
+                        <td class="etiqCampo3">¿Cuenta con espacio adecuado para el resguardo de medicamentos?</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="salud_009_sel_resguardoMedicamentos" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">¿Cuenta con inventario de medicamentos?</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="salud_009_sel_inventarioMedicamentos" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">¿Cuenta con Registro de Medicamentos Administrados a los NNA?</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="salud_009_sel_registroMedicamentoAdmin_a_NNA" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">¿Cuenta con Protocolo para la Administración de Medicamentos a los NNA?</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="salud_010_sel_protocoloAdmin_Medica_a_NNA" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">¿Cuenta con control al día de Niño Sano?</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="salud_011_sel_control_nino_sano" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">¿Cuenta con control al día de Adolescente Sano?</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="salud_011_sel_control_adolescente_sano" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+
+                    <tr>
+                        <td class="etiqCampo3">¿Existe Control Anual Ginecológico en los Adolescentes?</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="salud_011_sel_control_ginecologicoAdolescente" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">¿Existen adolescentes que se hayan negado a Control Ginecológico?</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="salud_012_sel_adolescenteNiegaControlGineco" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Adolescentes Embarazadas</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="salud_013_sel_adolescenteEmbarazada" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">En caso de Pertenecer a Residencia Adolescentes Embarazadas, ¿Tienen controles médicos al día?</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid; white-space: nowrap;">
+                            <select id="salud_014_sel_adolescenteEmbarazadaControlalDia" disabled="disabled" class="textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0" selected="selected">NO</option>
+                            </select>
+                            - CU&Aacute;NTAS:&nbsp;<input id="salud_015_adolescenteEmbarazadaControlalDia_cantidad" type="text" class="textCampo3" maxlength="3" placeholder="" onkeyup="EvaluaCuantasAdolescentesControlAldia(this);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="etiqCampo3">Observaciones</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="border-bottom: 1px #B2B2B2 solid;">
+                            <textarea id="salud_016_observaciones" class="form-control textCampo3" placeholder="Sin observaciones." style="width: 99%; height: 150px; text-align: left;" maxlength="4000" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsSalud');"></textarea>
+                            <span id="labelCaracteres_ObsSalud" class="lblrestoIngreso"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button id="btn_antecedentesSalud" class="btn btn-primary" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar los antecedentes de Salud" onclick="GrabarAntecedentes(6);">Grabar Antecedente de Salud</button>&nbsp;
+                            <button id="btn_FichaGenera_06" class="btn btn-warning" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></td>
+                    </tr>
+                </table>
             </div>           
 
-             <div role="tabpanel" class="tab-pane fade in" id="educacion">
-                        <table class="table">
-                            <tr>
-                                <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes Educación</span></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td class="etiqCampo2">CANTIDAD</td>
-                            </tr>      
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA matriculados</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="educacion_001_NNA_matriculados" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>                                              
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA que si asisten a Establecimiento Educacional</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="educacion_001_NNA_asisten_colegio_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA que no asisten a Establecimiento Educacional</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="educacion_002_NNA_NO_asisten_colegio_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="RevisaValorInasistenciaaClases(this);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Motivo de inasistencia de NNA a Establecimiento Educacional</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="educacion_002_NNA_NO_asisten_colegio_cantidad_motivo" class="form-control textCampoSel1" onchange="MotivoInasistencia(this);" disabled="disabled"><option value="-1"></option><option value="1">Salud</option><option value="2">Rechazo</option><option value="3">Suspensión</option><option value="4">Otro</option></select></td>
-                            </tr>
+            <div role="tabpanel" class="tab-pane fade in" id="educacion">
+                <table class="table">
+                    <tr>
+                        <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes Educación</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="etiqCampo2">CANTIDAD</td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA matriculados</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="educacion_001_NNA_matriculados" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA que si asisten a Establecimiento Educacional</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="educacion_001_NNA_asisten_colegio_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA que no asisten a Establecimiento Educacional</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="educacion_002_NNA_NO_asisten_colegio_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="RevisaValorInasistenciaaClases(this);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Motivo de inasistencia de NNA a Establecimiento Educacional</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="educacion_002_NNA_NO_asisten_colegio_cantidad_motivo" class="form-control textCampoSel1" onchange="MotivoInasistencia(this);" disabled="disabled">
+                                <option value="-1"></option>
+                                <option value="1">Salud</option>
+                                <option value="2">Rechazo</option>
+                                <option value="3">Suspensión</option>
+                                <option value="4">Otro</option>
+                            </select></td>
+                    </tr>
 
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA con Retraso o Rezago Escolar</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="educacion_003_NNA_retrasoEscolar_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA con Matrícula Cancelada</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="educacion_004_NNA_matriculaCancelada_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA que Asiste a Educación Diferencial</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="educacion_005_NNA_asisten_colegioDiferencial_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA que Asiste a Educación de Nivelación de Estudios</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="educacion_006_NNA_asisten_colegioNivelacion_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de NNA inscritos para exámenes libres</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="educacion_006_NNA_examenesLibres_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Espacios Destinados a Estudios y Desarrolo de Tareas</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="educacion_007_sel_EspacioEstudio_y_Tareas_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Material Bibliográfico</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="educacion_008_sel_materialBibliiografico_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Computadores</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="educacion_009_sel_computadores_existe"class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Acceso Controlado a Internet</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="educacion_010_sel_AccesoControladoInternet_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>                                                                                              
-                            <tr>
-                                <td colspan="2" class="etiqCampo3">Observaciones</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="border-bottom: 1px #B2B2B2 solid;"><textarea id="educacion_011_observaciones" class="form-control textCampo3" placeholder="Sin observaciones." style="width:99%;height:150px;text-align:left;" onkeyup ="return ContadorCaracter(this,'labelCaracteres_ObsEducacion');" maxlength="4000"></textarea>
-                                    <span id="labelCaracteres_ObsEducacion" class="lblrestoIngreso"></span>
-                                </td>
-                            </tr>
-                            <tr><td colspan="2" style="text-align:center;"><button id="btn_antecedentesEducacion" class="btn btn-primary" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar los antecedentes de Educación" onclick="GrabarAntecedentes(7);">Grabar Antecedente de Educación</button>&nbsp;<button id="btn_FichaGenera_07" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></td></tr>
-                        </table>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA con Retraso o Rezago Escolar</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="educacion_003_NNA_retrasoEscolar_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA con Matrícula Cancelada</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="educacion_004_NNA_matriculaCancelada_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA que Asiste a Educación Diferencial</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="educacion_005_NNA_asisten_colegioDiferencial_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA que Asiste a Educación de Nivelación de Estudios</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="educacion_006_NNA_asisten_colegioNivelacion_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">N° de NNA inscritos para exámenes libres</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <input id="educacion_006_NNA_examenesLibres_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Espacios Destinados a Estudios y Desarrolo de Tareas</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="educacion_007_sel_EspacioEstudio_y_Tareas_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Material Bibliográfico</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="educacion_008_sel_materialBibliiografico_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Computadores</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="educacion_009_sel_computadores_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td class="etiqCampo3">Acceso Controlado a Internet</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="educacion_010_sel_AccesoControladoInternet_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="etiqCampo3">Observaciones</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="border-bottom: 1px #B2B2B2 solid;">
+                            <textarea id="educacion_011_observaciones" class="form-control textCampo3" placeholder="Sin observaciones." style="width: 99%; height: 150px; text-align: left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsEducacion');" maxlength="4000"></textarea>
+                            <span id="labelCaracteres_ObsEducacion" class="lblrestoIngreso"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button id="btn_antecedentesEducacion" class="btn btn-primary" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar los antecedentes de Educación" onclick="GrabarAntecedentes(7);">Grabar Antecedente de Educación</button>&nbsp;
+                            <button id="btn_FichaGenera_07" class="btn btn-warning" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></td>
+                    </tr>
+                </table>
             </div>   
 
-             <div role="tabpanel" class="tab-pane fade in" id="alimentacion">
-                        <table class="table">
-                            <tr>
-                                <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes Alimentación</span></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Cuenta con Registro de Horarios de Entrega de Alimentos</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="alimentacion_001_sel_registroHonorarioEntregaAlimento_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr>
-                                <td class="etiqCampo3">¿Cuenta con minuta alimentaria?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr>
-                                <td class="etiqCampo3">Existencia de Menús Especiales</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="alimentacion_003_sel_menuEspeciales_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr>
-                                <td class="etiqCampo3">¿Cuenta con minuta alimentaria aprobada?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr>
-                                <td class="etiqCampo3">Existen Certificados Sanitarios de las Manipuladoras</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="alimentacion_005_sel_certifSanitarioManipuladores_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr style="display:none;">
-                                <td class="etiqCampo3">Almacenamiento de Alimentos y Estado de Conservación</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr>  
-                            <tr>
-                                <td class="etiqCampo3">Almacenamiento de Alimentos</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="alimentacion_006_sel_AlmacenaAlimento_existe" class="form-control textCampoSel1" onchange="EvaluaAlmacenaAlimentoEstadoConserva();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">Estado de Conservación</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="alimentacion_006_sel_EstadoConserva_existe" class="form-control textCampoSel1" onchange="EvaluaAlmacenaAlimentoEstadoConserva();"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                            </tr> 
+            <div role="tabpanel" class="tab-pane fade in" id="alimentacion">
+                <table class="table">
+                    <tr>
+                        <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes Alimentación</span></td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td class="etiqCampo3">Almacenamiento de Alimentos y Estado de Conservación</td>
+                        <td style="border-bottom: 1px #B2B2B2 solid;">
+                            <select id="alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe" class="form-control textCampoSel1">
+                                <option value="-1"></option>
+                                <option value="1">SI</option>
+                                <option value="0">NO</option>
+                            </select></td>
+                    </tr>
+                </table>
+                <style>
+                    .dataTables_filter, .dataTables_info {
+                        display: none;
+                    }
 
-                            <tr>
-                                <td></td>
-                                <td class="etiqCampo2">ESPECIFIQUE</td>
-                            </tr> 
-                            <tr>
-                                <td class="etiqCampo3">N° de Comidas Entregadas de Lunes a Viernes</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="alimentacion_007_comidas_lunes_a_viernes_cantidad" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">N° de Comidas Entregadas Sábado, Domingo y Festivos</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="alimentacion_008_comidas_sabado_domingo_fest_cantidad" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="etiqCampo3">Observaciones</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="border-bottom: 1px #B2B2B2 solid;"><textarea id="alimentacion_009_observacion" class="form-control textCampo3" placeholder="Sin observaciones." style="width:99%;height:150px;text-align:left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsAlimentacion');" maxlength="4000"></textarea>
-                                    <span id="labelCaracteres_ObsAlimentacion" class="lblrestoIngreso"></span>
-                                </td>
-                            </tr>
-                            <tr><td colspan="2" style="text-align:center;"><button id="btn_antecedentesAlimentacion" class="btn btn-primary" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar los antecedentes de Alimentación" onclick="GrabarAntecedentes(8);">Grabar Antecedente de Alimentación</button>&nbsp;<button id="btn_FichaGenera_08" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></td></tr>
-                        </table>
+                    .dataTables_wrapper table thead {
+                        display: none;
+                    }
+
+                    #gridAlimentacion > table {
+                        table-layout: fixed;
+                    }
+
+                    #gridAlimentacion, table.dataTable tbody th, table.dataTable tbody td {
+                        padding: 8px 10px;
+                        width: 100%;
+                    }
+
+                    table.dataTable.no-footer {
+                        border-bottom: 1px solid rgba(255,255,255,0.9) !important;
+                        background-color: rgba(255,255,255,0.9);
+                    }
+                </style>
+                <table id="gridAlimentacion" class="table table-bordered table-condensed" cellspacing="0" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th class="titulo-tabla invisible">Id</th>
+                            <th class="titulo-tabla">Nombre</th>
+                            <th class="titulo-tabla"></th>
+                            <th class="titulo-tabla"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <table class="table table-bordered table-condensed" cellspacing="0" style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type='text' value="Observaciones" class='form-control etiqCampo3' />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <textarea id="alimentacion_009_observacion" class="form-control textCampo3" placeholder="Sin observaciones." style="width: 99%; height: 150px; text-align: left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsAlimentacion');" maxlength="4000"></textarea>
+                                <span id="labelCaracteres_ObsAlimentacion" class="lblrestoIngreso"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="text-align: center;">
+                    <button id="btn_antecedentesAlimentacion" class="btn btn-primary" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar los antecedentes de Alimentación" onclick="GrabarAntecedentes(8);">Grabar Antecedente de Alimentación</button>&nbsp;
+                             <button id="btn_FichaGenera_08" class="btn btn-warning" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button>
+                </div>
+                <br />
             </div>   
 
              <div role="tabpanel" class="tab-pane fade in" id="gestion_residencia">
@@ -1406,15 +1572,14 @@ Spint 2.1
                                 </td>
                               </tr>
                             </tbody>
-                          </table>
-            </div>
+                  </table>
+                 <div style="text-align: center;">
+                     <button id="btn_antecedentesGestionResidencia" class="btn btn-primary" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar los antecedentes de Gestión de Residencia" onclick="GrabarAntecedentes(9);">Grabar Antecedente de Gestión de Residencia</button>&nbsp;
+                     <button id="btn_FichaGenera_09" class="btn btn-warning" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button>
 
-        <div style="text-align:center;">
-            <button id="btn_antecedentesGestionResidencia" class="btn btn-primary" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar los antecedentes de Gestión de Residencia" onclick="GrabarAntecedentes(9);">Grabar Antecedente de Gestión de Residencia</button>&nbsp;<button id="btn_FichaGenera_09" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button>
-
-        </div><br />
+                 </div><br />
+            </div>    
      </div>   
-       
 
         </div>
         <div id="frmMsg" style="display:none;">
@@ -1435,19 +1600,6 @@ Spint 2.1
             var d = new Date();
 
 
-            // DESARROLLO
-            //importarScript("../Scripts/ficha/antecedentes_generales.js?" + d.getTime());
-            //importarScript("../Scripts/ficha/antecedentes_poblacion_capacidad.js?" + d.getTime());
-            //importarScript("../Scripts/ficha/antecedentes_dotacion_personal.js?" + d.getTime());
-            //importarScript("../Scripts/ficha/antecedentes_infraestructura.js?" + d.getTime());
-            //importarScript("../Scripts/ficha/antecedentes_seguridad.js?" + d.getTime());
-            //importarScript("../Scripts/ficha/antecedentes_salud.js?" + d.getTime());
-            //importarScript("../Scripts/ficha/antecedentes_educacion.js?" + d.getTime());
-            //importarScript("../Scripts/ficha/antecedentes_alimentacion.js?" + d.getTime());
-            //importarScript("../Scripts/ficha/antecedentes_alimentacion.js?" + d.getTime());
-            //importarScript("../Scripts/ficha/antecedentes_gestion_residencia.js?" + d.getTime());
-            //importarScript("../Scripts/ficha/residencia1.js?" + d.getTime());
-
             //PRODUCCION
             importarScript("scripts/ficha/antecedentes_generales.js?" + d.getTime());
             importarScript("scripts/ficha/antecedentes_poblacion_capacidad.js?" + d.getTime());
@@ -1463,37 +1615,6 @@ Spint 2.1
 
         });
 
-        /*
-        NOTA: cuando se integra en SENAINFO la ruta de las librería javascript deben comenzar con:
-        
-        scripts/ficha/
-        
-        Y no como se utilizan en el ambiente de desarrolo local => ../Scripts/ficha/:
-        
-        //DESARROLLO
-            importarScript("../Scripts/ficha/antecedentes_generales.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_poblacion_capacidad.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_dotacion_personal.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_infraestructura.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_seguridad.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_salud.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_educacion.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_alimentacion.js?" + d.getTime());
-            importarScript("../Scripts/ficha/antecedentes_gestion_residencia.js?" + d.getTime());
-            importarScript("../Scripts/ficha/residencia1.js?" + d.getTime());
-        
-        //PRODUCCION
-            importarScript("scripts/ficha/antecedentes_generales.js?" + d.getTime());
-            importarScript("scripts/ficha/antecedentes_poblacion_capacidad.js?" + d.getTime());
-            importarScript("scripts/ficha/antecedentes_dotacion_personal.js?" + d.getTime());
-            importarScript("scripts/ficha/antecedentes_infraestructura.js?" + d.getTime());
-            importarScript("scripts/ficha/antecedentes_seguridad.js?" + d.getTime());
-            importarScript("scripts/ficha/antecedentes_salud.js?" + d.getTime());
-            importarScript("scripts/ficha/antecedentes_educacion.js?" + d.getTime());
-            importarScript("scripts/ficha/antecedentes_alimentacion.js?" + d.getTime());
-            importarScript("scripts/ficha/antecedentes_gestion_residencia.js?" + d.getTime());
-            importarScript("scripts/ficha/residencia1.js?" + d.getTime());
-        */
 
     </script>
 </body>

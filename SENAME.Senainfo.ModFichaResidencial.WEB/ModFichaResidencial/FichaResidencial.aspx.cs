@@ -823,7 +823,15 @@ namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial
         }
         #endregion
 
-        #region Antecedentes Alimentación      
+        #region Antecedentes Alimentación  
+        [WebMethod]
+        public static List<GetParAlimentacionDto> ObtenerParAlimentacion()
+        {
+            GetParAlimentacionImpl _GestionResidenciaImpl = new GetParAlimentacionImpl();
+            var result = _GestionResidenciaImpl.ObtenerParAlimentacion();
+            return result;
+        }
+
         [WebMethod]
         public static List<ResultadoOperacionAlimentacionDto> GrabarAntecedentesAlimentacion(
                                                             int CodProyecto, 

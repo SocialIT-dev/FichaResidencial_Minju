@@ -1274,15 +1274,15 @@ function ResetearFormulario() {
 
     //Reseteamos TAB Alimentacion
     var arrVariablesAlimentacion_1 = [
-        "alimentacion_001_sel_registroHonorarioEntregaAlimento_existe",
-        "alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe",
-        "alimentacion_003_sel_menuEspeciales_existe",
-        "alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe",
-        "alimentacion_005_sel_certifSanitarioManipuladores_existe",
+       // "alimentacion_001_sel_registroHonorarioEntregaAlimento_existe",
+       // "alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe",
+        //"alimentacion_003_sel_menuEspeciales_existe",
+        //"alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe",
+        //"alimentacion_005_sel_certifSanitarioManipuladores_existe",
         "alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe",
 
-        "alimentacion_006_sel_AlmacenaAlimento_existe", 
-        "alimentacion_006_sel_EstadoConserva_existe"
+        //"alimentacion_006_sel_AlmacenaAlimento_existe", 
+       // "alimentacion_006_sel_EstadoConserva_existe"
     ];
     arrVariablesAlimentacion_1.forEach(
         function (currentValue, index) {
@@ -1291,8 +1291,8 @@ function ResetearFormulario() {
         }
     );
     var arrVariablesAlimentacion_2 = [
-        "alimentacion_007_comidas_lunes_a_viernes_cantidad",
-        "alimentacion_008_comidas_sabado_domingo_fest_cantidad"
+      //  "alimentacion_007_comidas_lunes_a_viernes_cantidad",
+       // "alimentacion_008_comidas_sabado_domingo_fest_cantidad"
     ];
     arrVariablesAlimentacion_2.forEach(
         function (currentValue, index) {
@@ -1563,14 +1563,14 @@ function ActivaCamposFichaResidenciaXProyecto(valueCbmProyecto) {
     "educacion_010_sel_AccesoControladoInternet_existe",
     "educacion_011_observaciones",
 
-    "alimentacion_001_sel_registroHonorarioEntregaAlimento_existe",
-    "alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe",
-    "alimentacion_003_sel_menuEspeciales_existe",
-    "alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe",
-    "alimentacion_005_sel_certifSanitarioManipuladores_existe",
+    "IdParAlimentacion_1",
+    "IdParAlimentacion_2",
+    "IdParAlimentacion_3",
+    "IdParAlimentacion_4",
+    "IdParAlimentacion_5",
     "alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe",
-    "alimentacion_007_comidas_lunes_a_viernes_cantidad",
-    "alimentacion_008_comidas_sabado_domingo_fest_cantidad",
+    "IdParAlimentacion_8",
+    "IdParAlimentacion_9",
     "alimentacion_009_observacion",
 
     "idParGestionResidencia_1",
@@ -1629,8 +1629,8 @@ function ActivaCamposFichaResidenciaXProyecto(valueCbmProyecto) {
     "educacion_001_NNA_matriculados",
     "educacion_006_NNA_examenesLibres_cantidad",
 
-    "alimentacion_006_sel_AlmacenaAlimento_existe",
-    "alimentacion_006_sel_EstadoConserva_existe",
+    "IdParAlimentacion_6",
+    "IdParAlimentacion_7",
 
     "idParGestionResidencia_2",
     "idParGestionResidencia_3",
@@ -2294,18 +2294,18 @@ function GrabarFichaCompleta() {
     ////----------------------------------------------------------------
     //PASO 1.8 RESCATO DATOS ANTECDENTES ALIMENTACION Y VALIDO
     bValidar = false;
-    var registroHonorario = $("#alimentacion_001_sel_registroHonorarioEntregaAlimento_existe").val();
-    var registroPlanificacion = $("#alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe").val();
-    var menusEspeciales = $("#alimentacion_003_sel_menuEspeciales_existe").val();
-    var asesoriaNutricionista = $("#alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe").val();
-    var certificadosSanitarios = $("#alimentacion_005_sel_certifSanitarioManipuladores_existe").val();
+    var registroHonorario = $("#IdParAlimentacion_1").val();
+    var registroPlanificacion = $("#IdParAlimentacion_2").val();
+    var menusEspeciales = $("#IdParAlimentacion_3").val();
+    var asesoriaNutricionista = $("#IdParAlimentacion_4").val();
+    var certificadosSanitarios = $("#IdParAlimentacion_5").val();
 
     var conservacionAlimentos = $("#alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe").val();
-    var almacenamientoAlimentos_ = $("#alimentacion_006_sel_AlmacenaAlimento_existe").val();
-    var estadoConservaAlimentos_ = $("#alimentacion_006_sel_EstadoConserva_existe").val();
+    var almacenamientoAlimentos_ = $("#IdParAlimentacion_6").val();
+    var estadoConservaAlimentos_ = $("#IdParAlimentacion_7").val();
     
-    var cantidadComidas = $("#alimentacion_007_comidas_lunes_a_viernes_cantidad").val();
-    var cantidadComidasFeriados = $("#alimentacion_008_comidas_sabado_domingo_fest_cantidad").val();
+    var cantidadComidas = $("#IdParAlimentacion_8").val();
+    var cantidadComidasFeriados = $("#IdParAlimentacion_9").val();
     var observacionesAlimentacion = replaceAll(EliminaEspacios(document.getElementById("alimentacion_009_observacion").value), "'", "");
 
     //VALIDACION DE CAMPOS ANTECEDENTES ALIMENTACION
@@ -4097,15 +4097,15 @@ function GenerarFormularioPDF_FR(opc) {
     var educacion_011_observaciones = "";
 
     //variables antecedentes alimentacion-------------
-    var alimentacion_001_sel_registroHonorarioEntregaAlimento_existe = "";
-    var alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe = "";
-    var alimentacion_003_sel_menuEspeciales_existe = "";
-    var alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe = "";
-    var alimentacion_005_sel_certifSanitarioManipuladores_existe = "";
-    var alimentacion_006_sel_AlmacenaAlimento_existe = "";
-    var alimentacion_006_sel_EstadoConserva_existe = "";
-    var alimentacion_007_comidas_lunes_a_viernes_cantidad = "";
-    var alimentacion_008_comidas_sabado_domingo_fest_cantidad = "";
+    var IdParAlimentacion_1 = "";
+    var IdParAlimentacion_2 = "";
+    var IdParAlimentacion_3 = "";
+    var IdParAlimentacion_4 = "";
+    var IdParAlimentacion_5 = "";
+    var IdParAlimentacion_6 = "";
+    var IdParAlimentacion_7 = "";
+    var IdParAlimentacion_8 = "";
+    var IdParAlimentacion_9 = "";
     var alimentacion_009_observacion = "";
 
     //variables antecedentes residencia-------------
@@ -4412,15 +4412,15 @@ function GenerarFormularioPDF_FR(opc) {
         educacion_011_observaciones = $("#educacion_011_observaciones").val();
 
         //variables antecedentes alimentacion-------------
-        alimentacion_001_sel_registroHonorarioEntregaAlimento_existe = $("#alimentacion_001_sel_registroHonorarioEntregaAlimento_existe option:selected").text();
-        alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe = $("#alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe option:selected").text();
-        alimentacion_003_sel_menuEspeciales_existe = $("#alimentacion_003_sel_menuEspeciales_existe option:selected").text();
-        alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe = $("#alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe option:selected").text();
-        alimentacion_005_sel_certifSanitarioManipuladores_existe = $("#alimentacion_005_sel_certifSanitarioManipuladores_existe option:selected").text();
-        alimentacion_006_sel_AlmacenaAlimento_existe = $("#alimentacion_006_sel_AlmacenaAlimento_existe option:selected").text();
-        alimentacion_006_sel_EstadoConserva_existe = $("#alimentacion_006_sel_EstadoConserva_existe option:selected").text();
-        alimentacion_007_comidas_lunes_a_viernes_cantidad = $("#alimentacion_007_comidas_lunes_a_viernes_cantidad").val();
-        alimentacion_008_comidas_sabado_domingo_fest_cantidad = $("#alimentacion_008_comidas_sabado_domingo_fest_cantidad").val();
+        IdParAlimentacion_1 = $("#IdParAlimentacion_1 option:selected").text();
+        IdParAlimentacion_2 = $("#IdParAlimentacion_2 option:selected").text();
+        IdParAlimentacion_3 = $("#IdParAlimentacion_3 option:selected").text();
+        IdParAlimentacion_4 = $("#IdParAlimentacion_4 option:selected").text();
+        IdParAlimentacion_5 = $("#IdParAlimentacion_5 option:selected").text();
+        IdParAlimentacion_6 = $("#IdParAlimentacion_6 option:selected").text();
+        IdParAlimentacion_7 = $("#IdParAlimentacion_7 optionselected").text();
+        IdParAlimentacion_8 = $("#IdParAlimentacion_8").val();
+        IdParAlimentacion_9 = $("#IdParAlimentacion_9").val();
         alimentacion_009_observacion = $("#alimentacion_009_observacion").val();
 
         //variables antecedentes residencia-------------
@@ -4770,16 +4770,16 @@ function GenerarFormularioPDF_FR(opc) {
                     body: [
                             [{ text: 'ANTECEDENTES ALIMENTACIÓN', style: 'header2', colSpan: 2 }, {}],
                             [{}, { text: 'EXISTE', style: 'text2' }],
-                            [{ text: 'Cuenta con Registro de Horarios de Entrega de Alimentos', style: 'text2' },{ text: alimentacion_001_sel_registroHonorarioEntregaAlimento_existe, style: 'text2' }],
-                            [{ text: '¿Cuenta con minuta alimentaria? ', style: 'text2' },{ text: alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe, style: 'text2' }],
-                            [{ text: 'Existencia de Menús Especiales ', style: 'text2' },{ text: alimentacion_003_sel_menuEspeciales_existe, style: 'text2' }],
-                            [{ text: '¿Cuenta con minuta alimentaria aprobada?', style: 'text2' },{ text: alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe, style: 'text2' }],
-                            [{ text: 'Existen Certificados Sanitarios de las Manipuladoras', style: 'text2' },{ text: alimentacion_005_sel_certifSanitarioManipuladores_existe, style: 'text2' }],
-                            [{ text: 'Almacenamiento de Alimentos', style: 'text2' },{ text: alimentacion_006_sel_AlmacenaAlimento_existe, style: 'text2' }],
-                            [{ text: 'Estado de Conservación', style: 'text2' },{ text: alimentacion_006_sel_EstadoConserva_existe, style: 'text2' }],
+                        [{ text: 'Cuenta con Registro de Horarios de Entrega de Alimentos', style: 'text2' }, { text: IdParAlimentacion_1, style: 'text2' }],
+                        [{ text: '¿Cuenta con minuta alimentaria? ', style: 'text2' }, { text: IdParAlimentacion_2, style: 'text2' }],
+                        [{ text: 'Existencia de Menús Especiales ', style: 'text2' }, { text: IdParAlimentacion_3, style: 'text2' }],
+                        [{ text: '¿Cuenta con minuta alimentaria aprobada?', style: 'text2' }, { text: IdParAlimentacion_4, style: 'text2' }],
+                        [{ text: 'Existen Certificados Sanitarios de las Manipuladoras', style: 'text2' }, { text: IdParAlimentacion_5, style: 'text2' }],
+                        [{ text: 'Almacenamiento de Alimentos', style: 'text2' }, { text: IdParAlimentacion_6, style: 'text2' }],
+                        [{ text: 'Estado de Conservación', style: 'text2' }, { text: IdParAlimentacion_7, style: 'text2' }],
                             [{}, { text: 'ESPECIFIQUE', style: 'text2' }],
-                            [{ text: 'N° de Comidas Entregadas de Lunes a Viernes', style: 'text2' },{text: alimentacion_007_comidas_lunes_a_viernes_cantidad, style: 'text2' }],
-                            [{ text: 'N° de Comidas Entregadas Sábado, Domingo y Festivos', style: 'text2' },{ text: alimentacion_008_comidas_sabado_domingo_fest_cantidad, style: 'text2'}],
+                        [{ text: 'N° de Comidas Entregadas de Lunes a Viernes', style: 'text2' }, { text: IdParAlimentacion_8, style: 'text2' }],
+                        [{ text: 'N° de Comidas Entregadas Sábado, Domingo y Festivos', style: 'text2' }, { text: IdParAlimentacion_9, style: 'text2'}],
                             [{ text: 'OBSERVACIONES', style: 'text1', colSpan: 2 }, {}],
                             [{ text: alimentacion_009_observacion, style: 'text2', colSpan: 2 }, {}]
                     ]

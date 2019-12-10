@@ -9,6 +9,11 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces
     public interface IGetAntecedentesAlimentacion
     {
         List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.GetAntecedentesAlimentacionDto> ObtenerAntecedentesAlimentacion(int? CodFicha);
+        
+    }
+
+    public interface IParAlimentacion {
+        List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.GetParAlimentacionDto> ObtenerParAlimentacion();
     }
 
     public interface IResultadoOperacionAlimentacion

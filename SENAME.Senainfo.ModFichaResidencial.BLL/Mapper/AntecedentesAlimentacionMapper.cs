@@ -45,6 +45,28 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Mapper
             }
             return list;
         }
+
+        public static List<GetParAlimentacionDto> ToDtoParAlimentacion(DataTable dt)
+        {
+            List<GetParAlimentacionDto> list = new List<GetParAlimentacionDto>();
+            GetParAlimentacionDto dto = new GetParAlimentacionDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new GetParAlimentacionDto();
+                dto.error = dr["error"].ToString();
+
+                if (dto.error == "")
+                {
+                    dto.IdParAlimentacion = (int)dr["IdParAlimentacion"];
+                    dto.NombreParAlimentacion = dr["NombreParAlimentacion"].ToString();
+                    dto.VariableCuantitativa = (Boolean)dr["VariableCuantitativa"];
+                    dto.IndVigencia = dr["IndVigencia"].ToString();
+                }
+                list.Add(dto);
+            }
+            return list;
+        }
     }
 
     public class ResultadoOperacionAlimentacionMapper

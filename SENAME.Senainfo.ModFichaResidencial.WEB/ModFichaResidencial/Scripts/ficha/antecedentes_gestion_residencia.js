@@ -216,59 +216,6 @@ function ObtenerAntecedentesGestionResidencia(CodFicha) {
     });
 }
 
-// original
-function ObtenerAntecedentesGestionResidencia_ORIGINAL(CodFicha) {
-    $("#labelCaracteres_ObsGestionRes").html("");
-    $.ajax({
-        type: "POST",
-        url: "FichaResidencial.aspx/ObtenerAntecedentesGestionResidencia", 
-        data: "{'CodFicha': '" + CodFicha + "'}",
-        //data: '{}',
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (r) {
-            // Ajax OK !                   
-        },
-        error: function (r) {
-            DesplegarExcepcionCriticaApp(r.responseText);
-        }
-    }).then(function (r) {
- 
-        $.each(r.d,
-            function () {
-                $("#idParGestionResidencia_1").val(this.CatastroRedes); 
-                $("#gestionResid_002_sel_protocoloVisitas_existe").val(this.RegistroVisitas);
-                $("#idParGestionResidencia_4").val(this.ProtocoloAcogida);
-
-                $("#idParGestionResidencia_5").val(this.AutocuidadoEquipo);
-                $("#idParGestionResidencia_6").val(this.IntervencionCrisis);
-                $("#idParGestionResidencia_7").val(this.InformacionNormativa);
-                $("#idParGestionResidencia_8").val(this.ProtocoloConvivencia);
-                $("#idParGestionResidencia_9").val(this.ProtocoloReclamos);
-                $("#idParGestionResidencia_10").val(this.ProtocoloEscucha);
-                $("#idParGestionResidencia_11").val(this.VinculacionResidencias);
-                $("#idParGestionResidencia_12").val(this.ProcesosFormacion);
-                $("#idParGestionResidencia_13").val(this.ProtocoloApadrinamiento);
-                $("#idParGestionResidencia_14").val(this.ProtocoloTraslado);
-                $("#idParGestionResidencia_15").val(this.ProtocoloEgreso);
-                $("#idParGestionResidencia_16").val(this.ProtocoloRedSalud);
-                $("#gestionResid_016_sel_activi_habilitacionLaboral_existe").val(this.HabilitacionLaboral);
-
-                document.getElementById("gestionResid_017_observaciones").value = this.Observaciones;
-                ContadorCaracter(document.getElementById("gestionResid_017_observaciones"), "labelCaracteres_ObsGestionRes");
-
-                $("#idParGestionResidencia_2").val(this.RESProtocoloVisitas);
-                $("#idParGestionResidencia_3").val(this.RESRegistroVisitas);
-                $("#idParGestionResidencia_17").val(this.RESHabilitacionLaboral);
-                $("#idParGestionResidencia_18").val(this.RESVidaIndependiente);
-                //document.getElementById("gestionResid_018_observaciones_pobla_NNA_visita").value = this.ObservacionesNNAVisita;
-                //$("#gestionResid_019_sel_manifiesta_NNA_conversarJuez_existe").val(this.NNAvoluntadConversarConJuez );
-                //$("#gestionResid_020_sel_entrevisto_NNA_reservada_existe").val(this.NNAentrevistadoFormaReservada);
-            }
-        );
-    });
-}
-
 function ObtenerAntecedentesGestionResidencia_PJUD(CodFicha) {
     $.ajax({
         type: "POST",
@@ -593,6 +540,7 @@ function ObtenerAntecedentesGestionResidencia_Compare(codFichaPadre, bloqueDatos
 var ParValores = { 0: "NO", 1: "SI" };
 //  1. carga de la tabla ParGestionResidencia
 function CargaParGestionResidencia() {
+    $("#gridGestionResidencia").DataTable().destroy();
     $('#gridGestionResidencia').dataTable({
         "ajax": {
             "url": "FichaResidencial.aspx/ObtenerParAntecedentesGestionResidencia",
@@ -668,7 +616,6 @@ function CargaParGestionResidencia_original() {
                 "render": function (data, type, row, meta)
                 {
                     if (data.VariableCuantitativa == 0) {
-                            // muestra dropbox
                         var $select = $("<select class='form-control textCampoSel1 dllSiNo'></select>", {
                         });
                         $.each(ParValores, function (k, v) {
@@ -684,7 +631,6 @@ function CargaParGestionResidencia_original() {
                         });
                         return $select.prop("outerHTML");
                     } else {
-                        // muestra textbox
                         var $input = $("<input type='text' class='form-control textCampoSel2' maxlength='4' onkeypress='return ValidaIngresoSoloNumeros(this.value, event);'>",{});
                         return $input.prop("outerHTML");
                     }

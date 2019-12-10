@@ -6,19 +6,19 @@ function GrabarAntecedentesAlimentacion() {
     var CodProyecto = $("#general_001_sel_proyecto").val();
     var CodFicha_ = CodFicha;
 
-    var registroHonorario= $("#alimentacion_001_sel_registroHonorarioEntregaAlimento_existe").val();
-    var registroPlanificacion = $("#alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe").val();
-    var menusEspeciales = $("#alimentacion_003_sel_menuEspeciales_existe").val();
-    var asesoriaNutricionista = $("#alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe").val();
-    var certificadosSanitarios = $("#alimentacion_005_sel_certifSanitarioManipuladores_existe").val();
+    var registroHonorario = $("#IdParAlimentacion_1").val();
+    var registroPlanificacion = $("#IdParAlimentacion_2").val();
+    var menusEspeciales = $("#IdParAlimentacion_3").val();
+    var asesoriaNutricionista = $("#IdParAlimentacion_4").val();
+    var certificadosSanitarios = $("#IdParAlimentacion_5").val();
     var conservacionAlimentos = $("#alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe").val();
 
-    var cantidadComidas = $("#alimentacion_007_comidas_lunes_a_viernes_cantidad").val();
-    var cantidadComidasFeriados = $("#alimentacion_008_comidas_sabado_domingo_fest_cantidad").val();
+    var cantidadComidas = $("#IdParAlimentacion_8").val();
+    var cantidadComidasFeriados = $("#IdParAlimentacion_9").val();
     var observaciones = replaceAll(EliminaEspacios(document.getElementById("alimentacion_009_observacion").value), "'", "");
 
-    var sel_AlmacenaAlimento_existe = $("#alimentacion_006_sel_AlmacenaAlimento_existe").val();
-    var sel_EstadoConserva_existe = $("#alimentacion_006_sel_EstadoConserva_existe").val();
+    var sel_AlmacenaAlimento_existe = $("#IdParAlimentacion_6").val();
+    var sel_EstadoConserva_existe = $("#IdParAlimentacion_7").val();
 
     if (cantidadComidas == "") cantidadComidas = "0";
     if (cantidadComidasFeriados == "") cantidadComidasFeriados = "0";
@@ -96,6 +96,137 @@ function GrabarAntecedentesAlimentacion() {
 
     });
 }
+
+var ParValores = { 0: "NO", 1: "SI" };
+function CargaParAlimentacion() {
+    $("#gridAlimentacion").DataTable().destroy();
+    $('#gridAlimentacion').dataTable({
+        "ajax": {
+            "url": "FichaResidencial.aspx/ObtenerParAlimentacion",
+            "type": "POST",
+            "contentType": "application/json; charset=utf-8",
+            "dataType": "json",
+            "async": false,
+            "data": function (d) {
+                return JSON.stringify(d);
+            },
+            "dataSrc": "d",
+        },
+        "pageLength": 50,
+        "columns": [
+            { "data": "IdParAlimentacion" },
+            { "data": "NombreParAlimentacion", "sClass": "etiqCampo3" },
+            { "data": "VariableCuantitativa" },
+            {
+                "data": null,
+                "render": function (data, type, row, meta) {
+                    if (data.VariableCuantitativa == 0) {
+                        var $select = $("<select id='IdParAlimentacion_" + data.IdParAlimentacion + "' class='form-control textCampoSel1 dllSiNo'></select>", {
+                        });
+
+                        $.each(ParValores, function (k, v) {
+                            var $option = $("<option></option>", {
+                                "text": v,
+                                "value": k
+                            });
+                            if (data == v) {
+                                $option.attr("selected", "selected")
+                            }
+                            $select.append($option);
+                        });
+                        return $select.prop("outerHTML");
+                    }
+                    else {
+                        var $input = $("<input type='text' id='IdParAlimentacion_" + data.IdParAlimentacion + "' placeHolder='Especifique' class='form-control textCampoSel2' maxlength='4' onkeypress='return ValidaIngresoSoloNumeros(this.value, event);'>", {});
+                        return $input.prop("outerHTML");
+                    }
+                }
+            }
+        ],
+        "columnDefs": [{
+            "targets": [0, 2],
+            "visible": false,
+            "searchable": false
+        }
+        ],
+        "fixedColumns": true,
+        "bLengthChange": false,
+        "bInfo": false,
+        "bPaginate": false
+
+    });
+}
+
+function ObtenerAntecedentesAlimentacion_ensayo(CodFicha) {
+    $("#labelCaracteres_ObsAlimentacion").html("");
+    $.ajax({
+        type: "POST",
+        url: "FichaResidencial.aspx/ObtenerAntecedentesAlimentacion",
+        data: "{'CodFicha': '" + CodFicha + "'}",
+        //data: '{}',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (r) {
+            // Ajax OK !                   
+        },
+        error: function (r) {
+            DesplegarExcepcionCriticaApp(r.responseText);
+        }
+    }).then(function (r) {
+        $.each(r.d,
+            function () {
+                /* 1- Cuenta con Registro de Horarios de Entrega de Alimentos */ /*alimentacion_001_sel_registroHonorarioEntregaAlimento_existe*/
+                if (this.RegistroHonorario != 0 && this.RegistroHonorario != -1) $("#IdParAlimentacion_1").val("1");
+                else $("#IdParAlimentacion_1").val("0");
+
+                /* 2- ¿Cuenta con minuta alimentaria? */ /* alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe */
+                if (this.RegistroPlanificacion != 0 && this.RegistroPlanificacion != -1) $("#IdParAlimentacion_2").val("1");
+                else $("#IdParAlimentacion_2").val("0");
+
+                /* 3- Existencia de Menús Especiales */ /* alimentacion_003_sel_menuEspeciales_existe */
+                if (this.MenusEspeciales != 0 && this.MenusEspeciales != -1) $("#IdParAlimentacion_3").val("1");
+                else $("#IdParAlimentacion_3").val("0");
+
+                /* 4- ¿Cuenta con minuta alimentaria aprobada? */ /* alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe */
+                if (this.AsesoriaNutricionista != 0 && this.AsesoriaNutricionista != -1) $("#IdParAlimentacion_4").val("1");
+                else $("#IdParAlimentacion_4").val("0");
+
+                /* 5- Existen Certificados Sanitarios de las Manipuladoras */ /* alimentacion_005_sel_certifSanitarioManipuladores_existe */
+                if (this.CertificadosSanitarios != 0 && this.CertificadosSanitarios != -1) $("#IdParAlimentacion_5").val("1");
+                else $("#IdParAlimentacion_5").val("0");
+        
+                /* 6- Almacenamiento de Alimentos */ /* alimentacion_006_sel_AlmacenaAlimento_existe */
+                if (this.AlmacenamientoAlimentos != 0 && this.AlmacenamientoAlimentos != -1) $("#IdParAlimentacion_6").val("1");
+                else $("#IdParAlimentacion_6").val("0");
+
+                /* 7- Estado de Conservación */ /* alimentacion_006_sel_EstadoConserva_existe */
+                if (this.EstadoConservacionAlimentos != 0 && this.EstadoConservacionAlimentos != -1) $("#IdParAlimentacion_7").val("1");
+                else $("#IdParAlimentacion_7").val("0");
+
+                /* 8- N° de Comidas Entregadas de Lunes a Viernes */ /* alimentacion_007_comidas_lunes_a_viernes_cantidad */
+                $("#IdParAlimentacion_8").val(this.CantidadComidas);
+             
+                /* 9- N° de Comidas Entregadas Sábado, Domingo y Festivos */ /* alimentacion_008_comidas_sabado_domingo_fest_cantidad */
+                $("#IdParAlimentacion_9").val(this.CantidadComidasFeriados);
+
+                $("#alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe").val(this.ConservacionAlimentos); // style="display:none;"
+
+                document.getElementById("alimentacion_009_observacion").value = this.Observaciones;
+                ContadorCaracter(document.getElementById("alimentacion_009_observacion"), "labelCaracteres_ObsAlimentacion");  
+            }
+        );
+        if (opcioncarga == "GESTIONOBSERVACIONES" || opcioncarga == "GESTIONHISTORIAL") {
+            //CONTROL DESBLOQUEO ZONA CARGA
+            ctrl_ObtenerAntecedentesAlimentacion = true;
+            AdminitrarAccesoASeccionesOBS("desbloqueo", "FICHA_PADRE");
+
+            //CONTROL CARGA DE COMPARATIVA DEPENDIENTES
+            alimentacion_residencia = true;
+            CargaCamposComparativa8();
+        }
+    });
+}
+
 function ObtenerAntecedentesAlimentacion(CodFicha) {
     $("#labelCaracteres_ObsAlimentacion").html("");
     $.ajax({
@@ -114,21 +245,15 @@ function ObtenerAntecedentesAlimentacion(CodFicha) {
     }).then(function (r) {
         $.each(r.d,
             function () {
-                $("#alimentacion_001_sel_registroHonorarioEntregaAlimento_existe").val(this.RegistroHonorario);
-                $("#alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe").val(this.RegistroPlanificacion);
-                $("#alimentacion_003_sel_menuEspeciales_existe").val(this.MenusEspeciales);
-                $("#alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe").val(this.AsesoriaNutricionista);
-                $("#alimentacion_005_sel_certifSanitarioManipuladores_existe").val(this.CertificadosSanitarios);
+          
+           
                 $("#alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe").val(this.ConservacionAlimentos);
 
-                $("#alimentacion_007_comidas_lunes_a_viernes_cantidad").val(this.CantidadComidas);
-                $("#alimentacion_008_comidas_sabado_domingo_fest_cantidad").val(this.CantidadComidasFeriados);
 
                 document.getElementById("alimentacion_009_observacion").value = this.Observaciones;
                 ContadorCaracter(document.getElementById("alimentacion_009_observacion"), "labelCaracteres_ObsAlimentacion");
 
-                $("#alimentacion_006_sel_AlmacenaAlimento_existe").val(this.AlmacenamientoAlimentos);
-                $("#alimentacion_006_sel_EstadoConserva_existe").val(this.EstadoConservacionAlimentos);
+            
             }
         );
         if (opcioncarga == "GESTIONOBSERVACIONES" || opcioncarga == "GESTIONHISTORIAL") {
@@ -205,29 +330,29 @@ function ObtenerAntecedentesAlimentacion_Compare(codFichaPadre, bloqueDatos) {
         $.each(r.d,
             function () {
                 if (this.RegistroHonorario != "0" && this.RegistroHonorario != "-1")
-                    $("#alimentacion_001_sel_registroHonorarioEntregaAlimento_existe" + sufijo).val(1);
+                    $("#IdParAlimentacion_1" + sufijo).val(1);
                 else
-                    $("#alimentacion_001_sel_registroHonorarioEntregaAlimento_existe" + sufijo).val(0);
+                    $("#IdParAlimentacion_1" + sufijo).val(0);
 
                 if (this.RegistroPlanificacion != "0" && this.RegistroPlanificacion != "-1")
-                    $("#alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe" + sufijo).val(1);
+                    $("#IdParAlimentacion_2" + sufijo).val(1);
                 else
-                    $("#alimentacion_002_sel_registroPlanificacionMenuBalanceado_existe" + sufijo).val(0);
+                    $("#IdParAlimentacion_2" + sufijo).val(0);
 
                 if (this.MenusEspeciales != "0" && this.MenusEspeciales != "-1")
-                    $("#alimentacion_003_sel_menuEspeciales_existe" + sufijo).val(1);
+                    $("#IdParAlimentacion_3" + sufijo).val(1);
                 else
-                    $("#alimentacion_003_sel_menuEspeciales_existe" + sufijo).val(0);
+                    $("#IdParAlimentacion_3" + sufijo).val(0);
 
                 if (this.AsesoriaNutricionista != "0" && this.AsesoriaNutricionista != "-1")
-                    $("#alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe" + sufijo).val(1);
+                    $("#IdParAlimentacion_4" + sufijo).val(1);
                 else
-                    $("#alimentacion_004_sel_asesoriaNutricionistaPlanMenu_existe" + sufijo).val(0);
+                    $("#IdParAlimentacion_4" + sufijo).val(0);
 
                 if (this.CertificadosSanitarios != "0" && this.CertificadosSanitarios != "-1")
-                    $("#alimentacion_005_sel_certifSanitarioManipuladores_existe" + sufijo).val(1);
+                    $("#IdParAlimentacion_5" + sufijo).val(1);
                 else
-                    $("#alimentacion_005_sel_certifSanitarioManipuladores_existe" + sufijo).val(0);
+                    $("#IdParAlimentacion_5" + sufijo).val(0);
 
                 if (this.ConservacionAlimentos != "0" && this.ConservacionAlimentos != "-1")
                     $("#alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe" + sufijo).val(1);
@@ -235,17 +360,17 @@ function ObtenerAntecedentesAlimentacion_Compare(codFichaPadre, bloqueDatos) {
                     $("#alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe" + sufijo).val(0);
 
                 if (this.AlmacenamientoAlimentos != "0" && this.AlmacenamientoAlimentos != "-1")
-                    $("#alimentacion_006_sel_AlmacenaAlimento_existe" + sufijo).val(1);
+                    $("#IdParAlimentacion_6" + sufijo).val(1);
                 else
-                    $("#alimentacion_006_sel_AlmacenaAlimento_existe" + sufijo).val(0);
+                    $("#IdParAlimentacion_6" + sufijo).val(0);
 
                 if (this.EstadoConservacionAlimentos != "0" && this.EstadoConservacionAlimentos != "-1")
-                    $("#alimentacion_006_sel_EstadoConserva_existe" + sufijo).val(1);
+                    $("#IdParAlimentacion_7" + sufijo).val(1);
                 else
-                    $("#alimentacion_006_sel_EstadoConserva_existe" + sufijo).val(0);
+                    $("#IdParAlimentacion_7" + sufijo).val(0);
 
-                $("#alimentacion_007_comidas_lunes_a_viernes_cantidad" + sufijo).val(this.CantidadComidas);
-                $("#alimentacion_008_comidas_sabado_domingo_fest_cantidad" + sufijo).val(this.CantidadComidasFeriados);
+                $("#IdParAlimentacion_8" + sufijo).val(this.CantidadComidas);
+                $("#IdParAlimentacion_9" + sufijo).val(this.CantidadComidasFeriados);
 
                 document.getElementById("alimentacion_009_observacion" + sufijo).value = this.Observaciones;
             }
@@ -269,8 +394,8 @@ function ObtenerAntecedentesAlimentacion_Compare(codFichaPadre, bloqueDatos) {
 ////++++++++++++++++++++++
 //FUNCIONES FRONTEND
 function EvaluaAlmacenaAlimentoEstadoConserva(){
-    if ($("#alimentacion_006_sel_AlmacenaAlimento_existe").val() == "1" &&
-        $("#alimentacion_006_sel_EstadoConserva_existe").val() == "1")
+    if ($("#IdParAlimentacion_6").val() == "1" &&
+        $("#IdParAlimentacion_7").val() == "1")
         $("#alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe").val(1);
     else
         $("#alimentacion_006_sel_AlmacenaAlimentoEstadoConserva_existe").val(0);

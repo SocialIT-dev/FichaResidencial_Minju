@@ -925,7 +925,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_001_ofi_admin_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_001_ofi_admin_existe").selectedIndex = 2; 
+                document.getElementById("Infraest_001_ofi_admin_existe").selectedIndex = 0; 
             }
             break;
         case 2:
@@ -934,7 +934,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_003_salaReuniones_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_003_salaReuniones_existe").selectedIndex = 2;
+                document.getElementById("Infraest_003_salaReuniones_existe").selectedIndex = 0;
             }
             break;
         case 3:
@@ -943,7 +943,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_005_salaRecepcion_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_005_salaRecepcion_existe").selectedIndex = 2;
+                document.getElementById("Infraest_005_salaRecepcion_existe").selectedIndex = 0;
             }
             break;
         case 4:
@@ -952,7 +952,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_007_espacioVisitas_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_007_espacioVisitas_existe").selectedIndex = 2;
+                document.getElementById("Infraest_007_espacioVisitas_existe").selectedIndex = 0;
             }
             break;
         case 5:
@@ -961,7 +961,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_009_salaMultiuso_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_009_salaMultiuso_existe").selectedIndex = 2;
+                document.getElementById("Infraest_009_salaMultiuso_existe").selectedIndex = 0;
             }
             break;
         case 6:
@@ -970,7 +970,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_011_salaEstar_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_011_salaEstar_existe").selectedIndex = 2;
+                document.getElementById("Infraest_011_salaEstar_existe").selectedIndex = 0;
             }
             break;
         case 7:
@@ -979,7 +979,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_013_enfermeria_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_013_enfermeria_existe").selectedIndex = 2;
+                document.getElementById("Infraest_013_enfermeria_existe").selectedIndex = 0;
             }
             break;
         case 8:
@@ -988,7 +988,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_015_espacioRecreacional_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_015_espacioRecreacional_existe").selectedIndex = 2;
+                document.getElementById("Infraest_015_espacioRecreacional_existe").selectedIndex = 0;
             }
             break;
         case 9:
@@ -997,7 +997,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_019_areasVerdes_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_019_areasVerdes_existe").selectedIndex = 2;
+                document.getElementById("Infraest_019_areasVerdes_existe").selectedIndex = 0;
             }
             break;
         case 10:
@@ -1006,7 +1006,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_021_cocina_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_021_cocina_existe").selectedIndex = 2;
+                document.getElementById("Infraest_021_cocina_existe").selectedIndex = 0;
             }
             break;
         case 11:
@@ -1015,7 +1015,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_023_comedor_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_023_comedor_existe").selectedIndex = 2;
+                document.getElementById("Infraest_023_comedor_existe").selectedIndex = 0;
             }
             break;
         case 12:
@@ -1024,7 +1024,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_025_Lavanderia_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_025_Lavanderia_existe").selectedIndex = 2;
+                document.getElementById("Infraest_025_Lavanderia_existe").selectedIndex = 0;
             }
             break;
         case 13:
@@ -1033,7 +1033,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_027_Dormitorio_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_027_Dormitorio_existe").selectedIndex = 2;
+                document.getElementById("Infraest_027_Dormitorio_existe").selectedIndex = 0;
             }
             break;
         case 14:
@@ -1042,7 +1042,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_029_CamasNNA_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_029_CamasNNA_existe").selectedIndex = 2;
+                document.getElementById("Infraest_029_CamasNNA_existe").selectedIndex = 0;
             }
             break;
         case 15:
@@ -1051,7 +1051,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_031_closetLocker_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_031_closetLocker_existe").selectedIndex = 2;
+                document.getElementById("Infraest_031_closetLocker_existe").selectedIndex = 0;
             }
             break;
         case 16:
@@ -1060,7 +1060,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_033_banosPublico_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_033_banosPublico_existe").selectedIndex = 2;
+                document.getElementById("Infraest_033_banosPublico_existe").selectedIndex = 0;
             }
             break;
 
@@ -1069,7 +1069,7 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 2;
+                document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 0;
             }
             break;
         case 18:
@@ -1077,14 +1077,14 @@ function HabilitaInfraestructura(opc) {
                 document.getElementById("Infraest_037_duchasNNA_existe").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_037_duchasNNA_existe").selectedIndex = 2;
+                document.getElementById("Infraest_037_duchasNNA_existe").selectedIndex = 0;
             }
             break;
 
         case 19://CAMPO NUEVO: Baños NNA en Funcionamiento
             if (EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()) == 0 || EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val())=="") {
-                document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 2;
-                document.getElementById("Infraest_035_banosNNA_Funcionamiento_existe").selectedIndex = 2;
+                document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 0;
+                document.getElementById("Infraest_035_banosNNA_Funcionamiento_existe").selectedIndex = 0;
                 document.getElementById("Infraest_036_banosNNAadecuados_cantidad").selectedIndex = 0;
 
                 $("#Infraest_035_banosNNA_AcuerdoNormativa_existe").val(0);
@@ -1183,8 +1183,8 @@ function HabilitaInfraestructura(opc) {
             break;
         case 24://CAMPO NUEVO: Duchas para NNA en Funcionamiento
             if (EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()) == 0 || EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()) == "") {
-                document.getElementById("Infraest_037_duchasNNA_existe").selectedIndex = 2;
-                document.getElementById("Infraest_037_duchasNNA_funcionamiento_existe").selectedIndex = 2;
+                document.getElementById("Infraest_037_duchasNNA_existe").selectedIndex = 0;
+                document.getElementById("Infraest_037_duchasNNA_funcionamiento_existe").selectedIndex = 0;
                 document.getElementById("Infraest_038_duchasNNA_cantidad").selectedIndex = 0;
 
                 $("#Infraest_037_duchasNNA_normativa_existe").val(0);

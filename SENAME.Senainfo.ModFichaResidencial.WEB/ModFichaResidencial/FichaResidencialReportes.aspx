@@ -16,35 +16,6 @@
 
         <title>FICHA RESIDENCIAL  :: Senainfo :: Servicio Nacional de Menores</title>
 
-        <!-- DESARROLLO -->
-   <%--    <script src="../Scripts/jquery-3.2.1.min.js"></script>
-
-        <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-        <link href="../Content/theme.css" rel="stylesheet" />
-        <link href="../Scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
-        <link href="../Content/select2-bootstrap.min.css" rel="stylesheet" />
-
-        <link href="../Content/ficha_residencia.css" rel="stylesheet" />
-
-        <link href="../Content/timelineficha.css" rel="stylesheet" />
-        <link href="../Scripts/jquery.fileupload.css" rel="stylesheet" />
-        <link href="../Content/font-awesome.min.css" rel="stylesheet" />
-
-        <script src="../Scripts/bootstrap.min.js"></script>
-        <script src="../Scripts/jquery.floatThead.js"></script>
-        <script src="../Scripts/jquery.dataTables.js"></script>
-        <script src="../Scripts/dataTables.bootstrap.js"></script>
-
-        <script src="../Scripts/select2.min.js"></script>
-
-        <script src="../Scripts/sweetalert2/sweetalert2.all.min.js"></script>
-        <script src="../Scripts/ficha/progressbar.min.js"></script>
-        <script src="../Scripts/jquery.ui.widget.js"></script>
-        <script src="../Scripts/jquery.iframe-transport.js"></script>
-
-    <link rel="stylesheet" href="../Scripts/datepicker/datepicker.css" />
-        <script src="../Scripts/datepicker/datepicker.js"></script>
-        <script src="../Scripts/datepicker/datepicker.es-ES.js"></script>--%>
 
         <%--PRODUCCIÓN--%>
        
@@ -52,7 +23,7 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
         <link href="scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
-        <link href="../css/select2-bootstrap.min.css" rel="stylesheet" />
+        <link href="css/select2-bootstrap.min.css" rel="stylesheet" />
         <link href="css/ficha_residencia.css" rel="stylesheet" />
         <link href="css/timelineficha.css" rel="stylesheet" />
         <link href="scripts/jquery.fileupload.css" rel="stylesheet" />
@@ -206,7 +177,6 @@
                 </div>
             </div>
             
-
         </div>
 
     </div>                                       
@@ -224,9 +194,6 @@
     }
     $(document).ready(function () {
         var d = new Date();
-
-        // DESARROLLO
-      //  importarScript("../Scripts/ficha/reportes.js?" + d.getTime());
 
         // PRODUCCION
        importarScript("scripts/ficha/reportes.js?" + d.getTime());   

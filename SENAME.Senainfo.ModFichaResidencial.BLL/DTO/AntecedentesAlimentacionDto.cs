@@ -38,4 +38,13 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.DTO
         public string ETAPAS_PROCESADAS { get; set; }
         public string error { get; set; }
     }
+
+    public class GetParAlimentacionDto
+    {
+        public int IdParAlimentacion { get; set; }
+        public string NombreParAlimentacion { get; set; }
+        public Boolean VariableCuantitativa { get; set; }
+        public string IndVigencia { get; set; }
+        public string error { get; set; }
+    }
 }
