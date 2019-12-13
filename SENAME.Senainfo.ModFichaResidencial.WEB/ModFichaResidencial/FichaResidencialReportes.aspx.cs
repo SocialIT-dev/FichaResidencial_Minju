@@ -12,7 +12,6 @@ namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial
         protected void Page_Load(object sender, EventArgs e)
         {
             // TOKEN REPORTES : 65815628-8145-487F-BEB7-8C4A53A7B61A
-
             //<<== DESBLOQUEAR EN PRODUCCION/CERTIFICACIÓN EL SIGUIENTE BLOQUEO LINEAS EN PRODUCCION
 
             if (Session["tokens"] == null || ((DataSet)Session["tokens"]).Tables[0].Rows.Count == 0)
