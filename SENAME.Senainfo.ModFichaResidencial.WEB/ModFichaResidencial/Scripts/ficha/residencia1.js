@@ -1082,17 +1082,34 @@ function ResetearFormulario() {
 
     //Reseteamos TAB infraestructura
     var arrVariablesinfraestructura_1 = [
-        "Infraest_001_ofi_admin_existe",
-        "Infraest_003_salaReuniones_existe",
-        "Infraest_005_salaRecepcion_existe",
-        "Infraest_007_espacioVisitas_existe",
-        "Infraest_009_salaMultiuso_existe",
-        "Infraest_011_salaEstar_existe",
-    "Infraest_013_enfermeria_existe","Infraest_015_espacioRecreacional_existe","Infraest_019_areasVerdes_existe","Infraest_021_cocina_existe","Infraest_023_comedor_existe","Infraest_025_Lavanderia_existe",
-    "Infraest_027_Dormitorio_existe","Infraest_029_CamasNNA_existe","Infraest_031_closetLocker_existe","Infraest_033_banosPublico_existe","Infraest_035_banosNNAadecuados_existe","Infraest_037_duchasNNA_existe",
+       // "Infraest_001_ofi_admin_existe",
+       // "Infraest_003_salaReuniones_existe",
+       // "Infraest_005_salaRecepcion_existe",
+        //"Infraest_007_espacioVisitas_existe",
+       // "Infraest_009_salaMultiuso_existe",
+      //  "Infraest_011_salaEstar_existe",
+       // "Infraest_013_enfermeria_existe",
+       // "Infraest_015_espacioRecreacional_existe",
+       // "Infraest_019_areasVerdes_existe",
+        //"Infraest_021_cocina_existe",
+       // "Infraest_023_comedor_existe",
+      //  "Infraest_025_Lavanderia_existe",
+       // "Infraest_027_Dormitorio_existe",
+     //   "Infraest_029_CamasNNA_existe",
+       // "Infraest_031_closetLocker_existe",
+        //"Infraest_033_banosPublico_existe",
+        "Infraest_035_banosNNAadecuados_existe", "Infraest_037_duchasNNA_existe",
 
-    "Infraest_035_banosNNA_Funcionamiento_existe", "Infraest_035_banosNNA_AcuerdoNormativa_existe", "Infraest_035_banosNNA_Hombre_existe", "Infraest_035_banosNNA_Mujer_existe", "Infraest_035_banosNNA_mixto_existe",
-    "Infraest_037_duchasNNA_funcionamiento_existe","Infraest_037_duchasNNA_normativa_existe","Infraest_037_duchasNNA_hombres_existe","Infraest_037_duchasNNA_mujeres_existe","Infraest_037_duchasNNA_mixtos_existe" 
+        //"Infraest_035_banosNNA_Funcionamiento_existe",
+        //"Infraest_035_banosNNA_AcuerdoNormativa_existe",
+        //"Infraest_035_banosNNA_Hombre_existe",
+        //"Infraest_035_banosNNA_Mujer_existe",
+        //"Infraest_035_banosNNA_mixto_existe",
+       // "Infraest_037_duchasNNA_funcionamiento_existe",
+       // "Infraest_037_duchasNNA_normativa_existe",
+        //"Infraest_037_duchasNNA_hombres_existe",
+        //"Infraest_037_duchasNNA_mujeres_existe",
+       // "Infraest_037_duchasNNA_mixtos_existe" 
     ];
     arrVariablesinfraestructura_1.forEach(
         function (currentValue, index) {
@@ -1102,16 +1119,16 @@ function ResetearFormulario() {
     );
 
     var arrVariablesinfraestructura_3 = [
-    "Infraest_035_banosNNA_Funcionamiento_cant",
-    "Infraest_035_banosNNA_AcuerdoNormativa_cant",   
-    "Infraest_035_banosNNA_Hombre_cant", 
-    "Infraest_035_banosNNA_Mujer_cant",
-    "Infraest_035_banosNNA_mixto_cant",
-    "Infraest_037_duchasNNA_funcionamiento_cant",
-    "Infraest_037_duchasNNA_normativa_cant",
-    "Infraest_037_duchasNNA_hombres_cant",
-    "Infraest_037_duchasNNA_mujeres_cant",
-    "Infraest_037_duchasNNA_mixtos_cant"
+   // "Infraest_035_banosNNA_Funcionamiento_cant",
+   // "Infraest_035_banosNNA_AcuerdoNormativa_cant",   
+   // "Infraest_035_banosNNA_Hombre_cant", 
+   // "Infraest_035_banosNNA_Mujer_cant",
+    //"Infraest_035_banosNNA_mixto_cant",
+    //"Infraest_037_duchasNNA_funcionamiento_cant",
+   // "Infraest_037_duchasNNA_normativa_cant",
+   // "Infraest_037_duchasNNA_hombres_cant",
+   // "Infraest_037_duchasNNA_mujeres_cant",
+   // "Infraest_037_duchasNNA_mixtos_cant"
     ];
     arrVariablesinfraestructura_3.forEach(
         function (currentValue, index) {
@@ -1121,9 +1138,22 @@ function ResetearFormulario() {
     );
 
     var arrVariablesinfraestructura_2 = [
-    "Infraest_002_ofi_admin_cantidad","Infraest_004_salaReuniones_cantidad","Infraest_006_salaRecepcion_cantidad","Infraest_008_espacioVisitas_cantidad","Infraest_010_salaMultiuso_cantidad","Infraest_012_salaEstar_cantidad",
-    "Infraest_014_enfermeria_cantidad","Infraest_016_espacioRecreacional_cantidad","Infraest_020_areasVerdes_cantidad","Infraest_022_cocina_cantidad","Infraest_024_comedor_cantidad","Infraest_026_Lavanderia_cantidad",
-    "Infraest_028_Dormitorio_cantidad","Infraest_030_CamasNNA_cantidad","Infraest_032_closetLocker_cantidad","Infraest_034_banosPublico_cantidad"
+        //"Infraest_002_ofi_admin_cantidad",
+      //  "Infraest_004_salaReuniones_cantidad",
+       // "Infraest_006_salaRecepcion_cantidad",
+       // "Infraest_008_espacioVisitas_cantidad",
+       // "Infraest_010_salaMultiuso_cantidad",
+       // "Infraest_012_salaEstar_cantidad",
+        //"Infraest_014_enfermeria_cantidad",
+        //"Infraest_016_espacioRecreacional_cantidad",
+       // "Infraest_020_areasVerdes_cantidad",
+        //"Infraest_022_cocina_cantidad",
+        //"Infraest_024_comedor_cantidad",
+        //"Infraest_026_Lavanderia_cantidad",
+        //"Infraest_028_Dormitorio_cantidad",
+       // "Infraest_030_CamasNNA_cantidad",
+       // "Infraest_032_closetLocker_cantidad",
+        //"Infraest_034_banosPublico_cantidad"
     ];
     arrVariablesinfraestructura_2.forEach(
         function (currentValue, index) {
@@ -1133,19 +1163,19 @@ function ResetearFormulario() {
         }
     );
     var arrVariablesinfraestructura_3 = [
-    "Infraest_039_ambientacionAcorde_existe",
-    "Infraest_040_vestuarioAdecuado_existe",
-    "Infraest_041_utilesAseoPersonalNNA_existe",
-    "Infraest_042_aguaCaliente_existe",
+    //"Infraest_039_ambientacionAcorde_existe",
+    //"Infraest_040_vestuarioAdecuado_existe",
+   // "Infraest_041_utilesAseoPersonalNNA_existe",
+    //"Infraest_042_aguaCaliente_existe",
     "Infraest_043_estadoCalefonLlavesGas_existe",
-    "Infraest_044_sistemaCalefaccion_existe",
-    "Infraest_045_ventilacionAdecuada_existe",
-    "Infraest_046_AccesoDiscapacitados_existe",
-    "Infraest_047_InstalacionesHabilitadasDiscapacitados_existe",
+    //"Infraest_044_sistemaCalefaccion_existe",
+   //"Infraest_045_ventilacionAdecuada_existe",
+    //"Infraest_046_AccesoDiscapacitados_existe",
+    //"Infraest_047_InstalacionesHabilitadasDiscapacitados_existe",
 
-    "Infraest_040_vestuarioPersonalizado_existe",
-    "Infraest_043_CumpleNormaCalefon",
-    "Infraest_043_CumpleNormaLlaveGas"
+    //"Infraest_040_vestuarioPersonalizado_existe",
+   // "Infraest_043_CumpleNormaCalefon",
+   // "Infraest_043_CumpleNormaLlaveGas"
     ];
     arrVariablesinfraestructura_3.forEach(
     function (currentValue, index) {
@@ -1505,18 +1535,18 @@ function ActivaCamposFichaResidenciaXProyecto(valueCbmProyecto) {
     "dotacion_082_sel_alumnosPractica_cantidad", "dotacion_086_sel_apoyoVoluntario_cantidad", "dotacion_090_sel_Otros_cantidad", "dotacion_094_sel_PersonalLicenciaMedica_cantidad", "dotacion_098_sel_PersonalLicenciaMedicaConSuplente_cantidad",
     "dotacion_101_Observaciones",
 
-    "Infraest_002_ofi_admin_cantidad", "Infraest_004_salaReuniones_cantidad", "Infraest_006_salaRecepcion_cantidad", "Infraest_008_espacioVisitas_cantidad", "Infraest_010_salaMultiuso_cantidad", "Infraest_012_salaEstar_cantidad",
-    "Infraest_014_enfermeria_cantidad", "Infraest_016_espacioRecreacional_cantidad", "Infraest_020_areasVerdes_cantidad", "Infraest_022_cocina_cantidad", "Infraest_024_comedor_cantidad", "Infraest_026_Lavanderia_cantidad",
-    "Infraest_028_Dormitorio_cantidad", "Infraest_030_CamasNNA_cantidad", "Infraest_032_closetLocker_cantidad", "Infraest_034_banosPublico_cantidad", "Infraest_036_banosNNAadecuados_cantidad", "Infraest_038_duchasNNA_cantidad",
-    "Infraest_039_ambientacionAcorde_existe",
-    "Infraest_040_vestuarioAdecuado_existe",
-    "Infraest_041_utilesAseoPersonalNNA_existe",
-    "Infraest_042_aguaCaliente_existe",
+        "IdValor_1", "IdValor_2", "IdValor_3", "IdValor_4", "IdValor_5", "IdValor_6",
+        "IdValor_7", "IdValor_8", "IdValor_9", "IdValor_10", "IdValor_11", "IdValor_12",
+        "IdValor_13", "IdValor_14", "IdValor_15", "IdValor_16", "Infraest_036_banosNNAadecuados_cantidad", "Infraest_038_duchasNNA_cantidad",
+    "IdParInfraestructura_27",
+    "IdParInfraestructura_28",
+    "IdParInfraestructura_30",
+    "IdParInfraestructura_31",
     "Infraest_043_estadoCalefonLlavesGas_existe",
-    "Infraest_044_sistemaCalefaccion_existe",
-    "Infraest_045_ventilacionAdecuada_existe",
-    "Infraest_046_AccesoDiscapacitados_existe",
-    "Infraest_047_InstalacionesHabilitadasDiscapacitados_existe",
+    "IdParInfraestructura_34",
+    "IdParInfraestructura_35",
+    "IdParInfraestructura_36",
+    "IdParInfraestructura_37",
     "Infraest_049_observaciones",
 
     "seguridad_001_planEmergencia_existe",
@@ -1592,21 +1622,21 @@ function ActivaCamposFichaResidenciaXProyecto(valueCbmProyecto) {
     "gestionResid_017_observaciones",
 
     //CAMPOS NUEVOS
-    "Infraest_040_vestuarioPersonalizado_existe",
+    "IdParInfraestructura_29",
 
-    "Infraest_035_banosNNA_Funcionamiento_cant",
-    "Infraest_035_banosNNA_AcuerdoNormativa_cant",
-    "Infraest_035_banosNNA_Hombre_cant",
-    "Infraest_035_banosNNA_Mujer_cant",
-    "Infraest_035_banosNNA_mixto_cant",
-    "Infraest_037_duchasNNA_funcionamiento_cant",
-    "Infraest_037_duchasNNA_normativa_cant",
-    "Infraest_037_duchasNNA_hombres_cant",
-    "Infraest_037_duchasNNA_mujeres_cant",
-    "Infraest_037_duchasNNA_mixtos_cant",
+    "IdValor_17",
+    "IdValor_18",
+    "IdValor_19",
+    "IdValor_20",
+    "IdValor_21",
+    "IdValor_22",
+    "IdValor_23",
+    "IdValor_24",
+    "IdValor_25",
+    "IdValor_26",
 
-    "Infraest_043_CumpleNormaCalefon",
-    "Infraest_043_CumpleNormaLlaveGas",
+    "IdParInfraestructura_32",
+    "IdParInfraestructura_33",
 
     "seguridad_007_capacitacionPersonalemergencia",
     "seguridad_007_capacitacionPersonalprimerosAux",
@@ -1662,17 +1692,17 @@ function ActivaCamposFichaResidenciaXProyecto(valueCbmProyecto) {
     }
 
     //NUEVAS REGLAS
-    if (document.getElementById("Infraest_035_banosNNA_Funcionamiento_cant").value != "" && document.getElementById("Infraest_035_banosNNA_Funcionamiento_cant").value != "0") {
-        document.getElementById("Infraest_035_banosNNA_AcuerdoNormativa_cant").disabled = false;
+    if (document.getElementById("IdValor_17").value != "" && document.getElementById("IdValor_17").value != "0") {
+        document.getElementById("IdValor_18").disabled = false;
     }
     else {
-        document.getElementById("Infraest_035_banosNNA_AcuerdoNormativa_cant").disabled = true;
+        document.getElementById("IdValor_18").disabled = true;
     }
-    if (document.getElementById("Infraest_037_duchasNNA_funcionamiento_cant").value != "" && document.getElementById("Infraest_037_duchasNNA_funcionamiento_cant").value != "0") {
-        document.getElementById("Infraest_037_duchasNNA_normativa_cant").disabled = false;
+    if (document.getElementById("IdValor_22").value != "" && document.getElementById("IdValor_22").value != "0") {
+        document.getElementById("IdValor_23").disabled = false;
     }
     else {
-        document.getElementById("Infraest_037_duchasNNA_normativa_cant").disabled = true;
+        document.getElementById("IdValor_23").disabled = true;
     }
 }
 function StopValidaConexion() {
@@ -2000,53 +2030,53 @@ function GrabarFichaCompleta() {
     ////----------------------------------------------------------------
     //PASO 1.4 RESCATO DATOS ANTECDENTES INFRAESTRUCUTURA Y VALIDO
     bValidar = false;
-    var cantidadOficAdm = $("#Infraest_002_ofi_admin_cantidad").val();
-    var cantidadSalaReunion = $("#Infraest_004_salaReuniones_cantidad").val();
-    var cantidadSalaRecepcion = $("#Infraest_006_salaRecepcion_cantidad").val();
-    var cantidadEspaciosVisitas = $("#Infraest_008_espacioVisitas_cantidad").val();
-    var cantidadSalaTalleres = $("#Infraest_010_salaMultiuso_cantidad").val();
-    var cantidadSalaLiving = $("#Infraest_012_salaEstar_cantidad").val();
-    var cantidadEnfermeria = $("#Infraest_014_enfermeria_cantidad").val();
-    var cantidadRecreacion = $("#Infraest_016_espacioRecreacional_cantidad").val();
-    var cantidadAreasVerdes = $("#Infraest_020_areasVerdes_cantidad").val();
-    var cantidadCocina = $("#Infraest_022_cocina_cantidad").val();
-    var cantidadComedor = $("#Infraest_024_comedor_cantidad").val();
-    var cantidadLavanderia = $("#Infraest_026_Lavanderia_cantidad").val();
-    var cantidadDormitoriosNNA = $("#Infraest_028_Dormitorio_cantidad").val();
-    var cantidadCamasNNA = $("#Infraest_030_CamasNNA_cantidad").val();
-    var cantidadColsetLockers = $("#Infraest_032_closetLocker_cantidad").val();
-    var cantidadBañosPublicos = $("#Infraest_034_banosPublico_cantidad").val();
+    var cantidadOficAdm = $("#IdValor_1").val();
+    var cantidadSalaReunion = $("#IdValor_2").val();
+    var cantidadSalaRecepcion = $("#IdValor_3").val();
+    var cantidadEspaciosVisitas = $("#IdValor_4").val();
+    var cantidadSalaTalleres = $("#IdValor_5").val();
+    var cantidadSalaLiving = $("#IdValor_6").val();
+    var cantidadEnfermeria = $("#IdValor_7").val();
+    var cantidadRecreacion = $("#IdValor_8").val();
+    var cantidadAreasVerdes = $("#IdValor_9").val();
+    var cantidadCocina = $("#IdValor_10").val();
+    var cantidadComedor = $("#IdValor_11").val();
+    var cantidadLavanderia = $("#IdValor_12").val();
+    var cantidadDormitoriosNNA = $("#IdValor_13").val();
+    var cantidadCamasNNA = $("#IdValor_14").val();
+    var cantidadColsetLockers = $("#IdValor_15").val();
+    var cantidadBañosPublicos = $("#IdValor_16").val();
 
     var cantidadBañosNNA = $("#Infraest_036_banosNNAadecuados_cantidad").val();
-    var canBañosFunciNNA = $("#Infraest_035_banosNNA_Funcionamiento_cant").val();
-    var canBañosNormaNNA = $("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val();
-    var canBañosHombrNNA = $("#Infraest_035_banosNNA_Hombre_cant").val();
-    var canBañosMujerNNA = $("#Infraest_035_banosNNA_Mujer_cant").val();
-    var canBañosMixtoNNA = $("#Infraest_035_banosNNA_mixto_cant").val();
+    var canBañosFunciNNA = $("#IdValor_17").val();
+    var canBañosNormaNNA = $("#IdValor_18").val();
+    var canBañosHombrNNA = $("#IdValor_19").val();
+    var canBañosMujerNNA = $("#IdValor_20").val();
+    var canBañosMixtoNNA = $("#IdValor_21").val();
 
     var cantidadDuchasNNA = $("#Infraest_038_duchasNNA_cantidad").val();
-    var canDuchasFunciNNA = $("#Infraest_037_duchasNNA_funcionamiento_cant").val();
-    var canDuchasNormaNNA = $("#Infraest_037_duchasNNA_normativa_cant").val();
-    var canDuchasHombrNNA = $("#Infraest_037_duchasNNA_hombres_cant").val();
-    var canDuchasMujerNNA = $("#Infraest_037_duchasNNA_mujeres_cant").val();
-    var canDuchasMixtoNNA = $("#Infraest_037_duchasNNA_mixtos_cant").val();
+    var canDuchasFunciNNA = $("#IdValor_22").val();
+    var canDuchasNormaNNA = $("#IdValor_23").val();
+    var canDuchasHombrNNA = $("#IdValor_24").val();
+    var canDuchasMujerNNA = $("#IdValor_25").val();
+    var canDuchasMixtoNNA = $("#IdValor_26").val();
 
-    var ambienteAcorde = $("#Infraest_039_ambientacionAcorde_existe").val();
+    var ambienteAcorde = $("#IdParInfraestructura_27").val();
 
-    var vestuarioAdecuado = $("#Infraest_040_vestuarioAdecuado_existe").val();
-    var vestuarioPersonalizado = $("#Infraest_040_vestuarioPersonalizado_existe").val();
+    var vestuarioAdecuado = $("#IdParInfraestructura_28").val();
+    var vestuarioPersonalizado = $("#IdParInfraestructura_29").val();
     
-    var utilesAseo = $("#Infraest_041_utilesAseoPersonalNNA_existe").val();
-    var aguaCaliente = $("#Infraest_042_aguaCaliente_existe").val();
+    var utilesAseo = $("#IdParInfraestructura_30").val();
+    var aguaCaliente = $("#IdParInfraestructura_31").val();
 
     var calefonGas = $("#Infraest_043_estadoCalefonLlavesGas_existe").val();
-    var calefonNorma = $("#Infraest_043_CumpleNormaCalefon").val();
-    var llaveGasNorma = $("#Infraest_043_CumpleNormaLlaveGas").val();
+    var calefonNorma = $("#IdParInfraestructura_32").val();
+    var llaveGasNorma = $("#IdParInfraestructura_33").val();
     
-    var sistemaCalefacion = $("#Infraest_044_sistemaCalefaccion_existe").val();
-    var ventilacion = $("#Infraest_045_ventilacionAdecuada_existe").val();
-    var accesoDiscapacitados = $("#Infraest_046_AccesoDiscapacitados_existe").val();
-    var habilitaDiscapacitados = $("#Infraest_047_InstalacionesHabilitadasDiscapacitados_existe").val();
+    var sistemaCalefacion = $("#IdParInfraestructura_34").val();
+    var ventilacion = $("#IdParInfraestructura_35").val();
+    var accesoDiscapacitados = $("#IdParInfraestructura_36").val();
+    var habilitaDiscapacitados = $("#IdParInfraestructura_37").val();
     var observacionesInfraestructura = replaceAll(EliminaEspacios(document.getElementById("Infraest_049_observaciones").value), "'", "");
 
     //VALIDACION DE CAMPOS ANTECEDENTES INFRAESTRUCUTURA
@@ -3972,69 +4002,69 @@ function GenerarFormularioPDF_FR(opc) {
     var dotacion_101_Observaciones = "";
 
     //variables antecedentes infraestructura-------------
-    var Infraest_001_ofi_admin_existe = "";
-    var Infraest_002_ofi_admin_cantidad = "";
-    var Infraest_003_salaReuniones_existe = "";
-    var Infraest_004_salaReuniones_cantidad = "";
-    var Infraest_005_salaRecepcion_existe = "";
-    var Infraest_006_salaRecepcion_cantidad = "";
-    var Infraest_007_espacioVisitas_existe = "";
-    var Infraest_008_espacioVisitas_cantidad = "";
-    var Infraest_009_salaMultiuso_existe = "";
-    var Infraest_010_salaMultiuso_cantidad = "";
-    var Infraest_011_salaEstar_existe = "";
-    var Infraest_012_salaEstar_cantidad = "";
-    var Infraest_013_enfermeria_existe = "";
-    var Infraest_014_enfermeria_cantidad = "";
-    var Infraest_015_espacioRecreacional_existe = "";
-    var Infraest_016_espacioRecreacional_cantidad = "";
-    var Infraest_019_areasVerdes_existe = "";
-    var Infraest_020_areasVerdes_cantidad = "";
-    var Infraest_021_cocina_existe = "";
-    var Infraest_022_cocina_cantidad = "";
-    var Infraest_023_comedor_existe = "";
-    var Infraest_024_comedor_cantidad = "";
-    var Infraest_025_Lavanderia_existe = "";
-    var Infraest_026_Lavanderia_cantidad = "";
-    var Infraest_027_Dormitorio_existe = "";
-    var Infraest_028_Dormitorio_cantidad = "";
-    var Infraest_029_CamasNNA_existe = "";
-    var Infraest_030_CamasNNA_cantidad = "";
-    var Infraest_031_closetLocker_existe = "";
-    var Infraest_032_closetLocker_cantidad = "";
-    var Infraest_033_banosPublico_existe = "";
-    var Infraest_034_banosPublico_cantidad = "";
-    var Infraest_035_banosNNA_Funcionamiento_existe = "";
-    var Infraest_035_banosNNA_Funcionamiento_cant = "";
-    var Infraest_035_banosNNA_AcuerdoNormativa_existe = "";
-    var Infraest_035_banosNNA_AcuerdoNormativa_cant = "";
-    var Infraest_035_banosNNA_Hombre_existe = "";
-    var Infraest_035_banosNNA_Hombre_cant = "";
-    var Infraest_035_banosNNA_Mujer_existe = "";
-    var Infraest_035_banosNNA_Mujer_cant = "";
-    var Infraest_035_banosNNA_mixto_existe = "";
-    var Infraest_035_banosNNA_mixto_cant = "";
-    var Infraest_037_duchasNNA_funcionamiento_existe = "";
-    var Infraest_037_duchasNNA_funcionamiento_cant = "";
-    var Infraest_037_duchasNNA_normativa_existe = "";
-    var Infraest_037_duchasNNA_normativa_cant = "";
-    var Infraest_037_duchasNNA_hombres_existe = "";
-    var Infraest_037_duchasNNA_hombres_cant = "";
-    var Infraest_037_duchasNNA_mujeres_existe = "";
-    var Infraest_037_duchasNNA_mujeres_cant = "";
-    var Infraest_037_duchasNNA_mixtos_existe = "";
-    var Infraest_037_duchasNNA_mixtos_cant = "";
-    var Infraest_039_ambientacionAcorde_existe = "";
-    var Infraest_040_vestuarioAdecuado_existe = "";
-    var Infraest_040_vestuarioPersonalizado_existe = "";
-    var Infraest_041_utilesAseoPersonalNNA_existe = "";
-    var Infraest_042_aguaCaliente_existe = "";
-    var Infraest_043_CumpleNormaCalefon = "";
-    var Infraest_043_CumpleNormaLlaveGas = "";
-    var Infraest_044_sistemaCalefaccion_existe = "";
-    var Infraest_045_ventilacionAdecuada_existe = "";
-    var Infraest_046_AccesoDiscapacitados_existe = "";
-    var Infraest_047_InstalacionesHabilitadasDiscapacitados_existe = "";
+    var IdParInfraestructura_1 = "";
+    var IdValor_1 = "";
+    var IdParInfraestructura_2 = "";
+    var IdValor_2 = "";
+    var IdParInfraestructura_3 = "";
+    var IdValor_3 = "";
+    var IdParInfraestructura_4 = "";
+    var IdValor_4 = "";
+    var IdParInfraestructura_5 = "";
+    var IdValor_5 = "";
+    var IdParInfraestructura_6 = "";
+    var IdValor_6 = "";
+    var IdParInfraestructura_7 = "";
+    var IdValor_7 = "";
+    var IdParInfraestructura_8 = "";
+    var IdValor_8 = "";
+    var IdParInfraestructura_9 = "";
+    var IdValor_9 = "";
+    var IdParInfraestructura_10 = "";
+    var IdValor_10 = "";
+    var IdParInfraestructura_11 = "";
+    var IdValor_11 = "";
+    var IdParInfraestructura_12 = "";
+    var IdValor_12 = "";
+    var IdParInfraestructura_13 = "";
+    var IdValor_13 = "";
+    var IdParInfraestructura_14 = "";
+    var IdValor_14 = "";
+    var IdParInfraestructura_15 = "";
+    var IdValor_15 = "";
+    var IdParInfraestructura_16 = "";
+    var IdValor_16 = "";
+    var IdParInfraestructura_17 = "";
+    var IdValor_17 = "";
+    var IdParInfraestructura_18 = "";
+    var IdValor_18 = "";
+    var IdParInfraestructura_19 = "";
+    var IdValor_19 = "";
+    var IdParInfraestructura_20 = "";
+    var IdValor_20 = "";
+    var IdParInfraestructura_21 = "";
+    var IdValor_21 = "";
+    var IdParInfraestructura_22 = "";
+    var IdValor_22 = "";
+    var IdParInfraestructura_23 = "";
+    var IdValor_23 = "";
+    var IdParInfraestructura_24 = "";
+    var IdValor_24 = "";
+    var IdParInfraestructura_25 = "";
+    var IdValor_25 = "";
+    var IdParInfraestructura_26 = "";
+    var IdValor_26 = "";
+    var IdParInfraestructura_27 = "";
+    var IdParInfraestructura_28 = "";
+    var IdParInfraestructura_29 = "";
+    var IdParInfraestructura_30 = "";
+    var IdParInfraestructura_31 = "";
+    var IdParInfraestructura_32 = "";
+    var IdParInfraestructura_33 = "";
+    var IdParInfraestructura_34 = "";
+    var IdParInfraestructura_35 = "";
+    var IdParInfraestructura_36 = "";
+    var IdParInfraestructura_37 = "";
     var Infraest_049_observaciones = "";
 
     //variables antecedentes seguridad-------------
@@ -4287,69 +4317,69 @@ function GenerarFormularioPDF_FR(opc) {
         dotacion_101_Observaciones = $("#dotacion_101_Observaciones").val();
 
         //variables antecedentes infraestructura-------------
-        Infraest_001_ofi_admin_existe = $("#Infraest_001_ofi_admin_existe option:selected").text(); 
-        Infraest_002_ofi_admin_cantidad = $("#Infraest_002_ofi_admin_cantidad").val();
-        Infraest_003_salaReuniones_existe = $("#Infraest_003_salaReuniones_existe option:selected").text();
-        Infraest_004_salaReuniones_cantidad = $("#Infraest_004_salaReuniones_cantidad").val();
-        Infraest_005_salaRecepcion_existe = $("#Infraest_005_salaRecepcion_existe option:selected").text();
-        Infraest_006_salaRecepcion_cantidad = $("#Infraest_006_salaRecepcion_cantidad").val();
-        Infraest_007_espacioVisitas_existe = $("#Infraest_007_espacioVisitas_existe option:selected").text();
-        Infraest_008_espacioVisitas_cantidad = $("#Infraest_008_espacioVisitas_cantidad").val();
-        Infraest_009_salaMultiuso_existe = $("#Infraest_009_salaMultiuso_existe option:selected").text();
-        Infraest_010_salaMultiuso_cantidad = $("#Infraest_010_salaMultiuso_cantidad").val();
-        Infraest_011_salaEstar_existe = $("#Infraest_011_salaEstar_existe option:selected").text();
-        Infraest_012_salaEstar_cantidad = $("#Infraest_012_salaEstar_cantidad").val();
-        Infraest_013_enfermeria_existe = $("#Infraest_013_enfermeria_existe option:selected").text();
-        Infraest_014_enfermeria_cantidad = $("#Infraest_014_enfermeria_cantidad").val();
-        Infraest_015_espacioRecreacional_existe = $("#Infraest_015_espacioRecreacional_existe option:selected").text();
-        Infraest_016_espacioRecreacional_cantidad = $("#Infraest_016_espacioRecreacional_cantidad").val();
-        Infraest_019_areasVerdes_existe = $("#Infraest_019_areasVerdes_existe option:selected").text();
-        Infraest_020_areasVerdes_cantidad = $("#Infraest_020_areasVerdes_cantidad").val();
-        Infraest_021_cocina_existe = $("#Infraest_021_cocina_existe option:selected").text();
-        Infraest_022_cocina_cantidad = $("#Infraest_022_cocina_cantidad").val();
-        Infraest_023_comedor_existe = $("#Infraest_023_comedor_existe option:selected").text();
-        Infraest_024_comedor_cantidad = $("#Infraest_024_comedor_cantidad").val();
-        Infraest_025_Lavanderia_existe = $("#Infraest_025_Lavanderia_existe option:selected").text();
-        Infraest_026_Lavanderia_cantidad = $("#Infraest_026_Lavanderia_cantidad").val();
-        Infraest_027_Dormitorio_existe = $("#Infraest_027_Dormitorio_existe option:selected").text();
-        Infraest_028_Dormitorio_cantidad = $("#Infraest_028_Dormitorio_cantidad").val();
-        Infraest_029_CamasNNA_existe = $("#Infraest_029_CamasNNA_existe option:selected").text();
-        Infraest_030_CamasNNA_cantidad = $("#Infraest_030_CamasNNA_cantidad").val();
-        Infraest_031_closetLocker_existe = $("#Infraest_031_closetLocker_existe option:selected").text();
-        Infraest_032_closetLocker_cantidad = $("#Infraest_032_closetLocker_cantidad").val();
-        Infraest_033_banosPublico_existe = $("#Infraest_033_banosPublico_existe option:selected").text();
-        Infraest_034_banosPublico_cantidad = $("#Infraest_034_banosPublico_cantidad").val();
-        Infraest_035_banosNNA_Funcionamiento_existe = $("#Infraest_035_banosNNA_Funcionamiento_existe option:selected").text();
-        Infraest_035_banosNNA_Funcionamiento_cant = $("#Infraest_035_banosNNA_Funcionamiento_cant").val();
-        Infraest_035_banosNNA_AcuerdoNormativa_existe = $("#Infraest_035_banosNNA_AcuerdoNormativa_existe option:selected").text();
-        Infraest_035_banosNNA_AcuerdoNormativa_cant = $("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val();
-        Infraest_035_banosNNA_Hombre_existe = $("#Infraest_035_banosNNA_Hombre_existe option:selected").text();
-        Infraest_035_banosNNA_Hombre_cant = $("#Infraest_035_banosNNA_Hombre_cant").val();
-        Infraest_035_banosNNA_Mujer_existe = $("#Infraest_035_banosNNA_Mujer_existe option:selected").text();
-        Infraest_035_banosNNA_Mujer_cant = $("#Infraest_035_banosNNA_Mujer_cant").val();
-        Infraest_035_banosNNA_mixto_existe = $("#Infraest_035_banosNNA_mixto_existe option:selected").text();
-        Infraest_035_banosNNA_mixto_cant = $("#Infraest_035_banosNNA_mixto_cant").val();
-        Infraest_037_duchasNNA_funcionamiento_existe = $("#Infraest_037_duchasNNA_funcionamiento_existe option:selected").text();
-        Infraest_037_duchasNNA_funcionamiento_cant = $("#Infraest_037_duchasNNA_funcionamiento_cant").val();
-        Infraest_037_duchasNNA_normativa_existe = $("#Infraest_037_duchasNNA_normativa_existe option:selected").text();
-        Infraest_037_duchasNNA_normativa_cant = $("#Infraest_037_duchasNNA_normativa_cant").val();
-        Infraest_037_duchasNNA_hombres_existe = $("#Infraest_037_duchasNNA_hombres_existe option:selected").text();
-        Infraest_037_duchasNNA_hombres_cant = $("#Infraest_037_duchasNNA_hombres_cant").val();
-        Infraest_037_duchasNNA_mujeres_existe = $("#Infraest_037_duchasNNA_mujeres_existe option:selected").text();
-        Infraest_037_duchasNNA_mujeres_cant = $("#Infraest_037_duchasNNA_mujeres_cant").val();
-        Infraest_037_duchasNNA_mixtos_existe = $("#Infraest_037_duchasNNA_mixtos_existe option:selected").text();
-        Infraest_037_duchasNNA_mixtos_cant = $("#Infraest_037_duchasNNA_mixtos_cant").val();
-        Infraest_039_ambientacionAcorde_existe = $("#Infraest_039_ambientacionAcorde_existe option:selected").text();
-        Infraest_040_vestuarioAdecuado_existe = $("#Infraest_040_vestuarioAdecuado_existe option:selected").text();
-        Infraest_040_vestuarioPersonalizado_existe = $("#Infraest_040_vestuarioPersonalizado_existe option:selected").text();
-        Infraest_041_utilesAseoPersonalNNA_existe = $("#Infraest_041_utilesAseoPersonalNNA_existe option:selected").text();
-        Infraest_042_aguaCaliente_existe = $("#Infraest_042_aguaCaliente_existe option:selected").text();
-        Infraest_043_CumpleNormaCalefon = $("#Infraest_043_CumpleNormaCalefon option:selected").text();
-        Infraest_043_CumpleNormaLlaveGas = $("#Infraest_043_CumpleNormaLlaveGas option:selected").text();
-        Infraest_044_sistemaCalefaccion_existe = $("#Infraest_044_sistemaCalefaccion_existe option:selected").text();
-        Infraest_045_ventilacionAdecuada_existe = $("#Infraest_045_ventilacionAdecuada_existe option:selected").text();
-        Infraest_046_AccesoDiscapacitados_existe = $("#Infraest_046_AccesoDiscapacitados_existe option:selected").text();
-        Infraest_047_InstalacionesHabilitadasDiscapacitados_existe = $("#Infraest_047_InstalacionesHabilitadasDiscapacitados_existe option:selected").text();
+        IdParInfraestructura_1 = $("#IdParInfraestructura_1 option:selected").text(); 
+        IdValor_1 = $("#IdValor_1").val();
+        IdParInfraestructura_2 = $("#IdParInfraestructura_2 option:selected").text();
+        IdValor_2 = $("#IdValor_2").val();
+        IdParInfraestructura_3 = $("#IdParInfraestructura_3 option:selected").text();
+        IdValor_3 = $("#IdValor_3").val();
+        IdParInfraestructura_4 = $("#IdParInfraestructura_4 option:selected").text();
+        IdValor_4 = $("#IdValor_4").val();
+        IdParInfraestructura_5 = $("#IdParInfraestructura_5 option:selected").text();
+        IdValor_5 = $("#IdValor_5").val();
+        IdParInfraestructura_6 = $("#IdParInfraestructura_6 option:selected").text();
+        IdValor_6 = $("#IdValor_6").val();
+        IdParInfraestructura_7 = $("#IdParInfraestructura_7 option:selected").text();
+        IdValor_7 = $("#IdValor_7").val();
+        IdParInfraestructura_8 = $("#IdParInfraestructura_8 option:selected").text();
+        IdValor_8 = $("#IdValor_8").val();
+        IdParInfraestructura_9 = $("#IdParInfraestructura_9 option:selected").text();
+        IdValor_9 = $("#IdValor_9").val();
+        IdParInfraestructura_10 = $("#IdParInfraestructura_10 option:selected").text();
+        IdValor_10 = $("#IdValor_10").val();
+        IdParInfraestructura_11 = $("#IdParInfraestructura_11 option:selected").text();
+        IdValor_11 = $("#IdValor_11").val();
+        IdParInfraestructura_12 = $("#IdParInfraestructura_12 option:selected").text();
+        IdValor_12 = $("#IdValor_12").val();
+        IdParInfraestructura_13 = $("#IdParInfraestructura_13 option:selected").text();
+        IdValor_13 = $("#IdValor_13").val();
+        IdParInfraestructura_14 = $("#IdParInfraestructura_14 option:selected").text();
+        IdValor_14 = $("#IdValor_14").val();
+        IdParInfraestructura_15 = $("#IdParInfraestructura_15 option:selected").text();
+        IdValor_15 = $("#IdValor_15").val();
+        IdParInfraestructura_16 = $("#IdParInfraestructura_16 option:selected").text();
+        IdValor_16 = $("#IdValor_16").val();
+        IdParInfraestructura_17 = $("#IdParInfraestructura_17 option:selected").text();
+        IdValor_17 = $("#IdValor_17").val();
+        IdParInfraestructura_18 = $("#IdParInfraestructura_18 option:selected").text();
+        IdValor_18 = $("#IdValor_18").val();
+        IdParInfraestructura_19 = $("#IdParInfraestructura_19 option:selected").text();
+        IdValor_19 = $("#IdValor_19").val();
+        IdParInfraestructura_20 = $("#IdParInfraestructura_20 option:selected").text();
+        IdValor_20 = $("#IdValor_20").val();
+        IdParInfraestructura_21 = $("#IdParInfraestructura_21 option:selected").text();
+        IdValor_21 = $("#IdValor_21").val();
+        IdParInfraestructura_22 = $("#IdParInfraestructura_22 option:selected").text();
+        IdValor_22 = $("#IdValor_22").val();
+        IdParInfraestructura_23 = $("#IdParInfraestructura_23 option:selected").text();
+        IdValor_23 = $("#IdValor_23").val();
+        IdParInfraestructura_24 = $("#IdParInfraestructura_24 option:selected").text();
+        IdValor_24 = $("#IdValor_24").val();
+        IdParInfraestructura_25 = $("#IdParInfraestructura_25 option:selected").text();
+        IdValor_25 = $("#IdValor_25").val();
+        IdParInfraestructura_26 = $("#IdParInfraestructura_26 option:selected").text();
+        IdValor_26 = $("#IdValor_26").val();
+        IdParInfraestructura_27 = $("#IdParInfraestructura_27 option:selected").text();
+        IdParInfraestructura_28 = $("#IdParInfraestructura_28 option:selected").text();
+        IdParInfraestructura_29 = $("#IdParInfraestructura_29 option:selected").text();
+        IdParInfraestructura_30 = $("#IdParInfraestructura_30 option:selected").text();
+        IdParInfraestructura_31 = $("#IdParInfraestructura_31 option:selected").text();
+        IdParInfraestructura_32 = $("#IdParInfraestructura_32 option:selected").text();
+        IdParInfraestructura_33 = $("#IdParInfraestructura_33 option:selected").text();
+        IdParInfraestructura_34 = $("#IdParInfraestructura_34 option:selected").text();
+        IdParInfraestructura_35 = $("#IdParInfraestructura_35 option:selected").text();
+        IdParInfraestructura_36 = $("#IdParInfraestructura_36 option:selected").text();
+        IdParInfraestructura_37 = $("#IdParInfraestructura_37 option:selected").text();
         Infraest_049_observaciones = $("#Infraest_049_observaciones").val();
 
         //variables antecedentes seguridad-------------
@@ -4628,43 +4658,43 @@ function GenerarFormularioPDF_FR(opc) {
                     body: [
                             [{ text: 'ANTECEDENTES INFRAESTRUCTURA Y EQUIPAMIENTO', style: 'header2', colSpan: 3 }, {}, {}],
                             [{}, { text: 'EXISTE', style: 'text2' }, { text: 'CANTIDAD', style: 'text2' }],
-                            [{ text: 'Oficinas Administrativas', style: 'text2' }, { text: Infraest_001_ofi_admin_existe, style: 'text2' }, { text: Infraest_002_ofi_admin_cantidad, style: 'text2' }],
-                            [{ text: 'Sala de Reuniones', style: 'text2' }, { text: Infraest_003_salaReuniones_existe, style: 'text2' }, { text: Infraest_004_salaReuniones_cantidad, style: 'text2' }],
-                            [{ text: 'Sala de Recepción 	', style: 'text2' },{ text:  Infraest_005_salaRecepcion_existe, style: 'text2' },{ text:  Infraest_006_salaRecepcion_cantidad, style: 'text2' }],
-                            [{ text: 'Espacio de Visitas 	', style: 'text2' },{ text:  Infraest_007_espacioVisitas_existe, style: 'text2' },{ text:  Infraest_008_espacioVisitas_cantidad, style: 'text2' }],
-                            [{ text: 'Sala Multiuso para Talleres ', style: 'text2' },{ text:  Infraest_009_salaMultiuso_existe, style: 'text2' },{ text:  Infraest_010_salaMultiuso_cantidad, style: 'text2' }],
-                            [{ text: 'Sala de Estar/Living ', style: 'text2' },{ text:  Infraest_011_salaEstar_existe, style: 'text2' },{ text:  Infraest_012_salaEstar_cantidad, style: 'text2' }],
-                            [{ text: 'Unidad de Salud', style: 'text2' },{ text:  Infraest_013_enfermeria_existe, style: 'text2' },{ text:  Infraest_014_enfermeria_cantidad, style: 'text2' }],
-                            [{ text: 'Espacios Recreacionales', style: 'text2' },{ text:  Infraest_015_espacioRecreacional_existe, style: 'text2' },{ text:  Infraest_016_espacioRecreacional_cantidad, style: 'text2' }],
-                            [{ text: 'Áreas Verdes', style: 'text2' },{ text:  Infraest_019_areasVerdes_existe, style: 'text2' },{ text:  Infraest_020_areasVerdes_cantidad, style: 'text2' }],
-                            [{ text: 'Cocina', style: 'text2' },{ text:  Infraest_021_cocina_existe, style: 'text2' },{ text:  Infraest_022_cocina_cantidad, style: 'text2' }],
-                            [{ text: 'Comedor', style: 'text2' },{ text:  Infraest_023_comedor_existe, style: 'text2' },{ text:  Infraest_024_comedor_cantidad, style: 'text2' }],
-                            [{ text: 'Lavandería', style: 'text2' },{ text:  Infraest_025_Lavanderia_existe, style: 'text2' },{ text:  Infraest_026_Lavanderia_cantidad, style: 'text2' }],
-                            [{ text: 'Dormitorio NNA', style: 'text2' },{ text:  Infraest_027_Dormitorio_existe, style: 'text2' },{ text:  Infraest_028_Dormitorio_cantidad, style: 'text2' }],
-                            [{ text: 'Camas NNA', style: 'text2' },{ text:  Infraest_029_CamasNNA_existe, style: 'text2' },{ text:  Infraest_030_CamasNNA_cantidad, style: 'text2' }],
-                            [{ text: 'Closet, Lockers', style: 'text2' },{ text:  Infraest_031_closetLocker_existe, style: 'text2' },{ text:  Infraest_032_closetLocker_cantidad, style: 'text2' }],
-                            [{ text: 'Baños para Público', style: 'text2' },{ text:  Infraest_033_banosPublico_existe, style: 'text2' },{ text:  Infraest_034_banosPublico_cantidad, style: 'text2' }],
-                            [{ text: 'Baños NNA en Funcionamiento', style: 'text2' },{ text:  Infraest_035_banosNNA_Funcionamiento_existe, style: 'text2' },{ text:  Infraest_035_banosNNA_Funcionamiento_cant, style: 'text2' }],
-                            [{ text: 'Baños NNA de acuerdo a Normativa', style: 'text2' },{ text:  Infraest_035_banosNNA_AcuerdoNormativa_existe, style: 'text2' },{ text:  Infraest_035_banosNNA_AcuerdoNormativa_cant, style: 'text2' }],
-                            [{ text: 'Baños NNA de hombres ', style: 'text2' },{ text:  Infraest_035_banosNNA_Hombre_existe, style: 'text2' },{ text:  Infraest_035_banosNNA_Hombre_cant, style: 'text2' }],
-                            [{ text: 'Baños NNA de mujeres', style: 'text2' },{ text:  Infraest_035_banosNNA_Mujer_existe, style: 'text2' },{ text:  Infraest_035_banosNNA_Mujer_cant, style: 'text2' }],
-                            [{ text: 'Baños NNA mixtos', style: 'text2' },{ text:  Infraest_035_banosNNA_mixto_existe, style: 'text2' },{ text:  Infraest_035_banosNNA_mixto_cant, style: 'text2' }],
-                            [{ text: 'Duchas para NNA en Funcionamiento', style: 'text2' },{ text:  Infraest_037_duchasNNA_funcionamiento_existe, style: 'text2' },{ text:  Infraest_037_duchasNNA_funcionamiento_cant, style: 'text2' }],
-                            [{ text: 'Duchas para NNA de acuerdo a Normativa', style: 'text2' },{ text:  Infraest_037_duchasNNA_normativa_existe, style: 'text2' },{ text:  Infraest_037_duchasNNA_normativa_cant, style: 'text2' }],
-                            [{ text: 'Duchas para NNA de hombres', style: 'text2' },{ text:  Infraest_037_duchasNNA_hombres_existe, style: 'text2' },{ text:  Infraest_037_duchasNNA_hombres_cant, style: 'text2' }],
-                            [{ text: 'Duchas para NNA de mujeres', style: 'text2' },{ text:  Infraest_037_duchasNNA_mujeres_existe, style: 'text2' },{ text:  Infraest_037_duchasNNA_mujeres_cant, style: 'text2' }],
-                            [{ text: 'Duchas para NNA mixtas', style: 'text2' },{ text:  Infraest_037_duchasNNA_mixtos_existe, style: 'text2' },{ text:  Infraest_037_duchasNNA_mixtos_cant, style: 'text2' }],
-                            [{ text: 'Ambientación Acorde a la Población', style: 'text2' }, { text: Infraest_039_ambientacionAcorde_existe, style: 'text2' }, { text: '', style: 'celdaNula' }],
-                            [{ text: 'Vestuario adecuado de acuerdo a estación', style: 'text2' },{ text:  Infraest_040_vestuarioAdecuado_existe, style: 'text2' },{text:'', style: 'celdaNula'}],
-                            [{ text: 'Vestuario personalizado para el NNA', style: 'text2' }, { text: Infraest_040_vestuarioPersonalizado_existe, style: 'text2' }, { text: '', style: 'celdaNula' }],
-                            [{ text: 'Útiles de Aseo Personal para los NNA', style: 'text2' }, { text: Infraest_041_utilesAseoPersonalNNA_existe, style: 'text2' }, { text: '', style: 'celdaNula' }],
-                            [{ text: 'Agua Caliente', style: 'text2' }, { text: Infraest_042_aguaCaliente_existe, style: 'text2' }, { text: '', style: 'celdaNula' }],
-                            [{ text: 'Cumple Normativa Calefón ', style: 'text2' }, { text: Infraest_043_CumpleNormaCalefon, style: 'text2' }, { text: '', style: 'celdaNula' }],
-                            [{ text: 'Cumple Normativa llave de gas', style: 'text2' }, { text: Infraest_043_CumpleNormaLlaveGas, style: 'text2' }, { text: '', style: 'celdaNula' }],
-                            [{ text: 'Sistema de calefacción (Especificar en Observación)', style: 'text2' }, { text: Infraest_044_sistemaCalefaccion_existe, style: 'text2' }, { text: '', style: 'celdaNula' }],
-                            [{ text: 'Ventilación adecuada del inmueble', style: 'text2' }, { text: Infraest_045_ventilacionAdecuada_existe, style: 'text2' }, { text: '', style: 'celdaNula' }],
-                            [{ text: 'Acceso para personas con situación de Discapacidad', style: 'text2' }, { text: Infraest_046_AccesoDiscapacitados_existe, style: 'text2' }, { text: '', style: 'celdaNula' }],
-                            [{ text: 'Instalaciones Habilitadas para Discapacitados (Baños, ramplas, etc.)', style: 'text2' }, { text: Infraest_047_InstalacionesHabilitadasDiscapacitados_existe, style: 'text2' }, { text: '', style: 'celdaNula' }],
+                        [{ text: 'Oficinas Administrativas', style: 'text2' }, { text: IdParInfraestructura_1, style: 'text2' }, { text: IdValor_1, style: 'text2' }],
+                        [{ text: 'Sala de Reuniones', style: 'text2' }, { text: IdParInfraestructura_2, style: 'text2' }, { text: IdValor_2, style: 'text2' }],
+                        [{ text: 'Sala de Recepción 	', style: 'text2' }, { text: IdParInfraestructura_3, style: 'text2' }, { text: IdValor_3, style: 'text2' }],
+                        [{ text: 'Espacio de Visitas 	', style: 'text2' }, { text: IdParInfraestructura_4, style: 'text2' }, { text: IdValor_4, style: 'text2' }],
+                        [{ text: 'Sala Multiuso para Talleres ', style: 'text2' }, { text: IdParInfraestructura_5, style: 'text2' }, { text: IdValor_5, style: 'text2' }],
+                        [{ text: 'Sala de Estar/Living ', style: 'text2' }, { text: IdParInfraestructura_6, style: 'text2' }, { text: IdValor_6, style: 'text2' }],
+                        [{ text: 'Unidad de Salud', style: 'text2' }, { text: IdParInfraestructura_7, style: 'text2' }, { text: IdValor_7, style: 'text2' }],
+                        [{ text: 'Espacios Recreacionales', style: 'text2' }, { text: IdParInfraestructura_8, style: 'text2' }, { text: IdValor_8, style: 'text2' }],
+                        [{ text: 'Áreas Verdes', style: 'text2' }, { text: IdParInfraestructura_9, style: 'text2' }, { text: IdValor_9, style: 'text2' }],
+                        [{ text: 'Cocina', style: 'text2' }, { text: IdParInfraestructura_10, style: 'text2' }, { text: IdValor_10, style: 'text2' }],
+                        [{ text: 'Comedor', style: 'text2' }, { text: IdParInfraestructura_11, style: 'text2' }, { text: IdValor_11, style: 'text2' }],
+                        [{ text: 'Lavandería', style: 'text2' }, { text: IdParInfraestructura_12, style: 'text2' }, { text: IdValor_12, style: 'text2' }],
+                        [{ text: 'Dormitorio NNA', style: 'text2' }, { text: IdParInfraestructura_13, style: 'text2' }, { text: IdValor_13, style: 'text2' }],
+                        [{ text: 'Camas NNA', style: 'text2' }, { text: IdParInfraestructura_14, style: 'text2' }, { text: IdValor_14, style: 'text2' }],
+                        [{ text: 'Closet, Lockers', style: 'text2' }, { text: IdParInfraestructura_15, style: 'text2' }, { text: IdValor_15, style: 'text2' }],
+                        [{ text: 'Baños para Público', style: 'text2' }, { text: IdParInfraestructura_16, style: 'text2' }, { text: IdValor_16, style: 'text2' }],
+                        [{ text: 'Baños NNA en Funcionamiento', style: 'text2' }, { text: IdParInfraestructura_17, style: 'text2' }, { text: IdValor_17, style: 'text2' }],
+                        [{ text: 'Baños NNA de acuerdo a Normativa', style: 'text2' }, { text: IdParInfraestructura_18, style: 'text2' }, { text: IdValor_18, style: 'text2' }],
+                        [{ text: 'Baños NNA de hombres ', style: 'text2' }, { text: IdParInfraestructura_19, style: 'text2' }, { text: IdValor_19, style: 'text2' }],
+                        [{ text: 'Baños NNA de mujeres', style: 'text2' }, { text: IdParInfraestructura_20, style: 'text2' }, { text: IdValor_20, style: 'text2' }],
+                        [{ text: 'Baños NNA mixtos', style: 'text2' }, { text: IdParInfraestructura_21, style: 'text2' }, { text: IdValor_21, style: 'text2' }],
+                        [{ text: 'Duchas para NNA en Funcionamiento', style: 'text2' }, { text: IdParInfraestructura_22, style: 'text2' }, { text: IdValor_22, style: 'text2' }],
+                        [{ text: 'Duchas para NNA de acuerdo a Normativa', style: 'text2' }, { text: IdParInfraestructura_23, style: 'text2' }, { text: IdValor_23, style: 'text2' }],
+                        [{ text: 'Duchas para NNA de hombres', style: 'text2' }, { text: IdParInfraestructura_24, style: 'text2' }, { text: IdValor_24, style: 'text2' }],
+                        [{ text: 'Duchas para NNA de mujeres', style: 'text2' }, { text: IdParInfraestructura_25, style: 'text2' }, { text: IdValor_25, style: 'text2' }],
+                        [{ text: 'Duchas para NNA mixtas', style: 'text2' }, { text: IdParInfraestructura_26, style: 'text2' }, { text: IdValor_26, style: 'text2' }],
+                        [{ text: 'Ambientación Acorde a la Población', style: 'text2' }, { text: IdParInfraestructura_27, style: 'text2' }, { text: '', style: 'celdaNula' }],
+                        [{ text: 'Vestuario adecuado de acuerdo a estación', style: 'text2' }, { text: IdParInfraestructura_28, style: 'text2' },{text:'', style: 'celdaNula'}],
+                        [{ text: 'Vestuario personalizado para el NNA', style: 'text2' }, { text: IdParInfraestructura_29, style: 'text2' }, { text: '', style: 'celdaNula' }],
+                        [{ text: 'Útiles de Aseo Personal para los NNA', style: 'text2' }, { text: IdParInfraestructura_30, style: 'text2' }, { text: '', style: 'celdaNula' }],
+                        [{ text: 'Agua Caliente', style: 'text2' }, { text: IdParInfraestructura_31, style: 'text2' }, { text: '', style: 'celdaNula' }],
+                        [{ text: 'Cumple Normativa Calefón ', style: 'text2' }, { text: IdParInfraestructura_32, style: 'text2' }, { text: '', style: 'celdaNula' }],
+                        [{ text: 'Cumple Normativa llave de gas', style: 'text2' }, { text: IdParInfraestructura_33, style: 'text2' }, { text: '', style: 'celdaNula' }],
+                        [{ text: 'Sistema de calefacción (Especificar en Observación)', style: 'text2' }, { text: IdParInfraestructura_34, style: 'text2' }, { text: '', style: 'celdaNula' }],
+                        [{ text: 'Ventilación adecuada del inmueble', style: 'text2' }, { text: IdParInfraestructura_35, style: 'text2' }, { text: '', style: 'celdaNula' }],
+                        [{ text: 'Acceso para personas con situación de Discapacidad', style: 'text2' }, { text: IdParInfraestructura_36, style: 'text2' }, { text: '', style: 'celdaNula' }],
+                        [{ text: 'Instalaciones Habilitadas para Discapacitados (Baños, ramplas, etc.)', style: 'text2' }, { text: IdParInfraestructura_37, style: 'text2' }, { text: '', style: 'celdaNula' }],
                             [{ text: 'OBSERVACIONES', style: 'text2', colSpan: 3 }, {}, {}],
                             [{ text: Infraest_049_observaciones, style: 'text2', colSpan: 3 }, {}, {}]
                     ]

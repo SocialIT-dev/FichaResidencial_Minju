@@ -79,4 +79,15 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.DTO
         public string Descripcion { get; set; }
         public string error { get; set; }
     }
+
+    public class GetParInfraestructuraDto
+    {
+    public int IdParInfraestructura{ get; set; }
+    public string NombreParInfraestructura{ get; set; }
+    public bool VariableCuantitativa { get; set; }
+    public bool? SegundaVarCuantitativa { get; set; }
+    public string IndVigencia{ get; set; }
+    public string error { get; set; }
+    }
+
 }

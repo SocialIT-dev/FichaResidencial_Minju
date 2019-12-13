@@ -508,6 +508,14 @@ namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial
         #endregion
 
         #region Antecedentes Infraestructura
+  
+        [WebMethod]
+        public static List<GetParInfraestructuraDto> ObtenerParInfraestructura()
+        {
+            GetParInfraestructuraImpl _InfraestructuraImpl = new GetParInfraestructuraImpl();
+            var result = _InfraestructuraImpl.ObtenerParInfraestructura();
+            return result;
+        }
         [WebMethod]
         public static List<ResultadoOperacionInfraestructuraDto> GrabarAntecedentesInfraestructura(
                                                             int CodProyecto,

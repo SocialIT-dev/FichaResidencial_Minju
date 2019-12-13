@@ -95,6 +95,29 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Mapper
             }
             return list;
         }
+
+        public static List<GetParInfraestructuraDto> ToDtoParInfraestructura(DataTable dt)
+        {
+            List<GetParInfraestructuraDto> list = new List<GetParInfraestructuraDto>();
+            GetParInfraestructuraDto dto = new GetParInfraestructuraDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new GetParInfraestructuraDto();
+                dto.error = dr["error"].ToString();
+
+                if (dto.error == "")
+                {
+                    dto.IdParInfraestructura = (int)dr["IdParInfraestructura"];
+                    dto.NombreParInfraestructura = dr["NombreParInfraestructura"].ToString();
+                    dto.VariableCuantitativa = (bool)dr["VariableCuantitativa"];
+                    dto.SegundaVarCuantitativa = dr["SegundaVarCuantitativa"] is DBNull ? false : (bool)dr["SegundaVarCuantitativa"];
+                    dto.IndVigencia = dr["IndVigencia"].ToString();
+                }
+                list.Add(dto);
+            }
+            return list;
+        }
     }
 
     public class ResultadoOperacionInfraestructuraMapper

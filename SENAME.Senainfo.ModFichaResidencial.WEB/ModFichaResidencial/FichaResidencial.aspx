@@ -634,140 +634,7 @@ Spint 2.1
                     <tr>
                         <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes Recursos Materiales, Infraestructura y Equipamiento</span></td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td class="etiqCampo2"></td>
-                        <td class="etiqCampo2">CANTIDAD</td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Oficinas Administrativas</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_001_ofi_admin_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_002_ofi_admin_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(1);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Sala de Reuniones</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_003_salaReuniones_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_004_salaReuniones_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(2);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Sala de Recepción</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_005_salaRecepcion_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_006_salaRecepcion_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(3);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Espacio de Visitas</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_007_espacioVisitas_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_008_espacioVisitas_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(4);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Sala Multiuso para Talleres</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_009_salaMultiuso_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_010_salaMultiuso_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(5);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Sala de Estar/Living</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_011_salaEstar_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_012_salaEstar_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(6);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Unidad de Salud</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_013_enfermeria_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_014_enfermeria_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(7);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Espacios Recreacionales</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_015_espacioRecreacional_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_016_espacioRecreacional_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(8);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Áreas Verdes</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_019_areasVerdes_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_020_areasVerdes_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(9);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Cocina</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_021_cocina_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_022_cocina_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(10);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Comedor</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_023_comedor_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_024_comedor_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(11);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Lavandería</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_025_Lavanderia_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_026_Lavanderia_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(12);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Dormitorio NNA</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_027_Dormitorio_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_028_Dormitorio_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(13);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Camas NNA</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_029_CamasNNA_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_030_CamasNNA_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(14);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Closet, Lockers</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_031_closetLocker_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_032_closetLocker_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(15);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Baños para Público</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_033_banosPublico_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_034_banosPublico_cantidad" class="form-control textCampoSel1" onkeyup="HabilitaInfraestructura(16);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4" /></td>
-                    </tr>
-
+                   
                     <tr style="display: none;">
                         <td class="etiqCampo3">Baños NNA Adecuados y Suficientes</td>
                         <td style="border-bottom: 1px #B2B2B2 solid;">
@@ -784,47 +651,6 @@ Spint 2.1
                                 <option value="6">+5</option>
                             </select></td>
                     </tr>
-                    <tr>
-                        <td class="etiqCampo3">Baños NNA en Funcionamiento</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_035_banosNNA_Funcionamiento_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_035_banosNNA_Funcionamiento_cant" class="form-control textCampoSel1" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="HabilitaInfraestructura(19);" onblur="ValidaSumaDependientesbanosNNAFunc();" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Baños NNA de acuerdo a Normativa</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_035_banosNNA_AcuerdoNormativa_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_035_banosNNA_AcuerdoNormativa_cant" class="form-control textCampoSel1" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="HabilitaInfraestructura(20);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Baños NNA de hombres</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_035_banosNNA_Hombre_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_035_banosNNA_Hombre_cant" class="form-control textCampoSel1" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="HabilitaInfraestructura(21);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Baños NNA de mujeres</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_035_banosNNA_Mujer_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_035_banosNNA_Mujer_cant" class="form-control textCampoSel1" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="HabilitaInfraestructura(22);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Baños NNA mixtos</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_035_banosNNA_mixto_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_035_banosNNA_mixto_cant" class="form-control textCampoSel1" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="HabilitaInfraestructura(23);" maxlength="4" /></td>
-                    </tr>
-
                     <tr style="display: none;">
                         <td class="etiqCampo3">Duchas para NNA</td>
                         <td style="border-bottom: 1px #B2B2B2 solid;">
@@ -841,82 +667,6 @@ Spint 2.1
                                 <option value="6">+5</option>
                             </select></td>
                     </tr>
-                    <tr>
-                        <td class="etiqCampo3">Duchas para NNA en Funcionamiento</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_037_duchasNNA_funcionamiento_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_037_duchasNNA_funcionamiento_cant" class="form-control textCampoSel1" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="HabilitaInfraestructura(24);" onblur="ValidaSumaDependecniasDuchaNNAFunc();" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Duchas para  NNA de acuerdo a Normativa</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_037_duchasNNA_normativa_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_037_duchasNNA_normativa_cant" class="form-control textCampoSel1" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="HabilitaInfraestructura(25);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Duchas para NNA de hombres</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_037_duchasNNA_hombres_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_037_duchasNNA_hombres_cant" class="form-control textCampoSel1" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="HabilitaInfraestructura(26);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Duchas para NNA de mujeres</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_037_duchasNNA_mujeres_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_037_duchasNNA_mujeres_cant" class="form-control textCampoSel1" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="HabilitaInfraestructura(27);" maxlength="4" /></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Duchas para NNA mixtas</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_037_duchasNNA_mixtos_existe" disabled="disabled" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <input id="Infraest_037_duchasNNA_mixtos_cant" class="form-control textCampoSel1" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" onkeyup="HabilitaInfraestructura(28);" maxlength="4" /></td>
-                    </tr>
-
-                    <tr>
-                        <td class="etiqCampo3">Ambientación Acorde a la Población</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_039_ambientacionAcorde_existe" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Vestuario adecuado de acuerdo a estación</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_040_vestuarioAdecuado_existe" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Vestuario personalizado para el NNA</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_040_vestuarioPersonalizado_existe" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Útiles de Aseo Personal para los NNA</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_041_utilesAseoPersonalNNA_existe" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Agua Caliente</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_042_aguaCaliente_existe" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
                     <tr style="display: none;">
                         <td class="etiqCampo3">Estado Calefón y Llaves de Gas</td>
                         <td style="border-bottom: 1px #B2B2B2 solid;">
@@ -925,66 +675,42 @@ Spint 2.1
                         <td style="border-bottom: 1px #B2B2B2 solid;"></td>
                     </tr>
 
-                    <tr>
-                        <td class="etiqCampo3">Cumple Normativa Calefón</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_043_CumpleNormaCalefon" class="form-control textCampoSel1 dllSiNo" onchange="EvaluaCumpleNormaCalefonLlaveGas();">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Cumple Normativa llave de gas</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_043_CumpleNormaLlaveGas" class="form-control textCampoSel1 dllSiNo" onchange="EvaluaCumpleNormaCalefonLlaveGas();">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
-
-                    <tr>
-                        <td class="etiqCampo3">Sistema de calefacción (Especificar en Observación)</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_044_sistemaCalefaccion_existe" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Ventilación adecuada del inmueble</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_045_ventilacionAdecuada_existe" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Acceso para personas con situación de Discapacidad</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_046_AccesoDiscapacitados_existe" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
-                    <tr>
-                        <td class="etiqCampo3">Instalaciones Habilitadas para Discapacitados (Baños, ramplas, etc.)</td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="Infraest_047_InstalacionesHabilitadasDiscapacitados_existe" class="form-control textCampoSel1 dllSiNo">
-                            </select></td>
-                        <td style="border-bottom: 1px #B2B2B2 solid;"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="etiqCampo3">Observaciones</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="border-bottom: 1px #B2B2B2 solid;">
-                            <textarea id="Infraest_049_observaciones" class="form-control textCampo3" placeholder="Sin observaciones." style="width: 99%; height: 150px; text-align: left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsInfra');" maxlength="4000"></textarea>
-                            <span id="labelCaracteres_ObsInfra" class="lblrestoIngreso"></span>
-                            <br />
-                            <span class="lblrestoIngreso" style="color: blue;">* Recuerde incorporar en las observaciones la especificación correspondiente si declara existencia de Sistema de Calefacción.</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="text-align: center;">
-                            <button id="btn_antecedentesInfraestructura" class="btn btn-primary" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar los antecedentes de Recursos Materiales, Infraestructura y Equipamiento" onclick="GrabarAntecedentes(4);">Grabar Antecedente de Recursos Materiales, Infraestructura y Equipamiento</button>&nbsp;
-                            <button id="btn_FichaGenera_04" class="btn btn-warning" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></td>
-                    </tr>
                 </table>
+                <table id="gridInfraestructura" class="table table-bordered table-condensed" cellspacing="0" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th class="titulo-tabla invisible">Id</th>
+                            <th class="titulo-tabla">Nombre</th>
+                            <th class="titulo-tabla"></th>
+                            <th class="titulo-tabla"></th>
+                            <th class="titulo-tabla"></th>
+                            <th class="titulo-tabla"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <table class="table table-bordered table-condensed" cellspacing="0" style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type='text' value="Observaciones" class='form-control etiqCampo3' />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <textarea id="Infraest_049_observaciones" class="form-control textCampo3" placeholder="Sin observaciones." style="width: 99%; height: 150px; text-align: left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsInfra');" maxlength="4000"></textarea>
+                                <span id="labelCaracteres_ObsInfra" class="lblrestoIngreso"></span>
+                                <br />
+                                <span class="lblrestoIngreso" style="color: blue;">* Recuerde incorporar en las observaciones la especificación correspondiente si declara existencia de Sistema de Calefacción.</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="text-align: center;">
+                     <button id="btn_antecedentesInfraestructura" class="btn btn-primary" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar los antecedentes de Recursos Materiales, Infraestructura y Equipamiento" onclick="GrabarAntecedentes(4);">Grabar Antecedente de Recursos Materiales, Infraestructura y Equipamiento</button>&nbsp;
+                            <button id="btn_FichaGenera_04" class="btn btn-warning" style="cursor: pointer; font-weight: normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button>
+
+                </div><br />
             </div>         
 
             <div role="tabpanel" class="tab-pane fade in" id="seguridad">

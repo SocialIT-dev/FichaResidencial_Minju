@@ -11,6 +11,21 @@ using SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces;
 
 namespace SENAME.Senainfo.ModFichaResidencial.BLL.Impl
 {
+    public class GetParInfraestructuraImpl : IGetParInfraestructura 
+    {
+        private readonly GetAntecedentesInfraestructuraDao _getParInfraestructura;
+        public GetParInfraestructuraImpl()
+        {
+            _getParInfraestructura = new GetAntecedentesInfraestructuraDao();
+        }
+
+        public List<GetParInfraestructuraDto> ObtenerParInfraestructura()
+        {
+            var result = _getParInfraestructura.ObtenerParInfraestructura();
+            return GetAntecedentesInfraestructuraMapper.ToDtoParInfraestructura(result);
+        }
+    }
+
     public class GetAntecedentesInfraestructuraImpl : IGetAntecedentesInfraestructura
     {
         private readonly GetAntecedentesInfraestructuraDao _getAntecedentesInfraestructuraDao;

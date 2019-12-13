@@ -307,6 +307,7 @@
     <Content Include="ModFichaResidencial\FichaResidencialSesion.aspx" />
     <Content Include="ModFichaResidencial\FichaResidencialupload.aspx" />
     <Content Include="ModFichaResidencial\FichaResidencialReportes.aspx" />
+    <Content Include="ModFichaResidencial\Scripts\ficha\Ensayo.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\dataTables.bootstrap.js" />

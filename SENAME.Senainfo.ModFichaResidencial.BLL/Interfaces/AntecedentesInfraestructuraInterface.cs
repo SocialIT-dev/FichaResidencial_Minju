@@ -11,7 +11,13 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces
         List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.GetAntecedentesInfraestructuraDto> ObtenerAntecedentesInfraestructura(int? CodFicha);
     }
 
-    public interface IResultadoOperacionInfraestructura
+    public interface IGetParInfraestructura
+    {
+        List<DTO.GetParInfraestructuraDto> ObtenerParInfraestructura();
+    }
+
+
+public interface IResultadoOperacionInfraestructura
     {
         List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.ResultadoOperacionInfraestructuraDto> GrabarAntecedentesInfraestructura(
             int? CodFicha,

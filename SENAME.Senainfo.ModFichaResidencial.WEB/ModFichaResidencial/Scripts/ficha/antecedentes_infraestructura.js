@@ -6,49 +6,49 @@ function GrabarAntecedentesInfraestructura() {
     var CodProyecto = $("#general_001_sel_proyecto").val();
     var CodFicha_ = CodFicha;
 
-    var cantidadOficAdm= $("#Infraest_002_ofi_admin_cantidad").val();
-    var cantidadSalaReunion= $("#Infraest_004_salaReuniones_cantidad").val();
-    var cantidadSalaRecepcion= $("#Infraest_006_salaRecepcion_cantidad").val();
-    var cantidadEspaciosVisitas = $("#Infraest_008_espacioVisitas_cantidad").val();
-    var cantidadSalaTalleres= $("#Infraest_010_salaMultiuso_cantidad").val();
-    var cantidadSalaLiving= $("#Infraest_012_salaEstar_cantidad").val();
-    var cantidadEnfermeria= $("#Infraest_014_enfermeria_cantidad").val();
-    var cantidadRecreacion= $("#Infraest_016_espacioRecreacional_cantidad").val();
-    var cantidadAreasVerdes= $("#Infraest_020_areasVerdes_cantidad").val();
-    var cantidadCocina= $("#Infraest_022_cocina_cantidad").val();
-    var cantidadComedor = $("#Infraest_024_comedor_cantidad").val();
-    var cantidadLavanderia= $("#Infraest_026_Lavanderia_cantidad").val();
-    var cantidadDormitoriosNNA= $("#Infraest_028_Dormitorio_cantidad").val();
-    var cantidadCamasNNA= $("#Infraest_030_CamasNNA_cantidad").val();
-    var cantidadColsetLockers= $("#Infraest_032_closetLocker_cantidad").val();
-    var cantidadBañosPublicos= $("#Infraest_034_banosPublico_cantidad").val();
+    var cantidadOficAdm = $("#IdValor_1").val();
+    var cantidadSalaReunion = $("#IdValor_2").val();
+    var cantidadSalaRecepcion = $("#IdValor_3").val();
+    var cantidadEspaciosVisitas = $("#IdValor_4").val();
+    var cantidadSalaTalleres = $("#IdValor_5").val();
+    var cantidadSalaLiving = $("#IdValor_6").val();
+    var cantidadEnfermeria = $("#IdValor_7").val();
+    var cantidadRecreacion = $("#IdValor_8").val();
+    var cantidadAreasVerdes = $("#IdValor_9").val();
+    var cantidadCocina = $("#IdValor_10").val();
+    var cantidadComedor = $("#IdValor_11").val();
+    var cantidadLavanderia = $("#IdValor_12").val();
+    var cantidadDormitoriosNNA = $("#IdValor_13").val();
+    var cantidadCamasNNA = $("#IdValor_14").val();
+    var cantidadColsetLockers = $("#IdValor_15").val();
+    var cantidadBañosPublicos = $("#IdValor_16").val();
     var cantidadBañosNNA = $("#Infraest_036_banosNNAadecuados_cantidad").val();
     var cantidadDuchasNNA = $("#Infraest_038_duchasNNA_cantidad").val();
 
-    var AmbienteAcorde = $("#Infraest_039_ambientacionAcorde_existe").val();
-    var vestuarioAdecuado= $("#Infraest_040_vestuarioAdecuado_existe").val();
-    var utilesAseo= $("#Infraest_041_utilesAseoPersonalNNA_existe").val();
-    var aguaCaliente= $("#Infraest_042_aguaCaliente_existe").val();
+    var AmbienteAcorde = $("#IdParInfraestructura_27").val();
+    var vestuarioAdecuado = $("#IdParInfraestructura_28").val();
+    var utilesAseo = $("#IdParInfraestructura_30").val();
+    var aguaCaliente = $("#IdParInfraestructura_31").val();
     var calefonGas= $("#Infraest_043_estadoCalefonLlavesGas_existe").val();
-    var sistemaCalefacion= $("#Infraest_044_sistemaCalefaccion_existe").val();
-    var ventilacion= $("#Infraest_045_ventilacionAdecuada_existe").val();
-    var accesoDiscapacitados= $("#Infraest_046_AccesoDiscapacitados_existe").val();
-    var habilitaDiscapacitados= $("#Infraest_047_InstalacionesHabilitadasDiscapacitados_existe").val();
+    var sistemaCalefacion = $("#IdParInfraestructura_34").val();
+    var ventilacion = $("#IdParInfraestructura_35").val();
+    var accesoDiscapacitados = $("#IdParInfraestructura_36").val();
+    var habilitaDiscapacitados = $("#IdParInfraestructura_37").val();
     var observaciones = replaceAll(EliminaEspacios(document.getElementById("Infraest_049_observaciones").value), "'", "");
 
-    var BanosNNAenFuncionamiento = $("#Infraest_035_banosNNA_Funcionamiento_cant").val();
-    var BanosNNAdeacuerdoNormativa = $("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val();
-    var BanosNNAdehombres = $("#Infraest_035_banosNNA_Hombre_cant").val();
-    var BanosNNAdemujeres = $("#Infraest_035_banosNNA_Mujer_cant").val();
-    var BanosNNAmixtos = $("#Infraest_035_banosNNA_mixto_cant").val();
-    var DuchasNNAFuncionamiento = $("#Infraest_037_duchasNNA_funcionamiento_cant").val();
-    var DuchasNNAdeacuerdoNormativa = $("#Infraest_037_duchasNNA_normativa_cant").val();
-    var DuchasNNAdehombres = $("#Infraest_037_duchasNNA_hombres_cant").val();
-    var DuchasNNAdemujeres = $("#Infraest_037_duchasNNA_mujeres_cant").val();
-    var DuchasNNAmixtas = $("#Infraest_037_duchasNNA_mixtos_cant").val();
-    var VestuarioPersonalizadoNNA = $("#Infraest_040_vestuarioPersonalizado_existe").val();
-    var CumpleNormativaCalefon = $("#Infraest_043_CumpleNormaCalefon").val();
-    var CumpleNormativaLlaveGas = $("#Infraest_043_CumpleNormaLlaveGas").val();
+    var BanosNNAenFuncionamiento = $("#IdValor_17").val();
+    var BanosNNAdeacuerdoNormativa = $("#IdValor_18").val();
+    var BanosNNAdehombres = $("#IdValor_19").val();
+    var BanosNNAdemujeres = $("#IdValor_20").val();
+    var BanosNNAmixtos = $("#IdValor_21").val();
+    var DuchasNNAFuncionamiento = $("#IdValor_22").val();
+    var DuchasNNAdeacuerdoNormativa = $("#IdValor_23").val();
+    var DuchasNNAdehombres = $("#IdValor_24").val();
+    var DuchasNNAdemujeres = $("#IdValor_25").val();
+    var DuchasNNAmixtas = $("#IdValor_26").val();
+    var VestuarioPersonalizadoNNA = $("#IdParInfraestructura_29").val();
+    var CumpleNormativaCalefon = $("#IdParInfraestructura_32").val();
+    var CumpleNormativaLlaveGas = $("#IdParInfraestructura_33").val();
 
 
     if (BanosNNAenFuncionamiento == "") BanosNNAenFuncionamiento = "0";
@@ -183,6 +183,7 @@ function GrabarAntecedentesInfraestructura() {
     });
 }
 
+// REVISAR ESTA FUNCION NO SE LLAMA REVISAR
 function Infraest_037_duchasNNA_mixtos_cant(CodFicha) {
     $("#labelCaracteres_ObsInfra").html("");
     $.ajax({
@@ -201,148 +202,148 @@ function Infraest_037_duchasNNA_mixtos_cant(CodFicha) {
     }).then(function (r) {
         $.each(r.d,
             function () {
-                $("#Infraest_002_ofi_admin_cantidad").val(this.CantidadOficAdm);
-                $("#Infraest_004_salaReuniones_cantidad").val(this.CantidadSalaReunion);
-                $("#Infraest_006_salaRecepcion_cantidad").val(this.CantidadSalaRecepcion);
-                $("#Infraest_008_espacioVisitas_cantidad").val(this.CantidadEspaciosVisitas);
-                $("#Infraest_010_salaMultiuso_cantidad").val(this.CantidadSalaTalleres);
-                $("#Infraest_012_salaEstar_cantidad").val(this.CantidadSalaLiving);
-                $("#Infraest_014_enfermeria_cantidad").val(this.CantidadEnfermeria);
-                $("#Infraest_016_espacioRecreacional_cantidad").val(this.CantidadRecreacion);
-                $("#Infraest_020_areasVerdes_cantidad").val(this.CantidadAreasVerdes);
-                $("#Infraest_022_cocina_cantidad").val(this.CantidadCocina);
-                $("#Infraest_024_comedor_cantidad").val(this.CantidadComedor);
-                $("#Infraest_026_Lavanderia_cantidad").val(this.CantidadLavanderia);
-                $("#Infraest_028_Dormitorio_cantidad").val(this.CantidadDormitoriosNNA);
-                $("#Infraest_030_CamasNNA_cantidad").val(this.CantidadCamasNNA);
-                $("#Infraest_032_closetLocker_cantidad").val(this.CantidadColsetLockers);
-                $("#Infraest_034_banosPublico_cantidad").val(this.CantidadBañosPublicos);
+                $("#IdValor_1").val(this.CantidadOficAdm);
+                $("#IdValor_2").val(this.CantidadSalaReunion);
+                $("#IdValor_3").val(this.CantidadSalaRecepcion);
+                $("#IdValor_4").val(this.CantidadEspaciosVisitas);
+                $("#IdValor_5").val(this.CantidadSalaTalleres);
+                $("#IdValor_6").val(this.CantidadSalaLiving);
+                $("#IdValor_7").val(this.CantidadEnfermeria);
+                $("#IdValor_8").val(this.CantidadRecreacion);
+                $("#IdValor_9").val(this.CantidadAreasVerdes);
+                $("#IdValor_10").val(this.CantidadCocina);
+                $("#IdValor_11").val(this.CantidadComedor);
+                $("#IdValor_12").val(this.CantidadLavanderia);
+                $("#IdValor_13").val(this.CantidadDormitoriosNNA);
+                $("#IdValor_14").val(this.CantidadCamasNNA);
+                $("#IdValor_15").val(this.CantidadColsetLockers);
+                $("#IdValor_16").val(this.CantidadBañosPublicos);
 
                 /*Inicio - Valido si viene valor  en los combos individuales*/               
-                if (this.AmbienteAcorde == 0) $("#Infraest_039_ambientacionAcorde_existe").val("0"); 
-                   else $("#Infraest_039_ambientacionAcorde_existe").val("1");
+                if (this.AmbienteAcorde == 0) $("#IdParInfraestructura_27").val("0"); 
+                else $("#IdParInfraestructura_27").val("1");
                 
-                if (this.VestuarioAdecuado == 0) $("#Infraest_040_vestuarioAdecuado_existe").val("0");  
-                else $("#Infraest_040_vestuarioAdecuado_existe").val("1");
+                if (this.VestuarioAdecuado == 0) $("#IdParInfraestructura_28").val("0");  
+                else $("#IdParInfraestructura_28").val("1");
 
-                if (this.UtilesAseo == 0) $("#Infraest_041_utilesAseoPersonalNNA_existe").val(0); 
-                else $("#Infraest_041_utilesAseoPersonalNNA_existe").val("1");
+                if (this.UtilesAseo == 0) $("#IdParInfraestructura_30").val(0); 
+                else $("#IdParInfraestructura_30").val("1");
 
-                if (this.AguaCaliente == 0) $("#Infraest_042_aguaCaliente_existe").val("0"); 
-                else $("#Infraest_042_aguaCaliente_existe").val("1");
+                if (this.AguaCaliente == 0) $("#IdParInfraestructura_31").val("0"); 
+                else $("#IdParInfraestructura_31").val("1");
 
                 if (this.CalefonGas == 0) $("#Infraest_043_estadoCalefonLlavesGas_existe").val("0");
                 else $("#Infraest_043_estadoCalefonLlavesGas_existe").val("1");
 
-                if (this.SistemaCalefacion == 0) $("#Infraest_044_sistemaCalefaccion_existe").val("0"); 
-                else $("#Infraest_044_sistemaCalefaccion_existe").val("1");
+                if (this.SistemaCalefacion == 0) $("#IdParInfraestructura_34").val("0"); 
+                else $("#IdParInfraestructura_34").val("1");
 
-                if (this.Ventilacion == 0) $("#Infraest_045_ventilacionAdecuada_existe").val("0"); 
-                else $("#Infraest_045_ventilacionAdecuada_existe").val("1"); 
+                if (this.Ventilacion == 0) $("#IdParInfraestructura_35").val("0"); 
+                else $("#IdParInfraestructura_35").val("1"); 
 
-                if (this.AccesoDiscapacitados == 0) $("#Infraest_046_AccesoDiscapacitados_existe").val("0");
-                else $("#Infraest_046_AccesoDiscapacitados_existe").val("1"); 
+                if (this.AccesoDiscapacitados == 0) $("#IdParInfraestructura_36").val("0");
+                else $("#IdParInfraestructura_36").val("1"); 
 
-                if (this.HabilitaDiscapacitados == 0) $("#Infraest_047_InstalacionesHabilitadasDiscapacitados_existe").val("0"); 
-                else $("#Infraest_047_InstalacionesHabilitadasDiscapacitados_existe").val("1");
+                if (this.HabilitaDiscapacitados == 0) $("#IdParInfraestructura_37").val("0"); 
+                else $("#IdParInfraestructura_37").val("1");
 
-                if (this.CalefonNormativa == 0) $("#Infraest_043_CumpleNormaCalefon").val("0"); 
-                else $("#Infraest_043_CumpleNormaCalefon").val("1");
+                if (this.CalefonNormativa == 0) $("#IdParInfraestructura_32").val("0"); 
+                else $("#IdParInfraestructura_32").val("1");
                 
-                if (this.LlaveGasNormativa == 0) $("#Infraest_043_CumpleNormaLlaveGas").val("0"); 
-                else $("#Infraest_043_CumpleNormaLlaveGas").val("1"); 
+                if (this.LlaveGasNormativa == 0) $("#IdParInfraestructura_33").val("0"); 
+                else $("#IdParInfraestructura_33").val("1"); 
 
-                if (this.VestuarioPersonalizadoNNA == 0) $("#Infraest_040_vestuarioPersonalizado_existe").val("0"); 
-                else $("#Infraest_040_vestuarioPersonalizado_existe").val("1");  
+                if (this.VestuarioPersonalizadoNNA == 0) $("#IdParInfraestructura_29").val("0"); 
+                else $("#IdParInfraestructura_29").val("1");  
                 /* Fin */
 
                 $("#Infraest_036_banosNNAadecuados_cantidad").val(this.CantidadBañosNNA);
                 $("#Infraest_038_duchasNNA_cantidad").val(this.CantidadDuchasNNA);
 
-                $("#Infraest_035_banosNNA_Funcionamiento_cant").val(this.CantidadBañosNNAFuncionamiento);
-                $("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val(this.CantidadBañosNNANormativa);
-                $("#Infraest_035_banosNNA_Hombre_cant").val(this.CantidadBañosNNAHombres);
-                $("#Infraest_035_banosNNA_Mujer_cant").val(this.CantidadBañosNNAMujeres);
-                $("#Infraest_035_banosNNA_mixto_cant").val(this.CantidadBañosNNAMixtos);
+                $("#IdValor_17").val(this.CantidadBañosNNAFuncionamiento);
+                $("#IdValor_18").val(this.CantidadBañosNNANormativa);
+                $("#IdValor_19").val(this.CantidadBañosNNAHombres);
+                $("#IdValor_20").val(this.CantidadBañosNNAMujeres);
+                $("#IdValor_21").val(this.CantidadBañosNNAMixtos);
                
-                $("#Infraest_037_duchasNNA_funcionamiento_cant").val(this.CantidadDuchasNNAFuncionamiento);
-                $("#Infraest_037_duchasNNA_normativa_cant").val(this.CantidadDuchasNNANormativa);
-                $("#Infraest_037_duchasNNA_hombres_cant").val(this.CantidadDuchasNNAHombres);
-                $("#Infraest_037_duchasNNA_mujeres_cant").val(this.CantidadDuchasNNAMujeres);
-                $("#Infraest_037_duchasNNA_mixtos_cant").val(this.CantidadDuchasNNAMixtas);
+                $("#IdValor_22").val(this.CantidadDuchasNNAFuncionamiento);
+                $("#IdValor_23").val(this.CantidadDuchasNNANormativa);
+                $("#IdValor_24").val(this.CantidadDuchasNNAHombres);
+                $("#IdValor_25").val(this.CantidadDuchasNNAMujeres);
+                $("#IdValor_26").val(this.CantidadDuchasNNAMixtas);
 
-                if ($("#Infraest_035_banosNNA_Funcionamiento_cant").val() != "0")// probablemente hay que cambiar a 2
+                if ($("#IdValor_17").val() != "0")// probablemente hay que cambiar a 2
                 {
-                    $("#Infraest_035_banosNNA_Funcionamiento_existe").val("1");
-                    document.getElementById("Infraest_035_banosNNA_AcuerdoNormativa_cant").disabled = false;
+                    $("#IdParInfraestructura_17").val("1");
+                    document.getElementById("IdValor_18").disabled = false;
                 }
 
-                if ($("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val() != "0") $("#Infraest_035_banosNNA_AcuerdoNormativa_existe").val(1);
-                if ($("#Infraest_035_banosNNA_Hombre_cant").val() != "0") $("#Infraest_035_banosNNA_Hombre_existe").val(1);
-                if ($("#Infraest_035_banosNNA_Mujer_cant").val() != "0") $("#Infraest_035_banosNNA_Mujer_existe").val(1);
-                if ($("#Infraest_035_banosNNA_mixto_cant").val() != "0") $("#Infraest_035_banosNNA_mixto_existe").val(1);
+                if ($("#IdValor_18").val() != "0") $("#IdParInfraestructura_18").val(1);
+                if ($("#IdValor_19").val() != "0") $("#IdParInfraestructura_19").val(1);
+                if ($("#IdValor_20").val() != "0") $("#IdParInfraestructura_20").val(1);
+                if ($("#IdValor_21").val() != "0") $("#IdParInfraestructura_21").val(1);
 
-                if ($("#Infraest_037_duchasNNA_funcionamiento_cant").val() != "0")
+                if ($("#IdValor_22").val() != "0")
                 {
-                    $("#Infraest_037_duchasNNA_funcionamiento_existe").val(1);
-                    document.getElementById("Infraest_037_duchasNNA_normativa_cant").disabled = false;
+                    $("#IdParInfraestructura_22").val(1);
+                    document.getElementById("IdValor_23").disabled = false;
                 }
-                if ($("#Infraest_037_duchasNNA_normativa_cant").val() != "0") $("#Infraest_037_duchasNNA_normativa_existe").val(1);
-                if ($("#Infraest_037_duchasNNA_hombres_cant").val() != "0") $("#Infraest_037_duchasNNA_hombres_existe").val(1);
-                if ($("#Infraest_037_duchasNNA_mujeres_cant").val() != "0") $("#Infraest_037_duchasNNA_mujeres_existe").val(1);
-                if ($("#Infraest_037_duchasNNA_mixtos_cant").val() != "0") $("#Infraest_037_duchasNNA_mixtos_existe").val(1);
-               // else $("#Infraest_037_duchasNNA_mixtos_existe").val(0);
+                if ($("#IdValor_23").val() != "0") $("#IdParInfraestructura_23").val(1);
+                if ($("#IdValor_24").val() != "0") $("#IdParInfraestructura_24").val(1);
+                if ($("#IdValor_25").val() != "0") $("#IdParInfraestructura_25").val(1);
+                if ($("#IdValor_26").val() != "0") $("#IdParInfraestructura_26").val(1);
+               // else $("#IdParInfraestructura_26").val(0);
                 
                 document.getElementById("Infraest_049_observaciones").value = this.Observaciones;
                 ContadorCaracter(document.getElementById("Infraest_049_observaciones"), "labelCaracteres_ObsInfra");
 
-                if ($("#Infraest_002_ofi_admin_cantidad").val() != "0") $("#Infraest_001_ofi_admin_existe").val("1");
-                else $("#Infraest_001_ofi_admin_existe").val("0");
+                if ($("#IdValor_1").val() != "0") $("#IdParInfraestructura_1").val("1");
+                else $("#IdParInfraestructura_1").val("0");
 
-                if ($("#Infraest_004_salaReuniones_cantidad").val() != "0") $("#Infraest_003_salaReuniones_existe").val(1);
+                if ($("#IdValor_2").val() != "0") $("#IdParInfraestructura_2").val(1);
                 
 
-                if ($("#Infraest_006_salaRecepcion_cantidad").val() != "0")
-                    $("#Infraest_005_salaRecepcion_existe").val(1);
+                if ($("#IdValor_3").val() != "0")
+                    $("#IdParInfraestructura_3").val(1);
 
-                if ($("#Infraest_008_espacioVisitas_cantidad").val() != "0")
-                    $("#Infraest_007_espacioVisitas_existe").val(1);
+                if ($("#IdValor_4").val() != "0")
+                    $("#IdParInfraestructura_4").val(1);
 
-                if ($("#Infraest_010_salaMultiuso_cantidad").val() != "0")
-                    $("#Infraest_009_salaMultiuso_existe").val(1);
+                if ($("#IdValor_5").val() != "0")
+                    $("#IdParInfraestructura_5").val(1);
 
-                if ($("#Infraest_012_salaEstar_cantidad").val() != "0")
-                    $("#Infraest_011_salaEstar_existe").val(1);
+                if ($("#IdValor_6").val() != "0")
+                    $("#IdParInfraestructura_6").val(1);
 
-                if ($("#Infraest_014_enfermeria_cantidad").val() != "0")
-                    $("#Infraest_013_enfermeria_existe").val(1);
+                if ($("#IdValor_7").val() != "0")
+                    $("#IdParInfraestructura_7").val(1);
 
-                if ($("#Infraest_016_espacioRecreacional_cantidad").val() != "0")
-                    $("#Infraest_015_espacioRecreacional_existe").val(1);
+                if ($("#IdValor_8").val() != "0")
+                    $("#IdParInfraestructura_8").val(1);
 
-                if ($("#Infraest_020_areasVerdes_cantidad").val() != "0")
-                    $("#Infraest_019_areasVerdes_existe").val(1);
+                if ($("#IdValor_9").val() != "0")
+                    $("#IdParInfraestructura_9").val(1);
 
-                if ($("#Infraest_022_cocina_cantidad").val() != "0")
-                    $("#Infraest_021_cocina_existe").val(1);
+                if ($("#IdValor_10").val() != "0")
+                    $("#IdParInfraestructura_10").val(1);
 
-                if ($("#Infraest_024_comedor_cantidad").val() != "0")
-                    $("#Infraest_023_comedor_existe").val(1);
+                if ($("#IdValor_11").val() != "0")
+                    $("#IdParInfraestructura_11").val(1);
 
-                if ($("#Infraest_026_Lavanderia_cantidad").val() != "0")
-                    $("#Infraest_025_Lavanderia_existe").val(1);
+                if ($("#IdValor_12").val() != "0")
+                    $("#IdParInfraestructura_12").val(1);
 
-                if ($("#Infraest_028_Dormitorio_cantidad").val() != "0")
-                    $("#Infraest_027_Dormitorio_existe").val(1);
+                if ($("#IdValor_13").val() != "0")
+                    $("#IdParInfraestructura_13").val(1);
 
-                if ($("#Infraest_030_CamasNNA_cantidad").val() != "0")
-                    $("#Infraest_029_CamasNNA_existe").val(1);
+                if ($("#IdValor_14").val() != "0")
+                    $("#IdParInfraestructura_14").val(1);
 
-                if ($("#Infraest_032_closetLocker_cantidad").val() != "0")
-                    $("#Infraest_031_closetLocker_existe").val(1);
+                if ($("#IdValor_15").val() != "0")
+                    $("#IdParInfraestructura_15").val(1);
 
-                if ($("#Infraest_034_banosPublico_cantidad").val() != "0")
-                    $("#Infraest_033_banosPublico_existe").val(1);
+                if ($("#IdValor_16").val() != "0")
+                    $("#IdParInfraestructura_16").val(1);
 
                 if ($("#Infraest_036_banosNNAadecuados_cantidad").val() != "0")
                     $("#Infraest_035_banosNNAadecuados_existe").val(1);
@@ -360,6 +361,84 @@ function Infraest_037_duchasNNA_mixtos_cant(CodFicha) {
             infraestructura_residencia = true;
             CargaCamposComparativa4();
         }
+    });
+}
+
+var ParValores = { 0: "NO", 1: "SI" };
+function CargaParInfraestructura() {
+    $("#gridInfraestructura").DataTable().destroy();
+    $('#gridInfraestructura').dataTable({
+        "ajax": {
+            "url": "FichaResidencial.aspx/ObtenerParInfraestructura",
+            "type": "POST",
+            "contentType": "application/json; charset=utf-8",
+            "dataType": "json",
+            "async": false,
+            "data": function (d) {
+                return JSON.stringify(d);
+            },
+            "dataSrc": "d",
+        },
+        "pageLength": 50,
+        "columns": [
+            { "data": "IdParInfraestructura" },
+            { "data": "NombreParInfraestructura", "sClass": "etiqCampo3" },
+            { "data": "VariableCuantitativa" },
+            { "data": "SegundaVarCuantitativa" },
+            {
+                "data": null,
+                "render": function (data, type, row, meta)
+                {
+                    if (data.IdParInfraestructura <= 26) 
+                        var $select = $("<select id='IdParInfraestructura_" + data.IdParInfraestructura + "' class='form-control textCampoSel1 dllSiNo' disabled='disabled'></select>", {});
+                     else 
+                        var $select = $("<select id='IdParInfraestructura_" + data.IdParInfraestructura + "' class='form-control textCampoSel1 dllSiNo'></select>", {});
+
+                        $.each(ParValores, function (k, v) {
+                            var $option = $("<option></option>", {
+                                "text": v,
+                                "value": k
+                            });
+                            if (data == v) {
+                                $option.attr("selected", "selected")
+                            }
+                            $select.append($option);
+                        });
+                        return $select.prop("outerHTML");
+                }
+            },
+            {
+                "data": null,
+                "render": function (data, type, row, meta) {
+                    var dataRender;
+                    if ((data.SegundaVarCuantitativa == true) && (data.IdParInfraestructura <= 26))
+                    {                                                   
+                        if (data.IdParInfraestructura == 17) 
+                            var $input = $("<input type='text' id='IdValor_" + data.IdParInfraestructura + "' style='width:100px;' class='form-control' maxlength='4'  onkeyup='HabilitaInfraestructura(" + data.IdParInfraestructura + ");' onkeypress='return ValidaIngresoSoloNumeros(this.value, event)'; onblur='ValidaSumaDependientesbanosNNAFunc();'>", {});
+                        else if ((data.IdParInfraestructura == 22))
+                            var $input = $("<input type='text' id='IdValor_" + data.IdParInfraestructura + "' style='width:100px;' class='form-control' maxlength='4'  onkeyup='HabilitaInfraestructura(" + data.IdParInfraestructura + ");' onkeypress='return ValidaIngresoSoloNumeros(this.value, event)'; onblur='ValidaSumaDependecniasDuchaNNAFunc();'>", {});
+                        else
+                            var $input = $("<input type='text' id='IdValor_" + data.IdParInfraestructura + "' style='width:100px;' class='form-control' maxlength='4'  onkeyup='HabilitaInfraestructura(" + data.IdParInfraestructura + ");' onkeypress='return ValidaIngresoSoloNumeros(this.value, event);'>", {});
+
+                        return $input.prop("outerHTML");
+                    } else {
+                        dataRender = "";
+                        return dataRender;
+                    }
+                }
+            }
+        ],
+        "columnDefs": [{
+            "targets": [0, 2, 3],
+           "visible": false,
+            "searchable": false
+        }
+        ],
+        "fixedColumns": true,
+        "bLengthChange": false,
+        "bInfo": false,
+        "bPaginate": false
+
     });
 }
 
@@ -381,116 +460,114 @@ function ObtenerAntecedentesInfraestructura(CodFicha) {
     }).then(function (r) {
         $.each(r.d,
             function () {
-                $("#Infraest_002_ofi_admin_cantidad").val(this.CantidadOficAdm);
-                $("#Infraest_004_salaReuniones_cantidad").val(this.CantidadSalaReunion);
-                $("#Infraest_006_salaRecepcion_cantidad").val(this.CantidadSalaRecepcion);
-                $("#Infraest_008_espacioVisitas_cantidad").val(this.CantidadEspaciosVisitas);
-                $("#Infraest_010_salaMultiuso_cantidad").val(this.CantidadSalaTalleres);
-                $("#Infraest_012_salaEstar_cantidad").val(this.CantidadSalaLiving);
-                $("#Infraest_014_enfermeria_cantidad").val(this.CantidadEnfermeria);
-                $("#Infraest_016_espacioRecreacional_cantidad").val(this.CantidadRecreacion);
-                $("#Infraest_020_areasVerdes_cantidad").val(this.CantidadAreasVerdes);
-                $("#Infraest_022_cocina_cantidad").val(this.CantidadCocina);
-                $("#Infraest_024_comedor_cantidad").val(this.CantidadComedor);
-                $("#Infraest_026_Lavanderia_cantidad").val(this.CantidadLavanderia);
-                $("#Infraest_028_Dormitorio_cantidad").val(this.CantidadDormitoriosNNA);
-                $("#Infraest_030_CamasNNA_cantidad").val(this.CantidadCamasNNA);
-                $("#Infraest_032_closetLocker_cantidad").val(this.CantidadColsetLockers);
-                $("#Infraest_034_banosPublico_cantidad").val(this.CantidadBañosPublicos);
+                $("#IdValor_1").val(this.CantidadOficAdm);
+                $("#IdValor_2").val(this.CantidadSalaReunion);
+                $("#IdValor_3").val(this.CantidadSalaRecepcion);
+                $("#IdValor_4").val(this.CantidadEspaciosVisitas);
+                $("#IdValor_5").val(this.CantidadSalaTalleres);
+                $("#IdValor_6").val(this.CantidadSalaLiving);
+                $("#IdValor_7").val(this.CantidadEnfermeria);
+                $("#IdValor_8").val(this.CantidadRecreacion);
+                $("#IdValor_9").val(this.CantidadAreasVerdes);
+                $("#IdValor_10").val(this.CantidadCocina);
+                $("#IdValor_11").val(this.CantidadComedor);
+                $("#IdValor_12").val(this.CantidadLavanderia);
+                $("#IdValor_13").val(this.CantidadDormitoriosNNA);
+                $("#IdValor_14").val(this.CantidadCamasNNA);
+                $("#IdValor_15").val(this.CantidadColsetLockers);
+                $("#IdValor_16").val(this.CantidadBañosPublicos);
 
-
-                $("#Infraest_039_ambientacionAcorde_existe").val(this.AmbienteAcorde);
-                $("#Infraest_040_vestuarioAdecuado_existe").val(this.VestuarioAdecuado);
-                $("#Infraest_041_utilesAseoPersonalNNA_existe").val(this.UtilesAseo);
-                $("#Infraest_042_aguaCaliente_existe").val(this.AguaCaliente);
+                $("#IdParInfraestructura_27").val(this.AmbienteAcorde);
+                $("#IdParInfraestructura_28").val(this.VestuarioAdecuado);
+                $("#IdParInfraestructura_30").val(this.UtilesAseo);
+                $("#IdParInfraestructura_31").val(this.AguaCaliente);
                 $("#Infraest_043_estadoCalefonLlavesGas_existe").val(this.CalefonGas);
-                $("#Infraest_044_sistemaCalefaccion_existe").val(this.SistemaCalefacion);
-                $("#Infraest_045_ventilacionAdecuada_existe").val(this.Ventilacion);
-                $("#Infraest_046_AccesoDiscapacitados_existe").val(this.AccesoDiscapacitados);
-                $("#Infraest_047_InstalacionesHabilitadasDiscapacitados_existe").val(this.HabilitaDiscapacitados);
+                $("#IdParInfraestructura_34").val(this.SistemaCalefacion);
+                $("#IdParInfraestructura_35").val(this.Ventilacion);
+                $("#IdParInfraestructura_36").val(this.AccesoDiscapacitados);
+                $("#IdParInfraestructura_37").val(this.HabilitaDiscapacitados);
 
                 $("#Infraest_036_banosNNAadecuados_cantidad").val(this.CantidadBañosNNA);
                 $("#Infraest_038_duchasNNA_cantidad").val(this.CantidadDuchasNNA);
 
+                $("#IdValor_17").val(this.CantidadBañosNNAFuncionamiento);
+                $("#IdValor_18").val(this.CantidadBañosNNANormativa);
+                $("#IdValor_19").val(this.CantidadBañosNNAHombres);
+                $("#IdValor_20").val(this.CantidadBañosNNAMujeres);
+                $("#IdValor_21").val(this.CantidadBañosNNAMixtos);
 
-                $("#Infraest_035_banosNNA_Funcionamiento_cant").val(this.CantidadBañosNNAFuncionamiento);
-                $("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val(this.CantidadBañosNNANormativa);
-                $("#Infraest_035_banosNNA_Hombre_cant").val(this.CantidadBañosNNAHombres);
-                $("#Infraest_035_banosNNA_Mujer_cant").val(this.CantidadBañosNNAMujeres);
-                $("#Infraest_035_banosNNA_mixto_cant").val(this.CantidadBañosNNAMixtos);
+                $("#IdValor_22").val(this.CantidadDuchasNNAFuncionamiento);
+                $("#IdValor_23").val(this.CantidadDuchasNNANormativa);
+                $("#IdValor_24").val(this.CantidadDuchasNNAHombres);
+                $("#IdValor_25").val(this.CantidadDuchasNNAMujeres);
+                $("#IdValor_26").val(this.CantidadDuchasNNAMixtas);
 
-                $("#Infraest_037_duchasNNA_funcionamiento_cant").val(this.CantidadDuchasNNAFuncionamiento);
-                $("#Infraest_037_duchasNNA_normativa_cant").val(this.CantidadDuchasNNANormativa);
-                $("#Infraest_037_duchasNNA_hombres_cant").val(this.CantidadDuchasNNAHombres);
-                $("#Infraest_037_duchasNNA_mujeres_cant").val(this.CantidadDuchasNNAMujeres);
-                $("#Infraest_037_duchasNNA_mixtos_cant").val(this.CantidadDuchasNNAMixtas);
+                if ($("#IdValor_17").val() != "0") { $("#IdParInfraestructura_17").val(1); document.getElementById("IdValor_18").disabled = false; }
+                if ($("#IdValor_18").val() != "0") $("#IdParInfraestructura_18").val(1);
+                if ($("#IdValor_19").val() != "0") $("#IdParInfraestructura_19").val(1);
+                if ($("#IdValor_20").val() != "0") $("#IdParInfraestructura_20").val(1);
+                if ($("#IdValor_21").val() != "0") $("#IdParInfraestructura_21").val(1);
 
-                if ($("#Infraest_035_banosNNA_Funcionamiento_cant").val() != "0") { $("#Infraest_035_banosNNA_Funcionamiento_existe").val(1); document.getElementById("Infraest_035_banosNNA_AcuerdoNormativa_cant").disabled = false; }
-                if ($("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val() != "0") $("#Infraest_035_banosNNA_AcuerdoNormativa_existe").val(1);
-                if ($("#Infraest_035_banosNNA_Hombre_cant").val() != "0") $("#Infraest_035_banosNNA_Hombre_existe").val(1);
-                if ($("#Infraest_035_banosNNA_Mujer_cant").val() != "0") $("#Infraest_035_banosNNA_Mujer_existe").val(1);
-                if ($("#Infraest_035_banosNNA_mixto_cant").val() != "0") $("#Infraest_035_banosNNA_mixto_existe").val(1);
+                if ($("#IdValor_22").val() != "0") { $("#IdParInfraestructura_22").val(1); document.getElementById("IdValor_23").disabled = false; }
+                if ($("#IdValor_23").val() != "0") $("#IdParInfraestructura_23").val(1);
+                if ($("#IdValor_24").val() != "0") $("#IdParInfraestructura_24").val(1);
+                if ($("#IdValor_25").val() != "0") $("#IdParInfraestructura_25").val(1);
+                if ($("#IdValor_26").val() != "0") $("#IdParInfraestructura_26").val(1);
 
-                if ($("#Infraest_037_duchasNNA_funcionamiento_cant").val() != "0") { $("#Infraest_037_duchasNNA_funcionamiento_existe").val(1); document.getElementById("Infraest_037_duchasNNA_normativa_cant").disabled = false; }
-                if ($("#Infraest_037_duchasNNA_normativa_cant").val() != "0") $("#Infraest_037_duchasNNA_normativa_existe").val(1);
-                if ($("#Infraest_037_duchasNNA_hombres_cant").val() != "0") $("#Infraest_037_duchasNNA_hombres_existe").val(1);
-                if ($("#Infraest_037_duchasNNA_mujeres_cant").val() != "0") $("#Infraest_037_duchasNNA_mujeres_existe").val(1);
-                if ($("#Infraest_037_duchasNNA_mixtos_cant").val() != "0") $("#Infraest_037_duchasNNA_mixtos_existe").val(1);
-
-                $("#Infraest_043_CumpleNormaCalefon").val(this.CalefonNormativa);
-                $("#Infraest_043_CumpleNormaLlaveGas").val(this.LlaveGasNormativa);
-                $("#Infraest_040_vestuarioPersonalizado_existe").val(this.VestuarioPersonalizadoNNA);
+                $("#IdParInfraestructura_32").val(this.CalefonNormativa);
+                $("#IdParInfraestructura_33").val(this.LlaveGasNormativa);
+                $("#IdParInfraestructura_29").val(this.VestuarioPersonalizadoNNA);
 
                 document.getElementById("Infraest_049_observaciones").value = this.Observaciones;
                 ContadorCaracter(document.getElementById("Infraest_049_observaciones"), "labelCaracteres_ObsInfra");
 
-                if ($("#Infraest_002_ofi_admin_cantidad").val() != "0")
-                    $("#Infraest_001_ofi_admin_existe").val(1);
+                if ($("#IdValor_1").val() != "0")
+                    $("#IdParInfraestructura_1").val(1);
 
-                if ($("#Infraest_004_salaReuniones_cantidad").val() != "0")
-                    $("#Infraest_003_salaReuniones_existe").val(1);
+                if ($("#IdValor_2").val() != "0")
+                    $("#IdParInfraestructura_2").val(1);
 
-                if ($("#Infraest_006_salaRecepcion_cantidad").val() != "0")
-                    $("#Infraest_005_salaRecepcion_existe").val(1);
+                if ($("#IdValor_3").val() != "0")
+                    $("#IdParInfraestructura_3").val(1);
 
-                if ($("#Infraest_008_espacioVisitas_cantidad").val() != "0")
-                    $("#Infraest_007_espacioVisitas_existe").val(1);
+                if ($("#IdValor_4").val() != "0")
+                    $("#IdParInfraestructura_4").val(1);
 
-                if ($("#Infraest_010_salaMultiuso_cantidad").val() != "0")
-                    $("#Infraest_009_salaMultiuso_existe").val(1);
+                if ($("#IdValor_5").val() != "0")
+                    $("#IdParInfraestructura_5").val(1);
 
-                if ($("#Infraest_012_salaEstar_cantidad").val() != "0")
-                    $("#Infraest_011_salaEstar_existe").val(1);
+                if ($("#IdValor_6").val() != "0")
+                    $("#IdParInfraestructura_6").val(1);
 
-                if ($("#Infraest_014_enfermeria_cantidad").val() != "0")
-                    $("#Infraest_013_enfermeria_existe").val(1);
+                if ($("#IdValor_7").val() != "0")
+                    $("#IdParInfraestructura_7").val(1);
 
-                if ($("#Infraest_016_espacioRecreacional_cantidad").val() != "0")
-                    $("#Infraest_015_espacioRecreacional_existe").val(1);
+                if ($("#IdValor_8").val() != "0")
+                    $("#IdParInfraestructura_8").val(1);
 
-                if ($("#Infraest_020_areasVerdes_cantidad").val() != "0")
-                    $("#Infraest_019_areasVerdes_existe").val(1);
+                if ($("#IdValor_9").val() != "0")
+                    $("#IdParInfraestructura_9").val(1);
 
-                if ($("#Infraest_022_cocina_cantidad").val() != "0")
-                    $("#Infraest_021_cocina_existe").val(1);
+                if ($("#IdValor_10").val() != "0")
+                    $("#IdParInfraestructura_10").val(1);
 
-                if ($("#Infraest_024_comedor_cantidad").val() != "0")
-                    $("#Infraest_023_comedor_existe").val(1);
+                if ($("#IdValor_11").val() != "0")
+                    $("#IdParInfraestructura_11").val(1);
 
-                if ($("#Infraest_026_Lavanderia_cantidad").val() != "0")
-                    $("#Infraest_025_Lavanderia_existe").val(1);
+                if ($("#IdValor_12").val() != "0")
+                    $("#IdParInfraestructura_12").val(1);
 
-                if ($("#Infraest_028_Dormitorio_cantidad").val() != "0")
-                    $("#Infraest_027_Dormitorio_existe").val(1);
+                if ($("#IdValor_13").val() != "0")
+                    $("#IdParInfraestructura_13").val(1);
 
-                if ($("#Infraest_030_CamasNNA_cantidad").val() != "0")
-                    $("#Infraest_029_CamasNNA_existe").val(1);
+                if ($("#IdValor_14").val() != "0")
+                    $("#IdParInfraestructura_14").val(1);
 
-                if ($("#Infraest_032_closetLocker_cantidad").val() != "0")
-                    $("#Infraest_031_closetLocker_existe").val(1);
+                if ($("#IdValor_15").val() != "0")
+                    $("#IdParInfraestructura_15").val(1);
 
-                if ($("#Infraest_034_banosPublico_cantidad").val() != "0")
-                    $("#Infraest_033_banosPublico_existe").val(1);
+                if ($("#IdValor_16").val() != "0")
+                    $("#IdParInfraestructura_16").val(1);
 
                 if ($("#Infraest_036_banosNNAadecuados_cantidad").val() != "0")
                     $("#Infraest_035_banosNNAadecuados_existe").val(1);
@@ -546,7 +623,7 @@ function CargaParValores1()
                 x.disabled = false;
                 if (r.d.length == 1) {
                     $(".dllSiNo").prop('selectedIndex', 1);
-                    //  CargaParValores1($("#Infraest_039_ambientacionAcorde_existe").val());
+                    //  CargaParValores1($("#IdParInfraestructura_27").val());
                 }
             }
         }
@@ -694,196 +771,196 @@ function ObtenerAntecedentesInfraestructura_Compare(codFichaPadre, bloqueDatos) 
     }).then(function (r) {
         $.each(r.d,
             function () {
-                $("#Infraest_002_ofi_admin_cantidad" + sufijo).val(this.CantidadOficAdm);
-                $("#Infraest_004_salaReuniones_cantidad" + sufijo).val(this.CantidadSalaReunion);
-                $("#Infraest_006_salaRecepcion_cantidad" + sufijo).val(this.CantidadSalaRecepcion);
-                $("#Infraest_008_espacioVisitas_cantidad" + sufijo).val(this.CantidadEspaciosVisitas);
-                $("#Infraest_010_salaMultiuso_cantidad" + sufijo).val(this.CantidadSalaTalleres);
-                $("#Infraest_012_salaEstar_cantidad" + sufijo).val(this.CantidadSalaLiving);
-                $("#Infraest_014_enfermeria_cantidad" + sufijo).val(this.CantidadEnfermeria);
-                $("#Infraest_016_espacioRecreacional_cantidad" + sufijo).val(this.CantidadRecreacion);
-                $("#Infraest_020_areasVerdes_cantidad" + sufijo).val(this.CantidadAreasVerdes);
-                $("#Infraest_022_cocina_cantidad" + sufijo).val(this.CantidadCocina);
-                $("#Infraest_024_comedor_cantidad" + sufijo).val(this.CantidadComedor);
-                $("#Infraest_026_Lavanderia_cantidad" + sufijo).val(this.CantidadLavanderia);
-                $("#Infraest_028_Dormitorio_cantidad" + sufijo).val(this.CantidadDormitoriosNNA);
-                $("#Infraest_030_CamasNNA_cantidad" + sufijo).val(this.CantidadCamasNNA);
-                $("#Infraest_032_closetLocker_cantidad" + sufijo).val(this.CantidadColsetLockers);
-                $("#Infraest_034_banosPublico_cantidad" + sufijo).val(this.CantidadBañosPublicos);
+                $("#IdValor_1" + sufijo).val(this.CantidadOficAdm);
+                $("#IdValor_2" + sufijo).val(this.CantidadSalaReunion);
+                $("#IdValor_3" + sufijo).val(this.CantidadSalaRecepcion);
+                $("#IdValor_4" + sufijo).val(this.CantidadEspaciosVisitas);
+                $("#IdValor_5" + sufijo).val(this.CantidadSalaTalleres);
+                $("#IdValor_6" + sufijo).val(this.CantidadSalaLiving);
+                $("#IdValor_7" + sufijo).val(this.CantidadEnfermeria);
+                $("#IdValor_8" + sufijo).val(this.CantidadRecreacion);
+                $("#IdValor_9" + sufijo).val(this.CantidadAreasVerdes);
+                $("#IdValor_10" + sufijo).val(this.CantidadCocina);
+                $("#IdValor_11" + sufijo).val(this.CantidadComedor);
+                $("#IdValor_12" + sufijo).val(this.CantidadLavanderia);
+                $("#IdValor_13" + sufijo).val(this.CantidadDormitoriosNNA);
+                $("#IdValor_14" + sufijo).val(this.CantidadCamasNNA);
+                $("#IdValor_15" + sufijo).val(this.CantidadColsetLockers);
+                $("#IdValor_16" + sufijo).val(this.CantidadBañosPublicos);
 
 
-                $("#Infraest_039_ambientacionAcorde_existe" + sufijo).val(this.AmbienteAcorde);
-                $("#Infraest_040_vestuarioAdecuado_existe" + sufijo).val(this.VestuarioAdecuado);
-                $("#Infraest_041_utilesAseoPersonalNNA_existe" + sufijo).val(this.UtilesAseo);
-                $("#Infraest_042_aguaCaliente_existe" + sufijo).val(this.AguaCaliente);
+                $("#IdParInfraestructura_27" + sufijo).val(this.AmbienteAcorde);
+                $("#IdParInfraestructura_28" + sufijo).val(this.VestuarioAdecuado);
+                $("#IdParInfraestructura_30" + sufijo).val(this.UtilesAseo);
+                $("#IdParInfraestructura_31" + sufijo).val(this.AguaCaliente);
                 $("#Infraest_043_estadoCalefonLlavesGas_existe" + sufijo).val(this.CalefonGas);
-                $("#Infraest_044_sistemaCalefaccion_existe" + sufijo).val(this.SistemaCalefacion);
-                $("#Infraest_045_ventilacionAdecuada_existe" + sufijo).val(this.Ventilacion);
-                $("#Infraest_046_AccesoDiscapacitados_existe" + sufijo).val(this.AccesoDiscapacitados);
-                $("#Infraest_047_InstalacionesHabilitadasDiscapacitados_existe" + sufijo).val(this.HabilitaDiscapacitados);
+                $("#IdParInfraestructura_34" + sufijo).val(this.SistemaCalefacion);
+                $("#IdParInfraestructura_35" + sufijo).val(this.Ventilacion);
+                $("#IdParInfraestructura_36" + sufijo).val(this.AccesoDiscapacitados);
+                $("#IdParInfraestructura_37" + sufijo).val(this.HabilitaDiscapacitados);
 
                 $("#Infraest_036_banosNNAadecuados_cantidad" + sufijo).val(this.CantidadBañosNNA);
                 $("#Infraest_038_duchasNNA_cantidad" + sufijo).val(this.CantidadDuchasNNA);
 
 
-                $("#Infraest_035_banosNNA_Funcionamiento_cant" + sufijo).val(this.CantidadBañosNNAFuncionamiento);
-                $("#Infraest_035_banosNNA_AcuerdoNormativa_cant" + sufijo).val(this.CantidadBañosNNANormativa);
-                $("#Infraest_035_banosNNA_Hombre_cant" + sufijo).val(this.CantidadBañosNNAHombres);
-                $("#Infraest_035_banosNNA_Mujer_cant" + sufijo).val(this.CantidadBañosNNAMujeres);
-                $("#Infraest_035_banosNNA_mixto_cant" + sufijo).val(this.CantidadBañosNNAMixtos);
+                $("#IdValor_17" + sufijo).val(this.CantidadBañosNNAFuncionamiento);
+                $("#IdValor_18" + sufijo).val(this.CantidadBañosNNANormativa);
+                $("#IdValor_19" + sufijo).val(this.CantidadBañosNNAHombres);
+                $("#IdValor_20" + sufijo).val(this.CantidadBañosNNAMujeres);
+                $("#IdValor_21" + sufijo).val(this.CantidadBañosNNAMixtos);
 
-                $("#Infraest_037_duchasNNA_funcionamiento_cant" + sufijo).val(this.CantidadDuchasNNAFuncionamiento);
-                $("#Infraest_037_duchasNNA_normativa_cant" + sufijo).val(this.CantidadDuchasNNANormativa);
-                $("#Infraest_037_duchasNNA_hombres_cant" + sufijo).val(this.CantidadDuchasNNAHombres);
-                $("#Infraest_037_duchasNNA_mujeres_cant" + sufijo).val(this.CantidadDuchasNNAMujeres);
-                $("#Infraest_037_duchasNNA_mixtos_cant" + sufijo).val(this.CantidadDuchasNNAMixtas);
+                $("#IdValor_22" + sufijo).val(this.CantidadDuchasNNAFuncionamiento);
+                $("#IdValor_23" + sufijo).val(this.CantidadDuchasNNANormativa);
+                $("#IdValor_24" + sufijo).val(this.CantidadDuchasNNAHombres);
+                $("#IdValor_25" + sufijo).val(this.CantidadDuchasNNAMujeres);
+                $("#IdValor_26" + sufijo).val(this.CantidadDuchasNNAMixtas);
 
-                if ($("#Infraest_035_banosNNA_Funcionamiento_cant" + sufijo).val() != "0")
-                    $("#Infraest_035_banosNNA_Funcionamiento_existe" + sufijo).val(1);
+                if ($("#IdValor_17" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_17" + sufijo).val(1);
                 else
-                    $("#Infraest_035_banosNNA_Funcionamiento_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_17" + sufijo).val(0);
 
-                if ($("#Infraest_035_banosNNA_AcuerdoNormativa_cant" + sufijo).val() != "0")
-                    $("#Infraest_035_banosNNA_AcuerdoNormativa_existe" + sufijo).val(1);
+                if ($("#IdValor_18" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_18" + sufijo).val(1);
                 else
-                    $("#Infraest_035_banosNNA_AcuerdoNormativa_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_18" + sufijo).val(0);
 
-                if ($("#Infraest_035_banosNNA_Hombre_cant" + sufijo).val() != "0")
-                    $("#Infraest_035_banosNNA_Hombre_existe" + sufijo).val(1);
+                if ($("#IdValor_19" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_19" + sufijo).val(1);
                 else
-                    $("#Infraest_035_banosNNA_Hombre_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_19" + sufijo).val(0);
 
-                if ($("#Infraest_035_banosNNA_Mujer_cant" + sufijo).val() != "0")
-                    $("#Infraest_035_banosNNA_Mujer_existe" + sufijo).val(1);
+                if ($("#IdValor_20" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_20" + sufijo).val(1);
                 else
-                    $("#Infraest_035_banosNNA_Mujer_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_20" + sufijo).val(0);
 
-                if ($("#Infraest_035_banosNNA_mixto_cant" + sufijo).val() != "0")
-                    $("#Infraest_035_banosNNA_mixto_existe" + sufijo).val(1);
+                if ($("#IdValor_21" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_21" + sufijo).val(1);
                 else
-                    $("#Infraest_035_banosNNA_mixto_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_21" + sufijo).val(0);
 
-                if ($("#Infraest_037_duchasNNA_funcionamiento_cant" + sufijo).val() != "0") 
-                    $("#Infraest_037_duchasNNA_funcionamiento_existe" + sufijo).val(1);
+                if ($("#IdValor_22" + sufijo).val() != "0") 
+                    $("#IdParInfraestructura_22" + sufijo).val(1);
                 else
-                    $("#Infraest_037_duchasNNA_funcionamiento_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_22" + sufijo).val(0);
 
-                if ($("#Infraest_037_duchasNNA_normativa_cant" + sufijo).val() != "0")
-                    $("#Infraest_037_duchasNNA_normativa_existe" + sufijo).val(1);
+                if ($("#IdValor_23" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_23" + sufijo).val(1);
                 else
-                    $("#Infraest_037_duchasNNA_normativa_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_23" + sufijo).val(0);
 
-                if ($("#Infraest_037_duchasNNA_hombres_cant" + sufijo).val() != "0")
-                    $("#Infraest_037_duchasNNA_hombres_existe" + sufijo).val(1);
+                if ($("#IdValor_24" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_24" + sufijo).val(1);
                 else
-                    $("#Infraest_037_duchasNNA_hombres_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_24" + sufijo).val(0);
 
-                if ($("#Infraest_037_duchasNNA_mujeres_cant" + sufijo).val() != "0")
-                    $("#Infraest_037_duchasNNA_mujeres_existe" + sufijo).val(1);
+                if ($("#IdValor_25" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_25" + sufijo).val(1);
                 else
-                    $("#Infraest_037_duchasNNA_mujeres_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_25" + sufijo).val(0);
 
-                if ($("#Infraest_037_duchasNNA_mixtos_cant" + sufijo).val() != "0")
-                    $("#Infraest_037_duchasNNA_mixtos_existe" + sufijo).val(1);
+                if ($("#IdValor_26" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_26" + sufijo).val(1);
                 else
-                    $("#Infraest_037_duchasNNA_mixtos_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_26" + sufijo).val(0);
 
                 if( this.CalefonNormativa != "0" && this.CalefonNormativa !="-1")
-                    $("#Infraest_043_CumpleNormaCalefon"+ sufijo).val(1);
+                    $("#IdParInfraestructura_32"+ sufijo).val(1);
                 else
-                    $("#Infraest_043_CumpleNormaCalefon"+ sufijo).val(0);
+                    $("#IdParInfraestructura_32"+ sufijo).val(0);
 
                 if (this.LlaveGasNormativa != "0" && this.LlaveGasNormativa != "-1") // revisar cambiar 0 por 2
-                    $("#Infraest_043_CumpleNormaLlaveGas" + sufijo).val(1);
+                    $("#IdParInfraestructura_33" + sufijo).val(1);
                 else
-                    $("#Infraest_043_CumpleNormaLlaveGas" + sufijo).val(0);
+                    $("#IdParInfraestructura_33" + sufijo).val(0);
 
                 if (this.VestuarioPersonalizadoNNA != "0" && this.VestuarioPersonalizadoNNA != "-1")
-                    $("#Infraest_040_vestuarioPersonalizado_existe" + sufijo).val(1);
+                    $("#IdParInfraestructura_29" + sufijo).val(1);
                 else
-                    $("#Infraest_040_vestuarioPersonalizado_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_29" + sufijo).val(0);
 
                 document.getElementById("Infraest_049_observaciones" + sufijo).value = this.Observaciones;
 
-                if ($("#Infraest_002_ofi_admin_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_001_ofi_admin_existe" + sufijo).val("1");
+                if ($("#IdValor_1" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_1" + sufijo).val("1");
                 else
-                    $("#Infraest_001_ofi_admin_existe" + sufijo).val("0");
+                    $("#IdParInfraestructura_1" + sufijo).val("0");
 
-                if ($("#Infraest_004_salaReuniones_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_003_salaReuniones_existe" + sufijo).val(1);  // gcastro modificado de 0 a 2
+                if ($("#IdValor_2" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_2" + sufijo).val(1);  // gcastro modificado de 0 a 2
                 else
-                    $("#Infraest_003_salaReuniones_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_2" + sufijo).val(0);
 
-                if ($("#Infraest_006_salaRecepcion_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_005_salaRecepcion_existe" + sufijo).val(1);
+                if ($("#IdValor_3" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_3" + sufijo).val(1);
                 else
-                    $("#Infraest_005_salaRecepcion_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_3" + sufijo).val(0);
 
-                if ($("#Infraest_008_espacioVisitas_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_007_espacioVisitas_existe" + sufijo).val(1);
+                if ($("#IdValor_4" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_4" + sufijo).val(1);
                 else
-                    $("#Infraest_007_espacioVisitas_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_4" + sufijo).val(0);
 
-                if ($("#Infraest_010_salaMultiuso_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_009_salaMultiuso_existe" + sufijo).val(1);
+                if ($("#IdValor_5" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_5" + sufijo).val(1);
                 else
-                    $("#Infraest_009_salaMultiuso_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_5" + sufijo).val(0);
 
-                if ($("#Infraest_012_salaEstar_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_011_salaEstar_existe" + sufijo).val(1);
+                if ($("#IdValor_6" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_6" + sufijo).val(1);
                 else
-                    $("#Infraest_011_salaEstar_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_6" + sufijo).val(0);
 
-                if ($("#Infraest_014_enfermeria_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_013_enfermeria_existe" + sufijo).val(1);
+                if ($("#IdValor_7" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_7" + sufijo).val(1);
                 else
-                    $("#Infraest_013_enfermeria_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_7" + sufijo).val(0);
 
-                if ($("#Infraest_016_espacioRecreacional_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_015_espacioRecreacional_existe" + sufijo).val(1);
+                if ($("#IdValor_8" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_8" + sufijo).val(1);
                 else
-                    $("#Infraest_015_espacioRecreacional_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_8" + sufijo).val(0);
 
-                if ($("#Infraest_020_areasVerdes_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_019_areasVerdes_existe" + sufijo).val(1);
+                if ($("#IdValor_9" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_9" + sufijo).val(1);
                 else
-                    $("#Infraest_019_areasVerdes_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_9" + sufijo).val(0);
 
-                if ($("#Infraest_022_cocina_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_021_cocina_existe" + sufijo).val(1);
+                if ($("#IdValor_10" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_10" + sufijo).val(1);
                 else
-                    $("#Infraest_021_cocina_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_10" + sufijo).val(0);
 
-                if ($("#Infraest_024_comedor_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_023_comedor_existe" + sufijo).val(1);
+                if ($("#IdValor_11" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_11" + sufijo).val(1);
                 else
-                    $("#Infraest_023_comedor_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_11" + sufijo).val(0);
 
-                if ($("#Infraest_026_Lavanderia_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_025_Lavanderia_existe" + sufijo).val(1);
+                if ($("#IdValor_12" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_12" + sufijo).val(1);
                 else
-                    $("#Infraest_025_Lavanderia_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_12" + sufijo).val(0);
 
-                if ($("#Infraest_028_Dormitorio_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_027_Dormitorio_existe" + sufijo).val(1);
+                if ($("#IdValor_13" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_13" + sufijo).val(1);
                 else
-                    $("#Infraest_027_Dormitorio_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_13" + sufijo).val(0);
 
-                if ($("#Infraest_030_CamasNNA_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_029_CamasNNA_existe" + sufijo).val(1);
+                if ($("#IdValor_14" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_14" + sufijo).val(1);
                 else
-                    $("#Infraest_029_CamasNNA_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_14" + sufijo).val(0);
 
-                if ($("#Infraest_032_closetLocker_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_031_closetLocker_existe" + sufijo).val(1);
+                if ($("#IdValor_15" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_15" + sufijo).val(1);
                 else
-                    $("#Infraest_031_closetLocker_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_15" + sufijo).val(0);
 
-                if ($("#Infraest_034_banosPublico_cantidad" + sufijo).val() != "0")
-                    $("#Infraest_033_banosPublico_existe" + sufijo).val(1);
+                if ($("#IdValor_16" + sufijo).val() != "0")
+                    $("#IdParInfraestructura_16" + sufijo).val(1);
                 else
-                    $("#Infraest_033_banosPublico_existe" + sufijo).val(0);
+                    $("#IdParInfraestructura_16" + sufijo).val(0);
 
                 if ($("#Infraest_036_banosNNAadecuados_cantidad" + sufijo).val() != "0")
                     $("#Infraest_035_banosNNAadecuados_existe" + sufijo).val(1);
@@ -918,187 +995,188 @@ function ObtenerAntecedentesInfraestructura_Compare(codFichaPadre, bloqueDatos) 
 function HabilitaInfraestructura(opc) {
     var valor19 = 0, valor20 = 0, valor21 = 0, valor22 = 0, valor23 = 0;
     var valor24 = 0, valor25 = 0, valor26 = 0, valor27 = 0, valor28 = 0;
+    var valorCantidad = "";
     switch (opc) {
         case 1:
-            var ofi_admin_cantidad_ = $("#Infraest_002_ofi_admin_cantidad").val();
-            if (ofi_admin_cantidad_ != "0" && ofi_admin_cantidad_ != "") {
-                document.getElementById("Infraest_001_ofi_admin_existe").selectedIndex = 1;
+            var ofi_admin_cantidad_ = $("#IdValor_1").val();
+            valorCantidad  = ofi_admin_cantidad_.charAt(0);
+
+            if (valorCantidad != "0" && ofi_admin_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_1").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_001_ofi_admin_existe").selectedIndex = 0; 
+                document.getElementById("IdParInfraestructura_1").selectedIndex = 0; 
             }
             break;
         case 2:
-            var salaReuniones_cantidad_ = $("#Infraest_004_salaReuniones_cantidad").val();
-            if (salaReuniones_cantidad_ != "0" && salaReuniones_cantidad_ != "") {
-                document.getElementById("Infraest_003_salaReuniones_existe").selectedIndex = 1;
+            var salaReuniones_cantidad_ = $("#IdValor_2").val();
+            valorCantidad = salaReuniones_cantidad_.charAt(0);
+            if (valorCantidad != "0" && salaReuniones_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_2").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_003_salaReuniones_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_2").selectedIndex = 0;
             }
             break;
         case 3:
-            var salaRecepcion_cantidad_ = $("#Infraest_006_salaRecepcion_cantidad").val();
-            if (salaRecepcion_cantidad_ != "0" && salaRecepcion_cantidad_ != "") {
-                document.getElementById("Infraest_005_salaRecepcion_existe").selectedIndex = 1;
+            var salaRecepcion_cantidad_ = $("#IdValor_3").val();
+            valorCantidad = salaRecepcion_cantidad_.charAt(0);
+            if (valorCantidad != "0" && salaRecepcion_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_3").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_005_salaRecepcion_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_3").selectedIndex = 0;
             }
             break;
         case 4:
-            var espacioVisitas_cantidad_ = $("#Infraest_008_espacioVisitas_cantidad").val();
-            if (espacioVisitas_cantidad_ != "0" && espacioVisitas_cantidad_ != "") {
-                document.getElementById("Infraest_007_espacioVisitas_existe").selectedIndex = 1;
+            var espacioVisitas_cantidad_ = $("#IdValor_4").val();
+            valorCantidad = espacioVisitas_cantidad_.charAt(0);
+            if (valorCantidad != "0" && espacioVisitas_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_4").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_007_espacioVisitas_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_4").selectedIndex = 0;
             }
             break;
         case 5:
-            var salaMultiuso_cantidad_ = $("#Infraest_010_salaMultiuso_cantidad").val();
-            if (salaMultiuso_cantidad_ != "0" && salaMultiuso_cantidad_ != "") {
-                document.getElementById("Infraest_009_salaMultiuso_existe").selectedIndex = 1;
+            var salaMultiuso_cantidad_ = $("#IdValor_5").val();
+            valorCantidad = salaMultiuso_cantidad_.charAt(0);
+            if (valorCantidad != "0" && salaMultiuso_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_5").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_009_salaMultiuso_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_5").selectedIndex = 0;
             }
             break;
         case 6:
-            var salaEstar_cantidad_ = $("#Infraest_012_salaEstar_cantidad").val();
-            if (salaEstar_cantidad_ != "0" && salaEstar_cantidad_ != "") {
-                document.getElementById("Infraest_011_salaEstar_existe").selectedIndex = 1;
+            var salaEstar_cantidad_ = $("#IdValor_6").val();
+            valorCantidad = salaEstar_cantidad_.charAt(0);
+            if (valorCantidad != "0" && salaEstar_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_6").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_011_salaEstar_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_6").selectedIndex = 0;
             }
             break;
         case 7:
-            var enfermeria_cantidad_ = $("#Infraest_014_enfermeria_cantidad").val();
-            if (enfermeria_cantidad_ != "0" && enfermeria_cantidad_ != "") {
-                document.getElementById("Infraest_013_enfermeria_existe").selectedIndex = 1;
+            var enfermeria_cantidad_ = $("#IdValor_7").val();
+            valorCantidad = enfermeria_cantidad_.charAt(0);
+            if (valorCantidad != "0" && enfermeria_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_7").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_013_enfermeria_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_7").selectedIndex = 0;
             }
             break;
         case 8:
-            var espacioRecreacional_cantidad_ = $("#Infraest_016_espacioRecreacional_cantidad").val();
-            if (espacioRecreacional_cantidad_ != "0" && espacioRecreacional_cantidad_ != "") {
-                document.getElementById("Infraest_015_espacioRecreacional_existe").selectedIndex = 1;
+            var espacioRecreacional_cantidad_ = $("#IdValor_8").val();
+            valorCantidad = espacioRecreacional_cantidad_.charAt(0);
+            if (valorCantidad != "0" && espacioRecreacional_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_8").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_015_espacioRecreacional_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_8").selectedIndex = 0;
             }
             break;
         case 9:
-            var areasVerdes_cantidad_ = $("#Infraest_020_areasVerdes_cantidad").val();
-            if (areasVerdes_cantidad_ != "0" && areasVerdes_cantidad_ != "") {
-                document.getElementById("Infraest_019_areasVerdes_existe").selectedIndex = 1;
+            var areasVerdes_cantidad_ = $("#IdValor_9").val();
+            valorCantidad = areasVerdes_cantidad_.charAt(0);
+            if (valorCantidad != "0" && areasVerdes_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_9").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_019_areasVerdes_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_9").selectedIndex = 0;
             }
             break;
         case 10:
-            var cocina_cantidad_ = $("#Infraest_022_cocina_cantidad").val();
-            if (cocina_cantidad_ != "0" && cocina_cantidad_ != "") {
-                document.getElementById("Infraest_021_cocina_existe").selectedIndex = 1;
+            var cocina_cantidad_ = $("#IdValor_10").val();
+            valorCantidad = cocina_cantidad_.charAt(0);
+            if (valorCantidad != "0" && cocina_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_10").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_021_cocina_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_10").selectedIndex = 0;
             }
             break;
         case 11:
-            var comedor_cantidad_ = $("#Infraest_024_comedor_cantidad").val();
-            if (comedor_cantidad_ != "0" && comedor_cantidad_ != "") {
-                document.getElementById("Infraest_023_comedor_existe").selectedIndex = 1;
+            var comedor_cantidad_ = $("#IdValor_11").val();
+            valorCantidad = comedor_cantidad_.charAt(0);
+            if (valorCantidad != "0" && comedor_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_11").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_023_comedor_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_11").selectedIndex = 0;
             }
             break;
         case 12:
-            var Lavanderia_cantidad_ = $("#Infraest_026_Lavanderia_cantidad").val();
-            if (Lavanderia_cantidad_ != "0" && Lavanderia_cantidad_ != "") {
-                document.getElementById("Infraest_025_Lavanderia_existe").selectedIndex = 1;
+            var Lavanderia_cantidad_ = $("#IdValor_12").val();
+            valorCantidad = Lavanderia_cantidad_.charAt(0);
+            if (valorCantidad != "0" && Lavanderia_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_12").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_025_Lavanderia_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_12").selectedIndex = 0;
             }
             break;
         case 13:
-            var Dormitorio_cantidad_ = $("#Infraest_028_Dormitorio_cantidad").val();
-            if (Dormitorio_cantidad_ != "0" && Dormitorio_cantidad_ != "") {
-                document.getElementById("Infraest_027_Dormitorio_existe").selectedIndex = 1;
+            var Dormitorio_cantidad_ = $("#IdValor_13").val();
+            valorCantidad = Dormitorio_cantidad_.charAt(0);
+            if (valorCantidad != "0" && Dormitorio_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_13").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_027_Dormitorio_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_13").selectedIndex = 0;
             }
             break;
         case 14:
-            var CamasNNA_cantidad_ = $("#Infraest_030_CamasNNA_cantidad").val();
-            if (CamasNNA_cantidad_ != "0" && CamasNNA_cantidad_ != "") {
-                document.getElementById("Infraest_029_CamasNNA_existe").selectedIndex = 1;
+            var CamasNNA_cantidad_ = $("#IdValor_14").val();
+            valorCantidad = CamasNNA_cantidad_.charAt(0);
+            if (valorCantidad != "0" && CamasNNA_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_14").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_029_CamasNNA_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_14").selectedIndex = 0;
             }
             break;
         case 15:
-            var closetLocker_cantidad_ = $("#Infraest_032_closetLocker_cantidad").val();
-            if (closetLocker_cantidad_ != "0" && closetLocker_cantidad_ != "") {
-                document.getElementById("Infraest_031_closetLocker_existe").selectedIndex = 1;
+            var closetLocker_cantidad_ = $("#IdValor_15").val();
+            valorCantidad = closetLocker_cantidad_.charAt(0);
+            if (valorCantidad != "0" && closetLocker_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_15").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_031_closetLocker_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_15").selectedIndex = 0;
             }
             break;
         case 16:
-            var banosPublico_cantidad_ = $("#Infraest_034_banosPublico_cantidad").val();
-            if (banosPublico_cantidad_ != "0" && banosPublico_cantidad_ != "") {
-                document.getElementById("Infraest_033_banosPublico_existe").selectedIndex = 1;
+            var banosPublico_cantidad_ = $("#IdValor_16").val();
+            valorCantidad = banosPublico_cantidad_.charAt(0);
+            if (valorCantidad != "0" && banosPublico_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_16").selectedIndex = 1;
             }
             else {
-                document.getElementById("Infraest_033_banosPublico_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_16").selectedIndex = 0;
             }
             break;
 
-        case 17:
-            if (document.getElementById("Infraest_036_banosNNAadecuados_cantidad").selectedIndex != 0) {
-                document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 1;
-            }
-            else {
+        case 17://CAMPO NUEVO: Baños NNA en Funcionamiento -- antes era opción = 19
+            if (EliminaEspacios($("#IdValor_17").val()) == 0 || EliminaEspacios($("#IdValor_17").val())=="") {
                 document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 0;
-            }
-            break;
-        case 18:
-            if (document.getElementById("Infraest_038_duchasNNA_cantidad").selectedIndex != 0) {
-                document.getElementById("Infraest_037_duchasNNA_existe").selectedIndex = 1;
-            }
-            else {
-                document.getElementById("Infraest_037_duchasNNA_existe").selectedIndex = 0;
-            }
-            break;
-
-        case 19://CAMPO NUEVO: Baños NNA en Funcionamiento
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()) == 0 || EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val())=="") {
-                document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 0;
-                document.getElementById("Infraest_035_banosNNA_Funcionamiento_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_17").selectedIndex = 0;
                 document.getElementById("Infraest_036_banosNNAadecuados_cantidad").selectedIndex = 0;
 
-                $("#Infraest_035_banosNNA_AcuerdoNormativa_existe").val(0);
-                $("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val(0);
-                document.getElementById("Infraest_035_banosNNA_AcuerdoNormativa_cant").disabled = true;
+                $("#IdParInfraestructura_18").val(0);
+                $("#IdValor_18").val(0);
+                document.getElementById("IdValor_18").disabled = true;
             }
             else {
                 document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 1;
-                document.getElementById("Infraest_035_banosNNA_Funcionamiento_existe").selectedIndex = 1;
-                document.getElementById("Infraest_035_banosNNA_AcuerdoNormativa_cant").disabled = false;
+                document.getElementById("IdParInfraestructura_17").selectedIndex = 1;
+                document.getElementById("IdValor_18").disabled = false;
 
                 valor19 = 0;
-                if (EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()) != "") {
-                    valor19 = parseInt(EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()), 10);
+                if (EliminaEspacios($("#IdValor_17").val()) != "") {
+                    valor19 = parseInt(EliminaEspacios($("#IdValor_17").val()), 10);
                 }
                 if (valor19 > 5) {
                     $("#Infraest_036_banosNNAadecuados_cantidad").val(6);
@@ -1109,96 +1187,88 @@ function HabilitaInfraestructura(opc) {
            
             }
             break;
-        case 20://CAMPO NUEVO: Baños NNA de acuerdo a Normativa
-            if (EliminaEspacios($("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val()) == 0 || EliminaEspacios($("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val()) == "") {
-                $("#Infraest_035_banosNNA_AcuerdoNormativa_existe").val(0);
+        case 19:
+            var banosNNHombres_cantidad_ = $("#IdValor_19").val();
+            valorCantidad = banosNNHombres_cantidad_.charAt(0);
+            if (valorCantidad != "0" && banosNNHombres_cantidad_ != "") {
+                document.getElementById("IdParInfraestructura_19").selectedIndex = 1;
             }
             else {
-                $("#Infraest_035_banosNNA_AcuerdoNormativa_existe").val(1);
-                valor19 = parseInt(EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()), 10);
-                valor20 = parseInt($("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val(), 10);
+                document.getElementById("IdParInfraestructura_19").selectedIndex = 0;
+            }
+            break;
+        case 18:// CAMPO NUEVO: Baños NNA de acuerdo a Normativa  -- ANTES CASE : 20
+            if (EliminaEspacios($("#IdValor_18").val()) == 0 || EliminaEspacios($("#IdValor_18").val()) == "") {
+                $("#IdParInfraestructura_18").val(0);
+            }
+            else {
+                $("#IdParInfraestructura_18").val(1);
+                valor19 = parseInt(EliminaEspacios($("#IdValor_17").val()), 10);
+                valor20 = parseInt($("#IdValor_18").val(), 10);
                 if (valor20 > valor19) {
-                    $("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val(valor19);
+                    $("#IdValor_18").val(valor19);
                     MensajeINFO("<p style='font-size:12px;'>Está ingresando más baños NNA de acuerdo a normativa que baños NNA en funcionamiento. El sistema igualará ambos campos al valor de baños NNA en funcionamiento</p>");
                 }
             }
             break;
-        case 21://CAMPO NUEVO: Baños NNA Hombres
+
+        case 20://Baños NNA de mujeres   --- ANTES OPCIÓN = 22
             valor19 = 0; valor21 = 0; valor22 = 0; valor23 = 0;
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Hombre_cant").val()) == 0 || EliminaEspacios($("#Infraest_035_banosNNA_Hombre_cant").val()) == "") {
-                $("#Infraest_035_banosNNA_Hombre_existe").val(0);
+            if (EliminaEspacios($("#IdValor_20").val()) == 0 || EliminaEspacios($("#IdValor_20").val()) == "") {
+                $("#IdParInfraestructura_20").val(0);
             }
             else {
-                $("#Infraest_035_banosNNA_Hombre_existe").val(1);
+                $("#IdParInfraestructura_20").val(1);
             }
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()) != "") valor19 = parseInt(EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()), 10);
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Hombre_cant").val()) != "") valor21 = parseInt($("#Infraest_035_banosNNA_Hombre_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Mujer_cant").val()) != "") valor22 = parseInt($("#Infraest_035_banosNNA_Mujer_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_035_banosNNA_mixto_cant").val()) != "") valor23 = parseInt($("#Infraest_035_banosNNA_mixto_cant").val(), 10);
-            if (valor19 > 0 && ((valor21 + valor22 + valor23) > valor19)) {
-                $("#Infraest_035_banosNNA_Hombre_cant").val("");
-                $("#Infraest_035_banosNNA_Hombre_existe").val(0);
-                MensajeINFO("<p style='font-size:12px;'>Ingrese nuevamente el valor de baños NNA de hombres, pues el valor ingresado (" + valor21 + "), más las cantidades de baños NNA de mujeres y mixtos sobrepasa la cantidad de baños NNA en funcionamiento.</p>");
-            }
-
-            break;
-        case 22://CAMPO NUEVO: Baños NNA Mujeres
-            valor19 = 0; valor21 = 0; valor22 = 0; valor23 = 0;
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Mujer_cant").val()) == 0 || EliminaEspacios($("#Infraest_035_banosNNA_Mujer_cant").val()) == "") {
-                $("#Infraest_035_banosNNA_Mujer_existe").val(0);
-            }
-            else {
-                $("#Infraest_035_banosNNA_Mujer_existe").val(1);
-            }
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()) != "") valor19 = parseInt(EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()), 10);
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Hombre_cant").val()) != "") valor21 = parseInt($("#Infraest_035_banosNNA_Hombre_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Mujer_cant").val()) != "") valor22 = parseInt($("#Infraest_035_banosNNA_Mujer_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_035_banosNNA_mixto_cant").val()) != "") valor23 = parseInt($("#Infraest_035_banosNNA_mixto_cant").val(), 10);
+            if (EliminaEspacios($("#IdValor_17").val()) != "") valor19 = parseInt(EliminaEspacios($("#IdValor_17").val()), 10);
+            if (EliminaEspacios($("#IdValor_19").val()) != "") valor21 = parseInt($("#IdValor_19").val(), 10);
+            if (EliminaEspacios($("#IdValor_20").val()) != "") valor22 = parseInt($("#IdValor_20").val(), 10);
+            if (EliminaEspacios($("#IdValor_21").val()) != "") valor23 = parseInt($("#IdValor_21").val(), 10);
 
             if (valor19 > 0 && ((valor21 + valor22 + valor23) > valor19)) {
-                $("#Infraest_035_banosNNA_Mujer_cant").val("");
-                $("#Infraest_035_banosNNA_Mujer_existe").val(0);
+                $("#IdValor_20").val("");
+                $("#IdParInfraestructura_20").val(0);
                 MensajeINFO("<p style='font-size:12px;'>Ingrese nuevamente el valor de baños NNA de mujeres, pues el valor ingresado (" + valor22 + "), más las cantidades de baños NNA de hombres y mixtos sobrepasa la cantidad de baños NNA en funcionamiento.</p>");
             }
 
             break;
-        case 23://CAMPO NUEVO: Baños NNA mixtos
+        case 21://CAMPO NUEVO: Baños NNA mixtos  -- antes OPCION 23
             valor19 = 0; valor21 = 0; valor22 = 0; valor23 = 0;
-            if (EliminaEspacios($("#Infraest_035_banosNNA_mixto_cant").val()) == 0 || EliminaEspacios($("#Infraest_035_banosNNA_mixto_cant").val()) == "") {
-                $("#Infraest_035_banosNNA_mixto_existe").val(0);
+            if (EliminaEspacios($("#IdValor_21").val()) == 0 || EliminaEspacios($("#IdValor_21").val()) == "") {
+                $("#IdParInfraestructura_21").val(0);
             }
             else {
-                $("#Infraest_035_banosNNA_mixto_existe").val(1);
+                $("#IdParInfraestructura_21").val(1);
             }
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()) != "") valor19 = parseInt(EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()), 10);
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Hombre_cant").val()) != "") valor21 = parseInt($("#Infraest_035_banosNNA_Hombre_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_035_banosNNA_Mujer_cant").val()) != "") valor22 = parseInt($("#Infraest_035_banosNNA_Mujer_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_035_banosNNA_mixto_cant").val()) != "") valor23 = parseInt($("#Infraest_035_banosNNA_mixto_cant").val(), 10);
+            if (EliminaEspacios($("#IdValor_17").val()) != "") valor19 = parseInt(EliminaEspacios($("#IdValor_17").val()), 10);
+            if (EliminaEspacios($("#IdValor_19").val()) != "") valor21 = parseInt($("#IdValor_19").val(), 10);
+            if (EliminaEspacios($("#IdValor_20").val()) != "") valor22 = parseInt($("#IdValor_20").val(), 10);
+            if (EliminaEspacios($("#IdValor_21").val()) != "") valor23 = parseInt($("#IdValor_21").val(), 10);
             if (valor19 > 0 && ((valor21 + valor22 + valor23) > valor19)) {
-                $("#Infraest_035_banosNNA_mixto_cant").val("");
-                $("#Infraest_035_banosNNA_mixto_existe").val(0);
+                $("#IdValor_21").val("");
+                $("#IdParInfraestructura_21").val(0);
                 MensajeINFO("<p style='font-size:12px;'>Ingrese nuevamente el valor de baños NNA mixtos, pues el valor ingresado (" + valor23 + "), más las cantidades de baños NNA de hombres y mujeres sobrepasan la cantidad de baños NNA en funcionamiento.</p>");
             }
 
             break;
-        case 24://CAMPO NUEVO: Duchas para NNA en Funcionamiento
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()) == 0 || EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()) == "") {
+        case 22://CAMPO NUEVO: Duchas para NNA en Funcionamiento  -- ANTES OPCION 24
+            if (EliminaEspacios($("#IdValor_22").val()) == 0 || EliminaEspacios($("#IdValor_22").val()) == "") {
                 document.getElementById("Infraest_037_duchasNNA_existe").selectedIndex = 0;
-                document.getElementById("Infraest_037_duchasNNA_funcionamiento_existe").selectedIndex = 0;
+                document.getElementById("IdParInfraestructura_22").selectedIndex = 0;
                 document.getElementById("Infraest_038_duchasNNA_cantidad").selectedIndex = 0;
 
-                $("#Infraest_037_duchasNNA_normativa_existe").val(0);
-                $("#Infraest_037_duchasNNA_normativa_cant").val(0);
-                document.getElementById("Infraest_037_duchasNNA_normativa_cant").disabled = true;
+                $("#IdParInfraestructura_23").val(0);
+                $("#IdValor_23").val(0);
+                document.getElementById("IdValor_23").disabled = true;
             }
             else {
                 document.getElementById("Infraest_037_duchasNNA_existe").selectedIndex = 1;
-                document.getElementById("Infraest_037_duchasNNA_funcionamiento_existe").selectedIndex = 1;
-                document.getElementById("Infraest_037_duchasNNA_normativa_cant").disabled = false;
+                document.getElementById("IdParInfraestructura_22").selectedIndex = 1;
+                document.getElementById("IdValor_23").disabled = false;
 
                 valor24 = 0;
-                if (EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()) != "") {
-                    valor24 = parseInt(EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()), 10);
+                if (EliminaEspacios($("#IdValor_22").val()) != "") {
+                    valor24 = parseInt(EliminaEspacios($("#IdValor_22").val()), 10);
                 }
                 if (valor24 > 5) {
                     $("#Infraest_038_duchasNNA_cantidad").val(6);
@@ -1210,78 +1280,79 @@ function HabilitaInfraestructura(opc) {
             }
             break;
 
-        case 25://CAMPO NUEVO: Duchas para  NNA de acuerdo a Normativa
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_normativa_cant").val()) == 0 || EliminaEspacios($("#Infraest_037_duchasNNA_normativa_cant").val()) == "") {
-                $("#Infraest_037_duchasNNA_normativa_existe").val(0);
+        case 23://CAMPO NUEVO: Duchas para  NNA de acuerdo a Normativa  -- ANTES CASE 25
+            if (EliminaEspacios($("#IdValor_23").val()) == 0 || EliminaEspacios($("#IdValor_23").val()) == "") {
+                $("#IdParInfraestructura_23").val(0);
             }
             else {
-                $("#Infraest_037_duchasNNA_normativa_existe").val(1);
-                valor24 = parseInt(EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()), 10);
-                valor25 = parseInt($("#Infraest_037_duchasNNA_normativa_cant").val(), 10);
+                $("#IdParInfraestructura_23").val(1);
+                valor24 = parseInt(EliminaEspacios($("#IdValor_22").val()), 10);
+                valor25 = parseInt($("#IdValor_23").val(), 10);
                 if (valor25 > valor24) {
-                    $("#Infraest_037_duchasNNA_normativa_cant").val(valor24);
+                    $("#IdValor_23").val(valor24);
                     MensajeINFO("<p style='font-size:12px;'>Está ingresando más duchas para NNA de acuerdo a normativa que duchas para NNA en funcionamiento. El sistema igualará ambos campos al valor de duchas para NNA en funcionamiento.</p>");
                 }
             }
             break;
-        case 26://CAMPO NUEVO: Duchas para NNA de hombres
+        case 24://CAMPO NUEVO: Duchas para NNA de hombres -- ANTES  CASE 26
             valor24 = 0; valor26 = 0; valor27 = 0; valor28 = 0;
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_hombres_cant").val()) == 0 || EliminaEspacios($("#Infraest_037_duchasNNA_hombres_cant").val()) == "") {
-                $("#Infraest_037_duchasNNA_hombres_existe").val(0);
+            if (EliminaEspacios($("#IdValor_24").val()) == 0 || EliminaEspacios($("#IdValor_24").val()) == "") {
+                $("#IdParInfraestructura_24").val(0);
             }
             else {
-                $("#Infraest_037_duchasNNA_hombres_existe").val(1);
+                $("#IdParInfraestructura_24").val(1);
             }
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()) != "") valor24 = parseInt(EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()), 10);
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_hombres_cant").val()) != "") valor26 = parseInt($("#Infraest_037_duchasNNA_hombres_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_mujeres_cant").val()) != "") valor27 = parseInt($("#Infraest_037_duchasNNA_mujeres_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_mixtos_cant").val()) != "") valor28 = parseInt($("#Infraest_037_duchasNNA_mixtos_cant").val(), 10);
+            if (EliminaEspacios($("#IdValor_22").val()) != "") valor24 = parseInt(EliminaEspacios($("#IdValor_22").val()), 10);
+            if (EliminaEspacios($("#IdValor_24").val()) != "") valor26 = parseInt($("#IdValor_24").val(), 10);
+            if (EliminaEspacios($("#IdValor_25").val()) != "") valor27 = parseInt($("#IdValor_25").val(), 10);
+            if (EliminaEspacios($("#IdValor_26").val()) != "") valor28 = parseInt($("#IdValor_26").val(), 10);
             if (valor24 > 0 && ((valor26 + valor27 + valor28) > valor24)) {
-                $("#Infraest_037_duchasNNA_hombres_cant").val("");
-                $("#Infraest_037_duchasNNA_hombres_existe").val(0);
+                $("#IdValor_24").val("");
+                $("#IdParInfraestructura_24").val(0);
                 MensajeINFO("<p style='font-size:12px;'>Ingrese nuevamente el valor de duchas para NNA de hombres, pues el valor ingresado (" + valor26 + "), más las cantidades de duchas para NNA de mujeres y mixtas sobrepasa la cantidad de duchas para NNA en funcionamiento.</p>");
             }
             break;
-        case 27://CAMPO NUEVO: Duchas para NNA de mujeres
+        case 25://CAMPO NUEVO: Duchas para NNA de mujeres  -- ANTES CASE 27
             valor24 = 0; valor26 = 0; valor27 = 0; valor28 = 0;
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_mujeres_cant").val()) == 0 || EliminaEspacios($("#Infraest_037_duchasNNA_mujeres_cant").val()) == "") {
-                $("#Infraest_037_duchasNNA_mujeres_existe").val(0);
+            if (EliminaEspacios($("#IdValor_25").val()) == 0 || EliminaEspacios($("#IdValor_25").val()) == "") {
+                $("#IdParInfraestructura_25").val(0);
             }
             else {
-                $("#Infraest_037_duchasNNA_mujeres_existe").val(1);
+                $("#IdParInfraestructura_25").val(1);
             }
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()) != "") valor24 = parseInt(EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()), 10);
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_hombres_cant").val()) != "") valor26 = parseInt($("#Infraest_037_duchasNNA_hombres_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_mujeres_cant").val()) != "") valor27 = parseInt($("#Infraest_037_duchasNNA_mujeres_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_mixtos_cant").val()) != "") valor28 = parseInt($("#Infraest_037_duchasNNA_mixtos_cant").val(), 10);
+            if (EliminaEspacios($("#IdValor_22").val()) != "") valor24 = parseInt(EliminaEspacios($("#IdValor_22").val()), 10);
+            if (EliminaEspacios($("#IdValor_24").val()) != "") valor26 = parseInt($("#IdValor_24").val(), 10);
+            if (EliminaEspacios($("#IdValor_25").val()) != "") valor27 = parseInt($("#IdValor_25").val(), 10);
+            if (EliminaEspacios($("#IdValor_26").val()) != "") valor28 = parseInt($("#IdValor_26").val(), 10);
             if (valor24 > 0 && ((valor26 + valor27 + valor28) > valor24)) {
-                $("#Infraest_037_duchasNNA_mujeres_cant").val("");
-                $("#Infraest_037_duchasNNA_mujeres_existe").val(0);
+                $("#IdValor_25").val("");
+                $("#IdParInfraestructura_25").val(0);
                 MensajeINFO("<p style='font-size:12px;'>Ingrese nuevamente el valor de duchas para NNA de mujeres, pues el valor ingresado (" + valor27 + "), más las cantidades de duchas para NNA de hombres y mixtas sobrepasa la cantidad de duchas para NNA en funcionamiento.</p>");
             }
             break;
-        case 28://CAMPO NUEVO: Duchas para NNA mixtas
+        case 26://CAMPO NUEVO: Duchas para NNA mixtas -- ANTES CASE : 28
             valor24 = 0; valor26 = 0; valor27 = 0; valor28 = 0;
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_mixtos_cant").val()) == 0 || EliminaEspacios($("#Infraest_037_duchasNNA_mixtos_cant").val()) == "") {
-                $("#Infraest_037_duchasNNA_mixtos_existe").val(0);
+            if (EliminaEspacios($("#IdValor_26").val()) == 0 || EliminaEspacios($("#IdValor_26").val()) == "") {
+                $("#IdParInfraestructura_26").val(0);
             }
             else {
-                $("#Infraest_037_duchasNNA_mixtos_existe").val(1);
+                $("#IdParInfraestructura_26").val(1);
             }
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()) != "") valor24 = parseInt(EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()), 10);
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_hombres_cant").val()) != "") valor26 = parseInt($("#Infraest_037_duchasNNA_hombres_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_mujeres_cant").val()) != "") valor27 = parseInt($("#Infraest_037_duchasNNA_mujeres_cant").val(), 10);
-            if (EliminaEspacios($("#Infraest_037_duchasNNA_mixtos_cant").val()) != "") valor28 = parseInt($("#Infraest_037_duchasNNA_mixtos_cant").val(), 10);
+            if (EliminaEspacios($("#IdValor_22").val()) != "") valor24 = parseInt(EliminaEspacios($("#IdValor_22").val()), 10);
+            if (EliminaEspacios($("#IdValor_24").val()) != "") valor26 = parseInt($("#IdValor_24").val(), 10);
+            if (EliminaEspacios($("#IdValor_25").val()) != "") valor27 = parseInt($("#IdValor_25").val(), 10);
+            if (EliminaEspacios($("#IdValor_26").val()) != "") valor28 = parseInt($("#IdValor_26").val(), 10);
             if (valor24 > 0 && ((valor26 + valor27 + valor28) > valor24)) {
-                $("#Infraest_037_duchasNNA_mixtos_cant").val("");
-                $("#Infraest_037_duchasNNA_mixtos_existe").val(0);
+                $("#IdValor_26").val("");
+                $("#IdParInfraestructura_26").val(0);
                 MensajeINFO("<p style='font-size:12px;'>Ingrese nuevamente el valor de duchas para NNA mixtas, pues el valor ingresado (" + valor28 + "), más las cantidades de duchas para NNA de hombres y de mujeres sobrepasa la cantidad de duchas para NNA en funcionamiento.</p>");
             }
             break;
     }
 }
+
 function EvaluaCumpleNormaCalefonLlaveGas() {
-    if ($("#Infraest_043_CumpleNormaCalefon").val() == "1" && $("#Infraest_043_CumpleNormaLlaveGas").val() == "1")
+    if ($("#IdParInfraestructura_32").val() == "1" && $("#IdParInfraestructura_33").val() == "1")
         $("#Infraest_043_estadoCalefonLlavesGas_existe").val("1");
     else
         $("#Infraest_043_estadoCalefonLlavesGas_existe").val("0");
@@ -1290,28 +1361,37 @@ function EvaluaCumpleNormaCalefonLlaveGas() {
 
 function ValidaSumaDependientesbanosNNAFunc() {
     var valor19 = 0, valor20 = 0, valor21 = 0, valor22 = 0, valor23 = 0;
-
-    if (EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()) != "") {
-        valor19 = parseInt(EliminaEspacios($("#Infraest_035_banosNNA_Funcionamiento_cant").val()), 10);
+    /*
+        IdValor_17 -> Baños NNA en Funcionamiento
+        IdValor_18 -> Baños NNA de acuerdo a Normativa
+        IdValor_19 -> Baños NNA de hombres
+        IdValor_20 -> Baños NNA de mujeres
+        IdValor_21 -> Baños NNA mixtos
+     */
+    if (EliminaEspacios($("#IdValor_17").val()) != "") {
+        valor19 = parseInt(EliminaEspacios($("#IdValor_17").val()), 10);
     }
 
-    if (EliminaEspacios($("#Infraest_035_banosNNA_Hombre_cant").val()) != "") valor21 = parseInt($("#Infraest_035_banosNNA_Hombre_cant").val(), 10);
-    if (EliminaEspacios($("#Infraest_035_banosNNA_Mujer_cant").val()) != "") valor22 = parseInt($("#Infraest_035_banosNNA_Mujer_cant").val(), 10);
-    if (EliminaEspacios($("#Infraest_035_banosNNA_mixto_cant").val()) != "") valor23 = parseInt($("#Infraest_035_banosNNA_mixto_cant").val(), 10);
+    if (EliminaEspacios($("#IdValor_19").val()) != "") valor21 = parseInt($("#IdValor_19").val(), 10);
+    if (EliminaEspacios($("#IdValor_20").val()) != "") valor22 = parseInt($("#IdValor_20").val(), 10);
+    if (EliminaEspacios($("#IdValor_21").val()) != "") valor23 = parseInt($("#IdValor_21").val(), 10);
 
     if (valor19 > 0 && ((valor21 + valor22 + valor23) > valor19)) {
-        $("#Infraest_035_banosNNA_Funcionamiento_cant").val("");
+        $("#IdValor_17").val("");
 
-        document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 2;
-        document.getElementById("Infraest_035_banosNNA_Funcionamiento_existe").selectedIndex = 2;
+        document.getElementById("Infraest_035_banosNNAadecuados_existe").selectedIndex = 0;
+        document.getElementById("IdParInfraestructura_17").selectedIndex = 0;
         document.getElementById("Infraest_036_banosNNAadecuados_cantidad").selectedIndex = 0;
-        $("#Infraest_035_banosNNA_AcuerdoNormativa_existe").val(0);
-        $("#Infraest_035_banosNNA_AcuerdoNormativa_cant").val(0);
-        document.getElementById("Infraest_035_banosNNA_AcuerdoNormativa_cant").disabled = true;
+        $("#IdParInfraestructura_18").val(0);
+        $("#IdValor_18").val(0);
+        document.getElementById("IdValor_18").disabled = true;
         MensajeINFO("<p style='font-size:12px;'>Ingrese nuevamente el valor de baños NNA en funcionamiento, pues el valor ingresado (" + valor19 + "), es menor que la suma de las cantidades de baños NNA de hombres, mujeres y mixtos.</p>");
     }
     else {
-        if ((EliminaEspacios($("#Infraest_035_banosNNA_Hombre_cant").val()) != "") || (EliminaEspacios($("#Infraest_035_banosNNA_Hombre_cant").val()) != "") || (EliminaEspacios($("#Infraest_035_banosNNA_Hombre_cant").val()) != "")) {
+        if ((EliminaEspacios($("#IdValor_19").val()) != "") ||
+            (EliminaEspacios($("#IdValor_19").val()) != "") ||
+            (EliminaEspacios($("#IdValor_19").val()) != ""))
+        {
             if (valor19 > 0 && ((valor21 + valor22 + valor23) < valor19)) {
                 MensajeINFO("<p style='font-size:12px;'>La cantidad de baños NNA en funcionamiento es mayor que la suma de las cantidades de baños NNA de hombres, mujeres y mixtos. Tendrá que revisar las cantidades de estas últimas, porque la suma debe coincidir con la de baños en funcionamiento.</p>");
             }
@@ -1321,27 +1401,35 @@ function ValidaSumaDependientesbanosNNAFunc() {
 
 function ValidaSumaDependecniasDuchaNNAFunc() {
     var valor24 = 0, valor26 = 0, valor27 = 0, valor28 = 0;
-
-    if (EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()) != "") {
-        valor24 = parseInt(EliminaEspacios($("#Infraest_037_duchasNNA_funcionamiento_cant").val()), 10);
+    /*  
+        IdValor_22 -> Duchas para NNA en Funcionamiento
+        IdValor_23 -> Duchas para NNA de acuerdo a Normativa
+        IdValor_24 -> Duchas para NNA de hombres
+        IdValor_25 -> Duchas para NNA de mujeres
+        IdValor_26 -> Duchas para NNA mixtas
+     */
+    if (EliminaEspacios($("#IdValor_22").val()) != "") {
+        valor24 = parseInt(EliminaEspacios($("#IdValor_22").val()), 10);
     }
 
-    if (EliminaEspacios($("#Infraest_037_duchasNNA_hombres_cant").val()) != "") valor26 = parseInt($("#Infraest_037_duchasNNA_hombres_cant").val(), 10);
-    if (EliminaEspacios($("#Infraest_037_duchasNNA_mujeres_cant").val()) != "") valor27 = parseInt($("#Infraest_037_duchasNNA_mujeres_cant").val(), 10);
-    if (EliminaEspacios($("#Infraest_037_duchasNNA_mixtos_cant").val()) != "") valor28 = parseInt($("#Infraest_037_duchasNNA_mixtos_cant").val(), 10);
+    if (EliminaEspacios($("#IdValor_24").val()) != "") valor26 = parseInt($("#IdValor_24").val(), 10);
+    if (EliminaEspacios($("#IdValor_25").val()) != "") valor27 = parseInt($("#IdValor_25").val(), 10);
+    if (EliminaEspacios($("#IdValor_26").val()) != "") valor28 = parseInt($("#IdValor_26").val(), 10);
     if (valor24 > 0 && ((valor26 + valor27 + valor28) > valor24)) {
-        $("#Infraest_037_duchasNNA_funcionamiento_cant").val("");
+        $("#IdValor_22").val("");
 
         document.getElementById("Infraest_037_duchasNNA_existe").selectedIndex = 2;
-        document.getElementById("Infraest_037_duchasNNA_funcionamiento_existe").selectedIndex = 2;
+        document.getElementById("IdParInfraestructura_22").selectedIndex = 2;
         document.getElementById("Infraest_038_duchasNNA_cantidad").selectedIndex = 0;
-        $("#Infraest_037_duchasNNA_normativa_existe").val(0);
-        $("#Infraest_037_duchasNNA_normativa_cant").val(0);
-        document.getElementById("Infraest_037_duchasNNA_normativa_cant").disabled = true;
+        $("#IdParInfraestructura_23").val(0);
+        $("#IdValor_23").val(0);
+        document.getElementById("IdValor_23").disabled = true;
         MensajeINFO("<p style='font-size:12px;'>Ingrese nuevamente el valor de duchas para NNA en funcionamiento, pues el valor ingresado (" + valor24 + "), es menor que la suma de las cantidades de duchas para NNA de hombres, mujeres y mixtas.</p>");
     }
     else {
-        if ((EliminaEspacios($("#Infraest_037_duchasNNA_hombres_cant").val()) != "") || (EliminaEspacios($("#Infraest_037_duchasNNA_mujeres_cant").val()) != "") || (EliminaEspacios($("#Infraest_037_duchasNNA_mixtos_cant").val()) != "")) {
+        if ((EliminaEspacios($("#IdValor_24").val()) != "") ||
+            (EliminaEspacios($("#IdValor_25").val()) != "") ||
+            (EliminaEspacios($("#IdValor_26").val()) != "")) {
             if (valor24 > 0 && ((valor26 + valor27 + valor28) < valor24)) {
                 MensajeINFO("<p style='font-size:12px;'>La cantidad de duchas para NNA en funcionamiento es mayor que la suma de las cantidades de duchas para NNA de hombres, mujeres y mixtas. Tendrá que revisar las cantidades de estas últimas, porque la suma debe coincidir con la de duchas para NNA en funcionamiento.</p>");
             }

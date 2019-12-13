@@ -86,7 +86,7 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                             ObtenerAntecedentesPoblacionCapacidad(CodFichaAUX);
                             ObtenerAntecedentesDotacionPersonal(CodFichaAUX);
 
-                            
+                            CargaParInfraestructura();
                             ObtenerAntecedentesInfraestructura(CodFichaAUX);
                             
                             ObtenerAntecedentesSeguridad(CodFichaAUX);
