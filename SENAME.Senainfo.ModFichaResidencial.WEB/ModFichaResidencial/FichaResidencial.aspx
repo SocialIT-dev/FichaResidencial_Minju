@@ -4,8 +4,7 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <%@ Register Src="~/menu_colgante.ascx" TagPrefix="uc2" TagName="menu_colgante" %>
-    
-    
+        
 <!--
 Autor: Luis Danilo Espinoza, SOCIAL-IT
 07/11/2019
