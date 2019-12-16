@@ -26,10 +26,11 @@ Spint 2.1
 
         <script src="../js/jquery-3.2.1.min.js"></script>
 
+          <link href="css/ficha_residencia.css" rel="stylesheet" />
          <link href="../css/bootstrap-theme.min.css" rel="stylesheet" />
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
-        <link href="../css/theme.css" rel="stylesheet"
+        <link href="../css/theme.css" rel="stylesheet"/>
         <link href="scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
         <link href="css/select2-bootstrap.min.css" rel="stylesheet" />
         <link href="css/ficha_residencia.css" rel="stylesheet" />
