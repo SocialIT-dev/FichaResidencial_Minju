@@ -23,6 +23,8 @@ Spint 2.1
 
 
       <!-- PRODUCCION -->
+   
+
         <script src="../js/jquery-3.2.1.min.js"></script>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
@@ -42,9 +44,10 @@ Spint 2.1
 
         <link href="scripts/icheck/skins/all.css" rel="stylesheet" />
         <script src="scripts/icheck/icheck.min.js"></script>
-    
-        <link href="Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
-        <script src="Scripts/DataTables/jquery.dataTables.min.js"></script>
+
+          <link href="Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <script src="scripts/DataTables/jquery.dataTables.min.js"></script>
+
 
         <link rel="stylesheet" href="scripts/datepicker/datepicker.css" />
         <script src="scripts/datepicker/datepicker.js"></script>
