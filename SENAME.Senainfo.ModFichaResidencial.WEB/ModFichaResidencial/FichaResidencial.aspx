@@ -49,7 +49,7 @@ Spint 2.1
         <link rel="stylesheet" href="scripts/datepicker/datepicker.css" />
         <script src="scripts/datepicker/datepicker.js"></script>
         <script src="scripts/datepicker/datepicker.es-ES.js"></script>
-   
+  
     </head>
 <body>
 

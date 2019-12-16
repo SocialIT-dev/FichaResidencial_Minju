@@ -365,6 +365,7 @@ function Infraest_037_duchasNNA_mixtos_cant(CodFicha) {
 }
 
 var ParValores = { 0: "NO", 1: "SI" };
+
 function CargaParInfraestructura() {
     $("#gridInfraestructura").DataTable().destroy();
     $('#gridInfraestructura').dataTable({
