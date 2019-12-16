@@ -24,7 +24,7 @@ Spint 2.1
       <!-- PRODUCCION -->
         <script src="../js/jquery-3.2.1.min.js"></script>
 
-       <link href="css/ficha_residencia.css" rel="stylesheet" />
+       
          <link href="../css/bootstrap-theme.min.css" rel="stylesheet" />
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
