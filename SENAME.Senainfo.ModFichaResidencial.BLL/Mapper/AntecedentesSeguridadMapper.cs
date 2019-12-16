@@ -50,6 +50,28 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Mapper
             }
             return list;
         }
+
+        public static List<GetParSeguridadDto> ToDtoParSeguridad(DataTable dt)
+        {
+            List<GetParSeguridadDto> list = new List<GetParSeguridadDto>();
+            GetParSeguridadDto dto = new GetParSeguridadDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new GetParSeguridadDto();
+                dto.error = dr["error"].ToString();
+
+                if (dto.error == "")
+                {
+                    dto.IdParSeguridad = (int)dr["IdParInfraestructura"];
+                    dto.NombreParSeguridad = dr["NombreParInfraestructura"].ToString();
+                    dto.VariableCuantitativa = (bool)dr["VariableCuantitativa"];                   
+                    dto.IndVigencia = dr["IndVigencia"].ToString();
+                }
+                list.Add(dto);
+            }
+            return list;
+        }
     }
 
     public class ResultadoOperacionSeguridadMapper

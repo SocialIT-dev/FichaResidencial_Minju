@@ -51,6 +51,49 @@ namespace SENAME.Senainfo.ModFichaResidencial.DAL.DAO
                 return dt;
             }
         }
+
+
+        public DataTable ObtenerParSeguridad()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    using (var cmd = new SqlCommand("FichaRes.Get_parSeguridad", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("error", typeof(String));
+
+                DataRow dr = dt.NewRow();
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerParSeguridad";
+
+                dr["error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
     }
 
     public class ResultadoOperacionSeguridadDao : Repository

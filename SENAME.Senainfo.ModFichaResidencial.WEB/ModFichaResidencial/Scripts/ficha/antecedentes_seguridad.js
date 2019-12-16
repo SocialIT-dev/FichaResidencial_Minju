@@ -1,5 +1,6 @@
 ﻿////++++++++++++++++++++++
 //FUNCIONES ACCESO BACKEND
+
 function GrabarAntecedentesSeguridad() {
     var CodEstadoFicha = 1;
 
