@@ -43,4 +43,14 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.DTO
         public string ETAPAS_PROCESADAS { get; set; }
         public string error { get; set; }
     }
+
+    public class GetParSeguridadDto
+    {
+        public int IdParSeguridad { get; set; }
+        public string NombreParSeguridad { get; set; }
+        public bool VariableCuantitativa { get; set; }
+        public string IndVigencia { get; set; }
+        public string error { get; set; }
+    }
 }
+
