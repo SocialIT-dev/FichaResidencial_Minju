@@ -115,7 +115,6 @@ function GrabarAntecedentesGestionResidencia() {
     });
 }
 /* Sprint 6 - 20191204 - gcastro - */
-
 function ObtenerAntecedentesGestionResidencia(CodFicha) {
    
     $("#labelCaracteres_ObsGestionRes").html("");
