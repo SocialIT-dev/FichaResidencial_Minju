@@ -6,27 +6,28 @@ function GrabarAntecedentesGestionResidencia() {
     var CodProyecto = $("#general_001_sel_proyecto").val();
     var CodFicha_ = CodFicha;
 
-    var CatastroRedes = $("#idParGestionResidencia_1").val();
-    var RegistroVisitas= $("#gestionResid_002_sel_protocoloVisitas_existe").val();
-    var ProtocoloAcogida = $("#idParGestionResidencia_4").val();
-    var AutocuidadoEquipo = $("#idParGestionResidencia_5").val();
-    var IntervencionCrisis = $("#idParGestionResidencia_6").val();
-    var InformacionNormativa = $("#idParGestionResidencia_7").val();
-    var ProtocoloConvivencia = $("#idParGestionResidencia_8").val();
-    var ProtocoloReclamos = $("#idParGestionResidencia_9").val();
-    var ProtocoloEscucha = $("#idParGestionResidencia_10").val();
-    var VinculacionResidencias = $("#idParGestionResidencia_11").val();
-    var ProcesosFormacion = $("#idParGestionResidencia_12").val();
-    var ProtocoloApadrinamiento = $("#idParGestionResidencia_13").val();
-    var ProtocoloTraslado = $("#idParGestionResidencia_14").val();
-    var ProtocoloEgreso = $("#idParGestionResidencia_15").val();
-    var ProtocoloRedSalud = $("#idParGestionResidencia_16").val();
-    var HabilitacionLaboral= $("#gestionResid_016_sel_activi_habilitacionLaboral_existe").val();
+    var CatastroRedes = $("#idParGestionResidencia_1").val() == undefined ? -1 : $("#idParGestionResidencia_1").val();
+    var RegistroVisitas = $("#idParGestionResidencia_2").val() == undefined ? -1 : $("#idParGestionResidencia_2").val();
+    var ProtocoloAcogida = $("#idParGestionResidencia_4").val() == undefined ? -1 : $("#idParGestionResidencia_4").val();
+    var AutocuidadoEquipo = $("#idParGestionResidencia_5").val() == undefined ? -1 : $("#idParGestionResidencia_5").val();
+    var IntervencionCrisis = $("#idParGestionResidencia_6").val() == undefined ? -1 : $("#idParGestionResidencia_6").val();
+    var InformacionNormativa = $("#idParGestionResidencia_7").val() == undefined ? -1 : $("#idParGestionResidencia_7").val();
+    var ProtocoloConvivencia = $("#idParGestionResidencia_8").val() == undefined ? -1 : $("#idParGestionResidencia_8").val();
+    var ProtocoloReclamos = $("#idParGestionResidencia_9").val() == undefined ? -1 : $("#idParGestionResidencia_9").val();
+    var ProtocoloEscucha = $("#idParGestionResidencia_10").val() == undefined ? -1 : $("#idParGestionResidencia_10").val();
+    var VinculacionResidencias = $("#idParGestionResidencia_11").val() == undefined ? -1 : $("#idParGestionResidencia_11").val();
+    var ProcesosFormacion = $("#idParGestionResidencia_12").val() == undefined ? -1 : $("#idParGestionResidencia_12").val();
+    var ProtocoloApadrinamiento = $("#idParGestionResidencia_13").val() == undefined ? -1 : $("#idParGestionResidencia_13").val();
+    var ProtocoloTraslado = $("#idParGestionResidencia_14").val() == undefined ? -1 : $("#idParGestionResidencia_14").val();
+    var ProtocoloEgreso = $("#idParGestionResidencia_15").val() == undefined ? -1 : $("#idParGestionResidencia_15").val();
+    var ProtocoloRedSalud = $("#idParGestionResidencia_16").val() == undefined ? -1 : $("#idParGestionResidencia_16").val();
+    var HabilitacionLaboral = $("#idParGestionResidencia_17").val() == undefined ? -1 : $("#idParGestionResidencia_17").val();
 
-    var protoVisitas_existe = $("#idParGestionResidencia_2").val();
-    var regisVisitas_existe = $("#idParGestionResidencia_3").val();
-    var activi_habilitaLaboral = $("#idParGestionResidencia_17").val();
-    var activi_vidaInpendiente = $("#idParGestionResidencia_18").val();
+    var protoVisitas_existe = $("#idParGestionResidencia_2").val() == undefined ? -1 : $("#idParGestionResidencia_2").val();
+    var RESProtocoloVisitas = $("#idParGestionResidencia_2").val() == undefined ? -1 : $("#idParGestionResidencia_2").val();
+    var regisVisitas_existe = $("#idParGestionResidencia_3").val() == undefined ? -1 : $("#idParGestionResidencia_3").val();
+    var activi_habilitaLaboral = $("#idParGestionResidencia_17").val() == undefined ? -1 : $("#idParGestionResidencia_17").val();
+    var activi_vidaInpendiente = $("#idParGestionResidencia_18").val() == undefined ? -1 : $("#idParGestionResidencia_18").val();
 
     var Observaciones = replaceAll(EliminaEspacios(document.getElementById("gestionResid_017_observaciones").value),"'","");
 
@@ -136,7 +137,7 @@ function ObtenerAntecedentesGestionResidencia(CodFicha) {
         $.each(r.d,
             function () {
                 /* 1- Cuenta con catastro de redes */ /*gestionResid_001_sel_catastroRedes_existe*/
-                if (this.CatastroRedes != 0 && this.CatastroRedes != -1) $("#idParGestionResidencia_1").val("1"); 
+                if (this.CatastroRedes != 0 && this.CatastroRedes != -1) $("#idParGestionResidencia_1").val("1");
                 else $("#idParGestionResidencia_1").val("0");
 
                 /* eL id "gestionResid_002_sel_protocoloVisitas_existe" NO eliminar de la tabla original*/
@@ -154,7 +155,7 @@ function ObtenerAntecedentesGestionResidencia(CodFicha) {
                 else $("#idParGestionResidencia_4").val("0");
 
                 /* 5- Existen Actividades de Autocuidado para el Equipo */  /* gestionResid_004_sel_activi_autocuidadoEquipo_existe */
-                if (this.AutocuidadoEquipo != 0 && this.AutocuidadoEquipo != 1) $("#idParGestionResidencia_5").val("1"); 
+                if (this.AutocuidadoEquipo != 0 && this.AutocuidadoEquipo != -1) $("#idParGestionResidencia_5").val("1"); 
                 else $("#idParGestionResidencia_5").val("0");
 
                  /* 6- Cuenta con Protocolo de Actuación de Intervención en Crisis *//* gestionResid_005_sel_protocoloActua_intervencionCrisis_existe*/
@@ -182,7 +183,7 @@ function ObtenerAntecedentesGestionResidencia(CodFicha) {
                 else $("#idParGestionResidencia_11").val("0");
 
                 /* 12- Cuenta con Proceso de Formación Permanente para el personal *//*gestionResid_011_sel_ProcesoFormacion_existe*/
-                if (this.ProcesosFormacion != 0 || this.ProcesosFormacion != -1) $("#idParGestionResidencia_12").val("1");
+                if (this.ProcesosFormacion != 0 && this.ProcesosFormacion != -1) $("#idParGestionResidencia_12").val("1");
                 else $("#idParGestionResidencia_12").val("0");
 
                  /* 13- Existe Protocolo de Apadrinamiento *//*gestionResid_012_sel_protocoloApadrinamiento_existe*/
@@ -197,12 +198,12 @@ function ObtenerAntecedentesGestionResidencia(CodFicha) {
                 if (this.ProtocoloEgreso != 0 && this.ProtocoloEgreso != -1) $("#idParGestionResidencia_15").val("1");
                 else $("#idParGestionResidencia_15").val("0");
 
-                /* 16- Existe Protocolo para Derivación a Red Salud */ /*gestionResid_015_sel_protocolo_derivacion_RedSalud_existe*/
-                if (this.HabilitacionLaboral != 0 && this.HabilitacionLaboral != -1) $("#idParGestionResidencia_16").val("1");
+                /* 16- Existe Protocolo para Derivación a Red Salud */ /*gestionResid_015_sel_protocolo_derivacion_RedSalud_existe*/  
+                if (this.ProtocoloRedSalud != 0 && this.ProtocoloRedSalud != -1) $("#idParGestionResidencia_16").val("1");
                 else $("#idParGestionResidencia_16").val("0");
 
                 /* 17- ¿Existen Actividades de Habilitación Laboral? */ /*gestionResid_016_sel_activi_habilitaLaboral*/
-                if (this.RESHabilitacionLaboral != 0 && this.RESHabilitacionLaboral != -1) $("#idParGestionResidencia_17").val("1");
+                if (this.HabilitacionLaboral != 0 && this.HabilitacionLaboral != -1) $("#idParGestionResidencia_17").val("1");
                 else $("#idParGestionResidencia_17").val("0");
 
                  /* 18- ¿Existe proceso para la vida independiente? */  /*gestionResid_016_sel_activi_vidaInpendiente*/
@@ -249,7 +250,7 @@ function ObtenerAntecedentesGestionResidencia_PJUD(CodFicha) {
                 $("#idParGestionResidencia_14").val(this.ProtocoloTraslado);
                 $("#idParGestionResidencia_15").val(this.ProtocoloEgreso);
                 $("#idParGestionResidencia_16").val(this.ProtocoloRedSalud);
-                $("#gestionResid_016_sel_activi_habilitacionLaboral_existe").val(this.HabilitacionLaboral);
+                $("#idParGestionResidencia_17").val(this.HabilitacionLaboral);
 
                 document.getElementById("gestionResid_017_observaciones").value = this.Observaciones;
             }
@@ -493,9 +494,9 @@ function ObtenerAntecedentesGestionResidencia_Compare(codFichaPadre, bloqueDatos
                     $("#idParGestionResidencia_16" + sufijo).val(0);
 
                 if (this.HabilitacionLaboral != "0" && this.HabilitacionLaboral != "-1")
-                    $("#gestionResid_016_sel_activi_habilitacionLaboral_existe" + sufijo).val(1);
+                    $("#idParGestionResidencia_17" + sufijo).val(1);
                 else
-                    $("#gestionResid_016_sel_activi_habilitacionLaboral_existe" + sufijo).val(0);
+                    $("#idParGestionResidencia_17" + sufijo).val(0);
 
                 if (this.RESProtocoloVisitas != "0" && this.RESProtocoloVisitas != "-1")
                     $("#idParGestionResidencia_2" + sufijo).val(1);
@@ -558,13 +559,17 @@ function CargaParGestionResidencia() {
             { "data": "IdParGestionResi" },
             { "data": "NombreGestion", "sClass": "etiqCampo3" },
             { "data": "VariableCuantitativa" },
+            {"data":  "IndVigencia" },
             {
                 "data": null,
-                "render": function (data, type, row, meta) {
-                    var $select = $("<select id='idParGestionResidencia_" + data.IdParGestionResi +"' class='form-control textCampoSel1 dllSiNo'></select>", {
+                "render": function (data, type, row, meta)
+                {
+                    if (data.IndVigencia == "V")
+                    {
+                        var $select = $("<select id='idParGestionResidencia_" + data.IdParGestionResi + "' class='form-control textCampoSel1 dllSiNo'></select>", {
                         });
 
-                    $.each(ParValores, function (k, v) {
+                        $.each(ParValores, function (k, v) {
                             var $option = $("<option></option>", {
                                 "text": v,
                                 "value": k
@@ -575,11 +580,13 @@ function CargaParGestionResidencia() {
                             $select.append($option);
                         });
                         return $select.prop("outerHTML");
+                    }
+                    
                 }
             }
         ],
         "columnDefs": [{
-            "targets": [0, 2],
+            "targets": [0, 2,3],
             "visible": false,
             "searchable": false
         }
@@ -673,8 +680,8 @@ function EvaluaActividadHabilitaLaboralyVidaIndependiente(){
     if(
         $("#idParGestionResidencia_17").val() == "1" &&  
         $("#idParGestionResidencia_18").val() == "1")
-        $("#gestionResid_016_sel_activi_habilitacionLaboral_existe").val(1);
+        $("#idParGestionResidencia_17").val(1);
     else
-        $("#gestionResid_016_sel_activi_habilitacionLaboral_existe").val(0);
+        $("#idParGestionResidencia_17").val(0);
 }
 

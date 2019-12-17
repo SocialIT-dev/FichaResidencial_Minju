@@ -45,11 +45,9 @@ a {
 }
 
 
-
-
 ul {
   list-style-type: none;
-  width: 100%;
+ /*width: 100%;*/
 }
 
 .article_role_login {

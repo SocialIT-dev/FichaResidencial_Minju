@@ -24,13 +24,13 @@ Spint 2.1
       <!-- PRODUCCION -->
         <script src="../js/jquery-3.2.1.min.js"></script>
 
-         <link href="css/ficha_residencia.css" rel="stylesheet" />
+
          <link href="../css/bootstrap-theme.min.css" rel="stylesheet" />
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/theme.css" rel="stylesheet" />
         <link href="scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
         <link href="css/select2-bootstrap.min.css" rel="stylesheet" />
-      
+        <link href="css/ficha_residencia.css" rel="stylesheet" />
 
         <script src="../js/bootstrap.min.js"></script>
         <script src="../js/select2.min.js"></script>
@@ -1196,7 +1196,6 @@ Spint 2.1
                     }
 
                     #gridAlimentacion, table.dataTable tbody th, table.dataTable tbody td {
-                        padding: 8px 10px;
                         width: 100%;
                     }
 
@@ -1212,6 +1211,7 @@ Spint 2.1
                             <th class="titulo-tabla">Nombre</th>
                             <th class="titulo-tabla"></th>
                             <th class="titulo-tabla"></th>
+                           
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -1266,7 +1266,6 @@ Spint 2.1
                     }
                    
                     #gridGestionResidencia, table.dataTable tbody th, table.dataTable tbody td{
-                        padding: 8px 10px;
                         width: 100%;
                     }
                    table.dataTable.no-footer{
@@ -1279,7 +1278,8 @@ Spint 2.1
                                 <tr>
                                     <th class="titulo-tabla invisible">Id</th>
                                     <th class="titulo-tabla">Nombre</th>
-                                    <th class="titulo-tabla">Rut</th>
+                                    <th class="titulo-tabla"></th>
+                                    <th class="titulo-tabla"></th>
                                      <th class="titulo-tabla"></th>
                                 </tr>
                             </thead>
