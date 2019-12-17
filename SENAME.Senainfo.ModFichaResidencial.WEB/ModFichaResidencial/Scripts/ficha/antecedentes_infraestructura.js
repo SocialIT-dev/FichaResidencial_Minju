@@ -6,50 +6,49 @@ function GrabarAntecedentesInfraestructura() {
     var CodProyecto = $("#general_001_sel_proyecto").val();
     var CodFicha_ = CodFicha;
 
-    var cantidadOficAdm = $("#IdValor_1").val();
-    var cantidadSalaReunion = $("#IdValor_2").val();
-    var cantidadSalaRecepcion = $("#IdValor_3").val();
-    var cantidadEspaciosVisitas = $("#IdValor_4").val();
-    var cantidadSalaTalleres = $("#IdValor_5").val();
-    var cantidadSalaLiving = $("#IdValor_6").val();
-    var cantidadEnfermeria = $("#IdValor_7").val();
-    var cantidadRecreacion = $("#IdValor_8").val();
-    var cantidadAreasVerdes = $("#IdValor_9").val();
-    var cantidadCocina = $("#IdValor_10").val();
-    var cantidadComedor = $("#IdValor_11").val();
-    var cantidadLavanderia = $("#IdValor_12").val();
-    var cantidadDormitoriosNNA = $("#IdValor_13").val();
-    var cantidadCamasNNA = $("#IdValor_14").val();
-    var cantidadColsetLockers = $("#IdValor_15").val();
-    var cantidadBañosPublicos = $("#IdValor_16").val();
-    var cantidadBañosNNA = $("#Infraest_036_banosNNAadecuados_cantidad").val();
-    var cantidadDuchasNNA = $("#Infraest_038_duchasNNA_cantidad").val();
+    var cantidadOficAdm = $("#IdValor_1").val() == undefined ? -1 : $("#IdValor_1").val();
+    var cantidadSalaReunion = $("#IdValor_2").val() == undefined ? -1 : $("#IdValor_2").val();
+    var cantidadSalaRecepcion = $("#IdValor_3").val() == undefined ? -1 : $("#IdValor_3").val();
+    var cantidadEspaciosVisitas = $("#IdValor_4").val() == undefined ? -1 : $("#IdValor_4").val();
+    var cantidadSalaTalleres = $("#IdValor_5").val() == undefined ? -1 : $("#IdValor_5").val();
+    var cantidadSalaLiving = $("#IdValor_6").val() == undefined ? -1 : $("#IdValor_6").val();
+    var cantidadEnfermeria = $("#IdValor_7").val() == undefined ? -1 : $("#IdValor_7").val();
+    var cantidadRecreacion = $("#IdValor_8").val() == undefined ? -1 : $("#IdValor_8").val();
+    var cantidadAreasVerdes = $("#IdValor_9").val() == undefined ? -1 : $("#IdValor_9").val();
+    var cantidadCocina = $("#IdValor_10").val() == undefined ? -1 : $("#IdValor_10").val();
+    var cantidadComedor = $("#IdValor_11").val() == undefined ? -1 : $("#IdValor_11").val();
+    var cantidadLavanderia = $("#IdValor_12").val() == undefined ? -1 : $("#IdValor_12").val();
+    var cantidadDormitoriosNNA = $("#IdValor_13").val() == undefined ? -1 : $("#IdValor_13").val();
+    var cantidadCamasNNA = $("#IdValor_14").val() == undefined ? -1 : $("#IdValor_14").val();
+    var cantidadColsetLockers = $("#IdValor_15").val() == undefined ? -1 : $("#IdValor_15").val();
+    var cantidadBañosPublicos = $("#IdValor_16").val() == undefined ? -1 : $("#IdValor_16").val();
+    var cantidadBañosNNA = $("#Infraest_036_banosNNAadecuados_cantidad").val(); // == undefined ? -1 : $("#IdValor_").val();
+    var cantidadDuchasNNA = $("#Infraest_038_duchasNNA_cantidad").val(); // == undefined ? -1 : $("#IdValor_").val();
 
-    var AmbienteAcorde = $("#IdParInfraestructura_27").val();
-    var vestuarioAdecuado = $("#IdParInfraestructura_28").val();
-    var utilesAseo = $("#IdParInfraestructura_30").val();
-    var aguaCaliente = $("#IdParInfraestructura_31").val();
-    var calefonGas= $("#Infraest_043_estadoCalefonLlavesGas_existe").val();
-    var sistemaCalefacion = $("#IdParInfraestructura_34").val();
-    var ventilacion = $("#IdParInfraestructura_35").val();
-    var accesoDiscapacitados = $("#IdParInfraestructura_36").val();
-    var habilitaDiscapacitados = $("#IdParInfraestructura_37").val();
+    var AmbienteAcorde = $("#IdParInfraestructura_27").val() == undefined ? -1 : $("#IdValor_27").val();
+    var vestuarioAdecuado = $("#IdParInfraestructura_28").val() == undefined ? -1 : $("#IdValor_28").val();
+    var utilesAseo = $("#IdParInfraestructura_30").val() == undefined ? -1 : $("#IdValor_30").val();
+    var aguaCaliente = $("#IdParInfraestructura_31").val() == undefined ? -1 : $("#IdValor_31").val();
+    var calefonGas = $("#Infraest_043_estadoCalefonLlavesGas_existe").val(); // == undefined ? -1 : $("#IdValor_").val();
+    var sistemaCalefacion = $("#IdParInfraestructura_34").val() == undefined ? -1 : $("#IdValor_34").val();
+    var ventilacion = $("#IdParInfraestructura_35").val() == undefined ? -1 : $("#IdValor_35").val();
+    var accesoDiscapacitados = $("#IdParInfraestructura_36").val() == undefined ? -1 : $("#IdValor_36").val();
+    var habilitaDiscapacitados = $("#IdParInfraestructura_37").val() == undefined ? -1 : $("#IdValor_37").val();
     var observaciones = replaceAll(EliminaEspacios(document.getElementById("Infraest_049_observaciones").value), "'", "");
 
-    var BanosNNAenFuncionamiento = $("#IdValor_17").val();
-    var BanosNNAdeacuerdoNormativa = $("#IdValor_18").val();
-    var BanosNNAdehombres = $("#IdValor_19").val();
-    var BanosNNAdemujeres = $("#IdValor_20").val();
-    var BanosNNAmixtos = $("#IdValor_21").val();
-    var DuchasNNAFuncionamiento = $("#IdValor_22").val();
-    var DuchasNNAdeacuerdoNormativa = $("#IdValor_23").val();
-    var DuchasNNAdehombres = $("#IdValor_24").val();
-    var DuchasNNAdemujeres = $("#IdValor_25").val();
-    var DuchasNNAmixtas = $("#IdValor_26").val();
-    var VestuarioPersonalizadoNNA = $("#IdParInfraestructura_29").val();
-    var CumpleNormativaCalefon = $("#IdParInfraestructura_32").val();
-    var CumpleNormativaLlaveGas = $("#IdParInfraestructura_33").val();
-
+    var BanosNNAenFuncionamiento = $("#IdValor_17").val() == undefined ? -1 : $("#IdValor_17").val();
+    var BanosNNAdeacuerdoNormativa = $("#IdValor_18").val() == undefined ? -1 : $("#IdValor_18").val();
+    var BanosNNAdehombres = $("#IdValor_19").val() == undefined ? -1 : $("#IdValor_19").val();
+    var BanosNNAdemujeres = $("#IdValor_20").val() == undefined ? -1 : $("#IdValor_20").val();
+    var BanosNNAmixtos = $("#IdValor_21").val() == undefined ? -1 : $("#IdValor_21").val();
+    var DuchasNNAFuncionamiento = $("#IdValor_22").val() == undefined ? -1 : $("#IdValor_22").val();
+    var DuchasNNAdeacuerdoNormativa = $("#IdValor_23").val() == undefined ? -1 : $("#IdValor_23").val();
+    var DuchasNNAdehombres = $("#IdValor_24").val() == undefined ? -1 : $("#IdValor_24").val();
+    var DuchasNNAdemujeres = $("#IdValor_25").val() == undefined ? -1 : $("#IdValor_25").val();
+    var DuchasNNAmixtas = $("#IdValor_26").val() == undefined ? -1 : $("#IdValor_26").val();
+    var VestuarioPersonalizadoNNA = $("#IdParInfraestructura_29").val() == undefined ? -1 : $("#IdValor_29").val();
+    var CumpleNormativaCalefon = $("#IdParInfraestructura_32").val() == undefined ? -1 : $("#IdValor_32").val();
+    var CumpleNormativaLlaveGas = $("#IdParInfraestructura_33").val() == undefined ? -1 : $("#IdValor_33").val();
 
     if (BanosNNAenFuncionamiento == "") BanosNNAenFuncionamiento = "0";
     if (BanosNNAdeacuerdoNormativa == "") BanosNNAdeacuerdoNormativa = "0";
@@ -386,14 +385,16 @@ function CargaParInfraestructura() {
             { "data": "NombreParInfraestructura", "sClass": "etiqCampo3" },
             { "data": "VariableCuantitativa" },
             { "data": "SegundaVarCuantitativa" },
+            { "data": "IndVigencia" },
             {
                 "data": null,
                 "render": function (data, type, row, meta)
                 {
-                    if (data.IdParInfraestructura <= 26) 
-                        var $select = $("<select id='IdParInfraestructura_" + data.IdParInfraestructura + "' class='form-control textCampoSel1 dllSiNo' disabled='disabled'></select>", {});
-                     else 
-                        var $select = $("<select id='IdParInfraestructura_" + data.IdParInfraestructura + "' class='form-control textCampoSel1 dllSiNo'></select>", {});
+                    if (data.IndVigencia == 'V') {
+                        if (data.IdParInfraestructura <= 26)
+                            var $select = $("<select id='IdParInfraestructura_" + data.IdParInfraestructura + "' class='form-control dllSiNo' disabled='disabled' style='width: 100px;'></select>", {});
+                        else
+                            var $select = $("<select id='IdParInfraestructura_" + data.IdParInfraestructura + "' class='form-control  dllSiNo' style='width: 100px;'></select>", {});
 
                         $.each(ParValores, function (k, v) {
                             var $option = $("<option></option>", {
@@ -406,31 +407,33 @@ function CargaParInfraestructura() {
                             $select.append($option);
                         });
                         return $select.prop("outerHTML");
+                   }
                 }
             },
             {
                 "data": null,
                 "render": function (data, type, row, meta) {
                     var dataRender;
-                    if ((data.SegundaVarCuantitativa == true) && (data.IdParInfraestructura <= 26))
-                    {                                                   
-                        if (data.IdParInfraestructura == 17) 
-                            var $input = $("<input type='text' id='IdValor_" + data.IdParInfraestructura + "' style='width:100px;' class='form-control' maxlength='4'  onkeyup='HabilitaInfraestructura(" + data.IdParInfraestructura + ");' onkeypress='return ValidaIngresoSoloNumeros(this.value, event)'; onblur='ValidaSumaDependientesbanosNNAFunc();'>", {});
-                        else if ((data.IdParInfraestructura == 22))
-                            var $input = $("<input type='text' id='IdValor_" + data.IdParInfraestructura + "' style='width:100px;' class='form-control' maxlength='4'  onkeyup='HabilitaInfraestructura(" + data.IdParInfraestructura + ");' onkeypress='return ValidaIngresoSoloNumeros(this.value, event)'; onblur='ValidaSumaDependecniasDuchaNNAFunc();'>", {});
-                        else
-                            var $input = $("<input type='text' id='IdValor_" + data.IdParInfraestructura + "' style='width:100px;' class='form-control' maxlength='4'  onkeyup='HabilitaInfraestructura(" + data.IdParInfraestructura + ");' onkeypress='return ValidaIngresoSoloNumeros(this.value, event);'>", {});
+                    if (data.IndVigencia == 'V') { 
+                        if ((data.SegundaVarCuantitativa == true) && (data.IdParInfraestructura <= 26)) {
+                            if (data.IdParInfraestructura == 17)
+                                var $input = $("<input type='text' id='IdValor_" + data.IdParInfraestructura + "' style='width:100px;' class='form-control' maxlength='4'  onkeyup='HabilitaInfraestructura(" + data.IdParInfraestructura + ");' onkeypress='return ValidaIngresoSoloNumeros(this.value, event)'; onblur='ValidaSumaDependientesbanosNNAFunc();'>", {});
+                            else if ((data.IdParInfraestructura == 22))
+                                var $input = $("<input type='text' id='IdValor_" + data.IdParInfraestructura + "' style='width:100px;' class='form-control' maxlength='4'  onkeyup='HabilitaInfraestructura(" + data.IdParInfraestructura + ");' onkeypress='return ValidaIngresoSoloNumeros(this.value, event)'; onblur='ValidaSumaDependecniasDuchaNNAFunc();'>", {});
+                            else
+                                var $input = $("<input type='text' id='IdValor_" + data.IdParInfraestructura + "' style='width:100px;' class='form-control' maxlength='4'  onkeyup='HabilitaInfraestructura(" + data.IdParInfraestructura + ");' onkeypress='return ValidaIngresoSoloNumeros(this.value, event);'>", {});
 
-                        return $input.prop("outerHTML");
-                    } else {
-                        dataRender = "";
-                        return dataRender;
+                            return $input.prop("outerHTML");
+                        } else {
+                            dataRender = "";
+                            return dataRender;
+                        }
                     }
                 }
             }
         ],
         "columnDefs": [{
-            "targets": [0, 2, 3],
+            "targets": [0, 2, 3, 4],
            "visible": false,
             "searchable": false
         }

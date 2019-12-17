@@ -685,6 +685,7 @@ Spint 2.1
                             <th class="titulo-tabla"></th>
                             <th class="titulo-tabla"></th>
                             <th class="titulo-tabla"></th>
+                          <th class="titulo-tabla"></th>
                             <th class="titulo-tabla"></th>
                         </tr>
                     </thead>
@@ -1211,7 +1212,7 @@ Spint 2.1
                             <th class="titulo-tabla">Nombre</th>
                             <th class="titulo-tabla"></th>
                             <th class="titulo-tabla"></th>
-                           
+                           <th class="titulo-tabla"></th>
                         </tr>
                     </thead>
                     <tbody></tbody>

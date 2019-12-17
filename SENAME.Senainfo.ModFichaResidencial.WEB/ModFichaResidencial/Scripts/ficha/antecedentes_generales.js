@@ -95,8 +95,6 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
 
                             CargaParAlimentacion();
                             ObtenerAntecedentesAlimentacion(CodFichaAUX);
-                          
-                            ObtenerAntecedentesAlimentacion_ensayo(CodFichaAUX);
 
                             CargaParGestionResidencia(); 
                             ObtenerAntecedentesGestionResidencia(CodFichaAUX);

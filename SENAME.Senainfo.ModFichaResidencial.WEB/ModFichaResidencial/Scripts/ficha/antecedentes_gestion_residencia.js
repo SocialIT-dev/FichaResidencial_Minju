@@ -566,7 +566,7 @@ function CargaParGestionResidencia() {
                 {
                     if (data.IndVigencia == "V")
                     {
-                        var $select = $("<select id='idParGestionResidencia_" + data.IdParGestionResi + "' class='form-control textCampoSel1 dllSiNo'></select>", {
+                        var $select = $("<select id='idParGestionResidencia_" + data.IdParGestionResi + "' class='form-control dllSiNo' style='width: 100px;'></select>", {
                         });
 
                         $.each(ParValores, function (k, v) {
