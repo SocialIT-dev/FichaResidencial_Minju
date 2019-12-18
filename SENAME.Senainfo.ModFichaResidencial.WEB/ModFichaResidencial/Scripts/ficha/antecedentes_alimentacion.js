@@ -159,6 +159,7 @@ function CargaParAlimentacion() {
         "bPaginate": false
 
     });
+    document.getElementById("alimentacion_009_observacion").disabled = false;
 }
 
 function ObtenerAntecedentesAlimentacion(CodFicha) {

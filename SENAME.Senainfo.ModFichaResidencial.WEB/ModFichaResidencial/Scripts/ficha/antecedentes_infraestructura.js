@@ -25,15 +25,15 @@ function GrabarAntecedentesInfraestructura() {
     var cantidadBañosNNA = $("#Infraest_036_banosNNAadecuados_cantidad").val(); // == undefined ? -1 : $("#IdValor_").val();
     var cantidadDuchasNNA = $("#Infraest_038_duchasNNA_cantidad").val(); // == undefined ? -1 : $("#IdValor_").val();
 
-    var AmbienteAcorde = $("#IdParInfraestructura_27").val() == undefined ? -1 : $("#IdValor_27").val();
-    var vestuarioAdecuado = $("#IdParInfraestructura_28").val() == undefined ? -1 : $("#IdValor_28").val();
-    var utilesAseo = $("#IdParInfraestructura_30").val() == undefined ? -1 : $("#IdValor_30").val();
-    var aguaCaliente = $("#IdParInfraestructura_31").val() == undefined ? -1 : $("#IdValor_31").val();
+    var AmbienteAcorde = $("#IdParInfraestructura_27").val() == undefined ? -1 : $("#IdParInfraestructura_27").val();
+    var vestuarioAdecuado = $("#IdParInfraestructura_28").val() == undefined ? -1 : $("#IdParInfraestructura_28").val();
+    var utilesAseo = $("#IdParInfraestructura_30").val() == undefined ? -1 : $("#IdParInfraestructura_30").val();
+    var aguaCaliente = $("#IdParInfraestructura_31").val() == undefined ? -1 : $("#IdParInfraestructura_31").val();
     var calefonGas = $("#Infraest_043_estadoCalefonLlavesGas_existe").val(); // == undefined ? -1 : $("#IdValor_").val();
-    var sistemaCalefacion = $("#IdParInfraestructura_34").val() == undefined ? -1 : $("#IdValor_34").val();
-    var ventilacion = $("#IdParInfraestructura_35").val() == undefined ? -1 : $("#IdValor_35").val();
-    var accesoDiscapacitados = $("#IdParInfraestructura_36").val() == undefined ? -1 : $("#IdValor_36").val();
-    var habilitaDiscapacitados = $("#IdParInfraestructura_37").val() == undefined ? -1 : $("#IdValor_37").val();
+    var sistemaCalefacion = $("#IdParInfraestructura_34").val() == undefined ? -1 : $("#IdParInfraestructura_34").val();
+    var ventilacion = $("#IdParInfraestructura_35").val() == undefined ? -1 : $("#IdParInfraestructura_35").val();
+    var accesoDiscapacitados = $("#IdParInfraestructura_36").val() == undefined ? -1 : $("#IdParInfraestructura_36").val();
+    var habilitaDiscapacitados = $("#IdParInfraestructura_37").val() == undefined ? -1 : $("#IdParInfraestructura_37").val();
     var observaciones = replaceAll(EliminaEspacios(document.getElementById("Infraest_049_observaciones").value), "'", "");
 
     var BanosNNAenFuncionamiento = $("#IdValor_17").val() == undefined ? -1 : $("#IdValor_17").val();
@@ -46,9 +46,9 @@ function GrabarAntecedentesInfraestructura() {
     var DuchasNNAdehombres = $("#IdValor_24").val() == undefined ? -1 : $("#IdValor_24").val();
     var DuchasNNAdemujeres = $("#IdValor_25").val() == undefined ? -1 : $("#IdValor_25").val();
     var DuchasNNAmixtas = $("#IdValor_26").val() == undefined ? -1 : $("#IdValor_26").val();
-    var VestuarioPersonalizadoNNA = $("#IdParInfraestructura_29").val() == undefined ? -1 : $("#IdValor_29").val();
-    var CumpleNormativaCalefon = $("#IdParInfraestructura_32").val() == undefined ? -1 : $("#IdValor_32").val();
-    var CumpleNormativaLlaveGas = $("#IdParInfraestructura_33").val() == undefined ? -1 : $("#IdValor_33").val();
+    var VestuarioPersonalizadoNNA = $("#IdParInfraestructura_29").val() == undefined ? -1 : $("#IdParInfraestructura_29").val();
+    var CumpleNormativaCalefon = $("#IdParInfraestructura_32").val() == undefined ? -1 : $("#IdParInfraestructura_32").val();
+    var CumpleNormativaLlaveGas = $("#IdParInfraestructura_33").val() == undefined ? -1 : $("#IdParInfraestructura_33").val();
 
     if (BanosNNAenFuncionamiento == "") BanosNNAenFuncionamiento = "0";
     if (BanosNNAdeacuerdoNormativa == "") BanosNNAdeacuerdoNormativa = "0";
@@ -444,6 +444,7 @@ function CargaParInfraestructura() {
         "bPaginate": false
 
     });
+    document.getElementById("Infraest_049_observaciones").disabled = false;
 }
 
 function ObtenerAntecedentesInfraestructura(CodFicha) {
@@ -464,114 +465,206 @@ function ObtenerAntecedentesInfraestructura(CodFicha) {
     }).then(function (r) {
         $.each(r.d,
             function () {
-                $("#IdValor_1").val(this.CantidadOficAdm);
-                $("#IdValor_2").val(this.CantidadSalaReunion);
-                $("#IdValor_3").val(this.CantidadSalaRecepcion);
-                $("#IdValor_4").val(this.CantidadEspaciosVisitas);
-                $("#IdValor_5").val(this.CantidadSalaTalleres);
-                $("#IdValor_6").val(this.CantidadSalaLiving);
-                $("#IdValor_7").val(this.CantidadEnfermeria);
-                $("#IdValor_8").val(this.CantidadRecreacion);
-                $("#IdValor_9").val(this.CantidadAreasVerdes);
-                $("#IdValor_10").val(this.CantidadCocina);
-                $("#IdValor_11").val(this.CantidadComedor);
-                $("#IdValor_12").val(this.CantidadLavanderia);
-                $("#IdValor_13").val(this.CantidadDormitoriosNNA);
-                $("#IdValor_14").val(this.CantidadCamasNNA);
-                $("#IdValor_15").val(this.CantidadColsetLockers);
-                $("#IdValor_16").val(this.CantidadBañosPublicos);
+                if (this.CantidadOficAdm == -1) $("#IdValor_1").val(0);
+                else $("#IdValor_1").val(this.CantidadOficAdm);
 
-                $("#IdParInfraestructura_27").val(this.AmbienteAcorde);
-                $("#IdParInfraestructura_28").val(this.VestuarioAdecuado);
-                $("#IdParInfraestructura_30").val(this.UtilesAseo);
-                $("#IdParInfraestructura_31").val(this.AguaCaliente);
+                if (this.CantidadSalaReunion == -1) $("#IdValor_2").val(0);
+                else $("#IdValor_2").val(this.CantidadSalaReunion);
+
+                if (this.CantidadSalaRecepcion == -1) $("#IdValor_3").val(0);
+                else $("#IdValor_3").val(this.CantidadSalaRecepcion);
+
+                if (this.CantidadEspaciosVisitas == -1) $("#IdValor_4").val(0);
+                else $("#IdValor_4").val(this.CantidadEspaciosVisitas);
+
+                if (this.CantidadSalaTalleres == -1) $("#IdValor_5").val(0);
+                else $("#IdValor_5").val(this.CantidadSalaTalleres);
+
+                if (this.CantidadSalaLiving == -1) $("#IdValor_6").val(0);
+                else $("#IdValor_6").val(this.CantidadSalaLiving);
+
+                if (this.CantidadEnfermeria == -1) $("#IdValor_7").val(0);
+                else $("#IdValor_7").val(this.CantidadEnfermeria);
+
+                if (this.CantidadRecreacion == -1) $("#IdValor_8").val(0);
+                else $("#IdValor_8").val(this.CantidadRecreacion);
+
+                if (this.CantidadAreasVerdes == -1) ("#IdValor_9").val(0);
+                else $("#IdValor_9").val(this.CantidadAreasVerdes);
+
+                if (this.CantidadCocina == -1) $("#IdValor_10").val(0);
+                else $("#IdValor_10").val(this.CantidadCocina);
+
+                if (this.CantidadComedor == -1) $("#IdValor_11").val(0);
+                else $("#IdValor_11").val(this.CantidadComedor);
+
+                if (this.CantidadLavanderia == -1) $("#IdValor_12").val(0);
+                else $("#IdValor_12").val(this.CantidadLavanderia);
+
+                if (this.CantidadDormitoriosNNA == -1) $("#IdValor_13").val(0);
+                else $("#IdValor_13").val(this.CantidadDormitoriosNNA);
+
+                if (this.CantidadCamasNNA == -1) $("#IdValor_14").val(0);
+                else $("#IdValor_14").val(this.CantidadCamasNNA);
+
+                if (this.CantidadColsetLockers == -1) $("#IdValor_15").val(0);
+                else $("#IdValor_15").val(this.CantidadColsetLockers);
+
+                if (this.CantidadBañosPublicos == -1) $("#IdValor_16").val(0);
+                else $("#IdValor_16").val(this.CantidadBañosPublicos);
+
+                if (this.AmbienteAcorde == -1) $("#IdParInfraestructura_27").val("0");
+                else $("#IdParInfraestructura_27").val(this.AmbienteAcorde);
+
+                if (this.VestuarioAdecuado == -1) $("#IdParInfraestructura_28").val("0");
+                else $("#IdParInfraestructura_28").val(this.VestuarioAdecuado);
+
+                if (this.UtilesAseo == -1) $("#IdParInfraestructura_30").val("0");
+                else $("#IdParInfraestructura_30").val(this.UtilesAseo);
+
+                if (this.AguaCaliente == -1) $("#IdParInfraestructura_31").val("0");
+                else $("#IdParInfraestructura_31").val(this.AguaCaliente);
+
                 $("#Infraest_043_estadoCalefonLlavesGas_existe").val(this.CalefonGas);
-                $("#IdParInfraestructura_34").val(this.SistemaCalefacion);
-                $("#IdParInfraestructura_35").val(this.Ventilacion);
-                $("#IdParInfraestructura_36").val(this.AccesoDiscapacitados);
-                $("#IdParInfraestructura_37").val(this.HabilitaDiscapacitados);
+
+                if (this.SistemaCalefacion == -1) $("#IdParInfraestructura_34").val("0");
+                else $("#IdParInfraestructura_34").val(this.SistemaCalefacion);
+
+                if (this.Ventilacion == -1) $("#IdParInfraestructura_35").val("0");
+                else $("#IdParInfraestructura_35").val(this.Ventilacion);
+
+                if (this.AccesoDiscapacitados == -1) $("#IdParInfraestructura_36").val("0");
+                else $("#IdParInfraestructura_36").val(this.AccesoDiscapacitados);
+
+                if (this.HabilitaDiscapacitados == -1) $("#IdParInfraestructura_37").val("0");
+                else $("#IdParInfraestructura_37").val(this.HabilitaDiscapacitados);
 
                 $("#Infraest_036_banosNNAadecuados_cantidad").val(this.CantidadBañosNNA);
                 $("#Infraest_038_duchasNNA_cantidad").val(this.CantidadDuchasNNA);
 
-                $("#IdValor_17").val(this.CantidadBañosNNAFuncionamiento);
-                $("#IdValor_18").val(this.CantidadBañosNNANormativa);
-                $("#IdValor_19").val(this.CantidadBañosNNAHombres);
-                $("#IdValor_20").val(this.CantidadBañosNNAMujeres);
-                $("#IdValor_21").val(this.CantidadBañosNNAMixtos);
+                if (this.CantidadBañosNNAFuncionamiento == -1) $("#IdValor_17").val(0);
+                else $("#IdValor_17").val(this.CantidadBañosNNAFuncionamiento);
 
-                $("#IdValor_22").val(this.CantidadDuchasNNAFuncionamiento);
-                $("#IdValor_23").val(this.CantidadDuchasNNANormativa);
-                $("#IdValor_24").val(this.CantidadDuchasNNAHombres);
-                $("#IdValor_25").val(this.CantidadDuchasNNAMujeres);
-                $("#IdValor_26").val(this.CantidadDuchasNNAMixtas);
+                if (this.CantidadBañosNNANormativa == -1) $("#IdValor_18").val();
+                else $("#IdValor_18").val(this.CantidadBañosNNANormativa);
 
-                if ($("#IdValor_17").val() != "0") { $("#IdParInfraestructura_17").val(1); document.getElementById("IdValor_18").disabled = false; }
-                if ($("#IdValor_18").val() != "0") $("#IdParInfraestructura_18").val(1);
-                if ($("#IdValor_19").val() != "0") $("#IdParInfraestructura_19").val(1);
-                if ($("#IdValor_20").val() != "0") $("#IdParInfraestructura_20").val(1);
-                if ($("#IdValor_21").val() != "0") $("#IdParInfraestructura_21").val(1);
+                if (this.CantidadBañosNNAHombres == -1) $("#IdValor_19").val(0);
+                else $("#IdValor_19").val(this.CantidadBañosNNAHombres);
+
+                if (this.CantidadBañosNNAMujeres == -1) $("#IdValor_20").val(0);
+                else $("#IdValor_20").val(this.CantidadBañosNNAMujeres);
+
+                if (this.CantidadBañosNNAMixtos == -1) $("#IdValor_21").val(0);
+                else $("#IdValor_21").val(this.CantidadBañosNNAMixtos);
+
+                if (this.CantidadDuchasNNAFuncionamiento == -1) $("#IdValor_22").val(0);
+                else $("#IdValor_22").val(this.CantidadDuchasNNAFuncionamiento);
+
+                if (this.CantidadDuchasNNANormativa == -1) $("#IdValor_23").val(0);
+                else $("#IdValor_23").val(this.CantidadDuchasNNANormativa);
+
+                if (this.CantidadDuchasNNAHombres == -1) $("#IdValor_24").val();
+                else $("#IdValor_24").val(this.CantidadDuchasNNAHombres);
+
+                if (this.CantidadDuchasNNAMujeres == -1) $("#IdValor_25").val(0);
+                else $("#IdValor_25").val(this.CantidadDuchasNNAMujeres);
+
+                if (this.CantidadDuchasNNAMixtas == -1) $("#IdValor_26").val();
+                else $("#IdValor_26").val(this.CantidadDuchasNNAMixtas);
+
+                if ($("#IdValor_17").val() > "0") {
+                    $("#IdParInfraestructura_17").val(1);
+                    document.getElementById("IdValor_18").disabled = false;
+                } else {
+                    $("#IdParInfraestructura_17").val(0);
+                }
+
+                if ($("#IdValor_18").val() > "0") $("#IdParInfraestructura_18").val(1);
+                else $("#IdParInfraestructura_18").val(0);
+
+                if ($("#IdValor_19").val() > "0") $("#IdParInfraestructura_19").val(1);
+                else $("#IdParInfraestructura_19").val(0);
+
+                if ($("#IdValor_20").val() > "0") $("#IdParInfraestructura_20").val(1);
+                else $("#IdParInfraestructura_20").val(0);
+
+                if ($("#IdValor_21").val() > "0") $("#IdParInfraestructura_21").val(1);
+                else $("#IdParInfraestructura_21").val(0);
 
                 if ($("#IdValor_22").val() != "0") { $("#IdParInfraestructura_22").val(1); document.getElementById("IdValor_23").disabled = false; }
-                if ($("#IdValor_23").val() != "0") $("#IdParInfraestructura_23").val(1);
-                if ($("#IdValor_24").val() != "0") $("#IdParInfraestructura_24").val(1);
-                if ($("#IdValor_25").val() != "0") $("#IdParInfraestructura_25").val(1);
-                if ($("#IdValor_26").val() != "0") $("#IdParInfraestructura_26").val(1);
+                else { $("#IdParInfraestructura_22").val(0); }
 
-                $("#IdParInfraestructura_32").val(this.CalefonNormativa);
-                $("#IdParInfraestructura_33").val(this.LlaveGasNormativa);
-                $("#IdParInfraestructura_29").val(this.VestuarioPersonalizadoNNA);
+                if ($("#IdValor_23").val() > "0") $("#IdParInfraestructura_23").val(1);
+                else $("#IdParInfraestructura_23").val(0);
+
+                if ($("#IdValor_24").val() > "0") $("#IdParInfraestructura_24").val(1);
+                else $("#IdParInfraestructura_24").val(0);
+
+                if ($("#IdValor_25").val() > "0") $("#IdParInfraestructura_25").val(1);
+                else $("#IdParInfraestructura_25").val(0);
+
+                if ($("#IdValor_26").val() > "0") $("#IdParInfraestructura_26").val(1);
+                else $("#IdParInfraestructura_26").val(0);
+
+                if (this.CalefonNormativa == -1) $("#IdParInfraestructura_32").val(0);
+                else $("#IdParInfraestructura_32").val(this.CalefonNormativa);
+
+                if (this.LlaveGasNormativa == -1) $("#IdParInfraestructura_33").val(0);
+                else $("#IdParInfraestructura_33").val(this.LlaveGasNormativa);
+
+                if (this.VestuarioPersonalizadoNNA == -1) $("#IdParInfraestructura_29").val("0");
+                else $("#IdParInfraestructura_29").val(this.VestuarioPersonalizadoNNA);
 
                 document.getElementById("Infraest_049_observaciones").value = this.Observaciones;
                 ContadorCaracter(document.getElementById("Infraest_049_observaciones"), "labelCaracteres_ObsInfra");
+              
+                if ($("#IdValor_1").val() > "0") $("#IdParInfraestructura_1").val(1);
+                else $("#IdParInfraestructura_1").val(0);
 
-                if ($("#IdValor_1").val() != "0")
-                    $("#IdParInfraestructura_1").val(1);
+                if ($("#IdValor_2").val() > "0") $("#IdParInfraestructura_2").val(1);
+                   else $("#IdParInfraestructura_2").val(0);
 
-                if ($("#IdValor_2").val() != "0")
-                    $("#IdParInfraestructura_2").val(1);
+                if ($("#IdValor_3").val() > "0") $("#IdParInfraestructura_3").val(1);
+                    else $("#IdParInfraestructura_3").val(0);
 
-                if ($("#IdValor_3").val() != "0")
-                    $("#IdParInfraestructura_3").val(1);
+                if ($("#IdValor_4").val() > "0") $("#IdParInfraestructura_4").val(1);
+                    else $("#IdParInfraestructura_4").val(0);
 
-                if ($("#IdValor_4").val() != "0")
-                    $("#IdParInfraestructura_4").val(1);
+                if ($("#IdValor_5").val() > "0") $("#IdParInfraestructura_5").val(1);
+                    else $("#IdParInfraestructura_5").val(0);
 
-                if ($("#IdValor_5").val() != "0")
-                    $("#IdParInfraestructura_5").val(1);
+                if ($("#IdValor_6").val() > "0") $("#IdParInfraestructura_6").val(1); 
+                   else $("#IdParInfraestructura_6").val(0);
 
-                if ($("#IdValor_6").val() != "0")
-                    $("#IdParInfraestructura_6").val(1);
+                if ($("#IdValor_7").val() > "0") $("#IdParInfraestructura_7").val(1);
+                    else $("#IdParInfraestructura_7").val(0);
 
-                if ($("#IdValor_7").val() != "0")
-                    $("#IdParInfraestructura_7").val(1);
+                if ($("#IdValor_8").val() > "0") $("#IdParInfraestructura_8").val(1);
+                   else $("#IdParInfraestructura_8").val(0);
 
-                if ($("#IdValor_8").val() != "0")
-                    $("#IdParInfraestructura_8").val(1);
+                if ($("#IdValor_9").val() > "0") $("#IdParInfraestructura_9").val(1);
+                   else $("#IdParInfraestructura_9").val(0);
 
-                if ($("#IdValor_9").val() != "0")
-                    $("#IdParInfraestructura_9").val(1);
+                if ($("#IdValor_10").val() > "0") $("#IdParInfraestructura_10").val(1);
+                    else $("#IdParInfraestructura_10").val(0);
 
-                if ($("#IdValor_10").val() != "0")
-                    $("#IdParInfraestructura_10").val(1);
+                if ($("#IdValor_11").val() > "0") $("#IdParInfraestructura_11").val(1);
+                   else $("#IdParInfraestructura_11").val(0);
 
-                if ($("#IdValor_11").val() != "0")
-                    $("#IdParInfraestructura_11").val(1);
+                if ($("#IdValor_12").val() > "0") $("#IdParInfraestructura_12").val(1);
+                    else $("#IdParInfraestructura_12").val(0);
 
-                if ($("#IdValor_12").val() != "0")
-                    $("#IdParInfraestructura_12").val(1);
+                if ($("#IdValor_13").val() > "0") $("#IdParInfraestructura_13").val(1);
+                    else $("#IdParInfraestructura_13").val(0);
 
-                if ($("#IdValor_13").val() != "0")
-                    $("#IdParInfraestructura_13").val(1);
+                if ($("#IdValor_14").val() > "0") $("#IdParInfraestructura_14").val(1);
+                   else $("#IdParInfraestructura_14").val(0);
 
-                if ($("#IdValor_14").val() != "0")
-                    $("#IdParInfraestructura_14").val(1);
+                if ($("#IdValor_15").val() > "0") $("#IdParInfraestructura_15").val(1);
+                   else $("#IdParInfraestructura_15").val(0);
 
-                if ($("#IdValor_15").val() != "0")
-                    $("#IdParInfraestructura_15").val(1);
-
-                if ($("#IdValor_16").val() != "0")
-                    $("#IdParInfraestructura_16").val(1);
+                if ($("#IdValor_16").val() > "0") $("#IdParInfraestructura_16").val(1);
+                    else $("#IdParInfraestructura_16").val(0);
 
                 if ($("#Infraest_036_banosNNAadecuados_cantidad").val() != "0")
                     $("#Infraest_035_banosNNAadecuados_existe").val(1);

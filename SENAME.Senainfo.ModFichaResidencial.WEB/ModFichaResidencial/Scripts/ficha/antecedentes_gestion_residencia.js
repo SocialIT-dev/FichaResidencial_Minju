@@ -596,6 +596,7 @@ function CargaParGestionResidencia() {
         "bPaginate": false
        
     });
+    document.getElementById("gestionResid_017_observaciones").disabled = false;
 }
 
 function CargaParGestionResidencia_original() {

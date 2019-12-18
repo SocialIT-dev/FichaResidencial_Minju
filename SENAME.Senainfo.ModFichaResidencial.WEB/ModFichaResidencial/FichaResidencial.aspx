@@ -699,7 +699,7 @@ Spint 2.1
                         </tr>
                         <tr>
                             <td>
-                                <textarea id="Infraest_049_observaciones" class="form-control textCampo3" placeholder="Sin observaciones." style="width: 99%; height: 150px; text-align: left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsInfra');" maxlength="4000"></textarea>
+                                <textarea id="Infraest_049_observaciones"  class="form-control textCampo3" placeholder="Sin observaciones." style="width: 99%; height: 150px; text-align: left;" onkeyup="return ContadorCaracter(this,'labelCaracteres_ObsInfra');" maxlength="4000"></textarea>
                                 <span id="labelCaracteres_ObsInfra" class="lblrestoIngreso"></span>
                                 <br />
                                 <span class="lblrestoIngreso" style="color: blue;">* Recuerde incorporar en las observaciones la especificación correspondiente si declara existencia de Sistema de Calefacción.</span>
