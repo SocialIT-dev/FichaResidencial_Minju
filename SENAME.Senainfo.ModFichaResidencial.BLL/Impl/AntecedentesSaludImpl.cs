@@ -12,6 +12,7 @@ using SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces;
 namespace SENAME.Senainfo.ModFichaResidencial.BLL.Impl
 {
     
+
     public class GetParSaludImpl : IGetParSalud
     {
         private readonly GetAntecedentesSaludDao _getParSalud;
