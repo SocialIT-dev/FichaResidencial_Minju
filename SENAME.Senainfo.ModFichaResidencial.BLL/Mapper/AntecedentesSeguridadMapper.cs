@@ -63,8 +63,8 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Mapper
 
                 if (dto.error == "")
                 {
-                    dto.IdParSeguridad = (int)dr["IdParInfraestructura"];
-                    dto.NombreParSeguridad = dr["NombreParInfraestructura"].ToString();
+                    dto.IdParSeguridad = (int)dr["IdParSeguridad"];
+                    dto.NombreParSeguridad = dr["NombreParSeguridad"].ToString();
                     dto.VariableCuantitativa = (bool)dr["VariableCuantitativa"];                   
                     dto.IndVigencia = dr["IndVigencia"].ToString();
                 }

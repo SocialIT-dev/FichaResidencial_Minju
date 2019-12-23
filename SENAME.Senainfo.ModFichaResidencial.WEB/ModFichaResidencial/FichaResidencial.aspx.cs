@@ -516,6 +516,7 @@ namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial
             var result = _InfraestructuraImpl.ObtenerParInfraestructura();
             return result;
         }
+
         [WebMethod]
         public static List<ResultadoOperacionInfraestructuraDto> GrabarAntecedentesInfraestructura(
                                                             int CodProyecto,
@@ -645,6 +646,14 @@ namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial
 
         #region Antecedentes Seguridad
         [WebMethod]
+        public static List<GetParSeguridadDto> ObtenerParSeguridad()
+        {
+            GetParSeguridadImpl _ParSeguridadImpl = new GetParSeguridadImpl();
+            var result = _ParSeguridadImpl.ObtenerParSeguridad();
+            return result;
+        }
+
+        [WebMethod]
         public static List<ResultadoOperacionSeguridadDto> GrabarAntecedentesSeguridad(
                                                             int CodProyecto,
                                                             int CodFicha,
@@ -703,6 +712,14 @@ namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial
         #endregion
 
         #region Antecedentes Salud
+        [WebMethod]
+        public static List<GetParSaludDto> ObtenerParSalud()
+        {
+            GetParSaludImpl _SaludImpl = new GetParSaludImpl();
+            var result = _SaludImpl.ObtenerParSalud();
+            return result;
+        }
+
         [WebMethod]
         public static List<ResultadoOperacionSaludDto> GrabarAntecedentesSalud(
                                                             int CodProyecto,

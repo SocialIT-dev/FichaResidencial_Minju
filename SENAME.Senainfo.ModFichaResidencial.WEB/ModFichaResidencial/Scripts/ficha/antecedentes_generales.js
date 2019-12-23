@@ -2,8 +2,7 @@
 //FUNCIONES ACCESO BACKEND
 function CargaDatosGeneralesDDL2(CodProyecto) {
     ResetearFormulario();
-    // Sprint 3 - 20191113 - gcastro
-    CargaParValores1();
+
     var CodFichaAUX;
     var CodFicha2;
     var tokensUsr = document.getElementById("tokensUsr").value;
@@ -66,7 +65,6 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                                 document.getElementById("periodo_ficha").innerHTML = "&nbsp;";
                             }
 
-
                             if (CodFicha != "0")
                                 CodFichaAUX = CodFicha;
                             else
@@ -81,32 +79,26 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                             ObtenerAntecedentesGenerales(CodFichaAUX);
                             ObtenerNnaAbandonoDetalle(CodFichaAUX);
                             ObtenerNnaAdolescenteConHijosDetalle(CodFichaAUX);
-                            /* Sprint 3 - 20191120  - se agrega la llamada a function CargaRangoEtareoAtencion1(); */
-                            CargaRangoEtareoAtencion1();
+                          
                             ObtenerAntecedentesPoblacionCapacidad(CodFichaAUX);
                             ObtenerAntecedentesDotacionPersonal(CodFichaAUX);
 
-                            CargaParInfraestructura();
                             ObtenerAntecedentesInfraestructura(CodFichaAUX);
-                            
                             ObtenerAntecedentesSeguridad(CodFichaAUX);
+
                             ObtenerAntecedentesSalud(CodFichaAUX);
                             ObtenerAntecedentesEducacion(CodFichaAUX);
 
-                            CargaParAlimentacion();
                             ObtenerAntecedentesAlimentacion(CodFichaAUX);
-
-                            CargaParGestionResidencia(); 
                             ObtenerAntecedentesGestionResidencia(CodFichaAUX);
-
-                            //alert(tokensUsr);
                         }
                         else {
                             document.getElementById("folio_pendiente").innerHTML = "&nbsp;";
                             document.getElementById("periodo_ficha").innerHTML = "&nbsp;";
+
                         }
                     }
-                );
+               );
                 //SI EL USUARIO TIENE EN SUS TOKEN EL INDICADO EN EL SIGUIENTE IF 
                 //PODRÁ EDITAR LA FICHA MÁS RECIENTE DE LA RESIDENCIA
                 if (tokensUsr.indexOf("D5CF4DE5-5EFA-4EDD-AD65-5BED3AD9482A") != -1) {

@@ -11,6 +11,21 @@ using SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces;
 
 namespace SENAME.Senainfo.ModFichaResidencial.BLL.Impl
 {
+    
+     public class GetParSeguridadImpl : ISeguridad
+    {
+        private readonly GetAntecedentesSeguridadDao _getAntecedentesSeguridad;
+        public GetParSeguridadImpl()
+        {
+            _getAntecedentesSeguridad = new GetAntecedentesSeguridadDao();
+        }
+
+        public List<GetParSeguridadDto> ObtenerParSeguridad()
+        {
+            var result = _getAntecedentesSeguridad.ObtenerParSeguridad();
+            return GetAntecedentesSeguridadMapper.ToDtoParSeguridad(result);
+        }
+    }
     public class GetAntecedentesSeguridadImpl : IGetAntecedentesSeguridad
     {
         private readonly GetAntecedentesSeguridadDao _getAntecedentesSeguridadDao;

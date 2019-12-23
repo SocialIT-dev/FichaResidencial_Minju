@@ -1195,22 +1195,22 @@ function ResetearFormulario() {
 
     //Reseteamos TAB Seguridad
     var arrVariablesSeguridad = [
-        "seguridad_001_planEmergencia_existe",
-        "seguridad_002_simulacroEmergencia_existe",
-        "seguridad_003_planEmergenciaVisado_existe",
-        "seguridad_004_extintores_existe",
-        "seguridad_005_senaletica_existe",
-        "seguridad_006_viaEvacuacion_existe",
+       // "seguridad_001_planEmergencia_existe",
+        //"seguridad_002_simulacroEmergencia_existe",
+       // "seguridad_003_planEmergenciaVisado_existe",
+        //"seguridad_004_extintores_existe",
+        //"seguridad_005_senaletica_existe",
+        //"seguridad_006_viaEvacuacion_existe",
         "seguridad_007_capacitacionPersonal_existe",
         "seguridad_008_sanitizacion_existe",
-        "seguridad_009_sistemaElectrico_existe",
-        "seguridad_010_zonaSeguridad_existe",
+        //"seguridad_009_sistemaElectrico_existe",
+        //"seguridad_010_zonaSeguridad_existe",
 
-        "seguridad_007_capacitacionPersonalemergencia", 
-        "seguridad_007_capacitacionPersonalprimerosAux",
-        "seguridad_008_sanitizacion_",
-        "seguridad_008_sanitizacion_desratizacion",
-        "seguridad_008_sanitizacion_fumigacion"
+        //"seguridad_007_capacitacionPersonalemergencia", 
+        //"seguridad_007_capacitacionPersonalprimerosAux",
+       // "seguridad_008_sanitizacion_",
+        //"seguridad_008_sanitizacion_desratizacion",
+       // "seguridad_008_sanitizacion_fumigacion"
     ];
     arrVariablesSeguridad.forEach(
         function (currentValue, index) {
@@ -1223,16 +1223,16 @@ function ResetearFormulario() {
 
     //Reseteamos TAB Salud
     var arrVariablesSalud_1 = [
-        "salud_009_sel_registroMedicamentoAdmin_a_NNA",
-        "salud_010_sel_protocoloAdmin_Medica_a_NNA",
-        "salud_011_sel_control_ginecologicoAdolescente",
-        "salud_012_sel_adolescenteNiegaControlGineco",
-        "salud_013_sel_adolescenteEmbarazada",
+        //"salud_009_sel_registroMedicamentoAdmin_a_NNA",
+        //"salud_010_sel_protocoloAdmin_Medica_a_NNA",
+       // "salud_011_sel_control_ginecologicoAdolescente",
+        //"salud_012_sel_adolescenteNiegaControlGineco",
+       // "salud_013_sel_adolescenteEmbarazada",
 
-        "salud_009_sel_resguardoMedicamentos",
-        "salud_009_sel_inventarioMedicamentos",
-        "salud_011_sel_control_nino_sano",
-        "salud_011_sel_control_adolescente_sano"
+       // "salud_009_sel_resguardoMedicamentos",
+        //"salud_009_sel_inventarioMedicamentos",
+       //"salud_011_sel_control_nino_sano",
+        //"salud_011_sel_control_adolescente_sano"
     ];
     arrVariablesSalud_1.forEach(
         function (currentValue, index) {
@@ -1241,22 +1241,22 @@ function ResetearFormulario() {
         }
     );
     var arrVariablesSalud_2 = [
-        "salud_001_NNA_inscritosCESFAM",
-        "salud_002_NNA_problematicaSaludMental",
-        "salud_003_NNA_problematicaSaludMentalsinDiag",
-        "salud_004_NNA_inscritosEnferCronica",
-        "salud_005_NNA_Discapacidad",
-        "salud_006_NNA_inscritosProblemSaludRecibeMedica",
-        "salud_007_NNA_problematicaSaludenTratamiento",
+        //"salud_001_NNA_inscritosCESFAM",
+        //"salud_002_NNA_problematicaSaludMental",
+        //"salud_003_NNA_problematicaSaludMentalsinDiag",
+       // "salud_004_NNA_inscritosEnferCronica",
+        //"salud_005_NNA_Discapacidad",
+       // "salud_006_NNA_inscritosProblemSaludRecibeMedica",
+        //"salud_007_NNA_problematicaSaludenTratamiento",
         
-        "salud_015_adolescenteEmbarazadaControlalDia_cantidad",
+       // "salud_015_adolescenteEmbarazadaControlalDia_cantidad",
 
-        "salud_015_NNA_EsperaTransplantes", 
-        "salud_016_NNA_Transplantados",
+        //"salud_015_NNA_EsperaTransplantes", 
+       // "salud_016_NNA_Transplantados",
 
-        "salud_008_NNA_consumoDrogas",
-        "salud_008_NNA_consumoAlcohol",
-        "salud_017_consumoDrogasyAlcohol"
+       // "salud_008_NNA_consumoDrogas",
+       // "salud_008_NNA_consumoAlcohol",
+       // "salud_017_consumoDrogasyAlcohol"
     ];
     arrVariablesSalud_2.forEach(
         function (currentValue, index) {
@@ -1266,7 +1266,7 @@ function ResetearFormulario() {
     );
     document.getElementById("salud_016_observaciones").value="";
     document.getElementById("salud_016_observaciones").disabled = true; //deben habilitarse con la selección de codigo de proyecto
-    document.getElementById("salud_014_sel_adolescenteEmbarazadaControlalDia").selectedIndex = 2;
+   // document.getElementById("IdParSalud_22").selectedIndex = 2; comentado temporalmente !!!
 
     //Reseteamos TAB Educación
     var arrVariablesEducacion_1 = [
@@ -1549,33 +1549,33 @@ function ActivaCamposFichaResidenciaXProyecto(valueCbmProyecto) {
     "IdParInfraestructura_37",
     "Infraest_049_observaciones",
 
-    "seguridad_001_planEmergencia_existe",
-    "seguridad_002_simulacroEmergencia_existe",
-    "seguridad_003_planEmergenciaVisado_existe",
-    "seguridad_004_extintores_existe",
-    "seguridad_005_senaletica_existe",
-    "seguridad_006_viaEvacuacion_existe",
+    "IdParSeguridad_1",
+    "IdParSeguridad_2",
+    "IdParSeguridad_3",
+    "IdParSeguridad_4",
+    "IdParSeguridad_5",
+    "IdParSeguridad_6",
     "seguridad_007_capacitacionPersonal_existe",
     "seguridad_008_sanitizacion_existe",
-    "seguridad_009_sistemaElectrico_existe",
-    "seguridad_010_zonaSeguridad_existe",
+    "IdParSeguridad_12",
+    "IdParSeguridad_13",
     "seguridad_011_observaciones",
 
-    "salud_009_sel_registroMedicamentoAdmin_a_NNA",
-    "salud_010_sel_protocoloAdmin_Medica_a_NNA",
-    "salud_011_sel_control_ginecologicoAdolescente",
-    "salud_012_sel_adolescenteNiegaControlGineco",
-    "salud_013_sel_adolescenteEmbarazada",
-    //"salud_014_sel_adolescenteEmbarazadaControlalDia",
-    "salud_001_NNA_inscritosCESFAM",
-    "salud_002_NNA_problematicaSaludMental",
-    "salud_003_NNA_problematicaSaludMentalsinDiag",
-    "salud_004_NNA_inscritosEnferCronica",
-    "salud_005_NNA_Discapacidad",
-    "salud_006_NNA_inscritosProblemSaludRecibeMedica",
-    "salud_007_NNA_problematicaSaludenTratamiento",
+    "IdParSalud_15",
+    "IdParSalud_16",
+    "IdParSalud_19",
+    "IdParSalud_20",
+    "IdParSalud_21",
+    "IdParSalud_22",
+    "IdParSaludValor_1",
+    "IdParSaludValor_2",
+    "IdParSaludValor_3",
+    "IdParSaludValor_4",
+    "IdParSaludValor_7",
+    "IdParSaludValor_8",
+    "IdParSaludValor_9",
     
-    "salud_015_adolescenteEmbarazadaControlalDia_cantidad",
+    "IdParSaludValor_22",
     "salud_016_observaciones",
 
     "educacion_001_NNA_asisten_colegio_cantidad",
@@ -1638,23 +1638,23 @@ function ActivaCamposFichaResidenciaXProyecto(valueCbmProyecto) {
     "IdParInfraestructura_32",
     "IdParInfraestructura_33",
 
-    "seguridad_007_capacitacionPersonalemergencia",
-    "seguridad_007_capacitacionPersonalprimerosAux",
-    "seguridad_008_sanitizacion_",
-    "seguridad_008_sanitizacion_desratizacion",
-    "seguridad_008_sanitizacion_fumigacion",
+    "IdParSeguridad_7",
+    "IdParSeguridad_8",
+    "IdParSeguridad_9",
+    "IdParSeguridad_10",
+    "IdParSeguridad_11",
 
-    "salud_015_NNA_EsperaTransplantes",
-    "salud_016_NNA_Transplantados",
+    "IdParSaludValor_5",
+    "IdParSaludValor_6",
 
-    "salud_008_NNA_consumoDrogas",
-    "salud_008_NNA_consumoAlcohol",
-    "salud_017_consumoDrogasyAlcohol",
+    "IdParSaludValor_10",
+    "IdParSaludValor_11",
+    "IdParSaludValor_12",
 
-    "salud_009_sel_resguardoMedicamentos", 
-    "salud_009_sel_inventarioMedicamentos",
-    "salud_011_sel_control_nino_sano",  
-    "salud_011_sel_control_adolescente_sano",
+    "IdParSalud_13", 
+    "IdParSalud_14",
+    "IdParSalud_17",  
+    "IdParSalud_18",
 
     "educacion_001_NNA_matriculados",
     "educacion_006_NNA_examenesLibres_cantidad",
@@ -1712,6 +1712,16 @@ function StopValidaConexion() {
 $(document).ready(function () {
   
     CargaInicial();
+
+    /*Carga inicial de tablas paramétricas*/
+    CargaParValores1();
+    CargaRangoEtareoAtencion1();
+    CargaParInfraestructura();
+    CargaParSeguridad();
+    CargaParSalud();
+    CargaParAlimentacion();
+    CargaParGestionResidencia(); 
+
     opcioncarga = "REGISTROFICHARESIDENCIAL";
 
     $(document).keypress(function (event) {
@@ -2158,24 +2168,24 @@ function GrabarFichaCompleta() {
     ////----------------------------------------------------------------
     //PASO 1.5 RESCATO DATOS ANTECDENTES SEGURIDAD Y VALIDO
     bValidar = false;
-    var PlanEmergencia = $("#seguridad_001_planEmergencia_existe").val();
-    var SimulacroEmergencia = $("#seguridad_002_simulacroEmergencia_existe").val();
-    var PlanEmergenciaCalificado = $("#seguridad_003_planEmergenciaVisado_existe").val();
-    var Extintores = $("#seguridad_004_extintores_existe").val();
-    var Senaletica = $("#seguridad_005_senaletica_existe").val();
-    var ViasEvacuacion = $("#seguridad_006_viaEvacuacion_existe").val();
+    var PlanEmergencia = $("#IdParSeguridad_1").val();
+    var SimulacroEmergencia = $("#IdParSeguridad_2").val();
+    var PlanEmergenciaCalificado = $("#IdParSeguridad_3").val();
+    var Extintores = $("#IdParSeguridad_4").val();
+    var Senaletica = $("#IdParSeguridad_5").val();
+    var ViasEvacuacion = $("#IdParSeguridad_6").val();
 
     var CapacitacionPersonalEmergencia = $("#seguridad_007_capacitacionPersonal_existe").val();
-    var Cap_PersonalEmergencia = $("#seguridad_007_capacitacionPersonalemergencia").val();
-    var Cap_PersonalPrimerosAux = $("#seguridad_007_capacitacionPersonalprimerosAux").val();
+    var Cap_PersonalEmergencia = $("#IdParSeguridad_7").val();
+    var Cap_PersonalPrimerosAux = $("#IdParSeguridad_8").val();
 
     var Sanitizacion = $("#seguridad_008_sanitizacion_existe").val();
-    var Sanitizacion_ = $("#seguridad_008_sanitizacion_").val();
-    var Desratizacion = $("#seguridad_008_sanitizacion_desratizacion").val();
-    var Fumigacion = $("#seguridad_008_sanitizacion_fumigacion").val();
+    var Sanitizacion_ = $("#IdParSeguridad_9").val();
+    var Desratizacion = $("#IdParSeguridad_10").val();
+    var Fumigacion = $("#IdParSeguridad_11").val();
 
-    var SistemaElectrico = $("#seguridad_009_sistemaElectrico_existe").val();
-    var ZonasSeguridad = $("#seguridad_010_zonaSeguridad_existe").val();
+    var SistemaElectrico = $("#IdParSeguridad_12").val();
+    var ZonasSeguridad = $("#IdParSeguridad_13").val();
     var ObservacionesSeguridad = replaceAll(EliminaEspacios(document.getElementById("seguridad_011_observaciones").value), "'", "");
 
     //VALIDACION DE CAMPOS ANTECEDENTES SEGURIDAD
@@ -2208,35 +2218,35 @@ function GrabarFichaCompleta() {
     ////----------------------------------------------------------------
     //PASO 1.6 RESCATO DATOS ANTECDENTES SALUD Y VALIDO
     bValidar = false;
-    var NNACesfam = $("#salud_001_NNA_inscritosCESFAM").val();
-    var NNASaludMentalDiagnostico = $("#salud_002_NNA_problematicaSaludMental").val();
-    var NNASaludMental = $("#salud_003_NNA_problematicaSaludMentalsinDiag").val();
-    var NNACronicos = $("#salud_004_NNA_inscritosEnferCronica").val();
+    var NNACesfam = $("#IdParSaludValor_1").val();
+    var NNASaludMentalDiagnostico = $("#IdParSaludValor_2").val();
+    var NNASaludMental = $("#IdParSaludValor_3").val();
+    var NNACronicos = $("#IdParSaludValor_4").val();
 
-    var NNAEsperaTransplantes = $("#salud_015_NNA_EsperaTransplantes").val();
-    var NNATransplantados = $("#salud_016_NNA_Transplantados").val();
+    var NNAEsperaTransplantes = $("#IdParSaludValor_5").val();
+    var NNATransplantados = $("#IdParSaludValor_6").val();
 
-    var NNADiscapacitados = $("#salud_005_NNA_Discapacidad").val();
-    var NNAMedicamento = $("#salud_006_NNA_inscritosProblemSaludRecibeMedica").val();
-    var NNATratamiento = $("#salud_007_NNA_problematicaSaludenTratamiento").val();
+    var NNADiscapacitados = $("#IdParSaludValor_7").val();
+    var NNAMedicamento = $("#IdParSaludValor_8").val();
+    var NNATratamiento = $("#IdParSaludValor_9").val();
 
-    var NNADrogas = $("#salud_008_NNA_consumoDrogas").val();
-    var NNAAlcohol = $("#salud_008_NNA_consumoAlcohol").val();
-    var NNAAlcoholyDroga = $("#salud_017_consumoDrogasyAlcohol").val();
+    var NNADrogas = $("#IdParSaludValor_10").val();
+    var NNAAlcohol = $("#IdParSaludValor_11").val();
+    var NNAAlcoholyDroga = $("#IdParSaludValor_12").val();
     
-    var resguardoMedicamentos = $("#salud_009_sel_resguardoMedicamentos").val();
-    var inventarioMedicamentos = $("#salud_009_sel_inventarioMedicamentos").val();
+    var resguardoMedicamentos = $("#IdParSalud_13").val();
+    var inventarioMedicamentos = $("#IdParSalud_14").val();
 
-    var AdolecentesEmbarazadasControl = $("#salud_015_adolescenteEmbarazadaControlalDia_cantidad").val();
-    var RegistroMedicamentoNNA = $("#salud_009_sel_registroMedicamentoAdmin_a_NNA").val();
-    var ProtocoloAdmMedicamentos = $("#salud_010_sel_protocoloAdmin_Medica_a_NNA").val();
+    var AdolecentesEmbarazadasControl = $("#IdParSaludValor_22").val();
+    var RegistroMedicamentoNNA = $("#IdParSalud_15").val();
+    var ProtocoloAdmMedicamentos = $("#IdParSalud_16").val();
 
-    var controlNinoSano = $("#salud_011_sel_control_nino_sano").val();
-    var controlAdolescenteSano = $("#salud_011_sel_control_adolescente_sano").val();
+    var controlNinoSano = $("#IdParSalud_17").val();
+    var controlAdolescenteSano = $("#IdParSalud_18").val();
 
-    var ControlGinecologico = $("#salud_011_sel_control_ginecologicoAdolescente").val();
-    var NegadaControlGinecologico = $("#salud_012_sel_adolescenteNiegaControlGineco").val();
-    var AdolecentesEmbarazadas = $("#salud_013_sel_adolescenteEmbarazada").val();
+    var ControlGinecologico = $("#IdParSalud_19").val();
+    var NegadaControlGinecologico = $("#IdParSalud_20").val();
+    var AdolecentesEmbarazadas = $("#IdParSalud_21").val();
     var ObservacionesSalud = replaceAll(EliminaEspacios(document.getElementById("salud_016_observaciones").value), "'", "");
 
     //VALIDACION DE CAMPOS ANTECEDENTES SALUD
@@ -4068,46 +4078,46 @@ function GenerarFormularioPDF_FR(opc) {
     var Infraest_049_observaciones = "";
 
     //variables antecedentes seguridad-------------
-    var seguridad_001_planEmergencia_existe = "";
-    var seguridad_002_simulacroEmergencia_existe = "";
-    var seguridad_003_planEmergenciaVisado_existe = "";
-    var seguridad_004_extintores_existe = "";
-    var seguridad_005_senaletica_existe = "";
-    var seguridad_006_viaEvacuacion_existe = "";
+    var IdParSeguridad_1 = "";
+    var IdParSeguridad_2 = "";
+    var IdParSeguridad_3 = "";
+    var IdParSeguridad_4 = "";
+    var IdParSeguridad_5 = "";
+    var IdParSeguridad_6 = "";
     var seguridad_007_capacitacionPersonal_existe = "";
-    var seguridad_007_capacitacionPersonalemergencia = "";
-    var seguridad_007_capacitacionPersonalprimerosAux = "";
-    var seguridad_008_sanitizacion_ = "";
-    var seguridad_008_sanitizacion_desratizacion = "";
-    var seguridad_008_sanitizacion_fumigacion = "";
-    var seguridad_009_sistemaElectrico_existe = "";
-    var seguridad_010_zonaSeguridad_existe = "";
+    var IdParSeguridad_7 = "";
+    var IdParSeguridad_8 = "";
+    var IdParSeguridad_9 = "";
+    var IdParSeguridad_10 = "";
+    var IdParSeguridad_11 = "";
+    var IdParSeguridad_12 = "";
+    var IdParSeguridad_13 = "";
     var seguridad_011_observaciones = "";
 
-    //variables antecedentes seguridad-------------
-    var salud_001_NNA_inscritosCESFAM = "";
-    var salud_002_NNA_problematicaSaludMental = "";
-    var salud_003_NNA_problematicaSaludMentalsinDiag = "";
-    var salud_004_NNA_inscritosEnferCronica = "";
-    var salud_015_NNA_EsperaTransplantes = "";
-    var salud_016_NNA_Transplantados = "";
-    var salud_005_NNA_Discapacidad = "";
-    var salud_006_NNA_inscritosProblemSaludRecibeMedica = "";
-    var salud_007_NNA_problematicaSaludenTratamiento = "";
-    var salud_008_NNA_consumoDrogas = "";
-    var salud_008_NNA_consumoAlcohol = "";
-    var salud_017_consumoDrogasyAlcohol = "";
-    var salud_009_sel_resguardoMedicamentos = "";
-    var salud_009_sel_inventarioMedicamentos = "";
-    var salud_009_sel_registroMedicamentoAdmin_a_NNA = "";
-    var salud_010_sel_protocoloAdmin_Medica_a_NNA = "";
-    var salud_011_sel_control_nino_sano = "";
-    var salud_011_sel_control_adolescente_sano = "";
-    var salud_011_sel_control_ginecologicoAdolescente = "";
-    var salud_012_sel_adolescenteNiegaControlGineco = "";
-    var salud_013_sel_adolescenteEmbarazada = "";
-    var salud_014_sel_adolescenteEmbarazadaControlalDia = "";
-    var salud_015_adolescenteEmbarazadaControlalDia_cantidad = "";
+    //variables antecedentes salud -------------
+    var IdParSaludValor_1 = "";
+    var IdParSaludValor_2 = "";
+    var IdParSaludValor_3 = "";
+    var IdParSaludValor_4 = "";
+    var IdParSaludValor_5 = "";
+    var IdParSaludValor_6 = "";
+    var IdParSaludValor_7 = "";
+    var IdParSaludValor_8 = "";
+    var IdParSaludValor_9 = "";
+    var IdParSaludValor_10 = "";
+    var IdParSaludValor_11 = "";
+    var IdParSaludValor_12 = "";
+    var IdParSalud_13 = "";
+    var IdParSalud_14 = "";
+    var IdParSalud_15 = "";
+    var IdParSalud_16 = "";
+    var IdParSalud_17 = "";
+    var IdParSalud_18 = "";
+    var IdParSalud_19 = "";
+    var IdParSalud_20 = "";
+    var IdParSalud_21 = "";
+    var IdParSalud_22 = "";
+    var IdParSaludValor_22 = "";
     var salud_016_observaciones = "";
 
     //variables antecedentes educacion-------------
@@ -4383,46 +4393,46 @@ function GenerarFormularioPDF_FR(opc) {
         Infraest_049_observaciones = $("#Infraest_049_observaciones").val();
 
         //variables antecedentes seguridad-------------
-        seguridad_001_planEmergencia_existe = $("#seguridad_001_planEmergencia_existe option:selected").text();
-        seguridad_002_simulacroEmergencia_existe = $("#seguridad_002_simulacroEmergencia_existe option:selected").text();
-        seguridad_003_planEmergenciaVisado_existe = $("#seguridad_003_planEmergenciaVisado_existe option:selected").text();
-        seguridad_004_extintores_existe = $("#seguridad_004_extintores_existe option:selected").text();
-        seguridad_005_senaletica_existe = $("#seguridad_005_senaletica_existe option:selected").text();
-        seguridad_006_viaEvacuacion_existe = $("#seguridad_006_viaEvacuacion_existe option:selected").text();
+        IdParSeguridad_1 = $("#IdParSeguridad_1 option:selected").text();
+        IdParSeguridad_2 = $("#IdParSeguridad_2 option:selected").text();
+        IdParSeguridad_3 = $("#IdParSeguridad_3 option:selected").text();
+        IdParSeguridad_4 = $("#IdParSeguridad_4 option:selected").text();
+        IdParSeguridad_5 = $("#IdParSeguridad_5 option:selected").text();
+        IdParSeguridad_6 = $("#IdParSeguridad_6 option:selected").text();
         seguridad_007_capacitacionPersonal_existe = $("#seguridad_007_capacitacionPersonal_existe option:selected").text();
-        seguridad_007_capacitacionPersonalemergencia = $("#seguridad_007_capacitacionPersonalemergencia option:selected").text();
-        seguridad_007_capacitacionPersonalprimerosAux = $("#seguridad_007_capacitacionPersonalprimerosAux option:selected").text();
-        seguridad_008_sanitizacion_ = $("#seguridad_008_sanitizacion_ option:selected").text();
-        seguridad_008_sanitizacion_desratizacion = $("#seguridad_008_sanitizacion_desratizacion option:selected").text();
-        seguridad_008_sanitizacion_fumigacion = $("#seguridad_008_sanitizacion_fumigacion option:selected").text();
-        seguridad_009_sistemaElectrico_existe = $("#seguridad_009_sistemaElectrico_existe option:selected").text();
-        seguridad_010_zonaSeguridad_existe = $("#seguridad_010_zonaSeguridad_existe option:selected").text();
+        IdParSeguridad_7 = $("#IdParSeguridad_7 option:selected").text();
+        IdParSeguridad_8 = $("#IdParSeguridad_8 option:selected").text();
+        IdParSeguridad_9 = $("#IdParSeguridad_9 option:selected").text();
+        IdParSeguridad_10 = $("#IdParSeguridad_10 option:selected").text();
+        IdParSeguridad_11 = $("#IdParSeguridad_11 option:selected").text();
+        IdParSeguridad_12 = $("#IdParSeguridad_12 option:selected").text();
+        IdParSeguridad_13 = $("#IdParSeguridad_13 option:selected").text();
         seguridad_011_observaciones = $("#seguridad_011_observaciones").val();
 
         //variables antecedentes salud-------------
-        salud_001_NNA_inscritosCESFAM = $("#salud_001_NNA_inscritosCESFAM").val();
-        salud_002_NNA_problematicaSaludMental = $("#salud_002_NNA_problematicaSaludMental").val();
-        salud_003_NNA_problematicaSaludMentalsinDiag = $("#salud_003_NNA_problematicaSaludMentalsinDiag").val();
-        salud_004_NNA_inscritosEnferCronica = $("#salud_004_NNA_inscritosEnferCronica").val();
-        salud_015_NNA_EsperaTransplantes = $("#salud_015_NNA_EsperaTransplantes").val();
-        salud_016_NNA_Transplantados = $("#salud_016_NNA_Transplantados").val();
-        salud_005_NNA_Discapacidad = $("#salud_005_NNA_Discapacidad").val();
-        salud_006_NNA_inscritosProblemSaludRecibeMedica = $("#salud_006_NNA_inscritosProblemSaludRecibeMedica").val();
-        salud_007_NNA_problematicaSaludenTratamiento = $("#salud_007_NNA_problematicaSaludenTratamiento").val();
-        salud_008_NNA_consumoDrogas = $("#salud_008_NNA_consumoDrogas").val();
-        salud_008_NNA_consumoAlcohol = $("#salud_008_NNA_consumoAlcohol").val();
-        salud_017_consumoDrogasyAlcohol = $("#salud_017_consumoDrogasyAlcohol").val();
-        salud_009_sel_resguardoMedicamentos = $("#salud_009_sel_resguardoMedicamentos option:selected").text();
-        salud_009_sel_inventarioMedicamentos = $("#salud_009_sel_inventarioMedicamentos option:selected").text();
-        salud_009_sel_registroMedicamentoAdmin_a_NNA = $("#salud_009_sel_registroMedicamentoAdmin_a_NNA option:selected").text();
-        salud_010_sel_protocoloAdmin_Medica_a_NNA = $("#salud_010_sel_protocoloAdmin_Medica_a_NNA option:selected").text();
-        salud_011_sel_control_nino_sano = $("#salud_011_sel_control_nino_sano option:selected").text();
-        salud_011_sel_control_adolescente_sano = $("#salud_011_sel_control_adolescente_sano option:selected").text();
-        salud_011_sel_control_ginecologicoAdolescente = $("#salud_011_sel_control_ginecologicoAdolescente option:selected").text();
-        salud_012_sel_adolescenteNiegaControlGineco = $("#salud_012_sel_adolescenteNiegaControlGineco option:selected").text();
-        salud_013_sel_adolescenteEmbarazada = $("#salud_013_sel_adolescenteEmbarazada option:selected").text();
-        salud_014_sel_adolescenteEmbarazadaControlalDia = $("#salud_014_sel_adolescenteEmbarazadaControlalDia option:selected").text();
-        salud_015_adolescenteEmbarazadaControlalDia_cantidad = $("#salud_015_adolescenteEmbarazadaControlalDia_cantidad").val();
+        IdParSaludValor_1 = $("#IdParSaludValor_1").val();
+        IdParSaludValor_2 = $("#IdParSaludValor_2").val();
+        IdParSaludValor_3 = $("#IdParSaludValor_3").val();
+        IdParSaludValor_4 = $("#IdParSaludValor_4").val();
+        IdParSaludValor_5 = $("#IdParSaludValor_5").val();
+        IdParSaludValor_6 = $("#IdParSaludValor_6").val();
+        IdParSaludValor_7 = $("#IdParSaludValor_7").val();
+        IdParSaludValor_8 = $("#IdParSaludValor_8").val();
+        IdParSaludValor_9 = $("#IdParSaludValor_9").val();
+        IdParSaludValor_10 = $("#IdParSaludValor_10").val();
+        IdParSaludValor_11 = $("#IdParSaludValor_11").val();
+        IdParSaludValor_12 = $("#IdParSaludValor_12").val();
+        IdParSalud_13 = $("#IdParSalud_13 option:selected").text();
+        IdParSalud_14 = $("#IdParSalud_14 option:selected").text();
+        IdParSalud_15 = $("#IdParSalud_15 option:selected").text();
+        IdParSalud_16 = $("#IdParSalud_16 option:selected").text();
+        IdParSalud_17 = $("#IdParSalud_17 option:selected").text();
+        IdParSalud_18 = $("#IdParSalud_18 option:selected").text();
+        IdParSalud_19 = $("#IdParSalud_19 option:selected").text();
+        IdParSalud_20 = $("#IdParSalud_20 option:selected").text();
+        IdParSalud_21 = $("#IdParSalud_21 option:selected").text();
+        IdParSalud_22 = $("#IdParSalud_22 option:selected").text();
+        IdParSaludValor_22 = $("#IdParSaludValor_22").val();
         salud_016_observaciones = $("#salud_016_observaciones").val();
 
         //variables antecedentes educacion-------------
@@ -4709,19 +4719,19 @@ function GenerarFormularioPDF_FR(opc) {
                     body: [
                             [{ text: 'ANTECEDENTES SEGURIDAD', style: 'header2', colSpan: 2 }, {}],
                             [{}, { text: 'EXISTE', style: 'text2' }],
-                            [{ text: 'Plan de Emergencia 	', style: 'text2' }, { text: seguridad_001_planEmergencia_existe, style: 'text2' }],
-                            [{ text: 'Simulacro Emergencia (Último Cuatrimestre)', style: 'text2' }, { text: seguridad_002_simulacroEmergencia_existe, style: 'text2' }],
-                            [{ text: 'Plan de Emergencia ¿Visado por personal calificado?', style: 'text2' }, { text: seguridad_003_planEmergenciaVisado_existe, style: 'text2' }],
-                            [{ text: 'Extintores', style: 'text2' }, { text: seguridad_004_extintores_existe, style: 'text2' }],
-                            [{ text: 'Señalética 	', style: 'text2' }, { text: seguridad_005_senaletica_existe, style: 'text2' }],
-                            [{ text: 'Vías de Evacuación 	', style: 'text2' }, { text: seguridad_006_viaEvacuacion_existe, style: 'text2' }],
-                            [{ text: 'Capacitación Personal en Emergencia', style: 'text2' }, { text: seguridad_007_capacitacionPersonalemergencia, style: 'text2' }],
-                            [{ text: 'Capacitación Personal en Primeros Auxilios', style: 'text2' }, { text: seguridad_007_capacitacionPersonalprimerosAux, style: 'text2' }],
-                            [{ text: 'Sanitización', style: 'text2' }, { text: seguridad_008_sanitizacion_, style: 'text2' }],
-                            [{ text: 'Desratización', style: 'text2' }, { text: seguridad_008_sanitizacion_desratizacion, style: 'text2' }],
-                            [{ text: 'Fumigación', style: 'text2' }, { text: seguridad_008_sanitizacion_fumigacion, style: 'text2' }],
-                            [{ text: 'Sistema Eléctrico', style: 'text2' }, { text: seguridad_009_sistemaElectrico_existe, style: 'text2' }],
-                            [{ text: 'Zona de Seguridad Demarcada', style: 'text2' }, { text: seguridad_010_zonaSeguridad_existe, style: 'text2' }],
+                        [{ text: 'Plan de Emergencia 	', style: 'text2' }, { text: IdParSeguridad_1, style: 'text2' }],
+                        [{ text: 'Simulacro Emergencia (Último Cuatrimestre)', style: 'text2' }, { text: IdParSeguridad_2, style: 'text2' }],
+                        [{ text: 'Plan de Emergencia ¿Visado por personal calificado?', style: 'text2' }, { text: IdParSeguridad_3, style: 'text2' }],
+                        [{ text: 'Extintores', style: 'text2' }, { text: IdParSeguridad_4, style: 'text2' }],
+                        [{ text: 'Señalética 	', style: 'text2' }, { text: IdParSeguridad_5, style: 'text2' }],
+                        [{ text: 'Vías de Evacuación 	', style: 'text2' }, { text: IdParSeguridad_6, style: 'text2' }],
+                        [{ text: 'Capacitación Personal en Emergencia', style: 'text2' }, { text: IdParSeguridad_7, style: 'text2' }],
+                        [{ text: 'Capacitación Personal en Primeros Auxilios', style: 'text2' }, { text: IdParSeguridad_8, style: 'text2' }],
+                        [{ text: 'Sanitización', style: 'text2' }, { text: IdParSeguridad_9, style: 'text2' }],
+                        [{ text: 'Desratización', style: 'text2' }, { text: IdParSeguridad_10, style: 'text2' }],
+                        [{ text: 'Fumigación', style: 'text2' }, { text: IdParSeguridad_11, style: 'text2' }],
+                        [{ text: 'Sistema Eléctrico', style: 'text2' }, { text: IdParSeguridad_12, style: 'text2' }],
+                        [{ text: 'Zona de Seguridad Demarcada', style: 'text2' }, { text: IdParSeguridad_13, style: 'text2' }],
                             [{ text: 'OBSERVACIONES', style: 'text1', colSpan: 2 }, {}],
                             [{ text: seguridad_011_observaciones, style: 'text2', colSpan: 2 }, {}]
                     ]
@@ -4736,29 +4746,29 @@ function GenerarFormularioPDF_FR(opc) {
                     body: [
                             [{ text: 'ANTECEDENTES SALUD', style: 'header2', colSpan: 2 }, {}],
                             [{}, { text: 'ESPECIFICAR y/o EXISTE', style: 'text2' }],
-                            [{ text: 'N° de NNA Inscritos en CESFAM ', style: 'text1' }, { text: salud_001_NNA_inscritosCESFAM, style: 'text2' }],
-                            [{ text: 'N° de NNA con Problemática de Salud Mental con Diagnóstico ', style: 'text1' }, { text: salud_002_NNA_problematicaSaludMental, style: 'text2' }],
-                            [{ text: 'N° de NNA con Problemática de Salud Mental sin Diagnóstico', style: 'text1' }, { text: salud_003_NNA_problematicaSaludMentalsinDiag, style: 'text2' }],
-                            [{ text: 'N° de NNA Inscritos con Enfermedad Crónica', style: 'text1' }, { text: salud_004_NNA_inscritosEnferCronica, style: 'text2' }],
-                            [{ text: 'N° de NNA a la espera de Trasplante', style: 'text1' }, { text: salud_015_NNA_EsperaTransplantes, style: 'text2' }],
-                            [{ text: 'N° de NNA Trasplantados', style: 'text1' },{ text: salud_016_NNA_Transplantados, style: 'text2' }],
-                            [{ text: 'N° de NNA Inscritos con Situación de Discapacidad', style: 'text1' },{ text: salud_005_NNA_Discapacidad, style: 'text2' }],
-                            [{ text: 'N° de NNA recibiendo tratamiento farmacológico', style: 'text1' },{ text: salud_006_NNA_inscritosProblemSaludRecibeMedica, style: 'text2' }],
-                            [{ text: 'N° de NNA con Problemática de Salud en Tratamiento', style: 'text1' },{ text: salud_007_NNA_problematicaSaludenTratamiento, style: 'text2' }],
-                            [{ text: 'N° de NNA con Consumo sólo de Drogas', style: 'text1' },{ text: salud_008_NNA_consumoDrogas, style: 'text2' }],
-                            [{ text: 'N° de NNA con consumo sólo de Alcohol', style: 'text1' },{ text: salud_008_NNA_consumoAlcohol, style: 'text2' }],
-                            [{ text: 'N° de NNA con consumo de Alcohol y Drogas', style: 'text1' },{ text: salud_017_consumoDrogasyAlcohol, style: 'text2' }],
-                            [{ text: '¿Cuenta con espacio adecuado para el resguardo de medicamentos?', style: 'text1' },{ text: salud_009_sel_resguardoMedicamentos, style: 'text2' }],
-                            [{ text: '¿Cuenta con inventario de medicamentos?', style: 'text1' },{ text: salud_009_sel_inventarioMedicamentos, style: 'text2' }],
-                            [{ text: '¿Cuenta con Registro de Medicamentos Administrados a los NNA?', style: 'text1' },{ text: salud_009_sel_registroMedicamentoAdmin_a_NNA, style: 'text2' }],
-                            [{ text: '¿Cuenta con Protocolo para la Administración de Medicamentos a los NNA?', style: 'text1' },{ text: salud_010_sel_protocoloAdmin_Medica_a_NNA, style: 'text2' }],
-                            [{ text: '¿Cuenta con control al día de Niño Sano?', style: 'text1' },{ text: salud_011_sel_control_nino_sano, style: 'text2' }],
-                            [{ text: '¿Cuenta con control al día de Adolescente Sano?', style: 'text1' },{ text: salud_011_sel_control_adolescente_sano, style: 'text2' }],
-                            [{ text: '¿Existe Control Anual Ginecológico en los Adolescentes?', style: 'text1' },{ text: salud_011_sel_control_ginecologicoAdolescente, style: 'text2' }],
-                            [{ text: '¿Existen adolescentes que se hayan negado a Control Ginecológico?', style: 'text1' },{ text: salud_012_sel_adolescenteNiegaControlGineco, style: 'text2' }],
-                            [{ text: 'Adolescentes Embarazadas', style: 'text1' },{ text: salud_013_sel_adolescenteEmbarazada, style: 'text2' }],
-                            [{ text: 'En caso de Pertenecer a Residencia Adolescentes Embarazadas, ¿Tienen controles médicos al día?', style: 'text1' },{ text: salud_014_sel_adolescenteEmbarazadaControlalDia, style: 'text2' }],
-                            [{ text: 'N° de Adolescentes Embarazadas con controles médicos al día', style: 'text1' },{ text: salud_015_adolescenteEmbarazadaControlalDia_cantidad, style: 'text2' }],
+                        [{ text: 'N° de NNA Inscritos en CESFAM ', style: 'text1' }, { text: IdParSaludValor_1, style: 'text2' }],
+                        [{ text: 'N° de NNA con Problemática de Salud Mental con Diagnóstico ', style: 'text1' }, { text: IdParSaludValor_2, style: 'text2' }],
+                        [{ text: 'N° de NNA con Problemática de Salud Mental sin Diagnóstico', style: 'text1' }, { text: IdParSaludValor_3, style: 'text2' }],
+                        [{ text: 'N° de NNA Inscritos con Enfermedad Crónica', style: 'text1' }, { text: IdParSalud_4, style: 'text2' }],
+                        [{ text: 'N° de NNA a la espera de Trasplante', style: 'text1' }, { text: IdParSalud_5, style: 'text2' }],
+                        [{ text: 'N° de NNA Trasplantados', style: 'text1' }, { text: IdParSalud_6, style: 'text2' }],
+                        [{ text: 'N° de NNA Inscritos con Situación de Discapacidad', style: 'text1' }, { text: IdParSalud_7, style: 'text2' }],
+                        [{ text: 'N° de NNA recibiendo tratamiento farmacológico', style: 'text1' }, { text: IdParSalud_8, style: 'text2' }],
+                        [{ text: 'N° de NNA con Problemática de Salud en Tratamiento', style: 'text1' }, { text: IdParSalud_9, style: 'text2' }],
+                        [{ text: 'N° de NNA con Consumo sólo de Drogas', style: 'text1' }, { text: IdParSaludValor_10, style: 'text2' }],
+                        [{ text: 'N° de NNA con consumo sólo de Alcohol', style: 'text1' }, { text: IdParSaludValor_11, style: 'text2' }],
+                        [{ text: 'N° de NNA con consumo de Alcohol y Drogas', style: 'text1' }, { text: IdParSaludValor_12, style: 'text2' }],
+                        [{ text: '¿Cuenta con espacio adecuado para el resguardo de medicamentos?', style: 'text1' }, { text: IdParSalud_13, style: 'text2' }],
+                        [{ text: '¿Cuenta con inventario de medicamentos?', style: 'text1' }, { text: IdParSalud_14, style: 'text2' }],
+                        [{ text: '¿Cuenta con Registro de Medicamentos Administrados a los NNA?', style: 'text1' }, { text: IdParSalud_15, style: 'text2' }],
+                        [{ text: '¿Cuenta con Protocolo para la Administración de Medicamentos a los NNA?', style: 'text1' }, { text: IdParSalud_16, style: 'text2' }],
+                        [{ text: '¿Cuenta con control al día de Niño Sano?', style: 'text1' }, { text: IdParSalud_17, style: 'text2' }],
+                        [{ text: '¿Cuenta con control al día de Adolescente Sano?', style: 'text1' }, { text: IdParSalud_18, style: 'text2' }],
+                        [{ text: '¿Existe Control Anual Ginecológico en los Adolescentes?', style: 'text1' }, { text: IdParSalud_19, style: 'text2' }],
+                        [{ text: '¿Existen adolescentes que se hayan negado a Control Ginecológico?', style: 'text1' }, { text: IdParSalud_20, style: 'text2' }],
+                        [{ text: 'Adolescentes Embarazadas', style: 'text1' }, { text: IdParSalud_21, style: 'text2' }],
+                        [{ text: 'En caso de Pertenecer a Residencia Adolescentes Embarazadas, ¿Tienen controles médicos al día?', style: 'text1' }, { text: IdParSalud_22, style: 'text2' }],
+                        [{ text: 'N° de Adolescentes Embarazadas con controles médicos al día', style: 'text1' }, { text: IdParSaludValor_22, style: 'text2' }],
                             [{ text: 'OBSERVACIONES', style: 'text1', colSpan: 2 }, {}],
                             [{ text: salud_016_observaciones, style: 'text2', colSpan: 2 }, {}]
                     ]

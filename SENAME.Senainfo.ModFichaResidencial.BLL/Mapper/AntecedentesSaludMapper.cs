@@ -57,6 +57,29 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Mapper
             }
             return list;
         }
+
+        public static List<GetParSaludDto> ToDtoParSalud(DataTable dt)
+        {
+            List<GetParSaludDto> list = new List<GetParSaludDto>();
+            GetParSaludDto dto = new GetParSaludDto();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dto = new GetParSaludDto();
+                dto.error = dr["error"].ToString();
+
+                if (dto.error == "")
+                {
+                    dto.IdParSalud = (int)dr["IdParSalud"];
+                    dto.NombreParSalud = dr["NombreParSalud"].ToString();
+                    dto.VariableCuantitativa = (bool)dr["VariableCuantitativa"];
+                    dto.SegundaVarCuantitativa = dr["SegundaVarCuantitativa"] is DBNull ? false : (bool)dr["SegundaVarCuantitativa"];
+                    dto.IndVigencia = dr["IndVigencia"].ToString();
+                }
+                list.Add(dto);
+            }
+            return list;
+        }
     }
 
     public class ResultadoOperacionSaludMapper

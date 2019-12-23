@@ -50,9 +50,8 @@ namespace SENAME.Senainfo.ModFichaResidencial.DAL.DAO
                 return dt;
             }
         }
-    
 
-    public DataTable ObtenerAntecedentesInfraestructura(int? CodFicha)
+        public DataTable ObtenerAntecedentesInfraestructura(int? CodFicha)
         {
             DataTable dt = new DataTable();
             try

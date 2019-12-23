@@ -11,6 +11,11 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces
         List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.GetAntecedentesSaludDto> ObtenerAntecedentesSalud(int? CodFicha);
     }
 
+    public interface IGetParSalud
+    {
+        List<DTO.GetParSaludDto> ObtenerParSalud();
+    }
+
     public interface IResultadoOperacionSalud
     {
         List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.ResultadoOperacionSaludDto> GrabarAntecedentesSalud(
