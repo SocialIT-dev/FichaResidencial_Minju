@@ -291,9 +291,6 @@
     <Content Include="images\type_xlsx.png" />
     <Content Include="images\type_zip.png" />
     <Content Include="images\warning32x.png" />
-    <Content Include="ModFichaIndividual\FichaIndividual.aspx" />
-    <Content Include="ModFichaIndividual\FichaIndividualBuscador.aspx" />
-    <Content Include="ModFichaIndividual\FichaIndividualResultadosBusqueda.aspx" />
     <Content Include="ModFichaResidencial\FichaResidencial.aspx" />
     <Content Include="ModFichaResidencial\FichaResidencialHistorial.aspx" />
     <Content Include="ModFichaResidencial\FichaResidencialObservaciones.aspx" />
@@ -672,27 +669,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModFichaIndividual\FichaIndividual.aspx.cs">
-      <DependentUpon>FichaIndividual.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ModFichaIndividual\FichaIndividual.aspx.designer.cs">
-      <DependentUpon>FichaIndividual.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ModFichaIndividual\FichaIndividualBuscador.aspx.cs">
-      <DependentUpon>FichaIndividualBuscador.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ModFichaIndividual\FichaIndividualBuscador.aspx.designer.cs">
-      <DependentUpon>FichaIndividualBuscador.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ModFichaIndividual\FichaIndividualResultadosBusqueda.aspx.cs">
-      <DependentUpon>FichaIndividualResultadosBusqueda.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ModFichaIndividual\FichaIndividualResultadosBusqueda.aspx.designer.cs">
-      <DependentUpon>FichaIndividualResultadosBusqueda.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ModFichaResidencial\FichaResidencial.aspx.cs">
       <DependentUpon>FichaResidencial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

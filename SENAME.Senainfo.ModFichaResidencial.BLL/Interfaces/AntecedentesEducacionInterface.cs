@@ -8,7 +8,7 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces
 {
     public interface IGetAntecedentesEducacion
     {
-        List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.GetAntecedentesEducacionDto> ObtenerAntecedentesEducacion(int? CodFicha);
+        List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.GetEducacionDTO> ObtenerAntecedentesEducacion(string CodProyecto, int? CodFicha);
     }
 
     public interface IResultadoOperacionEducacion

@@ -9,7 +9,7 @@ namespace SENAME.Senainfo.ModFichaResidencial.DAL.DAO
 {
     public class GetAntecedentesEducacionDao : Repository
     {
-        public DataTable ObtenerAntecedentesEducacion(int? CodFicha)
+        public DataTable ObtenerAntecedentesEducacion(string CodProyecto, int? CodFicha)
         {
             DataTable dt = new DataTable();
             try
@@ -22,6 +22,7 @@ namespace SENAME.Senainfo.ModFichaResidencial.DAL.DAO
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                         cmd.CommandType = CommandType.StoredProcedure;
+                       // cmd.Parameters.AddWithValue("@CodProyecto", CodProyecto);
                         cmd.Parameters.AddWithValue("@CodFicha", CodFicha.HasValue ? (object)CodFicha : DBNull.Value);
                         da.SelectCommand = cmd;
                         da.Fill(dt);

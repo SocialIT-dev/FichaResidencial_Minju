@@ -11,38 +11,28 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Mapper
 {
     public class GetAntecedentesEducacionMapper
     {
-        public static List<GetAntecedentesEducacionDto> ToDto(DataTable dt)
+        public static List<GetEducacionDTO> ToDto(DataTable dt)
         {
-            List<GetAntecedentesEducacionDto> list = new List<GetAntecedentesEducacionDto>();
-            GetAntecedentesEducacionDto dto = new GetAntecedentesEducacionDto();
+            List<GetEducacionDTO> list = new List<GetEducacionDTO>();
+            GetEducacionDTO dto = new GetEducacionDTO();
 
             foreach (DataRow dr in dt.Rows)
             {
-                dto = new GetAntecedentesEducacionDto();
+                dto = new GetEducacionDTO();
                 dto.error = dr["error"].ToString();
 
                 if (dto.error == "")
                 {
                     dto.CodFicha = (int)dr["CodFicha"];
-                    dto.CodEstadoFicha = (int)dr["CodEstadoFicha"];
-                    dto.CodProyecto = (int)dr["CodProyecto"];
-                    dto.Periodo = (int)dr["Periodo"];
-                    dto.NNAEducacion = (int)dr["NNAEducacion"];
-                    dto.NNAEducacionNo = (int)dr["NNAEducacionNo"];
-                    dto.NNAEducacionNoMotivo = (int)dr["NNAEducacionNoMotivo"];
-                    dto.NNARetrasoEscolar = (int)dr["NNARetrasoEscolar"];
-                    dto.NNAMatriculaCancelada = (int)dr["NNAMatriculaCancelada"];
-                    dto.NNAEducaionEspecial = (int)dr["NNAEducaionEspecial"];
-                    dto.NNANivelacion = (int)dr["NNANivelacion"];
-                    dto.NNAMatriculados = (int)dr["NNAMatriculados"];
-                    dto.NNAExamenesLibres = (int)dr["NNAExamenesLibres"];
-                    dto.EspaciosEstudios = (int)dr["EspaciosEstudios"];
-                    dto.MaterialBibliografico = (int)dr["MaterialBibliografico"];
-                    dto.Computadores = (int)dr["Computadores"];
-                    dto.AccesoInternetControlado = (int)dr["AccesoInternetControlado"];
-                    dto.FechaActualizacion = (DateTime)dr["FechaActualizacion"];
-                    dto.IdUsuarioActualizacion = (int)dr["IdUsuarioActualizacion"];
-                    dto.Observaciones = dr["Observaciones"].ToString();
+                    dto.numeroAsistencia = (int)dr["numeroAsistencia"];
+                    dto.numeroNoAsistencia = (int)dr["numeroNoAsistencia"];
+                    dto.numeroMatriculados = (int)dr["numeroMatriculados"];
+                    dto.inscritosExamenesLibres = (int)dr["inscritosExamenesLibres"];
+                    dto.asisteEducacionDiferencial = (int)dr["asisteEducacionDiferencial"];
+                    dto.rezagoEscolar = 0;
+                    dto.nivelacionEstudios = 0;
+                    dto.matriculaCancelada = 0;
+                    dto.observaciones = dr["Observaciones"].ToString();
                 }
                 list.Add(dto);
             }

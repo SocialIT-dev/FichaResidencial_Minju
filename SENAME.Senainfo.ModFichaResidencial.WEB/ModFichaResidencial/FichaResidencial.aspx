@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaResidencial.aspx.cs" Inherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial.FichaResidencial" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaResidencial.aspx.cs" yzInherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial.FichaResidencial" %>
     
 <%-- DESCOMENTAR ESTA DOS LINEAS PARA SU VERSIÓN EN SENAINFO  --%>
 
@@ -843,7 +843,7 @@ Spint 2.1
                         <td class="etiqCampo3">Motivo de inasistencia de NNA a Establecimiento Educacional</td>
                         <td style="border-bottom: 1px #B2B2B2 solid;">
                             <select id="educacion_002_NNA_NO_asisten_colegio_cantidad_motivo" class="form-control textCampoSel1" onchange="MotivoInasistencia(this);" disabled="disabled">
-                                <option value="-1"></option>
+                                <option value="0">Seleccione</option>
                                 <option value="1">Salud</option>
                                 <option value="2">Rechazo</option>
                                 <option value="3">Suspensión</option>
@@ -879,37 +879,29 @@ Spint 2.1
                     <tr>
                         <td class="etiqCampo3">Espacios Destinados a Estudios y Desarrolo de Tareas</td>
                         <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="educacion_007_sel_EspacioEstudio_y_Tareas_existe" class="form-control textCampoSel1">
-                                <option value="-1"></option>
-                                <option value="1">SI</option>
-                                <option value="0">NO</option>
+                            <select id="educacion_007_sel_EspacioEstudio_y_Tareas_existe" class="form-control textCampoSel1 dllSiNo">
+                  
                             </select></td>
                     </tr>
                     <tr>
                         <td class="etiqCampo3">Material Bibliográfico</td>
                         <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="educacion_008_sel_materialBibliiografico_existe" class="form-control textCampoSel1">
-                                <option value="-1"></option>
-                                <option value="1">SI</option>
-                                <option value="0">NO</option>
+                            <select id="educacion_008_sel_materialBibliiografico_existe" class="form-control textCampoSel1 dllSiNo">
+                             
                             </select></td>
                     </tr>
                     <tr>
                         <td class="etiqCampo3">Computadores</td>
                         <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="educacion_009_sel_computadores_existe" class="form-control textCampoSel1">
-                                <option value="-1"></option>
-                                <option value="1">SI</option>
-                                <option value="0">NO</option>
-                            </select></td>
+                            <select id="educacion_009_sel_computadores_existe" class="form-control textCampoSel1 dllSiNo">
+                              
+                                </select></td>
                     </tr>
                     <tr>
                         <td class="etiqCampo3">Acceso Controlado a Internet</td>
                         <td style="border-bottom: 1px #B2B2B2 solid;">
-                            <select id="educacion_010_sel_AccesoControladoInternet_existe" class="form-control textCampoSel1">
-                                <option value="-1"></option>
-                                <option value="1">SI</option>
-                                <option value="0">NO</option>
+                            <select id="educacion_010_sel_AccesoControladoInternet_existe" class="form-control textCampoSel1 dllSiNo">
+                               
                             </select></td>
                     </tr>
                     <tr>

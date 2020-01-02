@@ -840,10 +840,10 @@ namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial
             return result;
         }
         [WebMethod]
-        public static List<GetAntecedentesEducacionDto> ObtenerAntecedentesEducacion(int CodFicha)
+        public static List<GetEducacionDTO> ObtenerAntecedentesEducacion(string CodProyecto, int CodFicha)
         {
             GetAntecedentesEducacionImpl _antecedentesEducacionImpl = new GetAntecedentesEducacionImpl();
-            var result = _antecedentesEducacionImpl.ObtenerAntecedentesEducacion(CodFicha);
+            var result = _antecedentesEducacionImpl.ObtenerAntecedentesEducacion(CodProyecto, CodFicha);
             return result;
         }
         #endregion

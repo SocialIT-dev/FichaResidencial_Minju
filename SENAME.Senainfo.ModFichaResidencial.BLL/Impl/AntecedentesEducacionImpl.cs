@@ -20,9 +20,9 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Impl
             _getAntecedentesEducacionDao = new GetAntecedentesEducacionDao();
         }
 
-        public List<GetAntecedentesEducacionDto> ObtenerAntecedentesEducacion(int? CodFicha)
+        public List<GetEducacionDTO> ObtenerAntecedentesEducacion(string CodProyecto, int? CodFicha)
         {
-            var result = _getAntecedentesEducacionDao.ObtenerAntecedentesEducacion(CodFicha);
+            var result = _getAntecedentesEducacionDao.ObtenerAntecedentesEducacion(CodProyecto, CodFicha);
             return GetAntecedentesEducacionMapper.ToDto(result);
         }
     }
