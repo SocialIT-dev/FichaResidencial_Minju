@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaResidencial.aspx.cs" yzInherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial.FichaResidencial" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaResidencial.aspx.cs" Inherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial.FichaResidencial" %>
     
 <%-- DESCOMENTAR ESTA DOS LINEAS PARA SU VERSIÓN EN SENAINFO  --%>
 
