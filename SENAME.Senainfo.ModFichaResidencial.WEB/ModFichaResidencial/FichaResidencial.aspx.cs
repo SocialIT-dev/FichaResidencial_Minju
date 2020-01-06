@@ -839,11 +839,12 @@ namespace SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial
                                                                                     Observaciones);
             return result;
         }
+        
         [WebMethod]
-        public static List<GetEducacionDTO> ObtenerAntecedentesEducacion(string CodProyecto, int CodFicha)
+        public static List<GetAntecedentesEducacionDto> ObtenerAntecedentesEducacion(string CodProyecto, int CodEstadoFicha, int? CodFichaAUX)
         {
-            GetAntecedentesEducacionImpl _antecedentesEducacionImpl = new GetAntecedentesEducacionImpl();
-            var result = _antecedentesEducacionImpl.ObtenerAntecedentesEducacion(CodProyecto, CodFicha);
+            GetMineducRegistroEducacionalImpl _antecedentesEducacion = new GetMineducRegistroEducacionalImpl();
+            var result = _antecedentesEducacion.ObtenerAntecedentesEducacion(CodProyecto, CodEstadoFicha, CodFichaAUX);
             return result;
         }
         #endregion

@@ -112,13 +112,15 @@ function GrabarAntecedentesEducacion() {
     });
 }
 
-function ObtenerAntecedentesEducacion(CodProyecto, CodFicha) {
+function ObtenerAntecedentesEducacion(CodProyecto, CodEstadoFicha, CodFichaAUX) {
+    
     $("#labelCaracteres_ObsEducacion").html("");
     $.ajax({
         type: "POST",
         url: "FichaResidencial.aspx/ObtenerAntecedentesEducacion",
         data: "{'CodProyecto': '" + CodProyecto + "', " +
-            "'CodFicha': '" + CodFicha + "'}",
+               "'CodFichaAUX': '" + CodFichaAUX + "'," +
+            "'CodEstadoFicha': '" + CodEstadoFicha + "'}",
         //data: '{}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -129,37 +131,37 @@ function ObtenerAntecedentesEducacion(CodProyecto, CodFicha) {
             DesplegarExcepcionCriticaApp(r.responseText);
         }
     }).then(function (r) {
+       
         $.each(r.d,
             function () {
-                $("#educacion_001_NNA_asisten_colegio_cantidad").val(this.numeroAsistencia);/* 2. N° de NNA que si asisten a Establecimiento Educacional */
-
-                $("#educacion_002_NNA_NO_asisten_colegio_cantidad").val(this.numeroNoAsistencia); /* 3. N° de NNA que no asisten a Establecimiento Educacional */
-
+                $("#educacion_001_NNA_asisten_colegio_cantidad").val(this.NNAEducacion);/* 2. N° de NNA que si asisten a Establecimiento Educacional */
+                $("#educacion_002_NNA_NO_asisten_colegio_cantidad").val(this.NNAEducacionNo); /* 3. N° de NNA que no asisten a Establecimiento Educacional */
                 /* NUEVO CAMPO ANTECEDENETES EDUCACIÓN: /* 4. Motivo de inasistencia de NNA a Establecimiento Educacional */
                 if (this.NNAEducacionNo == "0" || this.NNAEducacionNo == "" || this.NNAEducacionNo == undefined) {
                     $("#educacion_002_NNA_NO_asisten_colegio_cantidad_motivo").val(0);
-                    $("#educacion_002_NNA_NO_asisten_colegio_cantidad_motivo").attr("disabled", false);
                 }
                 else {
                     $("#educacion_002_NNA_NO_asisten_colegio_cantidad_motivo").val(this.NNAEducacionNoMotivo);
-                    $("#educacion_002_NNA_NO_asisten_colegio_cantidad_motivo").attr("disabled", false);
                 }
 
-                $("#educacion_003_NNA_retrasoEscolar_cantidad").val(this.rezagoEscolar); /* 5. N° de NNA con Retraso o Rezago Escolar */
-                $("#educacion_004_NNA_matriculaCancelada_cantidad").val(this.matriculaCancelada); /* 6. N° de NNA con Matrícula Cancelada */
-                $("#educacion_005_NNA_asisten_colegioDiferencial_cantidad").val(this.asisteEducacionDiferencial); /* 7. N° de NNA que Asiste a Educación Diferencial */
-                $("#educacion_006_NNA_asisten_colegioNivelacion_cantidad").val(this.nivelacionEstudios); /* 8. N° de NNA que Asiste a Educación de Nivelación de Estudios */
+                $("#educacion_003_NNA_retrasoEscolar_cantidad").val(this.NNARetrasoEscolar); /* 5. N° de NNA con Retraso o Rezago Escolar */
+                $("#educacion_004_NNA_matriculaCancelada_cantidad").val(this.NNAMatriculaCancelada); /* 6. N° de NNA con Matrícula Cancelada */
+                $("#educacion_005_NNA_asisten_colegioDiferencial_cantidad").val(this.NNAEducaionEspecial); /* 7. N° de NNA que Asiste a Educación Diferencial */
+                $("#educacion_006_NNA_asisten_colegioNivelacion_cantidad").val(this.NNANivelacion); /* 8. N° de NNA que Asiste a Educación de Nivelación de Estudios */
+                $("#educacion_007_sel_EspacioEstudio_y_Tareas_existe").val(this.EspaciosEstudios); /* 10. Espacios Destinados a Estudios y Desarrolo de Tareas */ /* se remplaza this.EspaciosEstudios por el cero */
+                $("#educacion_008_sel_materialBibliiografico_existe").val(this.MaterialBibliografico); /* 11. Material Bibliográfico */ /* SE Remplaza this.MaterialBibliografico por el cero */
+                $("#educacion_009_sel_computadores_existe").val(this.Computadores); /* 12. computadores */ /* se remplaza this.Computadores por el cero */
 
-                $("#educacion_007_sel_EspacioEstudio_y_Tareas_existe").val(0); /* 10. Espacios Destinados a Estudios y Desarrolo de Tareas */ /* se remplaza this.EspaciosEstudios por el cero */      
-                $("#educacion_008_sel_materialBibliiografico_existe").val(0); /* 11. Material Bibliográfico */ /* SE Remplaza this.MaterialBibliografico por el cero */
-                $("#educacion_009_sel_computadores_existe").val(0); /* 12. computadores */ /* se remplaza this.Computadores por el cero */
-                $("#educacion_010_sel_AccesoControladoInternet_existe").val(0); /* 13. Acceso Controlado a Internet */ /* se remplaza this.AccesoInternetControlado */
+                $("#educacion_010_sel_AccesoControladoInternet_existe").val(this.AccesoInternetControlado); /* 13. Acceso Controlado a Internet */ /* se remplaza this.AccesoInternetControlado */
 
-                document.getElementById("educacion_011_observaciones").value = this.observaciones;
+                document.getElementById("educacion_011_observaciones").value = this.Observaciones;
                 ContadorCaracter(document.getElementById("educacion_011_observaciones"), "labelCaracteres_ObsEducacion");
 
-                $("#educacion_001_NNA_matriculados").val(this.numeroMatriculados); /* 1. N° de NNA matriculados */
-                $("#educacion_006_NNA_examenesLibres_cantidad").val(this.inscritosExamenesLibres); /* 9. N° de NNA inscritos para exámenes libres */
+                $("#educacion_001_NNA_matriculados").val(this.NNAMatriculados); /* 1. N° de NNA matriculados */
+                
+
+                $("#educacion_006_NNA_examenesLibres_cantidad").val(this.NNAExamenesLibres); /* 9. N° de NNA inscritos para exámenes libres */
+            
             }
         );
         if (opcioncarga == "GESTIONOBSERVACIONES" || opcioncarga == "GESTIONHISTORIAL") {
@@ -171,9 +173,26 @@ function ObtenerAntecedentesEducacion(CodProyecto, CodFicha) {
             educacion_residencia = true;
             CargaCamposComparativa7();
         }
+        HabilitaCampos();  
     });
 }
 
+function HabilitaCampos() {
+    $("#educacion_001_NNA_asisten_colegio_cantidad").attr("disabled", false);
+    $("#educacion_002_NNA_NO_asisten_colegio_cantidad").attr("disabled", false);
+    $("#educacion_003_NNA_retrasoEscolar_cantidad").attr("disabled", false);
+    $("#educacion_004_NNA_matriculaCancelada_cantidad").attr("disabled", false);
+    $("#educacion_005_NNA_asisten_colegioDiferencial_cantidad").attr("disabled", false);
+    $("#educacion_006_NNA_asisten_colegioNivelacion_cantidad").attr("disabled", false);
+    $("#educacion_007_sel_EspacioEstudio_y_Tareas_existe").attr("disabled", false);
+    $("#educacion_008_sel_materialBibliiografico_existe").attr("disabled", false);
+    $("#educacion_010_sel_AccesoControladoInternet_existe").attr("disabled", false);
+    $("#educacion_001_NNA_matriculados").attr("disabled", false);
+    $("#educacion_006_NNA_examenesLibres_cantidad").attr("disabled", false);
+    $("#educacion_009_sel_computadores_existe").attr("disabled", false);
+    $("#educacion_011_observaciones").attr("disabled", false);
+    $("#educacion_002_NNA_NO_asisten_colegio_cantidad_motivo").attr("disabled", false);
+}
 
 
 function ObtenerAntecedentesEducacion_PJUD(CodFicha) {

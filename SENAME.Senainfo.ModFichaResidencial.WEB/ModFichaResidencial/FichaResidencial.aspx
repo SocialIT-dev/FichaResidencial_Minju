@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaResidencial.aspx.cs" yzInherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial.FichaResidencial" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FichaResidencial.aspx.cs" Inherits="SENAME.Senainfo.ModFichaResidencial.WEB.ModFichaResidencial.FichaResidencial" %>
     
 <%-- DESCOMENTAR ESTA DOS LINEAS PARA SU VERSIÓN EN SENAINFO  --%>
 
@@ -877,7 +877,7 @@ Spint 2.1
                             <input id="educacion_006_NNA_examenesLibres_cantidad" type="text" class="form-control textCampo3" maxlength="4" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" /></td>
                     </tr>
                     <tr>
-                        <td class="etiqCampo3">Espacios Destinados a Estudios y Desarrolo de Tareas</td>
+                        <td class="etiqCampo3">Espacios Destinados a Estudios y Desarrollo de Tareas</td>
                         <td style="border-bottom: 1px #B2B2B2 solid;">
                             <select id="educacion_007_sel_EspacioEstudio_y_Tareas_existe" class="form-control textCampoSel1 dllSiNo">
                   

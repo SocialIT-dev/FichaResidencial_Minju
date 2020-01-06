@@ -27,6 +27,7 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.DTO
         public int Periodo { get; set; }
         public int CodFicha2 { get; set; }
         public string error { get; set; }
+        public int CodEstadoFicha { get; set; }
     }
 
     public class NiñosVigentesDto

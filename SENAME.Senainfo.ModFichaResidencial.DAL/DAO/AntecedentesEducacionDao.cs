@@ -9,9 +9,24 @@ namespace SENAME.Senainfo.ModFichaResidencial.DAL.DAO
 {
     public class GetAntecedentesEducacionDao : Repository
     {
-        public DataTable ObtenerAntecedentesEducacion(string CodProyecto, int? CodFicha)
+        public DataTable ObtenerAntecedentesEducacion(string CodProyecto, int CodEstadoFicha, int? CodFichaAUX)
         {
             DataTable dt = new DataTable();
+            if (CodEstadoFicha.Equals(1))
+            {
+                dt = ObtenerAntecedentesEducacion_Parcial(CodProyecto, CodFichaAUX);
+            }
+            else 
+            {
+                dt = ObtenerMineducRegistroEducacional(CodProyecto, CodFichaAUX);
+            }
+            return dt;
+        }
+
+        public DataTable ObtenerAntecedentesEducacion_Parcial(string CodProyecto, int? CodFicha)
+        {
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
             try
             {
                 using (var con = GetConnection())
@@ -22,14 +37,12 @@ namespace SENAME.Senainfo.ModFichaResidencial.DAL.DAO
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                         cmd.CommandType = CommandType.StoredProcedure;
-                       // cmd.Parameters.AddWithValue("@CodProyecto", CodProyecto);
                         cmd.Parameters.AddWithValue("@CodFicha", CodFicha.HasValue ? (object)CodFicha : DBNull.Value);
                         da.SelectCommand = cmd;
                         da.Fill(dt);
 
                         DataColumn columNew = dt.Columns.Add("error", typeof(String));
                         columNew.DefaultValue = "";
-
                         return dt;
                     }
                 }
@@ -44,8 +57,51 @@ namespace SENAME.Senainfo.ModFichaResidencial.DAL.DAO
                 ControlExcepcion ce = new ControlExcepcion();
                 glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
 
-                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerAntecedentesEducacion";
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerAntecedentesEducacion_Parcial";
 
+                dr["error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+
+        public DataTable ObtenerMineducRegistroEducacional(string CodProyecto, int? CodFicha)
+        {
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    using (var cmd = new SqlCommand("FichaRes.GetMineduc_RegistroEducacional", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CodProyecto", CodProyecto.ToString());
+                        cmd.Parameters.AddWithValue("@CodFicha", CodFicha.HasValue ? (object)CodFicha : DBNull.Value);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("error", typeof(String));
+                        columNew.DefaultValue = "";
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("error", typeof(String));
+
+                DataRow dr = dt.NewRow();
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerMineducRegistroEducacional";
                 dr["error"] = glosaError;
                 dt.Rows.Add(dr);
 

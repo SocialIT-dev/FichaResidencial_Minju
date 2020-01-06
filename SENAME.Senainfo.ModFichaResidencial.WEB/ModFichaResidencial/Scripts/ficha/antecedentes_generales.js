@@ -5,6 +5,8 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
 
     var CodFichaAUX;
     var CodFicha2;
+    var CodEstadoFicha;
+
     var tokensUsr = document.getElementById("tokensUsr").value;
 
     if (CodProyecto != "0" && CodProyecto != null) {
@@ -45,6 +47,7 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                         $("#general_010_rut_director_proyecto").val(this.RutDirector);
                         CodFicha = this.CodFicha;
                         CodFicha2 = this.CodFicha2;
+                        CodEstadoFicha = this.CodEstadoFicha;
 
                         if (CodFicha != "0" || CodFicha2 != "0") {
 
@@ -87,7 +90,10 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                             ObtenerAntecedentesSeguridad(CodFichaAUX);
 
                             ObtenerAntecedentesSalud(CodFichaAUX);
-                            ObtenerAntecedentesEducacion(CodProyecto, CodFichaAUX);
+
+                             /* CodEstadoFicha = 1 ( Estado parcial )  -  CodEstadoFicha 2 = ( Estado definitvo ) */
+                            ObtenerAntecedentesEducacion(CodProyecto, CodEstadoFicha, CodFichaAUX);
+                            
 
                             ObtenerAntecedentesAlimentacion(CodFichaAUX);
                             ObtenerAntecedentesGestionResidencia(CodFichaAUX);

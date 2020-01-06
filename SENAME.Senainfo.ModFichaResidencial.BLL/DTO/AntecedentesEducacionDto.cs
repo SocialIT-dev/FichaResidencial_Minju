@@ -42,20 +42,5 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.DTO
         public string error { get; set; }
     }
 
-    public class GetEducacionDTO
-    {
-        public int CodFicha { get; set; }
-        public int numeroMatriculados { get; set; }
-        public int numeroAsistencia { get; set; }
-        public int numeroNoAsistencia { get; set; }
-        public int asisteEducacionDiferencial { get; set; }
-        public int inscritosExamenesLibres { get; set; }
-        /* falta 3 campos */
-        public int rezagoEscolar { get; set; }
-        public int matriculaCancelada { get; set; }
-        public int nivelacionEstudios { get; set; }
 
-        public string observaciones { get; set; }
-        public string error { get; set; }
-    }
 }

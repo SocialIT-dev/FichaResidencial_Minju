@@ -41,6 +41,7 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Mapper
                     dto.EdadMinima = (int)dr["EdadMaxima"];
                     dto.Periodo = (int)dr["Periodo"];
                     dto.CodFicha2 = (int)dr["CodFicha2"];
+                    dto.CodEstadoFicha = (int)dr["CodEstadoFicha"];
                 }
                 list.Add(dto);
             }

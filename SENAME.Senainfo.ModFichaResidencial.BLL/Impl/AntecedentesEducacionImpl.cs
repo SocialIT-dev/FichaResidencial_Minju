@@ -11,20 +11,34 @@ using SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces;
 
 namespace SENAME.Senainfo.ModFichaResidencial.BLL.Impl
 {
-    public class GetAntecedentesEducacionImpl : IGetAntecedentesEducacion
+    public class GetMineducRegistroEducacionalImpl : IGetAntecedentesEducacion
     {
+        private readonly GetAntecedentesEducacionDao _getMineducRegistroEducacionalDao;
         private readonly GetAntecedentesEducacionDao _getAntecedentesEducacionDao;
 
-        public GetAntecedentesEducacionImpl()
+        public GetMineducRegistroEducacionalImpl()
         {
+            _getMineducRegistroEducacionalDao = new GetAntecedentesEducacionDao();
             _getAntecedentesEducacionDao = new GetAntecedentesEducacionDao();
         }
 
-        public List<GetEducacionDTO> ObtenerAntecedentesEducacion(string CodProyecto, int? CodFicha)
-        {
-            var result = _getAntecedentesEducacionDao.ObtenerAntecedentesEducacion(CodProyecto, CodFicha);
-            return GetAntecedentesEducacionMapper.ToDto(result);
+        public List<GetAntecedentesEducacionDto> ObtenerAntecedentesEducacion(string CodProyecto, int CodEstadoFicha, int? CodFichaAUX)
+        {  
+            var result = _getAntecedentesEducacionDao.ObtenerAntecedentesEducacion(CodProyecto, CodEstadoFicha, CodFichaAUX);
+            if (CodEstadoFicha.Equals(1)) {
+                return GetAntecedentesEducacionMapper.ToDto(result); }
+            else
+             {
+                return GetAntecedentesEducacionMapper.ToDtoRegistroEducacional(result);
+            }
+         
         }
+
+        //public List<GetAntecedentesEducacionDto> ObtenerMineducRegistroEducacional(string CodProyecto, int? CodFicha)
+        //{
+        //    var result = _getMineducRegistroEducacionalDao.ObtenerMineducRegistroEducacional(CodProyecto, CodFicha);
+        //    return GetAntecedentesEducacionMapper.ToDtoRegistroEducacional(result);
+        //}
     }
 
     public class ResultadoOperacionEducacionImpl : IResultadoOperacionEducacion
