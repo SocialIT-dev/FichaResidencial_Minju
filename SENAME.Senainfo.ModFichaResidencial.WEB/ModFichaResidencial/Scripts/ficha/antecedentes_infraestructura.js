@@ -182,6 +182,7 @@ function GrabarAntecedentesInfraestructura() {
     });
 }
 
+
 // REVISAR ESTA FUNCION NO SE LLAMA REVISAR
 function Infraest_037_duchasNNA_mixtos_cant(CodFicha) {
     $("#labelCaracteres_ObsInfra").html("");
