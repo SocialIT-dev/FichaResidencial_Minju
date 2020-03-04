@@ -33,7 +33,7 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Mapper
                     dto.PoblacionVigente = (int)dr["PoblacionVigente"];
                     dto.TipoVulneracion = dr["TipoVulneracion"].ToString();
                     dto.ProgramaApadrinamiento = (int)dr["ProgramaApadrinamiento"];
-                    dto.FechaActualizacion = (DateTime)dr["FechaActualizacion"];
+                   // dto.FechaActualizacion = (DateTime)dr["FechaActualizacion"];
                     dto.IdUsuarioActualizacion = (int)dr["IdUsuarioActualizacion"];
                 }
                 list.Add(dto);

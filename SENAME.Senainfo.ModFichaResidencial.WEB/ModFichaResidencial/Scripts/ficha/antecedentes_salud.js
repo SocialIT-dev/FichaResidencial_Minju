@@ -80,7 +80,7 @@ function CargaParSalud() {
         "bInfo": false,
         "bPaginate": false
     });
-    document.getElementById("salud_016_observaciones").disabled = false;
+    //document.getElementById("salud_016_observaciones").disabled = false;
    
 
 }
@@ -214,7 +214,7 @@ function GrabarAntecedentesSalud() {
                         MensajeERROR_App_Critico2(strError);
                     }
                 }
-                ActivarDesactivarBotonesGrabar(6, false);
+              //  ActivarDesactivarBotonesGrabar(6, false);
             }
         );
     });

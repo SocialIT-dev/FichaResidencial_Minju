@@ -90,7 +90,7 @@ function GrabarAntecedentesAlimentacion() {
                         MensajeERROR_App_Critico2(strError);
                     }
                 }
-                ActivarDesactivarBotonesGrabar(8, false);
+                //ActivarDesactivarBotonesGrabar(8, false);
             }
         );
 
@@ -159,7 +159,7 @@ function CargaParAlimentacion() {
         "bPaginate": false
 
     });
-    document.getElementById("alimentacion_009_observacion").disabled = false;
+   // document.getElementById("alimentacion_009_observacion").disabled = false;
 }
 
 function ObtenerAntecedentesAlimentacion(CodFicha) {

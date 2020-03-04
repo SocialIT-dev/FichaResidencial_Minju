@@ -175,7 +175,7 @@ function GrabarAntecedentesInfraestructura() {
                         MensajeERROR_App_Critico2(strError);
                     }
                 }
-                ActivarDesactivarBotonesGrabar(4, false);
+              //  ActivarDesactivarBotonesGrabar(4, false);
             }
         );
 
@@ -366,6 +366,7 @@ function Infraest_037_duchasNNA_mixtos_cant(CodFicha) {
 
 var ParValores = { 0: "NO", 1: "SI" };
 
+
 function CargaParInfraestructura() {
     $("#gridInfraestructura").DataTable().destroy();
     $('#gridInfraestructura').dataTable({
@@ -445,8 +446,12 @@ function CargaParInfraestructura() {
         "bPaginate": false
 
     });
-    document.getElementById("Infraest_049_observaciones").disabled = false;
+
+    //document.getElementById("Infraest_049_observaciones").disabled = false;
 }
+
+
+
 
 function ObtenerAntecedentesInfraestructura(CodFicha) {
     $("#labelCaracteres_ObsInfra").html("");

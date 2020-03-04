@@ -11,6 +11,31 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Interfaces
         List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.GetDotacionPersonalDto> ObtenerDotacionPersonal(int? CodFicha);
     }
 
+    // Ini Polo
+
+    //public interface IGetParInfraestructura
+    public interface IGetParDotacionHAR
+    {
+     //    List<DTO.GetParInfraestructuraDto> ObtenerParInfraestructura();
+        List<DTO.GetParValoresHARDto> ObtenerParDotacion(int? CodFicha);
+    }
+
+    public interface IResultadoOperacionPersonalHAR
+    {
+        List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.ResultadoOperacionPersonalDtoHAR> GrabarAntecedentesPersonalHAR(
+            int? CodFicha,
+            int? CodProyecto,
+            int? CodEstadoFicha,
+            int? idUsuarioActualizacion,
+            int? CodProfesion,
+            int? Cantidad,
+            int? CodJornada,
+            int? HorasSemanales,            
+            string Observaciones);
+    }
+    //Fin Polo
+
+
     public interface IResultadoOperacionPersonal
     {
         List<SENAME.Senainfo.ModFichaResidencial.BLL.DTO.ResultadoOperacionPersonalDto> GrabarAntecedentesPersonal(

@@ -9,6 +9,8 @@ namespace SENAME.Senainfo.ModFichaResidencial.DAL.DAO
 {
     public class GetDotacionPersonalDao : Repository
     {
+
+        //HLAR
         public DataTable ObtenerDotacionPersonal(int? CodFicha)
         {
             DataTable dt = new DataTable();
@@ -50,8 +52,199 @@ namespace SENAME.Senainfo.ModFichaResidencial.DAL.DAO
                 return dt;
             }
         }
-    }
+        //public DataTable ObtenerParInfraestructura()
+        public DataTable ObtenerParDotacionHAR(int? CodFicha)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
 
+                    using (var cmd = new SqlCommand("FichaRes.GETDotacionPersonalHAR", con))  //new SqlCommand("FichaRes.Get_ParDotacionPersonal", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CodFicha", CodFicha.HasValue ? (object)CodFicha : DBNull.Value);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("error", typeof(String));
+
+                DataRow dr = dt.NewRow();
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerParInfraestructura";
+
+                dr["error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+    }
+    //Ini Polo
+    //public class GetAntecedentesInfraestructuraDao : Repository
+    public class GetAntecedentesDotacionHARDao : Repository
+    {
+
+        //public DataTable ObtenerAntecedentesInfraestructura(int? CodFicha)
+        public DataTable ObtenerAntecedentesDotacionPersonalHAR(int? CodFicha)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    using (var cmd = new SqlCommand("FichaRes.GETRecursosMateriales", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CodFicha", CodFicha.HasValue ? (object)CodFicha : DBNull.Value);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+                DataColumn colum = dt.Columns.Add("error", typeof(String));
+
+                DataRow dr = dt.NewRow();
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerAntecedentesInfraestructura";
+
+                dr["error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+
+        /// <summary>
+        /// Método que lista ParValores
+        /// Spring N° 3
+        /// </summary>
+        /// <returns>Rotorna lista</returns>
+        public DataTable ObtenerParValores()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    using (var cmd = new SqlCommand("FichaRes.Get_ParValores", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                DataColumn colum = dt.Columns.Add("error", typeof(String));
+                DataRow dr = dt.NewRow();
+
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: ObtenerRangoEtareoAtencion";
+
+                dr["error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+    }
+    public class ResultadoOperacionPersonalDaoHAR : Repository
+    {
+        public DataTable GrabarAntecedentesPersonalHAR(int? CodFicha, int? CodProyecto, int? CodEstadoFicha, int? idUsuarioActualizacion, int? CodProfesion ,int? Cantidad, int? CodJornada, int? HorasSemanales, string Observaciones)
+        {
+
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var con = GetConnection())
+                {
+                    con.Open();
+                    using (var cmd = new SqlCommand("FichaRes.InsertUpdateDotacionPersonalHAR", con))
+                    {
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CodFicha", CodFicha.HasValue ? (object)CodFicha : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@CodProyecto", CodProyecto.HasValue ? (object)CodProyecto : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@CodEstadoFicha", CodEstadoFicha.HasValue ? (object)CodEstadoFicha : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@idUsuarioActualizacion", idUsuarioActualizacion.HasValue ? (object)idUsuarioActualizacion : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@CodProfesion", CodProfesion.HasValue ? (object)CodProfesion : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Cantidad", Cantidad.HasValue ? (object)Cantidad : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@CodJornada", CodJornada.HasValue ? (object)CodJornada : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@HorasSemanales", HorasSemanales.HasValue ? (object)HorasSemanales : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Observaciones", Observaciones);
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+
+                        DataColumn columNew = dt.Columns.Add("error", typeof(String));
+                        columNew.DefaultValue = "";
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                DataColumn colum = dt.Columns.Add("error", typeof(String));
+
+                DataRow dr = dt.NewRow();
+                string glosaError = "";
+                ControlExcepcion ce = new ControlExcepcion();
+                glosaError = ce.ObtieneDetalleExcepcion(e.Message, e.Source, e.StackTrace, e.InnerException.ToString());
+
+                if (glosaError == "" || glosaError == null) glosaError = "Se ha producido una excepción de sistema no recuperable desde el servidor datos. Informar al adminitrador (se recomienda enviar una impresión de pantalla del error desplegado). Método: GrabarAntecedentesPersonal";
+
+                dr["error"] = glosaError;
+                dt.Rows.Add(dr);
+
+                return dt;
+            }
+        }
+    }
+    //Fin Polo
     public class ResultadoOperacionPersonalDao : Repository
     {
         public DataTable GrabarAntecedentesPersonal(

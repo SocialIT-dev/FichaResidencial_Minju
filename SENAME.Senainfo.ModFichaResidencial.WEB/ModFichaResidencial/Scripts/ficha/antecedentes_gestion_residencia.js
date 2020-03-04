@@ -108,14 +108,14 @@ function GrabarAntecedentesGestionResidencia() {
                         MensajeERROR_App_Critico2(strError);
                     }
                 }
-                ActivarDesactivarBotonesGrabar(9, false);
+                //ActivarDesactivarBotonesGrabar(9, false);
             }
         );
 
     });
 }
 /* Sprint 6 - 20191204 - gcastro - */
-function ObtenerAntecedentesGestionResidencia(CodFicha) {
+function ObtenerAntecedentesGestionResidencia(CodFicha, CodEstadoFichaAUX) {
    
     $("#labelCaracteres_ObsGestionRes").html("");
     $.ajax({
@@ -211,6 +211,16 @@ function ObtenerAntecedentesGestionResidencia(CodFicha) {
 
                 document.getElementById("gestionResid_017_observaciones").value = this.Observaciones;
                 ContadorCaracter(document.getElementById("gestionResid_017_observaciones"), "labelCaracteres_ObsGestionRes");
+
+                if (CodEstadoFichaAUX == 0) {
+                    $("#Infraest_049_observaciones").val("");
+                    $("#seguridad_011_observaciones").val("");
+                    $("#salud_016_observaciones").val("");
+                    $("#educacion_011_observaciones").val("");
+                    $("#alimentacion_009_observacion").val("");
+                    $("#gestionResid_017_observaciones").val("");
+                } 
+
             }
         );
     });
@@ -596,7 +606,7 @@ function CargaParGestionResidencia() {
         "bPaginate": false
        
     });
-    document.getElementById("gestionResid_017_observaciones").disabled = false;
+  //  document.getElementById("gestionResid_017_observaciones").disabled = false;
 }
 
 function CargaParGestionResidencia_original() {

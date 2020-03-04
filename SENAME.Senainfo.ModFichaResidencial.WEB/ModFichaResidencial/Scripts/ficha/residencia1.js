@@ -6,6 +6,7 @@ var cabmodal = "SENAINFO ";
 var CodFicha = 0;
 var CodProyecto = 0;
 var IdUsuarioActualizacion;
+
 var conect = "";
 
 var generalresidencia = false;
@@ -711,55 +712,57 @@ function GrabarAntecedentes(opc) {
     var tipo_antecedentes = "";
     switch (opc) {
         case 1:
-            ActivarDesactivarBotonesGrabar(opc,true);
+            //ActivarDesactivarBotonesGrabar(opc,true);
             tipo_antecedentes = "LOS ANTECEDENTES GENERALES";
             GrabarAntecedentesGenerales();
             break;
         case 2:
-            ActivarDesactivarBotonesGrabar(opc, true);
+            //ActivarDesactivarBotonesGrabar(opc, true);
             tipo_antecedentes = "LOS ANTECEDENTES POBLACIÓN Y CAPACIDAD";
             GrabarAntecedentesPoblacionCapacidad();
             break;
         case 3:
-            ActivarDesactivarBotonesGrabar(opc, true);
+           // ActivarDesactivarBotonesGrabar(opc, true);
             tipo_antecedentes = "LOS ANTECEDENTES DOTACIÓN DE PERSONAL";
-            GrabarAntecedentesDotacionPersonal();
+            GrabarAntecedentesDotacionPersonalHAR();
+            //GrabarAntecedentesDotacionPersonal();
             break;
         case 4:
-            ActivarDesactivarBotonesGrabar(opc, true);
+            //ActivarDesactivarBotonesGrabar(opc, true);
             tipo_antecedentes = "LOS ANTECEDENTES RECURSOS MATERIALES, INFRAESTRUCTURA Y EQUIPAMIENTO";
             GrabarAntecedentesInfraestructura();
             break;
         case 5:
-            ActivarDesactivarBotonesGrabar(opc, true);
+           // ActivarDesactivarBotonesGrabar(opc, true);
             tipo_antecedentes = "LOS ANTECEDENTES SEGURIDAD";
             GrabarAntecedentesSeguridad();
             break;
         case 6:
-            ActivarDesactivarBotonesGrabar(opc, true);
+           // ActivarDesactivarBotonesGrabar(opc, true);
             tipo_antecedentes = "LOS ANTECEDENTES SALUD";
             GrabarAntecedentesSalud();
             break;
         case 7:
-            ActivarDesactivarBotonesGrabar(opc, true);
+           // ActivarDesactivarBotonesGrabar(opc, true);
             tipo_antecedentes = "LOS ANTECEDENTES EDUCACIÓN";
             GrabarAntecedentesEducacion();
             break;
         case 8:
-            ActivarDesactivarBotonesGrabar(opc, true);
+          //  ActivarDesactivarBotonesGrabar(opc, true);
             tipo_antecedentes = "LOS ANTECEDENTES ALIMENTACIÓN";
             GrabarAntecedentesAlimentacion();
             break;
         case 9:
-            ActivarDesactivarBotonesGrabar(opc, true);
+           // ActivarDesactivarBotonesGrabar(opc, true);
             tipo_antecedentes = "LOS ANTECEDENTES GESTIÓN DE RESIDENCIA";
             GrabarAntecedentesGestionResidencia();
             break;
+        // AQUIHAR
 
         case 0:
-            ActivarDesactivarBotonesGrabar(opc, true);
             MensajeWARNING2("¿Confirma el registro de toda la ficha residecial folio " + CodFicha + "?. Si acepta, la ficha indicada no podrá ser modificada.", "GrabarFichaCompleta();", "ActivarDesactivarBotonesGrabar(0, false);")
             tipo_antecedentes = "LA FICHA RESIDENCIAL COMPLETA";
+            ActivarDesactivarBotonesGrabar(opc, true);
             break;
     }
 }
@@ -768,6 +771,7 @@ function GrabarFechaAplicacionFicha() {
     if (CodFicha != "" && CodFicha != "0") {
        // FechaAplicacion = $('#fechaaplicacionRegistro').html();
         /* remplazado por  */
+
         var FechaAplicacion = $('#ifechaaplicacionRegistro').val().toString();
 
         FechaAplicacion = FechaAplicacion.substring(6, 10) + FechaAplicacion.substring(3, 5) + FechaAplicacion.substring(0, 2);
@@ -802,7 +806,10 @@ function GrabarFechaAplicacionFicha() {
         });
     }
 }
-function ObtenerFechaAplicacionFicha(CodFicha) {
+
+
+
+function ObtenerFechaAplicacionFicha(CodFicha, CodEstadoFichaAUX) {
 
     $.ajax({
         type: "POST",
@@ -842,6 +849,7 @@ function ObtenerFechaAplicacionFicha(CodFicha) {
                         }
                 }
             );
+
         }
         else {
 
@@ -905,6 +913,59 @@ function ActivarDesactivarBotonesGrabar(opc, bactivacion) {
             break;
     }
 }
+
+// INI CodigoHAR
+function ActivarDesactivarCamposInput(opc, bactivacion) {
+    switch (opc) {
+        //Antecedentes Generales
+        case 1:
+ 
+            break;
+        //Antecedentes de Población y Capacidad
+        case 2:
+
+            break;
+        //Antecedentes de Dotacion de Personal
+        case 3:
+            $("#dotacion_101_Observaciones").attr({ "disabled": bactivacion });
+            break;
+        //Antecedentes Infractuctura
+        case 4:
+            $("#Infraest_049_observaciones").attr({ "disabled": bactivacion });
+            break;
+        //Antecedentes Seguridad
+        case 5:
+            $("#seguridad_011_observaciones").attr({ "disabled": bactivacion });
+            break;
+        //Antecedentes de Salud
+        case 6:
+            $("#salud_016_observaciones").attr({ "disabled": bactivacion });
+            break;
+        //Antecedentes de Educación
+        case 7:
+            $("#educacion_011_observaciones").attr({ "disabled": bactivacion });
+            break;
+        //Antecedentes de Alimentación
+        case 8:
+            $("#alimentacion_009_observacion").attr({ "disabled": bactivacion });
+            break;
+        //Antecedentes de Gestión de Residencia
+        case 9:
+            $("#gestionResid_017_observaciones").attr({ "disabled": bactivacion });
+            break;
+        case 0:
+            $("#dotacion_101_Observaciones").attr({ "disabled": bactivacion }); //3
+            $("#Infraest_049_observaciones").attr({ "disabled": bactivacion }); //4
+            $("#seguridad_011_observaciones").attr({ "disabled": bactivacion }); //5
+            $("#salud_016_observaciones").attr({ "disabled": bactivacion }); //6
+            $("#educacion_011_observaciones").attr({ "disabled": bactivacion }); //7
+            $("#alimentacion_009_observacion").attr({ "disabled": bactivacion }); //8
+            $("#gestionResid_017_observaciones").attr({ "disabled": bactivacion }); //9
+            break;
+    }
+}
+// FIN CodigoHAR
+
 function ResetearFormulario() {
     CodFicha = 0;
     document.getElementById("folio_pendiente").innerHTML = "&nbsp;";
@@ -960,7 +1021,8 @@ function ResetearFormulario() {
     "totalNNAabandono_total",
     "totalNNA_suscep_adopcion_total",
     "totalNNA_enlace_adopcion_total",
-    "totalNNA_causaini_adopcion_total",
+        "totalNNA_causaini_adopcion_total",
+
     "totalNNA_adoslecente_chijo_total"
     ];
 
@@ -972,6 +1034,9 @@ function ResetearFormulario() {
     );
     //INDICADORES DE TEXTO POR ESCRIBIR EN CAMPO OBSERVACIONES
     $("#labelCaracteres_ObsDotacion").html("");
+
+
+
     $("#labelCaracteres_ObsInfra").html("");
     $("#labelCaracteres_ObsSeguridad").html("");
     $("#labelCaracteres_ObsSalud").html("");
@@ -1022,63 +1087,81 @@ function ResetearFormulario() {
     document.getElementById("poblacion_005_tipo_vulneracion_mas_frecuente").value = "";
     document.getElementById("poblacion_005_tipo_vulneracion_mas_frecuente").disabled = true; //deben habilitarse con la selección de codigo de proyecto
 
-    //Reseteamos TAB Antecedentes Dotación Personal
-    var arrVariablesDotacionPersonal = [
-        "dotacion_003_sel_director_tipo_jornada", "dotacion_007_sel_asistente_tipo_jornada", "dotacion_011_sel_psicologo_tipo_jornada", "dotacion_015_sel_enfermero_tipo_jornada", "dotacion_019_sel_auxenfermero_tipo_jornada",
-        "dotacion_023_sel_medico_tipo_jornada", "dotacion_027_sel_psiquiatra_tipo_jornada", "dotacion_031_sel_terapeuta_ocup_tipo_jornada", "dotacion_035_sel_kinesiologo_tipo_jornada", "dotacion_039_sel_nutricionista_tipo_jornada",
-        "dotacion_043_sel_fonoaudiologo_tipo_jornada", "dotacion_047_sel_profesorEducaFisica_tipo_jornada", "dotacion_051_sel_psicopedagogo_tipo_jornada", "dotacion_055_sel_educadoraParvulos_tipo_jornada", "dotacion_059_sel_educadoraTratoDirecto_tipo_jornada",
-        "dotacion_063_sel_manipuladorAlimentos_tipo_jornada", "dotacion_067_sel_apoyoAdministrativo_tipo_jornada", "dotacion_071_sel_personalAseo_tipo_jornada", "dotacion_075_sel_personalLavandería_tipo_joranada", "dotacion_079_sel_monitoresTalleristas_tipo_jornada",
-        "dotacion_083_sel_alumnosPractica_tipo_jornada", "dotacion_087_sel_apoyoVoluntario_tipo_jornada", "dotacion_091_sel_Otros_tipo_jornada", "dotacion_095_sel_PersonalLicenciaMedica_tipo_jornada", "dotacion_099_sel_PersonalLicenciaMedicaConSuplente_tipo_jornada"
-    ];
-    arrVariablesDotacionPersonal.forEach(
-        function (currentValue, index) {
-            document.getElementById(currentValue).selectedIndex = 0;
-            document.getElementById(currentValue).disabled = true;
-        }
-    );
-    var arrVariablesDotacionPersonal_2 = [
-        "dotacion_004_sel_director_horas_semanales","dotacion_008_sel_asistente_horas_semanales","dotacion_012_sel_psicologo_horas_semanales","dotacion_016_sel_enfermero_horas_semanales","dotacion_020_sel_auxenfermero_horas_semanales",
-        "dotacion_024_sel_medico_horas_semanales","dotacion_028_sel_psiquiatra_horas_semanales","dotacion_032_sel_terapeuta_ocup_horas_semanales","dotacion_036_sel_kinesiologo_horas_semanales","dotacion_040_sel_nutricionista_horas_semanales",
-        "dotacion_044_sel_fonoaudiologo_horas_semanales","dotacion_048_sel_profesorEducaFisica_horas_semanales","dotacion_052_sel_psicopedagogo_horas_semanales","dotacion_056_sel_educadoraParvulos_horas_semanales","dotacion_060_sel_educadoraTratoDirecto_horas_semanales",
-        "dotacion_064_sel_manipuladorAlimentos_horas_semanales","dotacion_068_sel_apoyoAdministrativo_horas_semanales","dotacion_072_sel_personalAseo_horas_semanales","dotacion_076_sel_personalLavandería_horas_semanales","dotacion_080_sel_monitoresTalleristas_horas_semanales",
-        "dotacion_084_sel_alumnosPractica_horas_semanales","dotacion_088_sel_apoyoVoluntario_horas_semanales","dotacion_092_sel_Otros_horas_semanales","dotacion_096_sel_PersonalLicenciaMedica_horas_semanales","dotacion_100_sel_PersonalLicenciaMedicaConSuplente_horas_semanales"
-    ];
-    arrVariablesDotacionPersonal_2.forEach(
-        function (currentValue, index) {
-            document.getElementById(currentValue).value = "0";
-            document.getElementById(currentValue).disabled = true;
-        }
-    );
-    var arrVariablesDotacionPersonal_3 = [
-        "dotacion_001_sel_director_existe", "dotacion_005_sel_asistente_existe", "dotacion_009_sel_psicologo_existe", "dotacion_013_sel_enfermero_existe", "dotacion_017_sel_auxenfermero_existe",
-        "dotacion_021_sel_medico_existe", "dotacion_025_sel_psiquiatra_existe", "dotacion_029_sel_terapeuta_ocup_existe", "dotacion_033_sel_kinesiologo_existe", "dotacion_037_sel_nutricionista_existe",
-        "dotacion_041_sel_fonoaudiologo_existe", "dotacion_045_sel_profesorEducaFisica_existe", "dotacion_049_sel_psicopedagogo_existe", "dotacion_053_sel_educadoraParvulos_existe", "dotacion_057_sel_educadoraTratoDirecto_existe",
-        "dotacion_061_sel_manipuladorAlimentos_existe", "dotacion_065_sel_apoyoAdministrativo_existe", "dotacion_069_sel_personalAseo_existe", "dotacion_073_sel_personalLavanderia_existe", "dotacion_077_sel_monitoresTalleristas_existe",
-        "dotacion_081_sel_alumnosPractica_existe", "dotacion_085_sel_apoyoVoluntario_existe", "dotacion_089_sel_Otros_existe", "dotacion_093_sel_PersonalLicenciaMedica_existe", "dotacion_097_sel_PersonalLicenciaMedicaConSuplente_existe"
-    ];
-    arrVariablesDotacionPersonal_3.forEach(
-        function (currentValue, index) {
-            /* Sprint 3 - 20191115 - gcastro  Se cambió -> document.getElementById(currentValue).selectedIndex = 2 por selectedIndex = 1;*/
-            document.getElementById(currentValue).selectedIndex = 1; 
-            document.getElementById(currentValue).disabled = true;
-        }
-    );
-    var arrVariablesDotacionPersonal_4 = [
-        "dotacion_002_sel_director_cantidad","dotacion_006_sel_asistente_cantidad","dotacion_010_sel_psicologo_cantidad","dotacion_014_sel_enfermero_cantidad","dotacion_018_sel_auxenfermero_cantidad",
-        "dotacion_022_sel_medico_cantidad","dotacion_026_sel_psiquiatra_cantidad","dotacion_030_sel_terapeuta_ocup_cantidad","dotacion_034_sel_kinesiologo_cantidad","dotacion_038_sel_nutricionista_cantidad",
-        "dotacion_042_sel_fonoaudiologo_cantidad","dotacion_046_sel_profesorEducaFisica_cantidad","dotacion_050_sel_psicopedagogo_cantidad","dotacion_054_sel_educadoraParvulos_cantidad","dotacion_058_sel_educadoraTratoDirecto_cantidad",
-        "dotacion_062_sel_manipuladorAlimentos_cantidad","dotacion_066_sel_apoyoAdministrativo_cantidad","dotacion_070_sel_personalAseo_cantidad","dotacion_074_sel_personalLavandería_cantidad","dotacion_078_sel_monitoresTalleristas_cantidad",
-        "dotacion_082_sel_alumnosPractica_cantidad","dotacion_086_sel_apoyoVoluntario_cantidad","dotacion_090_sel_Otros_cantidad","dotacion_094_sel_PersonalLicenciaMedica_cantidad","dotacion_098_sel_PersonalLicenciaMedicaConSuplente_cantidad"
-    ];
-    arrVariablesDotacionPersonal_4.forEach(
-        function (currentValue, index) {
-            //document.getElementById(currentValue).selectedIndex = 0;
-            $("#" + currentValue).val("");
-            document.getElementById(currentValue).disabled = true; //deben habilitarse con la selección de codigo de proyecto
-        }
-    );
-    document.getElementById("dotacion_101_Observaciones").value="";
+    ////Reseteamos TAB Antecedentes Dotación Personal
+
+    var table = $('#gridDotacion').DataTable();
+    var numeroDeFilas = table.data().length;
+
+    for (var i = 0; i < numeroDeFilas; i++) {
+            var data = table.row(i).data();
+            var x = String(data.Select_Profesion).split("<select id=IdProfesion_");
+            var IdProf = x[1].split(" ");
+            var IdProf2 = IdProf[0];
+
+            $("#IdCantidad_" + IdProf2).val("0");
+            $("#IdHorasSemanales_" + IdProf2).val("0");
+            $("#IdCodJornada_" + IdProf2).val(0);
+    }
+        document.getElementById("dotacion_101_Observaciones").value="";
     document.getElementById("dotacion_101_Observaciones").disabled = true; //deben habilitarse con la selección de codigo de proyecto
+
+    //var arrVariablesDotacionPersonal = [
+    //    "dotacion_003_sel_director_tipo_jornada", "dotacion_007_sel_asistente_tipo_jornada", "dotacion_011_sel_psicologo_tipo_jornada", "dotacion_015_sel_enfermero_tipo_jornada", "dotacion_019_sel_auxenfermero_tipo_jornada",
+    //    "dotacion_023_sel_medico_tipo_jornada", "dotacion_027_sel_psiquiatra_tipo_jornada", "dotacion_031_sel_terapeuta_ocup_tipo_jornada", "dotacion_035_sel_kinesiologo_tipo_jornada", "dotacion_039_sel_nutricionista_tipo_jornada",
+    //    "dotacion_043_sel_fonoaudiologo_tipo_jornada", "dotacion_047_sel_profesorEducaFisica_tipo_jornada", "dotacion_051_sel_psicopedagogo_tipo_jornada", "dotacion_055_sel_educadoraParvulos_tipo_jornada", "dotacion_059_sel_educadoraTratoDirecto_tipo_jornada",
+    //    "dotacion_063_sel_manipuladorAlimentos_tipo_jornada", "dotacion_067_sel_apoyoAdministrativo_tipo_jornada", "dotacion_071_sel_personalAseo_tipo_jornada", "dotacion_075_sel_personalLavandería_tipo_joranada", "dotacion_079_sel_monitoresTalleristas_tipo_jornada",
+    //    "dotacion_083_sel_alumnosPractica_tipo_jornada", "dotacion_087_sel_apoyoVoluntario_tipo_jornada", "dotacion_091_sel_Otros_tipo_jornada", "dotacion_095_sel_PersonalLicenciaMedica_tipo_jornada", "dotacion_099_sel_PersonalLicenciaMedicaConSuplente_tipo_jornada"
+    //];
+ 
+    //arrVariablesDotacionPersonal.forEach(
+    //    function (currentValue, index) {
+    //        document.getElementById(currentValue).selectedIndex = 0;
+    //        document.getElementById(currentValue).disabled = true;
+    //    }
+    //);
+    //var arrVariablesDotacionPersonal_2 = [
+    //    "dotacion_004_sel_director_horas_semanales","dotacion_008_sel_asistente_horas_semanales","dotacion_012_sel_psicologo_horas_semanales","dotacion_016_sel_enfermero_horas_semanales","dotacion_020_sel_auxenfermero_horas_semanales",
+    //    "dotacion_024_sel_medico_horas_semanales","dotacion_028_sel_psiquiatra_horas_semanales","dotacion_032_sel_terapeuta_ocup_horas_semanales","dotacion_036_sel_kinesiologo_horas_semanales","dotacion_040_sel_nutricionista_horas_semanales",
+    //    "dotacion_044_sel_fonoaudiologo_horas_semanales","dotacion_048_sel_profesorEducaFisica_horas_semanales","dotacion_052_sel_psicopedagogo_horas_semanales","dotacion_056_sel_educadoraParvulos_horas_semanales","dotacion_060_sel_educadoraTratoDirecto_horas_semanales",
+    //    "dotacion_064_sel_manipuladorAlimentos_horas_semanales","dotacion_068_sel_apoyoAdministrativo_horas_semanales","dotacion_072_sel_personalAseo_horas_semanales","dotacion_076_sel_personalLavandería_horas_semanales","dotacion_080_sel_monitoresTalleristas_horas_semanales",
+    //    "dotacion_084_sel_alumnosPractica_horas_semanales","dotacion_088_sel_apoyoVoluntario_horas_semanales","dotacion_092_sel_Otros_horas_semanales","dotacion_096_sel_PersonalLicenciaMedica_horas_semanales","dotacion_100_sel_PersonalLicenciaMedicaConSuplente_horas_semanales"
+    //];
+    //arrVariablesDotacionPersonal_2.forEach(
+    //    function (currentValue, index) {
+    //        document.getElementById(currentValue).value = "0";
+    //        document.getElementById(currentValue).disabled = true;
+    //    }
+    //);
+    //var arrVariablesDotacionPersonal_3 = [
+    //    "dotacion_001_sel_director_existe", "dotacion_005_sel_asistente_existe", "dotacion_009_sel_psicologo_existe", "dotacion_013_sel_enfermero_existe", "dotacion_017_sel_auxenfermero_existe",
+    //    "dotacion_021_sel_medico_existe", "dotacion_025_sel_psiquiatra_existe", "dotacion_029_sel_terapeuta_ocup_existe", "dotacion_033_sel_kinesiologo_existe", "dotacion_037_sel_nutricionista_existe",
+    //    "dotacion_041_sel_fonoaudiologo_existe", "dotacion_045_sel_profesorEducaFisica_existe", "dotacion_049_sel_psicopedagogo_existe", "dotacion_053_sel_educadoraParvulos_existe", "dotacion_057_sel_educadoraTratoDirecto_existe",
+    //    "dotacion_061_sel_manipuladorAlimentos_existe", "dotacion_065_sel_apoyoAdministrativo_existe", "dotacion_069_sel_personalAseo_existe", "dotacion_073_sel_personalLavanderia_existe", "dotacion_077_sel_monitoresTalleristas_existe",
+    //    "dotacion_081_sel_alumnosPractica_existe", "dotacion_085_sel_apoyoVoluntario_existe", "dotacion_089_sel_Otros_existe", "dotacion_093_sel_PersonalLicenciaMedica_existe", "dotacion_097_sel_PersonalLicenciaMedicaConSuplente_existe"
+    //];
+    //arrVariablesDotacionPersonal_3.forEach(
+    //    function (currentValue, index) {
+    //        /* Sprint 3 - 20191115 - gcastro  Se cambió -> document.getElementById(currentValue).selectedIndex = 2 por selectedIndex = 1;*/
+    //        document.getElementById(currentValue).selectedIndex = 1; 
+    //        document.getElementById(currentValue).disabled = true;
+    //    }
+    //);
+    //var arrVariablesDotacionPersonal_4 = [
+    //    "dotacion_002_sel_director_cantidad","dotacion_006_sel_asistente_cantidad","dotacion_010_sel_psicologo_cantidad","dotacion_014_sel_enfermero_cantidad","dotacion_018_sel_auxenfermero_cantidad",
+    //    "dotacion_022_sel_medico_cantidad","dotacion_026_sel_psiquiatra_cantidad","dotacion_030_sel_terapeuta_ocup_cantidad","dotacion_034_sel_kinesiologo_cantidad","dotacion_038_sel_nutricionista_cantidad",
+    //    "dotacion_042_sel_fonoaudiologo_cantidad","dotacion_046_sel_profesorEducaFisica_cantidad","dotacion_050_sel_psicopedagogo_cantidad","dotacion_054_sel_educadoraParvulos_cantidad","dotacion_058_sel_educadoraTratoDirecto_cantidad",
+    //    "dotacion_062_sel_manipuladorAlimentos_cantidad","dotacion_066_sel_apoyoAdministrativo_cantidad","dotacion_070_sel_personalAseo_cantidad","dotacion_074_sel_personalLavandería_cantidad","dotacion_078_sel_monitoresTalleristas_cantidad",
+    //    "dotacion_082_sel_alumnosPractica_cantidad","dotacion_086_sel_apoyoVoluntario_cantidad","dotacion_090_sel_Otros_cantidad","dotacion_094_sel_PersonalLicenciaMedica_cantidad","dotacion_098_sel_PersonalLicenciaMedicaConSuplente_cantidad"
+    //];
+    //arrVariablesDotacionPersonal_4.forEach(
+    //    function (currentValue, index) {
+    //        //document.getElementById(currentValue).selectedIndex = 0;
+    //        $("#" + currentValue).val("");
+    //        document.getElementById(currentValue).disabled = true; //deben habilitarse con la selección de codigo de proyecto
+    //    }
+    //);
+    //document.getElementById("dotacion_101_Observaciones").value="";
+    //document.getElementById("dotacion_101_Observaciones").disabled = true; //deben habilitarse con la selección de codigo de proyecto
 
     //Reseteamos TAB infraestructura
     var arrVariablesinfraestructura_1 = [
@@ -1114,7 +1197,8 @@ function ResetearFormulario() {
     arrVariablesinfraestructura_1.forEach(
         function (currentValue, index) {
             /* Sprint 3 - 2019-11-14 - gcastro - Se remplazó selectedIndex = 2 por selectedIndex = 0 */
-            document.getElementById(currentValue).selectedIndex = 0;
+            document.getElementById(currentValue).sele
+            ctedIndex = 0;
         }
     );
 
@@ -1676,6 +1760,7 @@ function ActivaCamposFichaResidenciaXProyecto(valueCbmProyecto) {
 
     ];
 
+ 
     if (valueCbmProyecto == "0") {
         arrCamposFichaResidencial.forEach(
             function (currentValue, index) {
@@ -1714,9 +1799,16 @@ $(document).ready(function () {
     CargaInicial();
 
     /*Carga inicial de tablas paramétricas*/
+    //CargaParDotacionPersonalV2();
+    //CargaParValoresDotacionPersonal();
+    //CargaParDotacionPersonalV2();
+
+
+    CargaParValores1HAR(0);
     CargaParValores1();
     CargaRangoEtareoAtencion1();
     CargaParInfraestructura();
+  
     CargaParSeguridad();
     CargaParSalud();
     CargaParAlimentacion();
@@ -1746,7 +1838,7 @@ $(window).on('beforeunload', function () {
 var dialogProgress;
 var bar;
 function GrabarFichaCompleta() {
-    var sinDat1 = "", sinDat2 = "",sinDat3 = "",sinDat4 = "";
+    var sinDat1 = "", sinDat2 = "", sinDat3 = "", sinDat4 = "";
     var sinDat5 = "", sinDat6 = "", sinDat7 = "", sinDat8 = "", sinDat9 = "";
     var sinDatT = "";
     var dataParametros1 = "", dataParametros2 = "", dataParametros3 = "", dataParametros4 = "", dataParametros5 = "", dataParametros6 = "", dataParametros7 = "", dataParametros8 = "", dataParametros9 = "";
@@ -1754,6 +1846,7 @@ function GrabarFichaCompleta() {
     CodProyecto = $("#general_001_sel_proyecto").val();
     var CodFicha_ = CodFicha;
     var CodEstadoFicha = 1;
+//}
     var bValidar = false;
 
     ////----------------------------------------------------------------
@@ -1835,7 +1928,8 @@ function GrabarFichaCompleta() {
     //VALIDACION DE CAMPOS ANTECEDENTES POBLACION Y CAPACIDAD
     if (SubvencionSename == "-1") { sinDat2 += "<br /> - Residencia con Subvención SENAME"; bValidar = true; }
     if (SexoAtiende == "0") { sinDat2 += "<br /> - Sexo que atiende la Residencia"; bValidar = true; }
-    if (RangoEtareo == "0") { sinDat2 += "<br /> - Rango etáreao de Atención"; bValidar = true; }
+    if (RangoEtareo == "0") {
+        sinDat2 += "<br /> - Rango etáreao de Atención"; bValidar = true; }
     if (PoblacionVigente == "0") { sinDat2 += "<br /> - Rango etáreao Predominante"; bValidar = true; }
     if (EliminaEspacios(TipoVulneracion) == "") { sinDat2 += "<br /> - Tipo de Vulneración más Frecuente"; bValidar = true; }
     if (ProgramaApadrinamiento == "-1") { sinDat2 += "<br /> - Programa de Apadrinamiento"; bValidar = true; }
@@ -1848,189 +1942,218 @@ function GrabarFichaCompleta() {
     ////----------------------------------------------------------------
     //PASO 1.3 RESCATO DATOS ANTECDENTES DOTACION PERSONAL Y VALIDO
     bValidar = false;
-    var CantidadDirector = $("#dotacion_002_sel_director_cantidad").val();
-    var CantidadAsistenteSocial= $("#dotacion_006_sel_asistente_cantidad").val();
-    var CantidadPsicologo= $("#dotacion_010_sel_psicologo_cantidad").val();
-    var CantidadEnfermero= $("#dotacion_014_sel_enfermero_cantidad").val();
-    var CantidadAuxiliarEnfermeria= $("#dotacion_018_sel_auxenfermero_cantidad").val();
-    var CantidadMedico= $("#dotacion_022_sel_medico_cantidad").val();
-    var CantidadPsiquiatra= $("#dotacion_026_sel_psiquiatra_cantidad").val();
-    var CantidadTerapeutaOcupacional= $("#dotacion_030_sel_terapeuta_ocup_cantidad").val();
-    var CantidadKinesiolgo= $("#dotacion_034_sel_kinesiologo_cantidad").val();
-    var CantidadNutricionista= $("#dotacion_038_sel_nutricionista_cantidad").val();
-    var CantidadFonoaudiologo= $("#dotacion_042_sel_fonoaudiologo_cantidad").val();
-    var CantidadProfEducFisica= $("#dotacion_046_sel_profesorEducaFisica_cantidad").val();
-    var CantidadPsicopedagogo= $("#dotacion_050_sel_psicopedagogo_cantidad").val();
-    var CantidadEducadoraParvulos= $("#dotacion_054_sel_educadoraParvulos_cantidad").val();
-    var CantidadEducadorTratoDirecto= $("#dotacion_058_sel_educadoraTratoDirecto_cantidad").val();
-    var CantidadManipuladorAlimentos= $("#dotacion_062_sel_manipuladorAlimentos_cantidad").val();
-    var CantidadApoyoAdm= $("#dotacion_066_sel_apoyoAdministrativo_cantidad").val();
-    var CantidadPersonalAseo= $("#dotacion_070_sel_personalAseo_cantidad").val();
-    var CantidadPersonalLavanderia= $("#dotacion_074_sel_personalLavandería_cantidad").val();
-    var CantidadMonitoresTalleristas= $("#dotacion_078_sel_monitoresTalleristas_cantidad").val();
-    var CantidadAlumnosPractica= $("#dotacion_082_sel_alumnosPractica_cantidad").val();
-    var CantidadApoyoVoluntario= $("#dotacion_086_sel_apoyoVoluntario_cantidad").val();
-    var CantidadOtros= $("#dotacion_090_sel_Otros_cantidad").val();
-    var CantidadLicencia= $("#dotacion_094_sel_PersonalLicenciaMedica_cantidad").val();
-    var CantidadSuplenteLicencia= $("#dotacion_098_sel_PersonalLicenciaMedicaConSuplente_cantidad").val();
 
-    //tipo_jornada: 25
-    var CodJornadaDirector= $("#dotacion_003_sel_director_tipo_jornada").val();
-    var CodJornadaAsistenteSocial= $("#dotacion_007_sel_asistente_tipo_jornada").val();
-    var CodJornadaPsicologo = $("#dotacion_011_sel_psicologo_tipo_jornada").val();
-    var CodJornadaEnfermero= $("#dotacion_015_sel_enfermero_tipo_jornada").val();
-    var CodJornadaAuxiliarEnfermeria= $("#dotacion_019_sel_auxenfermero_tipo_jornada").val();
-    var CodJornadaMedico= $("#dotacion_023_sel_medico_tipo_jornada").val();
-    var CodJornadaPsiquiatra= $("#dotacion_027_sel_psiquiatra_tipo_jornada").val();
-    var CodJornadaTerapeutaOcupacional= $("#dotacion_031_sel_terapeuta_ocup_tipo_jornada").val();
-    var CodJornadaKinesiologo= $("#dotacion_035_sel_kinesiologo_tipo_jornada").val();
-    var CodJornadaNutricionista= $("#dotacion_039_sel_nutricionista_tipo_jornada").val();
-    var CodJornadaFonoaudiologo= $("#dotacion_043_sel_fonoaudiologo_tipo_jornada").val();
-    var CodJornadaProfEducFisica= $("#dotacion_047_sel_profesorEducaFisica_tipo_jornada").val();
-    var CodJornadaPsicopedagogo= $("#dotacion_051_sel_psicopedagogo_tipo_jornada").val();
-    var CodJornadaEducadoraParvulos= $("#dotacion_055_sel_educadoraParvulos_tipo_jornada").val();
-    var CodJornadaEducadorTratoDirecto= $("#dotacion_059_sel_educadoraTratoDirecto_tipo_jornada").val();
-    var CodJornadaManipuladorAlimentos= $("#dotacion_063_sel_manipuladorAlimentos_tipo_jornada").val();
-    var CodJornadaApoyoAdm= $("#dotacion_067_sel_apoyoAdministrativo_tipo_jornada").val();
-    var CodJornadaPersonalAseo= $("#dotacion_071_sel_personalAseo_tipo_jornada").val();
-    var CodJornadaPersonalLavanderia= $("#dotacion_075_sel_personalLavandería_tipo_joranada").val();
-    var CodJornadaMonitoresTalleristas= $("#dotacion_079_sel_monitoresTalleristas_tipo_jornada").val();
-    var CodJornadaAlumnosPractica= $("#dotacion_083_sel_alumnosPractica_tipo_jornada").val();
-    var CodJornadaApoyoVoluntario= $("#dotacion_087_sel_apoyoVoluntario_tipo_jornada").val();
-    var CodJornadaOtros= $("#dotacion_091_sel_Otros_tipo_jornada").val();
-    var CodJornadaLicencia= $("#dotacion_095_sel_PersonalLicenciaMedica_tipo_jornada").val();
-    var CodJornadaSuplenteLicencia= $("#dotacion_099_sel_PersonalLicenciaMedicaConSuplente_tipo_jornada").val();
+    var table = $('#gridDotacion').DataTable();
+    var numeroDeFilas = table.data().length;
 
-    //horas_semanales: 25
-    var HorasSemDirector= $("#dotacion_004_sel_director_horas_semanales").val();
-    var HorasSemAsistenteSocial = $("#dotacion_008_sel_asistente_horas_semanales").val();
-    var HorasSemPsicologo= $("#dotacion_012_sel_psicologo_horas_semanales").val();
-    var HorasSemEnfermero= $("#dotacion_016_sel_enfermero_horas_semanales").val();
-    var HorasSemAuxiliarEnfermeria= $("#dotacion_020_sel_auxenfermero_horas_semanales").val();
-    var HorasSemMedico= $("#dotacion_024_sel_medico_horas_semanales").val();
-    var HorasSemPsiquiatra= $("#dotacion_028_sel_psiquiatra_horas_semanales").val();
-    var HorasSemTerapeutaOcupacional= $("#dotacion_032_sel_terapeuta_ocup_horas_semanales").val();
-    var HorasSemKinesiologo= $("#dotacion_036_sel_kinesiologo_horas_semanales").val();
-    var HorasSemNutricionista= $("#dotacion_040_sel_nutricionista_horas_semanales").val();
-    var HorasSemFonoaudiolgo= $("#dotacion_044_sel_fonoaudiologo_horas_semanales").val();
-    var HorasSemProfEducFisica= $("#dotacion_048_sel_profesorEducaFisica_horas_semanales").val();
-    var HorasSemPsicopedagogo= $("#dotacion_052_sel_psicopedagogo_horas_semanales").val();
-    var HorasSemEducadoraParvulos= $("#dotacion_056_sel_educadoraParvulos_horas_semanales").val();
-    var HorasSemEducadorTratoDirecto= $("#dotacion_060_sel_educadoraTratoDirecto_horas_semanales").val();
-    var HorasSemManipuladorAlimentos= $("#dotacion_064_sel_manipuladorAlimentos_horas_semanales").val();
-    var HorasSemApoyoAdm= $("#dotacion_068_sel_apoyoAdministrativo_horas_semanales").val();
-    var HorasSemPersonalAseo= $("#dotacion_072_sel_personalAseo_horas_semanales").val();
-    var HorasSemPersonalLavanderia= $("#dotacion_076_sel_personalLavandería_horas_semanales").val();
-    var HorasSemMonitoresTalleristas= $("#dotacion_080_sel_monitoresTalleristas_horas_semanales").val();
-    var HorasSemAlumnosPractica= $("#dotacion_084_sel_alumnosPractica_horas_semanales").val();
-    var HorasSemApoyoVoluntario= $("#dotacion_088_sel_apoyoVoluntario_horas_semanales").val();
-    var HorasSemOtros= $("#dotacion_092_sel_Otros_horas_semanales").val();
-    var HorasSemLicencia= $("#dotacion_096_sel_PersonalLicenciaMedica_horas_semanales").val();
-    var HorasSemSuplenteLicencia= $("#dotacion_100_sel_PersonalLicenciaMedicaConSuplente_horas_semanales").val();
-    var ObservacionesDotacion = replaceAll(EliminaEspacios(document.getElementById("dotacion_101_Observaciones").value),"'","");
+    for (var i = 0; i < numeroDeFilas; i++) {
+        var data = table.row(i).data();
+        var x_ = String(data.Select_Profesion).split("<select id=IdProfesion_");
 
-    //VALIDACION DE CAMPOS ANTECEDENTES DOTACION PERSONAL
-    if (CantidadDirector != "0") {
-        if (CodJornadaDirector == "0") { sinDat3 += "<br /> - Tipo jornada director"; bValidar = true; }
-        if (HorasSemDirector == "0" || HorasSemDirector == "") { sinDat3 += "<br /> - Horas semanales director"; bValidar = true; }
+        var IdProf_ = x_[1].split(" ");
+        var ValorCant_ = $("#IdCantidad_" + IdProf_[0]).val();
+        var ValorHorasSemanales_ = $("#IdHorasSemanales_" + IdProf_[0]).val();
+        var ValorJornada_ = $("#IdCodJornada_" + IdProf_[0]).val();
+
+        if (ValorCant_ == "") {
+            ValorCant_ = 0;
+        }
+        if (ValorHorasSemanales_ == "") {
+            ValorHorasSemanales_ = 0;
+        }
+        if (ValorCant_ != "0") {
+            if (ValorJornada_ == "0") { sinDat3 += "<br /> - Tipo " + data.D_Descripcion; bValidar = true; }
+            if (ValorHorasSemanales_ == "0" || ValorHorasSemanales_ == "") { sinDat3 += "<br /> - Horas semanales " + data.D_Descripcion; bValidar = true; }
+
+        }
     }
-    if (CantidadAsistenteSocial != "0") {
-        if (CodJornadaAsistenteSocial == "0") { sinDat3 += "<br /> - Tipo jornada asistente social"; bValidar = true; }
-        if (HorasSemAsistenteSocial == "0" || HorasSemAsistenteSocial == "") { sinDat3 += "<br /> - Horas semanales asistente social"; bValidar = true; }
-    }
-    if (CantidadPsicologo != "0") {
-        if (CodJornadaPsicologo == "0") { sinDat3 += "<br /> - Tipo jornada psicologo"; bValidar = true; }
-        if (HorasSemPsicologo == "0" || HorasSemPsicologo == "") { sinDat3 += "<br /> - Horas semanales psicologo"; bValidar = true; }
-    }
-    if (CantidadEnfermero != "0") {
-        if (CodJornadaEnfermero == "0") { sinDat3 += "<br /> - Tipo jornada enfermero"; bValidar = true; }
-        if (HorasSemEnfermero == "0" || HorasSemEnfermero == "") { sinDat3 += "<br /> - Horas semanales enfermero"; bValidar = true; }
-    }
-    if (CantidadAuxiliarEnfermeria != "0") {
-        if (CodJornadaAuxiliarEnfermeria == "0") { sinDat3 += "<br /> - Tipo jornada auxiliar enfermeria"; bValidar = true; }
-        if (HorasSemAuxiliarEnfermeria == "0" || HorasSemAuxiliarEnfermeria == "") { sinDat3 += "<br /> - Horas semanales auxiliar enfermeria"; bValidar = true; }
-    }
-    if (CantidadMedico != "0") {
-        if (CodJornadaMedico == "0") { sinDat3 += "<br /> - Tipo jornada médico"; bValidar = true; }
-        if (HorasSemMedico == "0" || HorasSemMedico == "") { sinDat3 += "<br /> - Horas semanales médico"; bValidar = true; }
-    }
-    if (CantidadPsiquiatra != "0") {
-        if (CodJornadaPsiquiatra == "0") { sinDat3 += "<br /> - Tipo jornada psiquiatra"; bValidar = true; }
-        if (HorasSemPsiquiatra == "0" || HorasSemPsiquiatra == "") { sinDat3 += "<br /> - Horas semanales psiquiatra"; bValidar = true; }
-    }
-    if (CantidadTerapeutaOcupacional != "0") {
-        if (CodJornadaTerapeutaOcupacional == "0") { sinDat3 += "<br /> - Tipo jornada terapeuta ocupacional"; bValidar = true; }
-        if (HorasSemTerapeutaOcupacional == "0" || HorasSemTerapeutaOcupacional == "") { sinDat3 += "<br /> - Horas semanales terapeuta ocupacional"; bValidar = true; }
-    }
-    if (CantidadKinesiolgo != "0") {
-        if (CodJornadaKinesiologo == "0") { sinDat3 += "<br /> - Tipo jornada kinesiolgo"; bValidar = true; }
-        if (HorasSemKinesiologo == "0" || HorasSemKinesiologo == "") { sinDat3 += "<br /> - Horas semanales kinesiolgo"; bValidar = true; }
-    }
-    if (CantidadNutricionista != "0") {
-        if (CodJornadaNutricionista == "0") { sinDat3 += "<br /> - Tipo jornada nutricionista"; bValidar = true; }
-        if (HorasSemNutricionista == "0" || HorasSemNutricionista == "") { sinDat3 += "<br /> - Horas semanales nutricionista"; bValidar = true; }
-    }
-    if (CantidadFonoaudiologo != "0") {
-        if (CodJornadaFonoaudiologo == "0") { sinDat3 += "<br /> - Tipo jornada fonoaudiologo"; bValidar = true; }
-        if (HorasSemFonoaudiolgo == "0" || HorasSemFonoaudiolgo == "") { sinDat3 += "<br /> - Horas semanales fonoaudiologo"; bValidar = true; }
-    }
-    if (CantidadProfEducFisica != "0") {
-        if (CodJornadaProfEducFisica == "0") { sinDat3 += "<br /> - Tipo jornada profesor(a) de educación física"; bValidar = true; }
-        if (HorasSemProfEducFisica == "0" || HorasSemProfEducFisica == "") { sinDat3 += "<br /> - Horas semanales profesor(a) de educación física"; bValidar = true; }
-    }
-    if (CantidadPsicopedagogo != "0") {
-        if (CodJornadaPsicopedagogo == "0") { sinDat3 += "<br /> - Tipo jornada psicopedagogo"; bValidar = true; }
-        if (HorasSemPsicopedagogo == "0" || HorasSemPsicopedagogo == "") { sinDat3 += "<br /> - Horas semanales psicopedagogo"; bValidar = true; }
-    }
-    if (CantidadEducadoraParvulos != "0") {
-        if (CodJornadaEducadoraParvulos == "0") { sinDat3 += "<br /> - Tipo jornada educador(a) párvulos"; bValidar = true; }
-        if (HorasSemEducadoraParvulos == "0" || HorasSemEducadoraParvulos == "") { sinDat3 += "<br /> - Horas semanales educador(a) párvulos"; bValidar = true; }
-    }
-    if (CantidadEducadorTratoDirecto != "0") {
-        if (CodJornadaEducadorTratoDirecto == "0") { sinDat3 += "<br /> - Tipo jornada educador trato directo"; bValidar = true; }
-        if (HorasSemEducadorTratoDirecto == "0" || HorasSemEducadorTratoDirecto == "") { sinDat3 += "<br /> - Horas semanales educador trato directo"; bValidar = true; }
-    }
-    if (CantidadManipuladorAlimentos != "0") {
-        if (CodJornadaManipuladorAlimentos == "0") { sinDat3 += "<br /> - Tipo jornada manipulador de alimentos"; bValidar = true; }
-        if (HorasSemManipuladorAlimentos == "0" || HorasSemManipuladorAlimentos == "") { sinDat3 += "<br /> - Horas semanales manipulador de alimentos"; bValidar = true; }
-    }
-    if (CantidadApoyoAdm != "0") {
-        if (CodJornadaApoyoAdm == "0") { sinDat3 += "<br /> - Tipo jornada apoyo administrativo"; bValidar = true; }
-        if (HorasSemApoyoAdm == "0" || HorasSemApoyoAdm == "") { sinDat3 += "<br /> - Horas semanales apoyo administrativo"; bValidar = true; }
-    }
-    if (CantidadPersonalAseo != "0") {
-        if (CodJornadaPersonalAseo == "0") { sinDat3 += "<br /> - Tipo jornada personal de aseo"; bValidar = true; }
-        if (HorasSemPersonalAseo == "0" || HorasSemPersonalAseo == "") { sinDat3 += "<br /> - Horas semanales personal de aseo"; bValidar = true; }
-    }
-    if (CantidadPersonalLavanderia != "0") {
-        if (CodJornadaPersonalLavanderia == "0") { sinDat3 += "<br /> - Tipo jornada personal de lavanderia"; bValidar = true; }
-        if (HorasSemPersonalLavanderia == "0" || HorasSemPersonalLavanderia == "") { sinDat3 += "<br /> - Horas semanales personal de lavanderia"; bValidar = true; }
-    }
-    if (CantidadMonitoresTalleristas != "0") {
-        if (CodJornadaMonitoresTalleristas == "0") { sinDat3 += "<br /> - Tipo jornadaMonitores Talleristas"; bValidar = true; }
-        if (HorasSemMonitoresTalleristas == "0" || HorasSemMonitoresTalleristas == "") { sinDat3 += "<br /> - Horas semanales monitores talleristas"; bValidar = true; }
-    }
-    if (CantidadAlumnosPractica != "0") {
-        if (CodJornadaAlumnosPractica == "0") { sinDat3 += "<br /> - Tipo jornada alumnos en práctica"; bValidar = true; }
-        if (HorasSemAlumnosPractica == "0" || HorasSemAlumnosPractica == "") { sinDat3 += "<br /> -Horas semanales alumnos en práctica"; bValidar = true; }
-    }
-    if (CantidadApoyoVoluntario != "0") {
-        if (CodJornadaApoyoVoluntario == "0") { sinDat3 += "<br /> - Tipo jornada apoyo voluntario"; bValidar = true; }
-        if (HorasSemApoyoVoluntario == "0" || HorasSemApoyoVoluntario == "") { sinDat3 += "<br /> - Horas semanales apoyo voluntario"; bValidar = true; }
-    }
-    if (CantidadOtros != "0") {
-        if (CodJornadaOtros == "0") { sinDat3 += "<br /> - Tipo jornada otros"; bValidar = true; }
-        if (HorasSemOtros == "0" || HorasSemOtros == "") { sinDat3 += "<br /> - Horas semanales otros"; bValidar = true; }
-    }
-    if (CantidadLicencia != "0") {
-        if (CodJornadaLicencia == "0") { sinDat3 += "<br /> - Tipo jornada personal con licencia médica"; bValidar = true; }
-        if (HorasSemLicencia == "0" || HorasSemLicencia == "") { sinDat3 += "<br /> - Horas semanales personal con licencia médica"; bValidar = true; }
-    }
-    if (CantidadSuplenteLicencia != "0") {
-        if (CodJornadaSuplenteLicencia == "0") { sinDat3 += "<br /> - Tipo jornada personal con licencia (con suplente)"; bValidar = true; }
-        if (HorasSemSuplenteLicencia == "0" || HorasSemSuplenteLicencia == "") { sinDat3 += "<br /> - Horas semanales personal con licencia (con suplente)"; bValidar = true; }
-    }
+
+    var ObservacionesDotacion = replaceAll(EliminaEspacios(document.getElementById("dotacion_101_Observaciones").value), "'", "");
     if (ObservacionesDotacion == "") { sinDat3 += "<br /> - Observaciones de dotación de personal"; bValidar = true; }
+
+    //var CantidadDirector = $("#dotacion_002_sel_director_cantidad").val();
+    //var CantidadAsistenteSocial= $("#dotacion_006_sel_asistente_cantidad").val();
+    //var CantidadPsicologo= $("#dotacion_010_sel_psicologo_cantidad").val();
+    //var CantidadEnfermero= $("#dotacion_014_sel_enfermero_cantidad").val();
+    //var CantidadAuxiliarEnfermeria= $("#dotacion_018_sel_auxenfermero_cantidad").val();
+    //var CantidadMedico= $("#dotacion_022_sel_medico_cantidad").val();
+    //var CantidadPsiquiatra= $("#dotacion_026_sel_psiquiatra_cantidad").val();
+    //var CantidadTerapeutaOcupacional= $("#dotacion_030_sel_terapeuta_ocup_cantidad").val();
+    //var CantidadKinesiolgo= $("#dotacion_034_sel_kinesiologo_cantidad").val();
+    //var CantidadNutricionista= $("#dotacion_038_sel_nutricionista_cantidad").val();
+    //var CantidadFonoaudiologo= $("#dotacion_042_sel_fonoaudiologo_cantidad").val();
+    //var CantidadProfEducFisica= $("#dotacion_046_sel_profesorEducaFisica_cantidad").val();
+    //var CantidadPsicopedagogo= $("#dotacion_050_sel_psicopedagogo_cantidad").val();
+    //var CantidadEducadoraParvulos= $("#dotacion_054_sel_educadoraParvulos_cantidad").val();
+    //var CantidadEducadorTratoDirecto= $("#dotacion_058_sel_educadoraTratoDirecto_cantidad").val();
+    //var CantidadManipuladorAlimentos= $("#dotacion_062_sel_manipuladorAlimentos_cantidad").val();
+    //var CantidadApoyoAdm= $("#dotacion_066_sel_apoyoAdministrativo_cantidad").val();
+    //var CantidadPersonalAseo= $("#dotacion_070_sel_personalAseo_cantidad").val();
+    //var CantidadPersonalLavanderia= $("#dotacion_074_sel_personalLavandería_cantidad").val();
+    //var CantidadMonitoresTalleristas= $("#dotacion_078_sel_monitoresTalleristas_cantidad").val();
+    //var CantidadAlumnosPractica= $("#dotacion_082_sel_alumnosPractica_cantidad").val();
+    //var CantidadApoyoVoluntario= $("#dotacion_086_sel_apoyoVoluntario_cantidad").val();
+    //var CantidadOtros= $("#dotacion_090_sel_Otros_cantidad").val();
+    //var CantidadLicencia= $("#dotacion_094_sel_PersonalLicenciaMedica_cantidad").val();
+    //var CantidadSuplenteLicencia= $("#dotacion_098_sel_PersonalLicenciaMedicaConSuplente_cantidad").val();
+
+    ////tipo_jornada: 25
+    //var CodJornadaDirector= $("#dotacion_003_sel_director_tipo_jornada").val();
+    //var CodJornadaAsistenteSocial= $("#dotacion_007_sel_asistente_tipo_jornada").val();
+    //var CodJornadaPsicologo = $("#dotacion_011_sel_psicologo_tipo_jornada").val();
+    //var CodJornadaEnfermero= $("#dotacion_015_sel_enfermero_tipo_jornada").val();
+    //var CodJornadaAuxiliarEnfermeria= $("#dotacion_019_sel_auxenfermero_tipo_jornada").val();
+    //var CodJornadaMedico= $("#dotacion_023_sel_medico_tipo_jornada").val();
+    //var CodJornadaPsiquiatra= $("#dotacion_027_sel_psiquiatra_tipo_jornada").val();
+    //var CodJornadaTerapeutaOcupacional= $("#dotacion_031_sel_terapeuta_ocup_tipo_jornada").val();
+    //var CodJornadaKinesiologo= $("#dotacion_035_sel_kinesiologo_tipo_jornada").val();
+    //var CodJornadaNutricionista= $("#dotacion_039_sel_nutricionista_tipo_jornada").val();
+    //var CodJornadaFonoaudiologo= $("#dotacion_043_sel_fonoaudiologo_tipo_jornada").val();
+    //var CodJornadaProfEducFisica= $("#dotacion_047_sel_profesorEducaFisica_tipo_jornada").val();
+    //var CodJornadaPsicopedagogo= $("#dotacion_051_sel_psicopedagogo_tipo_jornada").val();
+    //var CodJornadaEducadoraParvulos= $("#dotacion_055_sel_educadoraParvulos_tipo_jornada").val();
+    //var CodJornadaEducadorTratoDirecto= $("#dotacion_059_sel_educadoraTratoDirecto_tipo_jornada").val();
+    //var CodJornadaManipuladorAlimentos= $("#dotacion_063_sel_manipuladorAlimentos_tipo_jornada").val();
+    //var CodJornadaApoyoAdm= $("#dotacion_067_sel_apoyoAdministrativo_tipo_jornada").val();
+    //var CodJornadaPersonalAseo= $("#dotacion_071_sel_personalAseo_tipo_jornada").val();
+    //var CodJornadaPersonalLavanderia= $("#dotacion_075_sel_personalLavandería_tipo_joranada").val();
+    //var CodJornadaMonitoresTalleristas= $("#dotacion_079_sel_monitoresTalleristas_tipo_jornada").val();
+    //var CodJornadaAlumnosPractica= $("#dotacion_083_sel_alumnosPractica_tipo_jornada").val();
+    //var CodJornadaApoyoVoluntario= $("#dotacion_087_sel_apoyoVoluntario_tipo_jornada").val();
+    //var CodJornadaOtros= $("#dotacion_091_sel_Otros_tipo_jornada").val();
+    //var CodJornadaLicencia= $("#dotacion_095_sel_PersonalLicenciaMedica_tipo_jornada").val();
+    //var CodJornadaSuplenteLicencia= $("#dotacion_099_sel_PersonalLicenciaMedicaConSuplente_tipo_jornada").val();
+
+    ////horas_semanales: 25
+    //var HorasSemDirector= $("#dotacion_004_sel_director_horas_semanales").val();
+    //var HorasSemAsistenteSocial = $("#dotacion_008_sel_asistente_horas_semanales").val();
+    //var HorasSemPsicologo= $("#dotacion_012_sel_psicologo_horas_semanales").val();
+    //var HorasSemEnfermero= $("#dotacion_016_sel_enfermero_horas_semanales").val();
+    //var HorasSemAuxiliarEnfermeria= $("#dotacion_020_sel_auxenfermero_horas_semanales").val();
+    //var HorasSemMedico= $("#dotacion_024_sel_medico_horas_semanales").val();
+    //var HorasSemPsiquiatra= $("#dotacion_028_sel_psiquiatra_horas_semanales").val();
+    //var HorasSemTerapeutaOcupacional= $("#dotacion_032_sel_terapeuta_ocup_horas_semanales").val();
+    //var HorasSemKinesiologo= $("#dotacion_036_sel_kinesiologo_horas_semanales").val();
+    //var HorasSemNutricionista= $("#dotacion_040_sel_nutricionista_horas_semanales").val();
+    //var HorasSemFonoaudiolgo= $("#dotacion_044_sel_fonoaudiologo_horas_semanales").val();
+    //var HorasSemProfEducFisica= $("#dotacion_048_sel_profesorEducaFisica_horas_semanales").val();
+    //var HorasSemPsicopedagogo= $("#dotacion_052_sel_psicopedagogo_horas_semanales").val();
+    //var HorasSemEducadoraParvulos= $("#dotacion_056_sel_educadoraParvulos_horas_semanales").val();
+    //var HorasSemEducadorTratoDirecto= $("#dotacion_060_sel_educadoraTratoDirecto_horas_semanales").val();
+    //var HorasSemManipuladorAlimentos= $("#dotacion_064_sel_manipuladorAlimentos_horas_semanales").val();
+    //var HorasSemApoyoAdm= $("#dotacion_068_sel_apoyoAdministrativo_horas_semanales").val();
+    //var HorasSemPersonalAseo= $("#dotacion_072_sel_personalAseo_horas_semanales").val();
+    //var HorasSemPersonalLavanderia= $("#dotacion_076_sel_personalLavandería_horas_semanales").val();
+    //var HorasSemMonitoresTalleristas= $("#dotacion_080_sel_monitoresTalleristas_horas_semanales").val();
+    //var HorasSemAlumnosPractica= $("#dotacion_084_sel_alumnosPractica_horas_semanales").val();
+    //var HorasSemApoyoVoluntario= $("#dotacion_088_sel_apoyoVoluntario_horas_semanales").val();
+    //var HorasSemOtros= $("#dotacion_092_sel_Otros_horas_semanales").val();
+    //var HorasSemLicencia= $("#dotacion_096_sel_PersonalLicenciaMedica_horas_semanales").val();
+    //var HorasSemSuplenteLicencia= $("#dotacion_100_sel_PersonalLicenciaMedicaConSuplente_horas_semanales").val();
+    //var ObservacionesDotacion = replaceAll(EliminaEspacios(document.getElementById("dotacion_101_Observaciones").value),"'","");
+
+    ////VALIDACION DE CAMPOS ANTECEDENTES DOTACION PERSONAL
+    //if (CantidadDirector != "0") {
+    //    if (CodJornadaDirector == "0") { sinDat3 += "<br /> - Tipo jornada director"; bValidar = true; }
+    //    if (HorasSemDirector == "0" || HorasSemDirector == "") { sinDat3 += "<br /> - Horas semanales director"; bValidar = true; }
+    //}
+    //if (CantidadAsistenteSocial != "0") {
+    //    if (CodJornadaAsistenteSocial == "0") { sinDat3 += "<br /> - Tipo jornada asistente social"; bValidar = true; }
+    //    if (HorasSemAsistenteSocial == "0" || HorasSemAsistenteSocial == "") { sinDat3 += "<br /> - Horas semanales asistente social"; bValidar = true; }
+    //}
+    //if (CantidadPsicologo != "0") {
+    //    if (CodJornadaPsicologo == "0") { sinDat3 += "<br /> - Tipo jornada psicologo"; bValidar = true; }
+    //    if (HorasSemPsicologo == "0" || HorasSemPsicologo == "") { sinDat3 += "<br /> - Horas semanales psicologo"; bValidar = true; }
+    //}
+    //if (CantidadEnfermero != "0") {
+    //    if (CodJornadaEnfermero == "0") { sinDat3 += "<br /> - Tipo jornada enfermero"; bValidar = true; }
+    //    if (HorasSemEnfermero == "0" || HorasSemEnfermero == "") { sinDat3 += "<br /> - Horas semanales enfermero"; bValidar = true; }
+    //}
+    //if (CantidadAuxiliarEnfermeria != "0") {
+    //    if (CodJornadaAuxiliarEnfermeria == "0") { sinDat3 += "<br /> - Tipo jornada auxiliar enfermeria"; bValidar = true; }
+    //    if (HorasSemAuxiliarEnfermeria == "0" || HorasSemAuxiliarEnfermeria == "") { sinDat3 += "<br /> - Horas semanales auxiliar enfermeria"; bValidar = true; }
+    //}
+    //if (CantidadMedico != "0") {
+    //    if (CodJornadaMedico == "0") { sinDat3 += "<br /> - Tipo jornada médico"; bValidar = true; }
+    //    if (HorasSemMedico == "0" || HorasSemMedico == "") { sinDat3 += "<br /> - Horas semanales médico"; bValidar = true; }
+    //}
+    //if (CantidadPsiquiatra != "0") {
+    //    if (CodJornadaPsiquiatra == "0") { sinDat3 += "<br /> - Tipo jornada psiquiatra"; bValidar = true; }
+    //    if (HorasSemPsiquiatra == "0" || HorasSemPsiquiatra == "") { sinDat3 += "<br /> - Horas semanales psiquiatra"; bValidar = true; }
+    //}
+    //if (CantidadTerapeutaOcupacional != "0") {
+    //    if (CodJornadaTerapeutaOcupacional == "0") { sinDat3 += "<br /> - Tipo jornada terapeuta ocupacional"; bValidar = true; }
+    //    if (HorasSemTerapeutaOcupacional == "0" || HorasSemTerapeutaOcupacional == "") { sinDat3 += "<br /> - Horas semanales terapeuta ocupacional"; bValidar = true; }
+    //}
+    //if (CantidadKinesiolgo != "0") {
+    //    if (CodJornadaKinesiologo == "0") { sinDat3 += "<br /> - Tipo jornada kinesiolgo"; bValidar = true; }
+    //    if (HorasSemKinesiologo == "0" || HorasSemKinesiologo == "") { sinDat3 += "<br /> - Horas semanales kinesiolgo"; bValidar = true; }
+    //}
+    //if (CantidadNutricionista != "0") {
+    //    if (CodJornadaNutricionista == "0") { sinDat3 += "<br /> - Tipo jornada nutricionista"; bValidar = true; }
+    //    if (HorasSemNutricionista == "0" || HorasSemNutricionista == "") { sinDat3 += "<br /> - Horas semanales nutricionista"; bValidar = true; }
+    //}
+    //if (CantidadFonoaudiologo != "0") {
+    //    if (CodJornadaFonoaudiologo == "0") { sinDat3 += "<br /> - Tipo jornada fonoaudiologo"; bValidar = true; }
+    //    if (HorasSemFonoaudiolgo == "0" || HorasSemFonoaudiolgo == "") { sinDat3 += "<br /> - Horas semanales fonoaudiologo"; bValidar = true; }
+    //}
+    //if (CantidadProfEducFisica != "0") {
+    //    if (CodJornadaProfEducFisica == "0") { sinDat3 += "<br /> - Tipo jornada profesor(a) de educación física"; bValidar = true; }
+    //    if (HorasSemProfEducFisica == "0" || HorasSemProfEducFisica == "") { sinDat3 += "<br /> - Horas semanales profesor(a) de educación física"; bValidar = true; }
+    //}
+    //if (CantidadPsicopedagogo != "0") {
+    //    if (CodJornadaPsicopedagogo == "0") { sinDat3 += "<br /> - Tipo jornada psicopedagogo"; bValidar = true; }
+    //    if (HorasSemPsicopedagogo == "0" || HorasSemPsicopedagogo == "") { sinDat3 += "<br /> - Horas semanales psicopedagogo"; bValidar = true; }
+    //}
+    //if (CantidadEducadoraParvulos != "0") {
+    //    if (CodJornadaEducadoraParvulos == "0") { sinDat3 += "<br /> - Tipo jornada educador(a) párvulos"; bValidar = true; }
+    //    if (HorasSemEducadoraParvulos == "0" || HorasSemEducadoraParvulos == "") { sinDat3 += "<br /> - Horas semanales educador(a) párvulos"; bValidar = true; }
+    //}
+    //if (CantidadEducadorTratoDirecto != "0") {
+    //    if (CodJornadaEducadorTratoDirecto == "0") { sinDat3 += "<br /> - Tipo jornada educador trato directo"; bValidar = true; }
+    //    if (HorasSemEducadorTratoDirecto == "0" || HorasSemEducadorTratoDirecto == "") { sinDat3 += "<br /> - Horas semanales educador trato directo"; bValidar = true; }
+    //}
+    //if (CantidadManipuladorAlimentos != "0") {
+    //    if (CodJornadaManipuladorAlimentos == "0") { sinDat3 += "<br /> - Tipo jornada manipulador de alimentos"; bValidar = true; }
+    //    if (HorasSemManipuladorAlimentos == "0" || HorasSemManipuladorAlimentos == "") { sinDat3 += "<br /> - Horas semanales manipulador de alimentos"; bValidar = true; }
+    //}
+    //if (CantidadApoyoAdm != "0") {
+    //    if (CodJornadaApoyoAdm == "0") { sinDat3 += "<br /> - Tipo jornada apoyo administrativo"; bValidar = true; }
+    //    if (HorasSemApoyoAdm == "0" || HorasSemApoyoAdm == "") { sinDat3 += "<br /> - Horas semanales apoyo administrativo"; bValidar = true; }
+    //}
+    //if (CantidadPersonalAseo != "0") {
+    //    if (CodJornadaPersonalAseo == "0") { sinDat3 += "<br /> - Tipo jornada personal de aseo"; bValidar = true; }
+    //    if (HorasSemPersonalAseo == "0" || HorasSemPersonalAseo == "") { sinDat3 += "<br /> - Horas semanales personal de aseo"; bValidar = true; }
+    //}
+    //if (CantidadPersonalLavanderia != "0") {
+    //    if (CodJornadaPersonalLavanderia == "0") { sinDat3 += "<br /> - Tipo jornada personal de lavanderia"; bValidar = true; }
+    //    if (HorasSemPersonalLavanderia == "0" || HorasSemPersonalLavanderia == "") { sinDat3 += "<br /> - Horas semanales personal de lavanderia"; bValidar = true; }
+    //}
+    //if (CantidadMonitoresTalleristas != "0") {
+    //    if (CodJornadaMonitoresTalleristas == "0") { sinDat3 += "<br /> - Tipo jornadaMonitores Talleristas"; bValidar = true; }
+    //    if (HorasSemMonitoresTalleristas == "0" || HorasSemMonitoresTalleristas == "") { sinDat3 += "<br /> - Horas semanales monitores talleristas"; bValidar = true; }
+    //}
+    //if (CantidadAlumnosPractica != "0") {
+    //    if (CodJornadaAlumnosPractica == "0") { sinDat3 += "<br /> - Tipo jornada alumnos en práctica"; bValidar = true; }
+    //    if (HorasSemAlumnosPractica == "0" || HorasSemAlumnosPractica == "") { sinDat3 += "<br /> -Horas semanales alumnos en práctica"; bValidar = true; }
+    //}
+    //if (CantidadApoyoVoluntario != "0") {
+    //    if (CodJornadaApoyoVoluntario == "0") { sinDat3 += "<br /> - Tipo jornada apoyo voluntario"; bValidar = true; }
+    //    if (HorasSemApoyoVoluntario == "0" || HorasSemApoyoVoluntario == "") { sinDat3 += "<br /> - Horas semanales apoyo voluntario"; bValidar = true; }
+    //}
+    //if (CantidadOtros != "0") {
+    //    if (CodJornadaOtros == "0") { sinDat3 += "<br /> - Tipo jornada otros"; bValidar = true; }
+    //    if (HorasSemOtros == "0" || HorasSemOtros == "") { sinDat3 += "<br /> - Horas semanales otros"; bValidar = true; }
+    //}
+    //if (CantidadLicencia != "0") {
+    //    if (CodJornadaLicencia == "0") { sinDat3 += "<br /> - Tipo jornada personal con licencia médica"; bValidar = true; }
+    //    if (HorasSemLicencia == "0" || HorasSemLicencia == "") { sinDat3 += "<br /> - Horas semanales personal con licencia médica"; bValidar = true; }
+    //}
+    //if (CantidadSuplenteLicencia != "0") {
+    //    if (CodJornadaSuplenteLicencia == "0") { sinDat3 += "<br /> - Tipo jornada personal con licencia (con suplente)"; bValidar = true; }
+    //    if (HorasSemSuplenteLicencia == "0" || HorasSemSuplenteLicencia == "") { sinDat3 += "<br /> - Horas semanales personal con licencia (con suplente)"; bValidar = true; }
+    //}
+    //if (ObservacionesDotacion == "") { sinDat3 += "<br /> - Observaciones de dotación de personal"; bValidar = true; }
 
     if (bValidar) {
         sinDatT = ((sinDatT != "") ? sinDatT + "<br />" : "");
@@ -2040,124 +2163,198 @@ function GrabarFichaCompleta() {
     ////----------------------------------------------------------------
     //PASO 1.4 RESCATO DATOS ANTECDENTES INFRAESTRUCUTURA Y VALIDO
     bValidar = false;
-    var cantidadOficAdm = $("#IdValor_1").val();
-    var cantidadSalaReunion = $("#IdValor_2").val();
-    var cantidadSalaRecepcion = $("#IdValor_3").val();
-    var cantidadEspaciosVisitas = $("#IdValor_4").val();
-    var cantidadSalaTalleres = $("#IdValor_5").val();
-    var cantidadSalaLiving = $("#IdValor_6").val();
-    var cantidadEnfermeria = $("#IdValor_7").val();
-    var cantidadRecreacion = $("#IdValor_8").val();
-    var cantidadAreasVerdes = $("#IdValor_9").val();
-    var cantidadCocina = $("#IdValor_10").val();
-    var cantidadComedor = $("#IdValor_11").val();
-    var cantidadLavanderia = $("#IdValor_12").val();
-    var cantidadDormitoriosNNA = $("#IdValor_13").val();
-    var cantidadCamasNNA = $("#IdValor_14").val();
-    var cantidadColsetLockers = $("#IdValor_15").val();
-    var cantidadBañosPublicos = $("#IdValor_16").val();
 
-    var cantidadBañosNNA = $("#Infraest_036_banosNNAadecuados_cantidad").val();
-    var canBañosFunciNNA = $("#IdValor_17").val();
-    var canBañosNormaNNA = $("#IdValor_18").val();
-    var canBañosHombrNNA = $("#IdValor_19").val();
-    var canBañosMujerNNA = $("#IdValor_20").val();
-    var canBañosMixtoNNA = $("#IdValor_21").val();
+    //var cantidadOficAdm = $("#IdValor_1").val();
+    //var cantidadSalaReunion = $("#IdValor_2").val();
+    //var cantidadSalaRecepcion = $("#IdValor_3").val();
+    //var cantidadEspaciosVisitas = $("#IdValor_4").val();
+    //var cantidadSalaTalleres = $("#IdValor_5").val();
+    //var cantidadSalaLiving = $("#IdValor_6").val();
+    //var cantidadEnfermeria = $("#IdValor_7").val();
+    //var cantidadRecreacion = $("#IdValor_8").val();
+    //var cantidadAreasVerdes = $("#IdValor_9").val();
+    //var cantidadCocina = $("#IdValor_10").val();
+    //var cantidadComedor = $("#IdValor_11").val();
+    //var cantidadLavanderia = $("#IdValor_12").val();
+    //var cantidadDormitoriosNNA = $("#IdValor_13").val();
+    //var cantidadCamasNNA = $("#IdValor_14").val();
+    //var cantidadColsetLockers = $("#IdValor_15").val();
+    //var cantidadBañosPublicos = $("#IdValor_16").val();
 
-    var cantidadDuchasNNA = $("#Infraest_038_duchasNNA_cantidad").val();
-    var canDuchasFunciNNA = $("#IdValor_22").val();
-    var canDuchasNormaNNA = $("#IdValor_23").val();
-    var canDuchasHombrNNA = $("#IdValor_24").val();
-    var canDuchasMujerNNA = $("#IdValor_25").val();
-    var canDuchasMixtoNNA = $("#IdValor_26").val();
+    //var cantidadBañosNNA = $("#Infraest_036_banosNNAadecuados_cantidad").val();
+    //var canBañosFunciNNA = $("#IdValor_17").val();
+    //var canBañosNormaNNA = $("#IdValor_18").val();
+    //var canBañosHombrNNA = $("#IdValor_19").val();
+    //var canBañosMujerNNA = $("#IdValor_20").val();
+    //var canBañosMixtoNNA = $("#IdValor_21").val();
 
-    var ambienteAcorde = $("#IdParInfraestructura_27").val();
+    //var cantidadDuchasNNA = $("#Infraest_038_duchasNNA_cantidad").val();
+    //var canDuchasFunciNNA = $("#IdValor_22").val();
+    //var canDuchasNormaNNA = $("#IdValor_23").val();
+    //var canDuchasHombrNNA = $("#IdValor_24").val();
+    //var canDuchasMujerNNA = $("#IdValor_25").val();
+    //var canDuchasMixtoNNA = $("#IdValor_26").val();
 
-    var vestuarioAdecuado = $("#IdParInfraestructura_28").val();
-    var vestuarioPersonalizado = $("#IdParInfraestructura_29").val();
+    //var ambienteAcorde = $("#IdParInfraestructura_27").val();
+
+    //var vestuarioAdecuado = $("#IdParInfraestructura_28").val();
+    //var vestuarioPersonalizado = $("#IdParInfraestructura_29").val();
     
-    var utilesAseo = $("#IdParInfraestructura_30").val();
-    var aguaCaliente = $("#IdParInfraestructura_31").val();
+    //var utilesAseo = $("#IdParInfraestructura_30").val();
+    //var aguaCaliente = $("#IdParInfraestructura_31").val();
 
-    var calefonGas = $("#Infraest_043_estadoCalefonLlavesGas_existe").val();
-    var calefonNorma = $("#IdParInfraestructura_32").val();
-    var llaveGasNorma = $("#IdParInfraestructura_33").val();
+    //var calefonGas = $("#Infraest_043_estadoCalefonLlavesGas_existe").val();
+    //var calefonNorma = $("#IdParInfraestructura_32").val();
+    //var llaveGasNorma = $("#IdParInfraestructura_33").val();
     
-    var sistemaCalefacion = $("#IdParInfraestructura_34").val();
-    var ventilacion = $("#IdParInfraestructura_35").val();
-    var accesoDiscapacitados = $("#IdParInfraestructura_36").val();
-    var habilitaDiscapacitados = $("#IdParInfraestructura_37").val();
-    var observacionesInfraestructura = replaceAll(EliminaEspacios(document.getElementById("Infraest_049_observaciones").value), "'", "");
+    //var sistemaCalefacion = $("#IdParInfraestructura_34").val();
+    //var ventilacion = $("#IdParInfraestructura_35").val();
+    //var accesoDiscapacitados = $("#IdParInfraestructura_36").val();
+    //var habilitaDiscapacitados = $("#IdParInfraestructura_37").val();
+    //var observacionesInfraestructura = replaceAll(EliminaEspacios(document.getElementById("Infraest_049_observaciones").value), "'", "");
+    var cantidadOficAdm = $("#IdValor_1").val() == undefined ? -1 : $("#IdValor_1").val();
+    var cantidadSalaReunion = $("#IdValor_2").val() == undefined ? -1 : $("#IdValor_2").val();
+    var cantidadSalaRecepcion = $("#IdValor_3").val() == undefined ? -1 : $("#IdValor_3").val();
+    var cantidadEspaciosVisitas = $("#IdValor_4").val() == undefined ? -1 : $("#IdValor_4").val();
+    var cantidadSalaTalleres = $("#IdValor_5").val() == undefined ? -1 : $("#IdValor_5").val();
+    var cantidadSalaLiving = $("#IdValor_6").val() == undefined ? -1 : $("#IdValor_6").val();
+    var cantidadEnfermeria = $("#IdValor_7").val() == undefined ? -1 : $("#IdValor_7").val();
+    var cantidadRecreacion = $("#IdValor_8").val() == undefined ? -1 : $("#IdValor_8").val();
+    var cantidadAreasVerdes = $("#IdValor_9").val() == undefined ? -1 : $("#IdValor_9").val();
+    var cantidadCocina = $("#IdValor_10").val() == undefined ? -1 : $("#IdValor_10").val();
+    var cantidadComedor = $("#IdValor_11").val() == undefined ? -1 : $("#IdValor_11").val();
+    var cantidadLavanderia = $("#IdValor_12").val() == undefined ? -1 : $("#IdValor_12").val();
+    var cantidadDormitoriosNNA = $("#IdValor_13").val() == undefined ? -1 : $("#IdValor_13").val();
+    var cantidadCamasNNA = $("#IdValor_14").val() == undefined ? -1 : $("#IdValor_14").val();
+    var cantidadColsetLockers = $("#IdValor_15").val() == undefined ? -1 : $("#IdValor_15").val();
+    var cantidadBañosPublicos = $("#IdValor_16").val() == undefined ? -1 : $("#IdValor_16").val();
+    var cantidadBañosNNA = $("#Infraest_036_banosNNAadecuados_cantidad").val(); // == undefined ? -1 : $("#IdValor_").val();
+    var cantidadDuchasNNA = $("#Infraest_038_duchasNNA_cantidad").val(); // == undefined ? -1 : $("#IdValor_").val();
 
+    var AmbienteAcorde = $("#IdParInfraestructura_27").val() == undefined ? -1 : $("#IdParInfraestructura_27").val();
+    var vestuarioAdecuado = $("#IdParInfraestructura_28").val() == undefined ? -1 : $("#IdParInfraestructura_28").val();
+    var utilesAseo = $("#IdParInfraestructura_30").val() == undefined ? -1 : $("#IdParInfraestructura_30").val();
+    var aguaCaliente = $("#IdParInfraestructura_31").val() == undefined ? -1 : $("#IdParInfraestructura_31").val();
+    var calefonGas = $("#Infraest_043_estadoCalefonLlavesGas_existe").val(); // == undefined ? -1 : $("#IdValor_").val();
+    var sistemaCalefacion = $("#IdParInfraestructura_34").val() == undefined ? -1 : $("#IdParInfraestructura_34").val();
+    var ventilacion = $("#IdParInfraestructura_35").val() == undefined ? -1 : $("#IdParInfraestructura_35").val();
+    var accesoDiscapacitados = $("#IdParInfraestructura_36").val() == undefined ? -1 : $("#IdParInfraestructura_36").val();
+    var habilitaDiscapacitados = $("#IdParInfraestructura_37").val() == undefined ? -1 : $("#IdParInfraestructura_37").val();
+    var observaciones = replaceAll(EliminaEspacios(document.getElementById("Infraest_049_observaciones").value), "'", "");
+
+    var BanosNNAenFuncionamiento = $("#IdValor_17").val() == undefined ? -1 : $("#IdValor_17").val();
+    var BanosNNAdeacuerdoNormativa = $("#IdValor_18").val() == undefined ? -1 : $("#IdValor_18").val();
+    var BanosNNAdehombres = $("#IdValor_19").val() == undefined ? -1 : $("#IdValor_19").val();
+    var BanosNNAdemujeres = $("#IdValor_20").val() == undefined ? -1 : $("#IdValor_20").val();
+    var BanosNNAmixtos = $("#IdValor_21").val() == undefined ? -1 : $("#IdValor_21").val();
+    var DuchasNNAFuncionamiento = $("#IdValor_22").val() == undefined ? -1 : $("#IdValor_22").val();
+    var DuchasNNAdeacuerdoNormativa = $("#IdValor_23").val() == undefined ? -1 : $("#IdValor_23").val();
+    var DuchasNNAdehombres = $("#IdValor_24").val() == undefined ? -1 : $("#IdValor_24").val();
+    var DuchasNNAdemujeres = $("#IdValor_25").val() == undefined ? -1 : $("#IdValor_25").val();
+    var DuchasNNAmixtas = $("#IdValor_26").val() == undefined ? -1 : $("#IdValor_26").val();
+    var VestuarioPersonalizadoNNA = $("#IdParInfraestructura_29").val() == undefined ? -1 : $("#IdParInfraestructura_29").val();
+    var CumpleNormativaCalefon = $("#IdParInfraestructura_32").val() == undefined ? -1 : $("#IdParInfraestructura_32").val();
+    var CumpleNormativaLlaveGas = $("#IdParInfraestructura_33").val() == undefined ? -1 : $("#IdParInfraestructura_33").val();
+
+    if (BanosNNAenFuncionamiento == "") BanosNNAenFuncionamiento = "0";
+    if (BanosNNAdeacuerdoNormativa == "") BanosNNAdeacuerdoNormativa = "0";
+    if (BanosNNAdehombres == "") BanosNNAdehombres = "0";
+    if (BanosNNAdemujeres == "") BanosNNAdemujeres = "0";
+    if (BanosNNAmixtos == "") BanosNNAmixtos = "0";
+    if (DuchasNNAFuncionamiento == "") DuchasNNAFuncionamiento = "0";
+    if (DuchasNNAdeacuerdoNormativa == "") DuchasNNAdeacuerdoNormativa = "0";
+    if (DuchasNNAdehombres == "") DuchasNNAdehombres = "0";
+    if (DuchasNNAdemujeres == "") DuchasNNAdemujeres = "0";
+    if (DuchasNNAmixtas == "") DuchasNNAmixtas = "0";
+
+    if (cantidadOficAdm == "") cantidadOficAdm = "0";
+    if (cantidadSalaReunion == "") cantidadSalaReunion = "0";
+    if (cantidadSalaRecepcion == "") cantidadSalaRecepcion = "0";
+    if (cantidadEspaciosVisitas == "") cantidadEspaciosVisitas = "0";
+    if (cantidadSalaTalleres == "") cantidadSalaTalleres = "0";
+    if (cantidadSalaLiving == "") cantidadSalaLiving = "0";
+    if (cantidadEnfermeria == "") cantidadEnfermeria = "0";
+    if (cantidadRecreacion == "") cantidadRecreacion = "0";
+    if (cantidadAreasVerdes == "") cantidadAreasVerdes = "0";
+    if (cantidadCocina == "") cantidadCocina = "0";
+    if (cantidadComedor == "") cantidadComedor = "0";
+    if (cantidadLavanderia == "") cantidadLavanderia = "0";
+    if (cantidadDormitoriosNNA == "") cantidadDormitoriosNNA = "0";
+    if (cantidadCamasNNA == "") cantidadCamasNNA = "0";
+    if (cantidadColsetLockers == "") cantidadColsetLockers = "0";
+    if (cantidadBañosPublicos == "") cantidadBañosPublicos = "0";
     //VALIDACION DE CAMPOS ANTECEDENTES INFRAESTRUCUTURA
 
     //BAÑOS NNA
-    if(canBañosHombrNNA == "") canBañosHombrNNA = "0";
-    if(canBañosMujerNNA == "") canBañosMujerNNA = "0";
-    if(canBañosMixtoNNA == "") canBañosMixtoNNA = "0";
+    if (BanosNNAdehombres == "") BanosNNAdehombres = "0";
+    if (BanosNNAdemujeres == "") BanosNNAdemujeres = "0";
+    if (BanosNNAmixtos == "") BanosNNAmixtos = "0";
 
-    if (canBañosFunciNNA != "") {
-        if (canBañosFunciNNA != "0") {
-            if (parseInt(canBañosFunciNNA, 10) != (parseInt(canBañosHombrNNA, 10) + parseInt(canBañosMujerNNA, 10) + parseInt(canBañosMixtoNNA, 10))) {
+    if (BanosNNAenFuncionamiento != "") {
+        if (BanosNNAenFuncionamiento != "0") {
+            if (parseInt(BanosNNAenFuncionamiento, 10) != (parseInt(BanosNNAdehombres, 10) + parseInt(BanosNNAdemujeres, 10) + parseInt(BanosNNAmixtos, 10))) {
                 sinDat4 += "<br /> - Suma de baños NNA hombres, mujeres y mixto no es igual a baños en funcionamiento."; bValidar = true;
             }
         }
         else {
-            if ((parseInt(canBañosHombrNNA, 10) + parseInt(canBañosMujerNNA, 10) + parseInt(canBañosMixtoNNA, 10)) != 0) {
+            if ((parseInt(BanosNNAdehombres, 10) + parseInt(BanosNNAdemujeres, 10) + parseInt(BanosNNAmixtos, 10)) != 0) {
                 sinDat4 += "<br /> - Indicó baños NNA hombres, mujeres y/o mixto, pero no ingreso baños en funcionamiento."; bValidar = true;
             }
         }
     }
     else {
-        if ((parseInt(canBañosHombrNNA, 10) + parseInt(canBañosMujerNNA, 10) + parseInt(canBañosMixtoNNA, 10)) != 0) {
+        if ((parseInt(BanosNNAdehombres, 10) + parseInt(BanosNNAdemujeres, 10) + parseInt(BanosNNAmixtos, 10)) != 0) {
             sinDat4 += "<br /> - Indicó baños NNA hombres, mujeres y/o mixto, pero no ingreso baños en funcionamiento."; bValidar = true;
         }
+
+
         else {
             sinDat4 += "<br />- Baños NNA en funcionamiento<br />- Baños NNA hombres<br />- Baños NNA mujeres<br />- Baños NNA mixtos"; bValidar = true;
         }
     }
     //DUCHAS NNA
-    if (canDuchasHombrNNA == "") canDuchasHombrNNA = "0";
-    if (canDuchasMujerNNA == "") canDuchasMujerNNA = "0";
-    if (canDuchasMixtoNNA == "") canDuchasMixtoNNA = "0";
+    if (DuchasNNAdehombres == "") DuchasNNAdehombres = "0";
+    if (DuchasNNAdemujeres == "") DuchasNNAdemujeres = "0";
+    if (DuchasNNAmixtas == "") DuchasNNAmixtas = "0";
 
-    if (canDuchasFunciNNA != "") {
-        if (canDuchasFunciNNA != "0") {
-            if (parseInt(canDuchasFunciNNA, 10) != (parseInt(canDuchasHombrNNA, 10) + parseInt(canDuchasMujerNNA, 10) + parseInt(canDuchasMixtoNNA, 10))) {
+    if (DuchasNNAFuncionamiento != "") {
+        if (DuchasNNAFuncionamiento != "0") {
+            if (parseInt(DuchasNNAFuncionamiento, 10) != (parseInt(DuchasNNAdehombres, 10) + parseInt(DuchasNNAdemujeres, 10) + parseInt(DuchasNNAmixtas, 10))) {
                 sinDat4 += "<br /> - Suma de duchas para NNA hombres, mujeres y mixto no es igual a duchas para NNA en funcionamiento."; bValidar = true;
             }
         }
         else {
-            if ( (parseInt(canDuchasHombrNNA, 10) + parseInt(canDuchasMujerNNA, 10) + parseInt(canDuchasMixtoNNA, 10)) != 0) {
+            if ((parseInt(DuchasNNAdehombres, 10) + parseInt(DuchasNNAdemujeres, 10) + parseInt(DuchasNNAmixtas, 10)) != 0) {
                 sinDat4 += "<br /> - Indicó duchas para NNA hombres, mujeres y/o mixtas, pero no ingreso duchas para NNA en funcionamiento."; bValidar = true;
             }
         }
     }
     else {
-        if ((parseInt(canDuchasHombrNNA, 10) + parseInt(canDuchasMujerNNA, 10) + parseInt(canDuchasMixtoNNA, 10)) != 0) {
+        if ((parseInt(DuchasNNAdehombres, 10) + parseInt(DuchasNNAdemujeres, 10) + parseInt(DuchasNNAmixtas, 10)) != 0) {
             sinDat4 += "<br /> - Indicó duchas para NNA hombres, mujeres y/o mixtas, pero no ingreso duchas para NNA en funcionamiento."; bValidar = true;
         }
+
         else {
             sinDat4 += "<br /> - Duchas para NNA en funcionamiento<br />- Duchas para NNA hombres<br />- Duchas para NNA mujeres<br />- Duchas para NNA mixtos"; bValidar = true;
         }
     }
 
-    if (ambienteAcorde == "-1") { sinDat4 += "<br /> - Ambientación Acorde a la Población"; bValidar = true; }
+    if (AmbienteAcorde == "-1") { sinDat4 += "<br /> - Ambientación Acorde a la Población"; bValidar = true; }
     if (vestuarioAdecuado == "-1") { sinDat4 += "<br /> - Vestuario adecuado de acuerdo a estación"; bValidar = true; }
-    if (vestuarioPersonalizado == "-1") { sinDat4 += "<br /> - Vestuario personalizado para el NNA"; bValidar = true; }
+    if (VestuarioPersonalizadoNNA == "-1") { sinDat4 += "<br /> - Vestuario personalizado para el NNA"; bValidar = true; }
     
     if (utilesAseo == "-1") { sinDat4 += "<br /> - Útiles de Aseo Personal para los NNA"; bValidar = true; }
     if (aguaCaliente == "-1") { sinDat4 += "<br /> - Agua Caliente"; bValidar = true; }
 
     //if (calefonGas == "-1") { sinDat4 += "<br /> - Estado Calefón y Llaves de Gas"; bValidar = true; }
-    if (calefonNorma == "-1") { sinDat4 += "<br /> - Cumple Normativa calefón"; bValidar = true; }
-    if (llaveGasNorma == "-1") { sinDat4 += "<br /> - Cumple Normativa llave de gas"; bValidar = true; }
+    if (CumpleNormativaCalefon == "-1") { sinDat4 += "<br /> - Cumple Normativa calefón"; bValidar = true; }
+    if (CumpleNormativaLlaveGas == "-1") { sinDat4 += "<br /> - Cumple Normativa llave de gas"; bValidar = true; }
     
     if (sistemaCalefacion == "-1") { sinDat4 += "<br /> - Sistema de calefacción (Especificar en Observación)"; bValidar = true; }
     if (ventilacion == "-1") { sinDat4 += "<br /> - Ventilación adecuada del inmueble"; bValidar = true; }
     if (accesoDiscapacitados == "-1") { sinDat4 += "<br /> - Acceso para personas con situación de Discapacidad"; bValidar = true; }
     if (habilitaDiscapacitados == "-1") { sinDat4 += "<br /> - Instalaciones Habilitadas para Discapacitados (Baños, ramplas, etc.)"; bValidar = true; }
-    if (observacionesInfraestructura == "") { sinDat4 += "<br /> - Observaciones"; bValidar = true; }
+    if (observaciones == "") { sinDat4 += "<br /> - Observaciones"; bValidar = true; }
 
     if (bValidar) {
         sinDatT = ((sinDatT != "") ? sinDatT + "<br />" : "");
@@ -2218,69 +2415,113 @@ function GrabarFichaCompleta() {
     ////----------------------------------------------------------------
     //PASO 1.6 RESCATO DATOS ANTECDENTES SALUD Y VALIDO
     bValidar = false;
-    var NNACesfam = $("#IdParSaludValor_1").val();
-    var NNASaludMentalDiagnostico = $("#IdParSaludValor_2").val();
-    var NNASaludMental = $("#IdParSaludValor_3").val();
-    var NNACronicos = $("#IdParSaludValor_4").val();
+    //var NNACesfam = $("#IdParSaludValor_1").val();
+    //var NNASaludMentalDiagnostico = $("#IdParSaludValor_2").val();
+    //var NNASaludMental = $("#IdParSaludValor_3").val();
+    //var NNACronicos = $("#IdParSaludValor_4").val();
 
-    var NNAEsperaTransplantes = $("#IdParSaludValor_5").val();
-    var NNATransplantados = $("#IdParSaludValor_6").val();
 
-    var NNADiscapacitados = $("#IdParSaludValor_7").val();
-    var NNAMedicamento = $("#IdParSaludValor_8").val();
-    var NNATratamiento = $("#IdParSaludValor_9").val();
+    //var NNAEsperaTransplantes = $("#IdParSaludValor_5").val();
+    //var NNATransplantados = $("#IdParSaludValor_6").val();
 
-    var NNADrogas = $("#IdParSaludValor_10").val();
-    var NNAAlcohol = $("#IdParSaludValor_11").val();
-    var NNAAlcoholyDroga = $("#IdParSaludValor_12").val();
+    //var NNADiscapacitados = $("#IdParSaludValor_7").val();
+    //var NNAMedicamento = $("#IdParSaludValor_8").val();
+    //var NNATratamiento = $("#IdParSaludValor_9").val();
+
+    //var NNADrogas = $("#IdParSaludValor_10").val();
+    //var NNAAlcohol = $("#IdParSaludValor_11").val();
+    //var NNAAlcoholyDroga = $("#IdParSaludValor_12").val();
     
-    var resguardoMedicamentos = $("#IdParSalud_13").val();
-    var inventarioMedicamentos = $("#IdParSalud_14").val();
+    //var resguardoMedicamentos = $("#IdParSalud_13").val();
+    //var inventarioMedicamentos = $("#IdParSalud_14").val();
 
-    var AdolecentesEmbarazadasControl = $("#IdParSaludValor_22").val();
-    var RegistroMedicamentoNNA = $("#IdParSalud_15").val();
-    var ProtocoloAdmMedicamentos = $("#IdParSalud_16").val();
+    //var AdolecentesEmbarazadasControl = $("#IdParSaludValor_22").val();
+    //var RegistroMedicamentoNNA = $("#IdParSalud_15").val();
+    //var ProtocoloAdmMedicamentos = $("#IdParSalud_16").val();
 
-    var controlNinoSano = $("#IdParSalud_17").val();
-    var controlAdolescenteSano = $("#IdParSalud_18").val();
+    //var controlNinoSano = $("#IdParSalud_17").val();
+    //var controlAdolescenteSano = $("#IdParSalud_18").val();
 
-    var ControlGinecologico = $("#IdParSalud_19").val();
-    var NegadaControlGinecologico = $("#IdParSalud_20").val();
-    var AdolecentesEmbarazadas = $("#IdParSalud_21").val();
-    var ObservacionesSalud = replaceAll(EliminaEspacios(document.getElementById("salud_016_observaciones").value), "'", "");
+    //var ControlGinecologico = $("#IdParSalud_19").val();
+    //var NegadaControlGinecologico = $("#IdParSalud_20").val();
+    //var AdolecentesEmbarazadas = $("#IdParSalud_21").val();
+    //var ObservacionesSalud = replaceAll(EliminaEspacios(document.getElementById("salud_016_observaciones").value), "'", "");
+    var NNACesfam = $("#IdParSaludValor_1").val() == undefined ? -1 : $("#IdParSaludValor_1").val();
+    var NNASaludMentalDiagnostico = $("#IdParSaludValor_2").val() == undefined ? -1 : $("#IdParSaludValor_2").val();
+    var NNASaludMental = $("#IdParSaludValor_3").val() == undefined ? -1 : $("#IdParSaludValor_3").val();
+    var NNACronicos = $("#IdParSaludValor_4").val() == undefined ? -1 : $("#IdParSaludValor_4").val();
+    var NNADiscapacitados = $("#IdParSaludValor_7").val() == undefined ? -1 : $("#IdParSaludValor_7").val();
+    var NNAMedicamento = $("#IdParSaludValor_8").val() == undefined ? -1 : $("#IdParSaludValor_8").val();
+    var NNATratamiento = $("#IdParSaludValor_9").val() == undefined ? -1 : $("#IdParSaludValor_9").val();
 
+
+    var RegistroMedicamentoNNA = $("#IdParSalud_15").val() == undefined ? "0" : $("#IdParSalud_15").val();
+    var ProtocoloAdmMedicamentos = $("#IdParSalud_16").val() == undefined ? "0" : $("#IdParSalud_16").val();
+    var ControlGinecologico = $("#IdParSalud_19").val() == undefined ? "0" : $("#IdParSalud_19").val();
+    var NegadaControlGinecologico = $("#IdParSalud_20").val() == undefined ? "0" : $("#IdParSalud_20").val();
+    var AdolecentesEmbarazadas = $("#IdParSalud_21").val() == undefined ? "0" : $("#IdParSalud_21").val();
+    var AdolecentesEmbarazadasControl = $("#IdParSaludValor_22").val() == undefined ? -1 : $("#IdParSaludValor_22").val();
+    var Observaciones = replaceAll(EliminaEspacios(document.getElementById("salud_016_observaciones").value), "'", "");
+
+    var NNA_EsperaTransplantes = $("#IdParSaludValor_5").val() == undefined ? -1 : $("#IdParSaludValor_5").val();
+    var NNA_Transplantados = $("#IdParSaludValor_6").val() == undefined ? -1 : $("#IdParSaludValor_6").val();
+
+    var NNADrogas = $("#IdParSaludValor_10").val() == undefined ? -1 : $("#IdParSaludValor_10").val();
+    var NNA_consumoAlcohol = $("#IdParSaludValor_11").val() == undefined ? -1 : $("#IdParSaludValor_11").val();
+    var NNAAlcoholyDroga = $("#IdParSaludValor_12").val() == undefined ? -1 : $("#IdParSaludValor_12").val();
+
+    var sel_resguardoMedicamentos = $("#IdParSalud_13").val() == undefined ? "0" : $("#IdParSalud_13").val();
+    var sel_inventarioMedicamentos = $("#IdParSalud_14").val() == undefined ? "0" : $("#IdParSalud_14").val();
+    var sel_control_nino_sano = $("#IdParSalud_17").val() == undefined ? "0" : $("#IdParSalud_17").val();
+    var sel_control_adolescente_sano = $("#IdParSalud_18").val() == undefined ? "0" : $("#IdParSalud_18").val();
+
+    if (NNACesfam == "") NNACesfam = "0";
+    if (NNASaludMentalDiagnostico == "") NNASaludMentalDiagnostico = "0";
+    if (NNASaludMental == "") NNASaludMental = "0";
+    if (NNACronicos == "") NNACronicos = "0";
+    if (NNADiscapacitados == "") NNADiscapacitados = "0";
+    if (NNAMedicamento == "") NNAMedicamento = "0";
+    if (NNATratamiento == "") NNATratamiento = "0";
+    if (NNADrogas == "") NNADrogas = "0";
+
+    if (NNA_EsperaTransplantes == "") NNA_EsperaTransplantes = "0";
+    if (NNA_Transplantados == "") NNA_Transplantados = "0";
+    if (NNA_consumoAlcohol == "") NNA_consumoAlcohol = "0";
+    if (NNAAlcoholyDroga == "") NNAAlcoholyDroga = "0";
+
+    if (AdolecentesEmbarazadasControl == "") AdolecentesEmbarazadasControl = "0";
     //VALIDACION DE CAMPOS ANTECEDENTES SALUD
     if (NNACesfam == "") { sinDat6 += "<br /> - N° de NNA Inscritos en CESFAM"; bValidar = true; }
     if (NNASaludMentalDiagnostico == "") { sinDat6 += "<br /> - N° de NNA con Problemática de Salud Mental con Diagnóstico"; bValidar = true; }
     if (NNASaludMental == "") { sinDat6 += "<br /> - N° de NNA con Problemátiva de Salud Mental sin Diagnóstico"; bValidar = true; }
     if (NNACronicos == "") { sinDat6 += "<br /> - N° de NNA Inscritos con Enfermedad Crónica"; bValidar = true; }
 
-    if (NNAEsperaTransplantes == "") { sinDat6 += "<br /> - N° de NNA a la espera de Trasplante"; bValidar = true; }
-    if (NNATransplantados == "") { sinDat6 += "<br /> - N° de NNA Trasplantados"; bValidar = true; }
+    if (NNA_EsperaTransplantes == "") { sinDat6 += "<br /> - N° de NNA a la espera de Trasplante"; bValidar = true; }
+    if (NNA_Transplantados == "") { sinDat6 += "<br /> - N° de NNA Trasplantados"; bValidar = true; }
 
     if (NNADiscapacitados == "") { sinDat6 += "<br /> - N° de NNA Inscritos con Situación de Discapacidad"; bValidar = true; }
     if (NNAMedicamento == "") { sinDat6 += "<br /> - N° de NNA recibiendo tratamiento farmacológico"; bValidar = true; }
     if (NNATratamiento == "") { sinDat6 += "<br /> - N° de NNA con Problemática de Salud en Tratamiento"; bValidar = true; }
 
     if (NNADrogas == "") { sinDat6 += "<br /> - N° de NNA con Consumo sólo de Drogas"; bValidar = true; }
-    if (NNAAlcohol == "") { sinDat6 += "<br /> - N° de NNA con consumo sólo de Alcohol"; bValidar = true; }
+    if (NNA_consumoAlcohol == "") { sinDat6 += "<br /> - N° de NNA con consumo sólo de Alcohol"; bValidar = true; }
     if (NNAAlcoholyDroga == "") { sinDat6 += "<br /> - N° de NNA con consumo de Alcohol y Drogas"; bValidar = true; }
     
 
-    if (resguardoMedicamentos == "-1") { sinDat6 += "<br /> - ¿Cuenta con espacio adecuado para el resguardo de medicamentos?"; bValidar = true; }
-    if (inventarioMedicamentos == "-1") { sinDat6 += "<br /> - ¿Cuenta con inventario de medicamentos?"; bValidar = true; }
+    if (sel_resguardoMedicamentos == "-1") { sinDat6 += "<br /> - ¿Cuenta con espacio adecuado para el resguardo de medicamentos?"; bValidar = true; }
+    if (sel_inventarioMedicamentos == "-1") { sinDat6 += "<br /> - ¿Cuenta con inventario de medicamentos?"; bValidar = true; }
 
     if (RegistroMedicamentoNNA == "-1") { sinDat6 += "<br /> - Registro de Medicamentos Administrados a los NNA"; bValidar = true; }
     if (ProtocoloAdmMedicamentos == "-1") { sinDat6 += "<br /> - Protocolo para la Administración de Medicamentos a los NNA"; bValidar = true; }
 
-    if (controlNinoSano == "-1") { sinDat6 += "<br /> - ¿Cuenta con control al día de Niño Sano?"; bValidar = true; }
-    if (controlAdolescenteSano == "-1") { sinDat6 += "<br /> - ¿Cuenta con control al día de Adolescente Sano?"; bValidar = true; }
+    if (sel_control_nino_sano == "-1") { sinDat6 += "<br /> - ¿Cuenta con control al día de Niño Sano?"; bValidar = true; }
+    if (sel_control_adolescente_sano == "-1") { sinDat6 += "<br /> - ¿Cuenta con control al día de Adolescente Sano?"; bValidar = true; }
 
     if (ControlGinecologico == "-1") { sinDat6 += "<br /> - Control Anual Ginecológico en los Adolescentes"; bValidar = true; }
     if (NegadaControlGinecologico == "-1") { sinDat6 += "<br /> - Adolescentes que se hayan negado a Control Ginecológico"; bValidar = true; }
     if (AdolecentesEmbarazadas == "-1") { sinDat6 += "<br /> - Adolesentes Embarazadas"; bValidar = true; }
     if (AdolecentesEmbarazadasControl == "") { sinDat6 += "<br /> - Adolescentes Embarazadas que pertenecen a la residencia "; bValidar = true; }
-    if (ObservacionesSalud == "") { sinDat6 += "<br /> - Observaciones"; bValidar = true; }
+    if (Observaciones == "") { sinDat6 += "<br /> - Observaciones"; bValidar = true; }
 
     if (bValidar) {
         sinDatT = ((sinDatT != "") ? sinDatT + "<br />" : "");
@@ -2430,9 +2671,11 @@ function GrabarFichaCompleta() {
     }
     /**/
     //----------------------------------------------------------------
-    //PASO 1.10 REVISO SI HAY DATOS FALTANTES PARA INFORMAR AL USUARIO
+//PASO 1.10 REVISO SI HAY DATOS FALTANTES PARA INFORMAR AL USUARIO
+
     if (sinDatT != "") {
         swal({
+
             title: "<span class='titsec3' >REGISTRO DE FICHA RESIDENCIAL</span>",
             html: "<div style='font-size:12px;text-align:left;'>Para poder grabar la ficha residencial en forma completa debe ingresar todos los datos, pues todos son obligatorios. Los campos que debe completar son:<br/><br/><div>" +
                   "<div class='scrollbar2' id='style-12'>" +
@@ -2455,6 +2698,7 @@ function GrabarFichaCompleta() {
         ActivarDesactivarBotonesGrabar(0, false);
         //SE DETIENE LA EJECUCIÓN DE GRABADO POR 
         //VALIDACION DE CAMPOS FALTANTES
+
         return;
     }
 
@@ -2526,7 +2770,7 @@ function GrabarFichaCompleta() {
 
 
 
-    //----------------------------------------------------------------
+    //AQUIHAR----------------------------------------------------------------
     //PASO 2.3 ARMO FORMATO JSON DATOS Y PROCEDO A GRABAR DATOS DOTACION PERSONAL
     var dataParametros3 =
         "{" +
@@ -2643,82 +2887,83 @@ function GrabarFichaCompleta() {
     //PASO 2.4 ARMO FORMATO JSON DATOS Y PROCEDO A GRABAR DATOS INFRAESTRUCTURA   
     var dataParametros4 =
         "{"+
-        "'CodProyecto': '" + CodProyecto + "'," +
-        "'CodFicha': '[CodFicha_]'," +
-        "'IdUsuarioActualizacion': '" + IdUsuarioActualizacion + "'," +
-        "'CodEstadoFicha': '" + CodEstadoFicha + "'," +
+        "\"CodProyecto\": \"" + CodProyecto + "\"," +
+        "\"CodFicha\": \"[CodFicha_]\"," +
+        "\"IdUsuarioActualizacion\": \"" + IdUsuarioActualizacion + "\"," +
+        "\"CodEstadoFicha\": \"" + CodEstadoFicha + "\"," +
 
-        "'CantidadOficAdm': '" + cantidadOficAdm + "'," +
-        "'CantidadSalaReunion': '" + cantidadSalaReunion + "'," +
-        "'CantidadSalaRecepcion': '" + cantidadSalaRecepcion + "'," +
-        "'CantidadEspaciosVisitas': '" + cantidadEspaciosVisitas + "'," +
-        "'CantidadSalaTalleres': '" + cantidadSalaTalleres + "'," +
-        "'CantidadSalaLiving': '" + cantidadSalaLiving + "'," +
-        "'CantidadEnfermeria': '" + cantidadEnfermeria + "'," +
-        "'CantidadRecreacion': '" + cantidadRecreacion + "'," +
-        "'CantidadAreasVerdes': '" + cantidadAreasVerdes + "'," +
-        "'CantidadCocina': '" + cantidadCocina + "'," +
-        "'CantidadComedor': '" + cantidadComedor + "'," +
-        "'CantidadLavanderia': '" + cantidadLavanderia + "'," +
-        "'CantidadDormitoriosNNA': '" + cantidadDormitoriosNNA + "'," +
-        "'CantidadCamasNNA': '" + cantidadCamasNNA + "'," +
-        "'CantidadColsetLockers': '" + cantidadColsetLockers + "'," +
-        "'CantidadBañosPublicos': '" + cantidadBañosPublicos + "'," +
-        "'CantidadBañosNNA': '" + cantidadBañosNNA + "'," +
-        "'CantidadDuchasNNA': '" + cantidadDuchasNNA + "'," +
-        "'AmbienteAcorde': '" + ambienteAcorde + "'," +
-        "'VestuarioAdecuado': '" + vestuarioAdecuado + "'," +
-        "'UtilesAseo': '" + utilesAseo + "'," +
-        "'AguaCaliente': '" + aguaCaliente + "'," +
-        "'CalefonGas': '" + calefonGas + "'," +
-        "'SistemaCalefacion': '" + sistemaCalefacion + "'," +
-        "'Ventilacion': '" + ventilacion + "'," +
-        "'AccesoDiscapacitados': '" + accesoDiscapacitados + "'," +
-        "'HabilitaDiscapacitados': '" + habilitaDiscapacitados + "'," +
-        "'Observaciones': '" + replaceAll(observacionesInfraestructura, "'", "") + "'," +
 
-        "'BanosNNAenFuncionamiento': '" + canBañosFunciNNA + "'," +
-        "'BanosNNAdeacuerdoNormativa': '" + canBañosNormaNNA + "'," +
-        "'BanosNNAdehombres': '" + canBañosHombrNNA + "'," +
-        "'BanosNNAdemujeres': '" + canBañosMujerNNA + "'," +
-        "'BanosNNAmixtos': '" + canBañosMixtoNNA + "'," +
+        "\"CantidadOficAdm\": \"" + cantidadOficAdm + "\"," +
+        "\"CantidadSalaReunion\": \"" + cantidadSalaReunion + "\"," +
+        "\"CantidadSalaRecepcion\": \"" + cantidadSalaRecepcion + "\"," +
+        "\"CantidadEspaciosVisitas\": \"" + cantidadEspaciosVisitas + "\"," +
+        "\"CantidadSalaTalleres\": \"" + cantidadSalaTalleres + "\"," +
+        "\"CantidadSalaLiving\": \"" + cantidadSalaLiving + "\"," +
+        "\"CantidadEnfermeria\": \"" + cantidadEnfermeria + "\"," +
+        "\"CantidadRecreacion\": \"" + cantidadRecreacion + "\"," +
+        "\"CantidadAreasVerdes\": \"" + cantidadAreasVerdes + "\"," +
+        "\"CantidadCocina\": \"" + cantidadCocina + "\"," +
+        "\"CantidadComedor\": \"" + cantidadComedor + "\"," +
+        "\"CantidadLavanderia\": \"" + cantidadLavanderia + "\"," +
+        "\"CantidadDormitoriosNNA\": \"" + cantidadDormitoriosNNA + "\"," +
+        "\"CantidadCamasNNA\": \"" + cantidadCamasNNA + "\"," +
+        "\"CantidadColsetLockers\": \"" + cantidadColsetLockers + "\"," +
+        "\"CantidadBañosPublicos\": \"" + cantidadBañosPublicos + "\"," +
+        "\"CantidadBañosNNA\": \"" + cantidadBañosNNA + "\"," +
+        "\"CantidadDuchasNNA\": \"" + cantidadDuchasNNA + "\"," +
+        "\"AmbienteAcorde\": \"" + AmbienteAcorde + "\"," +
+        "\"VestuarioAdecuado\": \"" + vestuarioAdecuado + "\"," +
+        "\"UtilesAseo\": \"" + utilesAseo + "\"," +
+        "\"AguaCaliente\": \"" + aguaCaliente + "\"," +
+        "\"CalefonGas\": \"" + calefonGas + "\"," +
+        "\"SistemaCalefacion\": \"" + sistemaCalefacion + "\"," +
+        "\"Ventilacion\": \"" + ventilacion + "\"," +
+        "\"AccesoDiscapacitados\": \"" + accesoDiscapacitados + "\"," +
+        "\"HabilitaDiscapacitados\": \"" + habilitaDiscapacitados + "\"," +
+        "\"Observaciones\": \"" + replaceAll(observaciones, "\"", "") + "\"," +
 
-        "'DuchasNNAFuncionamiento': '" + canDuchasFunciNNA + "'," +
-        "'DuchasNNAdeacuerdoNormativa': '" + canDuchasNormaNNA + "'," +
-        "'DuchasNNAdehombres': '" + canDuchasHombrNNA + "'," +
-        "'DuchasNNAdemujeres': '" + canDuchasMujerNNA + "'," +
-        "'DuchasNNAmixtas': '" + canDuchasMixtoNNA + "'," +
+        "\"BanosNNAenFuncionamiento\": \"" + BanosNNAenFuncionamiento + "\"," +
+        "\"BanosNNAdeacuerdoNormativa\": \"" + BanosNNAdeacuerdoNormativa + "\"," +
+        "\"BanosNNAdehombres\": \"" + BanosNNAdehombres + "\"," +
+        "\"BanosNNAdemujeres\": \"" + BanosNNAdemujeres + "\"," +
+        "\"BanosNNAmixtos\": \"" + BanosNNAmixtos + "\"," +
 
-        "'VestuarioPersonalizadoNNA': '" + vestuarioPersonalizado + "'," +
-        "'CumpleNormativaCalefon': '" + calefonNorma + "'," +
-        "'CumpleNormativaLlaveGas': '" + llaveGasNorma + "'" +
+        "\"DuchasNNAFuncionamiento\": \"" + DuchasNNAFuncionamiento + "\"," +
+        "\"DuchasNNAdeacuerdoNormativa\": \"" + DuchasNNAdeacuerdoNormativa + "\"," +
+        "\"DuchasNNAdehombres\": \"" + DuchasNNAdehombres + "\"," +
+        "\"DuchasNNAdemujeres\": \"" + DuchasNNAdemujeres + "\"," +
+        "\"DuchasNNAmixtas\": \"" + DuchasNNAmixtas + "\"," +
+
+        "\"VestuarioPersonalizadoNNA\": \"" + VestuarioPersonalizadoNNA + "\"," +
+        "\"CumpleNormativaCalefon\": \"" + CumpleNormativaCalefon + "\"," +
+        "\"CumpleNormativaLlaveGas\": \"" + CumpleNormativaLlaveGas + "\"" +
         "}";
 
     //----------------------------------------------------------------
     //PASO 2.5 ARMO FORMATO JSON DATOS Y PROCEDO A GRABAR DATOS SEGURIDAD
     var dataParametros5 =
          "{" +
-         "'CodProyecto': '" + CodProyecto + "'," +
-         "'CodFicha': '[CodFicha_]'," +
-         "'IdUsuarioActualizacion': '" + IdUsuarioActualizacion + "'," +
-         "'CodEstadoFicha': '" + CodEstadoFicha + "'," +
-         "'PlanEmergencia': '" + PlanEmergencia + "'," +
-         "'SimulacroEmergencia': '" + SimulacroEmergencia + "'," +
-         "'PlanEmergenciaCalificado': '" + PlanEmergenciaCalificado + "'," +
-         "'Extintores': '" + Extintores + "'," +
-         "'Senaletica': '" + Senaletica + "'," +
-         "'ViasEvacuacion': '" + ViasEvacuacion + "'," +
-         "'CapacitacionPersonalEmergencia': '" + CapacitacionPersonalEmergencia + "'," +
-         "'Sanitizacion': '" + Sanitizacion + "'," +
-         "'SistemaElectrico': '" + SistemaElectrico + "'," +
-         "'ZonasSeguridad': '" + ZonasSeguridad + "'," +
-         "'Observaciones': '" + replaceAll(ObservacionesSeguridad, "'", "") + "'," +
+         "\"CodProyecto\": \"" + CodProyecto + "\"," +
+         "\"CodFicha\": \"[CodFicha_]\"," +
+         "\"IdUsuarioActualizacion\": \"" + IdUsuarioActualizacion + "\"," +
+         "\"CodEstadoFicha\": \"" + CodEstadoFicha + "\"," +
+         "\"PlanEmergencia\": \"" + PlanEmergencia + "\"," +
+         "\"SimulacroEmergencia\": \"" + SimulacroEmergencia + "\"," +
+         "\"PlanEmergenciaCalificado\": \"" + PlanEmergenciaCalificado + "\"," +
+         "\"Extintores\": \"" + Extintores + "\"," +
+         "\"Senaletica\": \"" + Senaletica + "\"," +
+         "\"ViasEvacuacion\": \"" + ViasEvacuacion + "\"," +
+         "\"CapacitacionPersonalEmergencia\": \"" + CapacitacionPersonalEmergencia + "\"," +
+         "\"Sanitizacion\": \"" + Sanitizacion + "\"," +
+         "\"SistemaElectrico\": \"" + SistemaElectrico + "\"," +
+         "\"ZonasSeguridad\": \"" + ZonasSeguridad + "\"," +
+         "\"Observaciones\": \"" + replaceAll(ObservacionesSeguridad, "\"", "") + "\"," +
 
-        "'capacitacionEmergencia': '" + Cap_PersonalEmergencia + "'," +
-        "'capacitacionPrimerosAux': '" + Cap_PersonalPrimerosAux + "'," +
-        "'seg_sanitizacion': '" + Sanitizacion_ + "'," +
-        "'seg_desratizacion': '" + Desratizacion + "'," +
-        "'seg_fumigacion': '" + Fumigacion + "'" +
+        "\"capacitacionEmergencia\": \"" + Cap_PersonalEmergencia + "\"," +
+        "\"capacitacionPrimerosAux\": \"" + Cap_PersonalPrimerosAux + "\"," +
+        "\"seg_sanitizacion\": \"" + Sanitizacion_ + "\"," +
+        "\"seg_desratizacion\": \"" + Desratizacion + "\"," +
+        "\"seg_fumigacion\": \"" + Fumigacion + "\"" +
         "}";
 
 
@@ -2726,114 +2971,115 @@ function GrabarFichaCompleta() {
     //PASO 2.6 ARMO FORMATO JSON DATOS Y PROCEDO A GRABAR DATOS SALUD
     var dataParametros6 =
             "{" +
-            "'CodProyecto': '" + CodProyecto + "'," +
-            "'CodFicha': '[CodFicha_]'," +
-            "'IdUsuarioActualizacion': '" + IdUsuarioActualizacion + "'," +
-            "'CodEstadoFicha': '" + CodEstadoFicha + "'," +
-            "'NNACesfam': '" + NNACesfam + "'," +
-            "'NNASaludMentalDiagnostico': '" + NNASaludMentalDiagnostico + "'," +
-            "'NNASaludMental': '" + NNASaludMental + "'," +
-            "'NNACronicos': '" + NNACronicos + "'," +
-            "'NNADiscapacitados': '" + NNADiscapacitados + "'," +
-            "'NNAMedicamento': '" + NNAMedicamento + "'," +
-            "'NNATratamiento': '" + NNATratamiento + "'," +
-            "'NNADrogas': '" + NNADrogas + "'," +
-            "'RegistroMedicamentoNNA': '" + RegistroMedicamentoNNA + "'," +
-            "'ProtocoloAdmMedicamentos': '" + ProtocoloAdmMedicamentos + "'," +
-            "'ControlGinecologico': '" + ControlGinecologico + "'," +
-            "'NegadaControlGinecologico': '" + NegadaControlGinecologico + "'," +
-            "'AdolecentesEmbarazadas': '" + AdolecentesEmbarazadas + "'," +
-            "'AdolecentesEmbarazadasControl': '" + AdolecentesEmbarazadasControl + "'," +
-            "'Observaciones': '" + replaceAll(ObservacionesSalud, "'", "") + "'," +
+            "\"CodProyecto\": \"" + CodProyecto + "\"," +
+            "\"CodFicha\": \"[CodFicha_]\"," +
+            "\"IdUsuarioActualizacion\": \"" + IdUsuarioActualizacion + "\"," +
+            "\"CodEstadoFicha\": \"" + CodEstadoFicha + "\"," +
+            "\"NNACesfam\": \"" + NNACesfam + "\"," +
+            "\"NNASaludMentalDiagnostico\": \"" + NNASaludMentalDiagnostico + "\"," +
+            "\"NNASaludMental\": \"" + NNASaludMental + "\"," +
+            "\"NNACronicos\": \"" + NNACronicos + "\"," +
+            "\"NNADiscapacitados\": \"" + NNADiscapacitados + "\"," +
+            "\"NNAMedicamento\": \"" + NNAMedicamento + "\"," +
+            "\"NNATratamiento\": \"" + NNATratamiento + "\"," +
+            "\"NNADrogas\": \"" + NNADrogas + "\"," +
+            "\"RegistroMedicamentoNNA\": \"" + RegistroMedicamentoNNA + "\"," +
+            "\"ProtocoloAdmMedicamentos\": \"" + ProtocoloAdmMedicamentos + "\"," +
+            "\"ControlGinecologico\": \"" + ControlGinecologico + "\"," +
+            "\"NegadaControlGinecologico\": \"" + NegadaControlGinecologico + "\"," +
+            "\"AdolecentesEmbarazadas\": \"" + AdolecentesEmbarazadas + "\"," +
+            "\"AdolecentesEmbarazadasControl\": \"" + AdolecentesEmbarazadasControl + "\"," +
+        "\"Observaciones\": \"" + replaceAll(Observaciones, "\"", "") + "\"," +
 
-            "'NNA_EsperaTransplantes': '" + NNAEsperaTransplantes + "'," +
-            "'NNA_Transplantados': '" + NNATransplantados + "'," +
-            "'NNA_consumoAlcohol': '" + NNAAlcohol + "'," +
-            "'sel_resguardoMedicamentos': '" + resguardoMedicamentos + "'," +
-            "'sel_inventarioMedicamentos': '" + inventarioMedicamentos + "'," +
-            "'sel_control_nino_sano': '" + controlNinoSano + "'," +
-            "'sel_control_adolescente_sano': '" + controlAdolescenteSano + "'," +
-            "'NNAAlcoholyDroga': '" + NNAAlcoholyDroga + "'" +
+        "\"NNA_EsperaTransplantes\": \"" + NNA_EsperaTransplantes + "\"," +
+        "\"NNA_Transplantados\": \"" + NNA_Transplantados + "\"," +
+        "\"NNA_consumoAlcohol\": \"" + NNA_consumoAlcohol + "\"," +
+        "\"sel_resguardoMedicamentos\": \"" + sel_resguardoMedicamentos + "\"," +
+        "\"sel_inventarioMedicamentos\": \"" + sel_inventarioMedicamentos + "\"," +
+        "\"sel_control_nino_sano\": \"" + sel_control_nino_sano + "\"," +
+        "\"sel_control_adolescente_sano\": \"" + sel_control_adolescente_sano + "\"," +
+            "\"NNAAlcoholyDroga\": \"" + NNAAlcoholyDroga + "\"" +
             "}";
           
     //----------------------------------------------------------------
     //PASO 2.7 ARMO FORMATO JSON DATOS Y PROCEDO A GRABAR DATOS EDUCACION
     var dataParametros7 =
             "{" +
-            "'CodProyecto': '" + CodProyecto + "'," +
-            "'CodFicha': '[CodFicha_]'," +
-            "'IdUsuarioActualizacion': '" + IdUsuarioActualizacion + "'," +
-            "'CodEstadoFicha': '" + CodEstadoFicha + "'," +
-            "'NNAEducacion': '" + NNAEducacion + "'," +
-            "'NNAEducacionNo': '" + NNAEducacionNo + "'," +
-            "'NNARetrasoEscolar': '" + NNARetrasoEscolar + "'," +
-            "'NNAMatriculaCancelada': '" + NNAMatriculaCancelada + "'," +
-            "'NNAEducaionEspecial': '" + NNAEducaionEspecial + "'," +
-            "'NNANivelacion': '" + NNANivelacion + "'," +
-            "'EspaciosEstudios': '" + EspaciosEstudios + "'," +
-            "'MaterialBibliografico': '" + MaterialBibliografico + "'," +
-            "'Computadores': '" + Computadores + "'," +
-            "'AccesoInternetControlado': '" + AccesoInternetControlado + "'," +
-            "'Observaciones': '" + replaceAll(ObservacionesEducacion, "'", "") + "'," +
+            "\"CodProyecto\": \"" + CodProyecto + "\"," +
+            "\"CodFicha\": \"[CodFicha_]\"," +
+            "\"IdUsuarioActualizacion\": \"" + IdUsuarioActualizacion + "\"," +
+            "\"CodEstadoFicha\": \"" + CodEstadoFicha + "\"," +
+            "\"NNAEducacion\": \"" + NNAEducacion + "\"," +
+            "\"NNAEducacionNo\": \"" + NNAEducacionNo + "\"," +
+            "\"NNARetrasoEscolar\": \"" + NNARetrasoEscolar + "\"," +
+            "\"NNAMatriculaCancelada\": \"" + NNAMatriculaCancelada + "\"," +
+            "\"NNAEducaionEspecial\": \"" + NNAEducaionEspecial + "\"," +
+            "\"NNANivelacion\": \"" + NNANivelacion + "\"," +
+            "\"EspaciosEstudios\": \"" + EspaciosEstudios + "\"," +
+            "\"MaterialBibliografico\": \"" + MaterialBibliografico + "\"," +
+            "\"Computadores\": \"" + Computadores + "\"," +
+            "\"AccesoInternetControlado\": \"" + AccesoInternetControlado + "\"," +
+            "\"Observaciones\": \"" + replaceAll(ObservacionesEducacion, "\"", "") + "\"," +
 
-            "'NNA_matriculados': '" +  NNAmatriculados + "'," +
-            "'NNA_examenesLibres': '" + NNA_examenesLibres + "'," +
-            "'NNAEducacionNoMotivo': '" + NNAEducacionNoMotivo + "'" +
+            "\"NNA_matriculados\": \"" +  NNAmatriculados + "\"," +
+            "\"NNA_examenesLibres\": \"" + NNA_examenesLibres + "\"," +
+            "\"NNAEducacionNoMotivo\": \"" + NNAEducacionNoMotivo + "\"" +
             "}";
 
     //----------------------------------------------------------------
     //PASO 2.8 ARMO FORMATO JSON DATOS Y PROCEDO A GRABAR DATOS ALIMENTACION
     var dataParametros8 =
         "{" +
-        "'CodProyecto': '" + CodProyecto + "'," +
-        "'CodFicha': '[CodFicha_]'," +
-        "'IdUsuarioActualizacion': '" + IdUsuarioActualizacion + "'," +
-        "'CodEstadoFicha': '" + CodEstadoFicha + "'," +
-        "'RegistroHonorario': '" + registroHonorario + "'," +
-        "'RegistroPlanificacion': '" + registroPlanificacion + "'," +
-        "'MenusEspeciales': '" + menusEspeciales + "'," +
-        "'AsesoriaNutricionista': '" + asesoriaNutricionista + "'," +
-        "'CertificadosSanitarios': '" + certificadosSanitarios + "'," +
-        "'ConservacionAlimentos': '" + conservacionAlimentos + "'," +
-        "'CantidadComidas': '" + cantidadComidas + "'," +
-        "'CantidadComidasFeriados': '" + cantidadComidasFeriados + "'," +
-        "'Observaciones': '" + replaceAll(EliminaEspacios(observacionesAlimentacion), "'", "") + "'," +
+        "\"CodProyecto\": \"" + CodProyecto + "\"," +
+        "\"CodFicha\": \"[CodFicha_]\"," +
+        "\"IdUsuarioActualizacion\": \"" + IdUsuarioActualizacion + "\"," +
+        "\"CodEstadoFicha\": \"" + CodEstadoFicha + "\"," +
+        "\"RegistroHonorario\": \"" + registroHonorario + "\"," +
+        "\"RegistroPlanificacion\": \"" + registroPlanificacion + "\"," +
+        "\"MenusEspeciales\": \"" + menusEspeciales + "\"," +
+        "\"AsesoriaNutricionista\": \"" + asesoriaNutricionista + "\"," +
+        "\"CertificadosSanitarios\": \"" + certificadosSanitarios + "\"," +
+        "\"ConservacionAlimentos\": \"" + conservacionAlimentos + "\"," +
+        "\"CantidadComidas\": \"" + cantidadComidas + "\"," +
+        "\"CantidadComidasFeriados\": \"" + cantidadComidasFeriados + "\"," +
+        "\"Observaciones\": \"" + replaceAll(EliminaEspacios(observacionesAlimentacion), "\"", "") + "\"," +
 
-        "'AlmacenaAlimento_existe': '" + almacenamientoAlimentos_ + "'," +
-        "'EstadoConserva_existe': '" + estadoConservaAlimentos_ + "'" +
+        "\"AlmacenaAlimento_existe\": \"" + almacenamientoAlimentos_ + "\"," +
+        "\"EstadoConserva_existe\": \"" + estadoConservaAlimentos_ + "\"" +
         "}";
 
     //----------------------------------------------------------------
     //PASO 2.9 ARMO FORMATO JSON DATOS Y PROCEDO A GRABAR DATOS GESTION RESIDENCIA
+
     CodEstadoFicha = 2; //---> Aquí cambio el estado de la ficha residencial con el último SET de datos
     var dataParametros9 =
-            "{" +
-            "'CodProyecto': '" + CodProyecto + "'," +
-            "'CodFicha': '[CodFicha_]'," +
-            "'IdUsuarioActualizacion': '" + IdUsuarioActualizacion + "'," +
-            "'CodEstadoFicha': '" + CodEstadoFicha + "'," +
-            "'CatastroRedes': '" + CatastroRedes + "'," +
-            "'RegistroVisitas': '" + RegistroVisitas + "'," +
-            "'ProtocoloAcogida': '" + ProtocoloAcogida + "'," +
-            "'AutocuidadoEquipo': '" + AutocuidadoEquipo + "'," +
-            "'IntervencionCrisis': '" + IntervencionCrisis + "'," +
-            "'InformacionNormativa': '" + InformacionNormativa + "'," +
-            "'ProtocoloConvivencia': '" + ProtocoloConvivencia + "'," +
-            "'ProtocoloReclamos': '" + ProtocoloReclamos + "'," +
-            "'ProtocoloEscucha': '" + ProtocoloEscucha + "'," +
-            "'VinculacionResidencias': '" + VinculacionResidencias + "'," +
-            "'ProcesosFormacion': '" + ProcesosFormacion + "'," +
-            "'ProtocoloApadrinamiento': '" + ProtocoloApadrinamiento + "'," +
-            "'ProtocoloTraslado': '" + ProtocoloTraslado + "'," +
-            "'ProtocoloEgreso': '" + ProtocoloEgreso + "'," +
-            "'ProtocoloRedSalud': '" + ProtocoloRedSalud + "'," +
-            "'HabilitacionLaboral': '" + HabilitacionLaboral + "'," +
-            "'Observaciones': '" + replaceAll(ObservacionesResidencia, "'", "") + "'," +
+        "{" +
+            "\"CodProyecto\": \"" + CodProyecto + "\"," +
+            "\"CodFicha\": \"[CodFicha_]\"," +
+            "\"IdUsuarioActualizacion\": \"" + IdUsuarioActualizacion + "\"," +
+            "\"CodEstadoFicha\": \"" + CodEstadoFicha + "\"," +
+            "\"CatastroRedes\": \"" + CatastroRedes + "\"," +
+            "\"RegistroVisitas\": \"" + RegistroVisitas + "\"," +
+            "\"ProtocoloAcogida\": \"" + ProtocoloAcogida + "\"," +
+            "\"AutocuidadoEquipo\": \"" + AutocuidadoEquipo + "\"," +
+            "\"IntervencionCrisis\": \"" + IntervencionCrisis + "\"," +
+            "\"InformacionNormativa\": \"" + InformacionNormativa + "\"," +
+            "\"ProtocoloConvivencia\": \"" + ProtocoloConvivencia + "\"," +
+            "\"ProtocoloReclamos\": \"" + ProtocoloReclamos + "\"," +
+            "\"ProtocoloEscucha\": \"" + ProtocoloEscucha + "\"," +
+            "\"VinculacionResidencias\": \"" + VinculacionResidencias + "\"," +
+            "\"ProcesosFormacion\": \"" + ProcesosFormacion + "\"," +
+            "\"ProtocoloApadrinamiento\": \"" + ProtocoloApadrinamiento + "\"," +
+            "\"ProtocoloTraslado\": \"" + ProtocoloTraslado + "\"," +
+            "\"ProtocoloEgreso\": \"" + ProtocoloEgreso + "\"," +
+            "\"ProtocoloRedSalud\": \"" + ProtocoloRedSalud + "\"," +
+            "\"HabilitacionLaboral\": \"" + HabilitacionLaboral + "\"," +
+            "\"Observaciones\": \"" + replaceAll(ObservacionesResidencia, "\"", "") + "\"," +
 
-            "'protoVisitas_existe': '" + protoVisitas + "'," +
-            "'regisVisitas_existe': '" + regisVisitas + "'," +
-            "'activi_habilitaLaboral': '" + actividadHabilitacionLaboral + "'," +
-            "'activi_vidaInpendiente': '" + actividadVidaIndependiente + "'" +
+            "\"protoVisitas_existe\": \"" + protoVisitas + "\"," +
+            "\"regisVisitas_existe\": \"" + regisVisitas + "\"," +
+            "\"activi_habilitaLaboral\": \"" + actividadHabilitacionLaboral + "\"," +
+            "\"activi_vidaInpendiente\": \"" + actividadVidaIndependiente + "\"" +
             "}";
        
     //----------------------------------------------------------------
@@ -2891,7 +3137,7 @@ function GrabarFichaCompleta() {
 
 function Paso1_Generales(dataParametros1, dataParametros2, dataParametros3, dataParametros4, dataParametros5, dataParametros6, dataParametros7, dataParametros8, dataParametros9) {
     document.getElementById("spanEtapa").innerHTML = "Antecedentes Generales";
-
+    CodEstadoFicha = 2;
     $.ajax({
         type: "POST",
         url: "FichaResidencial.aspx/GrabarAntecedentesGenerales",
@@ -2945,7 +3191,7 @@ function Paso1_Generales(dataParametros1, dataParametros2, dataParametros3, data
 }
 function Paso2_Poblacion_Capacidad(dataParametros2, dataParametros3, dataParametros4, dataParametros5, dataParametros6, dataParametros7, dataParametros8, dataParametros9) {
     document.getElementById("spanEtapa").innerHTML = "Antecedentes Poblacion y Capacidad";
-
+    CodEstadoFicha = 2;
     dataParametros2 = replaceAll(dataParametros2, "[CodFicha_]", CodFicha);
     $.ajax({
         type: "POST",
@@ -2987,6 +3233,7 @@ function Paso2_Poblacion_Capacidad(dataParametros2, dataParametros3, dataParamet
                     //ACTIVO TODOS LOS BOTONES
                     ActivarDesactivarBotonesGrabar(0, false);
 
+
                     //SE DETIENE LA EJECUCIÓN DE GRABADO POR ERROR  
                     //EN EL PASO DE ANTECEDENTES POBLACION Y CAPACIDAD 
                     return;
@@ -2997,28 +3244,81 @@ function Paso2_Poblacion_Capacidad(dataParametros2, dataParametros3, dataParamet
 
 
 }
+//AQUIHAR
 function Paso3_Dotacion_Personal(dataParametros3, dataParametros4, dataParametros5, dataParametros6, dataParametros7, dataParametros8, dataParametros9) {
     document.getElementById("spanEtapa").innerHTML = "Antecedentes Dotacion Personal";
+    CodEstadoFicha = 2;
+    //dataParametros3 = replaceAll(dataParametros3, "[CodFicha_]", CodFicha);
+    //$.ajax({
+    //    type: "POST",
+    //    url: "FichaResidencial.aspx/GrabarAntecedentesDotacionPersonal",
+    //    data: dataParametros3,
+    //    //data: '{}',
+    //    contentType: "application/json; charset=utf-8",
+    //    dataType: "json",
+    //    success: function (r) {
+    //        // Ajax OK !                   
+    //    },
+    //    error: function (r) {
+    //        DesplegarExcepcionCriticaApp(r.responseText);
+    //        //SE DETIENE LA EJECUCIÓN DE GRABADO POR ERROR  
+    //        //EN EL PASO DE ANTECEDENTES DOTACION PERSONAL
+    //        return;
+    //    }
 
-    dataParametros3 = replaceAll(dataParametros3, "[CodFicha_]", CodFicha);
+    //poloaracena
+    var table = $('#gridDotacion').DataTable();
+    var numeroDeFilas = table.data().length;
+    var CodigoProy = $("#general_001_sel_proyecto").val();
+    var observacionesDotacion = replaceAll(EliminaEspacios(document.getElementById("dotacion_101_Observaciones").value), "'", "");
+    var CodigoEstFicha = 1;
+
+    var strGrilla = '';
+    var pipe = "|";
+    for (var i = 0; i < numeroDeFilas; i++) {
+        var data = table.row(i).data();
+
+        var x = String(data.Select_Profesion).split("<select id=IdProfesion_");
+        var IdProf = x[1].split(" ");
+        var IdProf2 = IdProf[0];
+        var ValorCant = $("#IdCantidad_" + IdProf2).val();
+        var ValorHorasSemanales = $("#IdHorasSemanales_" + IdProf2).val();
+        var ValorJornada = $("#IdCodJornada_" + IdProf2).val();
+
+        if (ValorCant == "") {
+            ValorCant = "0";
+        }
+
+        if (ValorHorasSemanales == "") {
+            ValorHorasSemanales = "0";
+        }
+
+        if (ValorJornada == "") {
+            ValorJornada = "0";
+        }
+  
+        strGrilla = strGrilla + CodFicha + pipe + CodigoProy + pipe + CodigoEstFicha + pipe + IdUsuarioActualizacion + pipe + IdProf2 + pipe + ValorCant + pipe + ValorJornada + pipe + ValorHorasSemanales + pipe + observacionesDotacion + "~"
+
+    }
+    strGrilla = "{\"strGrilla\":" + "\"" + strGrilla + "\""
+
+    strGrilla = strGrilla + "}";
+    strGrilla = strGrilla.replace(/~"}/g, "\"}");
+
     $.ajax({
         type: "POST",
-        url: "FichaResidencial.aspx/GrabarAntecedentesDotacionPersonal",
-        data: dataParametros3,
+        url: "FichaResidencial.aspx/GrabarAntecedentesDotacionPersonalHAR",
+        data: strGrilla,
         //data: '{}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (r) {
-            // Ajax OK !                   
+            //ok
         },
         error: function (r) {
             DesplegarExcepcionCriticaApp(r.responseText);
-            //SE DETIENE LA EJECUCIÓN DE GRABADO POR ERROR  
-            //EN EL PASO DE ANTECEDENTES DOTACION PERSONAL
-            return;
         }
     }).then(function (r) {
-
         $.each(r.d,
             function () {
                 if (this.REGISTRO_ACTUALIZADO != -1 && this.REGISTRO_ACTUALIZADO != null) {
@@ -3052,7 +3352,7 @@ function Paso3_Dotacion_Personal(dataParametros3, dataParametros4, dataParametro
 }
 function Paso4_Infraestructura(dataParametros4, dataParametros5, dataParametros6, dataParametros7, dataParametros8, dataParametros9) {
     document.getElementById("spanEtapa").innerHTML = "Antecedentes Infraestructura";
-
+    CodEstadoFicha = 2;
     dataParametros4 = replaceAll(dataParametros4, "[CodFicha_]", CodFicha);
     $.ajax({
         type: "POST",
@@ -3106,7 +3406,7 @@ function Paso4_Infraestructura(dataParametros4, dataParametros5, dataParametros6
 }
 function Paso5_Seguridad(dataParametros5, dataParametros6, dataParametros7, dataParametros8, dataParametros9) {
     document.getElementById("spanEtapa").innerHTML = "Antecedentes Seguridad";
-
+    CodEstadoFicha = 2;
     dataParametros5 = replaceAll(dataParametros5, "[CodFicha_]", CodFicha);
     $.ajax({
         type: "POST",
@@ -3160,7 +3460,7 @@ function Paso5_Seguridad(dataParametros5, dataParametros6, dataParametros7, data
 }
 function Paso6_Salud(dataParametros6, dataParametros7, dataParametros8, dataParametros9) {
     document.getElementById("spanEtapa").innerHTML = "Antecedentes Salud";
-
+    CodEstadoFicha = 2;
     dataParametros6 = replaceAll(dataParametros6, "[CodFicha_]", CodFicha);
     $.ajax({
         type: "POST",
@@ -3214,7 +3514,7 @@ function Paso6_Salud(dataParametros6, dataParametros7, dataParametros8, dataPara
 }
 function Paso7_Educacion(dataParametros7, dataParametros8, dataParametros9) {
     document.getElementById("spanEtapa").innerHTML = "Antecedentes Educación";
-
+    CodEstadoFicha = 2;
     dataParametros7 = replaceAll(dataParametros7, "[CodFicha_]", CodFicha);
     $.ajax({
         type: "POST",
@@ -3268,7 +3568,7 @@ function Paso7_Educacion(dataParametros7, dataParametros8, dataParametros9) {
 }
 function Paso8_Alimentacion(dataParametros8, dataParametros9) {
     document.getElementById("spanEtapa").innerHTML = "Antecedentes Alimentación";
-
+    CodEstadoFicha = 2;
     dataParametros8 = replaceAll(dataParametros8, "[CodFicha_]", CodFicha);
     $.ajax({
         type: "POST",
@@ -3322,7 +3622,7 @@ function Paso8_Alimentacion(dataParametros8, dataParametros9) {
 }
 function Paso9_Gestion_Residencia(dataParametros9) {
     document.getElementById("spanEtapa").innerHTML = "Antecedentes Gestión Residencia";
-
+    CodEstadoFicha = 2;
     dataParametros9 = replaceAll(dataParametros9, "[CodFicha_]", CodFicha);
     $.ajax({
         type: "POST",
@@ -3371,6 +3671,8 @@ function Paso9_Gestion_Residencia(dataParametros9) {
 }
 function MensajeRegistroFichaFullExitoso(CodFicha) {
     swal.clickCancel();
+
+    //alert("MensajeRegistroFichaFullExitoso");
     MessageSucess("Se han registrado exitosamente todos datos de antecedentes de la Ficha de Gestión Residencial folio número " + CodFicha + " y se ha procedido a su cierre.");
     
     //ACTIVO TODOS LOS BOTONES
@@ -3589,6 +3891,7 @@ function CargaDatosGeneralesDDL(CodProyecto) {
             DesplegarExcepcionCriticaApp(r.responseText);
         }
     }).then(function (r) {
+
         var Institucion = $("#general_000_sel_Institucion");
         InicializaCombo("#general_000_sel_Institucion");
         Institucion.append("<option value='0'>Selecciona una institución</option>");
@@ -3597,11 +3900,17 @@ function CargaDatosGeneralesDDL(CodProyecto) {
         InicializaCombo("#general_001_sel_proyecto");
         proyecto.append("<option value='0'>Selecciona un proyecto</option>");
 
+
+
         $.each(r.d,
             function () {
 
                 $("#general_000_sel_Institucion").append("<option value='0'>" + this.NombreInstitucion + "</option>");
                 $("#general_001_sel_proyecto").append("<option value='" + CodProyecto + "'>" + this.NombreProyecto + "</option>");
+            
+
+
+            
             }
         );
     });

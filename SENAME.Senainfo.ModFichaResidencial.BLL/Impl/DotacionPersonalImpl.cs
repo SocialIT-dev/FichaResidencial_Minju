@@ -20,13 +20,64 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.Impl
             _getDotacionPersonalDao = new GetDotacionPersonalDao();
         }
 
+
         public List<GetDotacionPersonalDto> ObtenerDotacionPersonal(int? CodFicha)
         {
             var result = _getDotacionPersonalDao.ObtenerDotacionPersonal(CodFicha);
             return GetDotacionPersonalMapper.ToDto(result);
         }
     }
+    // Ini Polo
+    //public class GetParInfraestructuraImpl : IGetParInfraestructura
+    public class GetParDotacionPersonalHARImpl : IGetParDotacionHAR
+    {
+        private readonly GetDotacionPersonalDao _getParDotacionPersonalHAR;
+        public GetParDotacionPersonalHARImpl()
+        {
+            _getParDotacionPersonalHAR = new GetDotacionPersonalDao();
+        }
 
+        public List<GetParValoresHARDto> ObtenerParDotacion(int? CodFicha)
+        {
+            var result = _getParDotacionPersonalHAR.ObtenerParDotacionHAR(CodFicha);
+            return GetDotacionPersonalMapper.ToDtoParValoresHAR(result);
+        }
+    }
+
+    public class ResultadoOperacionPersonalImplHAR :IResultadoOperacionPersonalHAR
+    {
+        private readonly ResultadoOperacionPersonalDaoHAR _resultadoOperacionPersonalDaoHAR;
+
+        public ResultadoOperacionPersonalImplHAR()
+        {
+            _resultadoOperacionPersonalDaoHAR = new ResultadoOperacionPersonalDaoHAR();
+        }
+
+        public List<ResultadoOperacionPersonalDtoHAR> GrabarAntecedentesPersonalHAR(
+            int? CodFicha,
+            int? CodProyecto,
+            int? CodEstadoFicha,
+            int? idUsuarioActualizacion,
+                int? CodProfesion,
+              int? Cantidad,
+               int? CodJornada,
+                int? HorasSemanales,  
+             string Observaciones)
+        {
+            var result = _resultadoOperacionPersonalDaoHAR.GrabarAntecedentesPersonalHAR(
+                CodFicha,
+            CodProyecto,
+             CodEstadoFicha,
+             idUsuarioActualizacion,
+             CodProfesion ,
+             Cantidad ,
+              CodJornada ,
+              HorasSemanales,
+              Observaciones);
+            return ResultadoOperacionPersonalMapperHAR.ToDto(result);
+        }
+    }
+    // Fin Polo
     public class ResultadoOperacionPersonalImpl : IResultadoOperacionPersonal
     {
         private readonly ResultadoOperacionPersonalDao _resultadoOperacionPersonalDao;

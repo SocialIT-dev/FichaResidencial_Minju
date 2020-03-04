@@ -56,7 +56,7 @@ Spint 2.1
     <form id="form1" runat="server">
 
         <%--DESCOMENTAR SIGUIENTE LINEA PARA SU VERSIÓN EN SENAINFO --%>
-       <uc2:menu_colgante runat="server" ID="menu_colgante" />
+      <uc2:menu_colgante runat="server" ID="menu_colgante" />
 
         <asp:HiddenField ID="idusuario_conect" runat="server" />
         <asp:HiddenField ID="tokensUsr" runat="server" />
@@ -433,188 +433,22 @@ Spint 2.1
                             <tr>
                                 <td colspan="2" style="padding: 10px;"><span class="titsec2">Antecedentes de Dotación de Personal</span></td>
                             </tr>
-                            <tr>
-                                <td></td>
-                                <td class="etiqCampo2"></td>
-                                <td class="etiqCampo2">CANTIDAD</td>
-                                <td class="etiqCampo5">TIPO JORNADA</td>
-                                <td class="etiqCampo2">HORAS SEMANALES</td>
-                            </tr>                        
-                            <tr>
-                                <td class="etiqCampo3">Director(a)</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_001_sel_director_existe" class="form-control textCampoSel1" disabled="disabled"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_002_sel_director_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(1);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_003_sel_director_tipo_jornada" class="form-control textCampoSel1" disabled="disabled"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_004_sel_director_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Asistente Social:</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_005_sel_asistente_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_006_sel_asistente_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(2);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_007_sel_asistente_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_008_sel_asistente_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Psicólogo</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_009_sel_psicologo_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_010_sel_psicologo_cantidad" class ="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(3);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_011_sel_psicologo_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_012_sel_psicologo_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Enfermero(a)</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_013_sel_enfermero_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_014_sel_enfermero_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(4);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_015_sel_enfermero_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_016_sel_enfermero_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Auxiliar de Enfermería</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_017_sel_auxenfermero_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_018_sel_auxenfermero_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(5);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_019_sel_auxenfermero_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_020_sel_auxenfermero_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Médico</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_021_sel_medico_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_022_sel_medico_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(6);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_023_sel_medico_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_024_sel_medico_horas_semanales"  type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Psiquiatra</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_025_sel_psiquiatra_existe"  class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_026_sel_psiquiatra_cantidad"class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(7);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_027_sel_psiquiatra_tipo_jornada"class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_028_sel_psiquiatra_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Terapeuta Ocupacional</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_029_sel_terapeuta_ocup_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_030_sel_terapeuta_ocup_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(8);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_031_sel_terapeuta_ocup_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_032_sel_terapeuta_ocup_horas_semanales"  type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Kinesiólogo</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_033_sel_kinesiologo_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_034_sel_kinesiologo_cantidad"class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(9);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_035_sel_kinesiologo_tipo_jornada"class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_036_sel_kinesiologo_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Nutricionista</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_037_sel_nutricionista_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_038_sel_nutricionista_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(10);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_039_sel_nutricionista_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_040_sel_nutricionista_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Fonoaudiólogo</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_041_sel_fonoaudiologo_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_042_sel_fonoaudiologo_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(11);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_043_sel_fonoaudiologo_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_044_sel_fonoaudiologo_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Profesor(a) de Educación Física</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_045_sel_profesorEducaFisica_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_046_sel_profesorEducaFisica_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(12);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_047_sel_profesorEducaFisica_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_048_sel_profesorEducaFisica_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Psicopedagogo(a)</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_049_sel_psicopedagogo_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_050_sel_psicopedagogo_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(13);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_051_sel_psicopedagogo_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_052_sel_psicopedagogo_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Educador(a) de Párvulos</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_053_sel_educadoraParvulos_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_054_sel_educadoraParvulos_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(14);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_055_sel_educadoraParvulos_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_056_sel_educadoraParvulos_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Educador(a) de trato directo</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_057_sel_educadoraTratoDirecto_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_058_sel_educadoraTratoDirecto_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(15);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_059_sel_educadoraTratoDirecto_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_060_sel_educadoraTratoDirecto_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Manipulador(a) de Alimentos</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_061_sel_manipuladorAlimentos_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_062_sel_manipuladorAlimentos_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(16);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_063_sel_manipuladorAlimentos_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_064_sel_manipuladorAlimentos_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Apoyo Administrativo</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_065_sel_apoyoAdministrativo_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_066_sel_apoyoAdministrativo_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(17);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_067_sel_apoyoAdministrativo_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_068_sel_apoyoAdministrativo_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Personal de Aseo</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_069_sel_personalAseo_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_070_sel_personalAseo_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(18);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_071_sel_personalAseo_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_072_sel_personalAseo_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Personal de Lavandería</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_073_sel_personalLavanderia_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_074_sel_personalLavandería_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(19);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_075_sel_personalLavandería_tipo_joranada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_076_sel_personalLavandería_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Monitores Talleristas</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_077_sel_monitoresTalleristas_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_078_sel_monitoresTalleristas_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(20);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_079_sel_monitoresTalleristas_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_080_sel_monitoresTalleristas_horas_semanales"  type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Alumnos en Práctica (Especificar en Observación)</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_081_sel_alumnosPractica_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_082_sel_alumnosPractica_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(21);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_083_sel_alumnosPractica_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_084_sel_alumnosPractica_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Apoyo Voluntario (Especificar en Observación)</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_085_sel_apoyoVoluntario_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_086_sel_apoyoVoluntario_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(22);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_087_sel_apoyoVoluntario_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_088_sel_apoyoVoluntario_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Otros (Especificar en Observaciones)</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_089_sel_Otros_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_090_sel_Otros_cantidad"class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(23);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_091_sel_Otros_tipo_jornada"class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_092_sel_Otros_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">¿Personal con Licencia Médica?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_093_sel_PersonalLicenciaMedica_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_094_sel_PersonalLicenciaMedica_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(24);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_095_sel_PersonalLicenciaMedica_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_096_sel_PersonalLicenciaMedica_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
-                            <tr>
-                                <td class="etiqCampo3">Personal con Licencia ¿Cuenta con Suplente?</td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_097_sel_PersonalLicenciaMedicaConSuplente_existe" class="form-control textCampoSel1"><option value="-1"></option><option value="1">SI</option><option value="0">NO</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_098_sel_PersonalLicenciaMedicaConSuplente_cantidad" class="form-control textCampoSel2" onkeyup="HabilitaDotacionPersonal(25);" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);" maxlength="4"/></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><select id="dotacion_099_sel_PersonalLicenciaMedicaConSuplente_tipo_jornada" class="form-control textCampoSel1"><option value="0"></option><option value="1">Completa</option><option value="2">Parcial</option><option value="3">Otra</option></select></td>
-                                <td style="border-bottom: 1px #B2B2B2 solid;"><input id="dotacion_100_sel_PersonalLicenciaMedicaConSuplente_horas_semanales" type="text" class="form-control textCampo3" maxlength="2" placeholder="" onkeypress="return ValidaIngresoSoloNumeros(this.value, event);"/></td>
-                            </tr>
+                         </table>
+
+                   <table id="gridDotacion" class="table table-bordered table-condensed" cellspacing="0" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th class="titulo-tabla"></th>
+                            <th class="titulo-tabla"></th>
+                            <th class="titulo-tabla"></th>
+                            <th class="titulo-tabla"></th>
+                            <th class="titulo-tabla"></th>
+                        </tr>
+                    </thead>
+                     <tbody></tbody>
+                    </table>
+
+                 <table class="table">
                             <tr>
                                 <td colspan="5" class="etiqCampo3">Observaciones</td>
                             </tr>
@@ -627,6 +461,16 @@ Spint 2.1
                             <tr><td colspan="5" style="text-align:center;"><button id="btn_antecedentesDotacionPersonal" class="btn btn-primary" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar los antecedentes de Dotación Personal " onclick="GrabarAntecedentes(3);">Grabar Antecedente Dotación Personal</button>&nbsp;<button id="btn_FichaGenera_03" class="btn btn-warning" style="cursor: pointer;font-weight:normal;" title="haga clic para grabar la ficha residencial completa" onclick="GrabarAntecedentes(0);">Grabar Ficha Residencial</button></td></tr>
                         </table>
             </div>
+
+
+
+
+            <%--kdhsfhkhflhlashfkl--%>
+
+
+
+
+  
 
             <div role="tabpanel" class="tab-pane fade in" id="infraestructura">
                 <table class="table">

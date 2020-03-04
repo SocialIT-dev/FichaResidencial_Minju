@@ -2,7 +2,7 @@
 //FUNCIONES ACCESO BACKEND
 function CargaDatosGeneralesDDL2(CodProyecto) {
     ResetearFormulario();
-
+    //HLAR
     var CodFichaAUX;
     var CodFicha2;
     var CodEstadoFicha;
@@ -48,7 +48,9 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                         CodFicha = this.CodFicha;
                         CodFicha2 = this.CodFicha2;
                         CodEstadoFicha = this.CodEstadoFicha;
+ 
 
+                  
                         if (CodFicha != "0" || CodFicha2 != "0") {
 
                             if (CodFicha != "0") {
@@ -67,7 +69,7 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                                 document.getElementById("folio_pendiente").innerHTML = "&nbsp;";
                                 document.getElementById("periodo_ficha").innerHTML = "&nbsp;";
                             }
-
+                   
                             if (CodFicha != "0")
                                 CodFichaAUX = CodFicha;
                             else
@@ -77,6 +79,8 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                             //alert("- CodFichaAUX=" + CodFichaAUX + " =>> " + "\n- CodFicha=" + CodFicha + "\n- CodFicha2=" + CodFicha2);
 
                             //Obtengo fecha aplicación de ficha residencial
+
+
                             ObtenerFechaAplicacionFicha(CodFichaAUX);
 
                             ObtenerAntecedentesGenerales(CodFichaAUX);
@@ -84,9 +88,14 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                             ObtenerNnaAdolescenteConHijosDetalle(CodFichaAUX);
                           
                             ObtenerAntecedentesPoblacionCapacidad(CodFichaAUX);
-                            ObtenerAntecedentesDotacionPersonal(CodFichaAUX);
+                            CargaParValores1HAR(CodFichaAUX, CodEstadoFicha);
+                          //  ObtenerAntecedentesDotacionPersonal(CodFichaAUX);
+                            //ObtenerAntecedentesDotacionPersonalV2(CodFichaAUX);
 
                             ObtenerAntecedentesInfraestructura(CodFichaAUX);
+
+                            //ObtenerAntecedentesInfraestructuraV2(CodFichaAUX);
+
                             ObtenerAntecedentesSeguridad(CodFichaAUX);
 
                             ObtenerAntecedentesSalud(CodFichaAUX);
@@ -96,12 +105,27 @@ function CargaDatosGeneralesDDL2(CodProyecto) {
                             
 
                             ObtenerAntecedentesAlimentacion(CodFichaAUX);
-                            ObtenerAntecedentesGestionResidencia(CodFichaAUX);
+                            ObtenerAntecedentesGestionResidencia(CodFichaAUX, CodEstadoFicha);
+
+                          
+                            //aquiHAR2
+                            if (CodEstadoFicha == 2) {
+                                ActivarDesactivarBotonesGrabar(0, false);
+                                ActivarDesactivarCamposInput(0, true);
+                            } else {
+                                ActivarDesactivarBotonesGrabar(0, true);
+                                ActivarDesactivarCamposInput(0, false);
+                                
+                            }
                         }
                         else {
+
+                            ActivarDesactivarCamposInput(0, false);
+
+                            
+
                             document.getElementById("folio_pendiente").innerHTML = "&nbsp;";
                             document.getElementById("periodo_ficha").innerHTML = "&nbsp;";
-
                         }
                     }
                );
@@ -656,7 +680,7 @@ function GrabarAntecedentesGenerales() {
                             MensajeERROR_App_Critico2(strError);
                         }
                     }
-                    ActivarDesactivarBotonesGrabar(1, false);
+                    //ActivarDesactivarBotonesGrabar(1, false);
                 }
             );
         }

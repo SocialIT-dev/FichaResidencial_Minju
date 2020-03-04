@@ -105,7 +105,7 @@ function GrabarAntecedentesEducacion() {
                         MensajeERROR_App_Critico2(strError);
                     }
                 }
-                ActivarDesactivarBotonesGrabar(7, false);
+               // ActivarDesactivarBotonesGrabar(7, false);
             }
         );
 
@@ -190,7 +190,7 @@ function HabilitaCampos() {
     $("#educacion_001_NNA_matriculados").attr("disabled", false);
     $("#educacion_006_NNA_examenesLibres_cantidad").attr("disabled", false);
     $("#educacion_009_sel_computadores_existe").attr("disabled", false);
-    $("#educacion_011_observaciones").attr("disabled", false);
+   // $("#educacion_011_observaciones").attr("disabled", false);
     $("#educacion_002_NNA_NO_asisten_colegio_cantidad_motivo").attr("disabled", false);
 }
 

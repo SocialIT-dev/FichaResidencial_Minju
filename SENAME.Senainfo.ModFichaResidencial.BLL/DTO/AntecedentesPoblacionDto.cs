@@ -18,10 +18,11 @@ namespace SENAME.Senainfo.ModFichaResidencial.BLL.DTO
         public int PoblacionVigente  { get; set; }
 		public string TipoVulneracion  { get; set; }
 		public int ProgramaApadrinamiento  { get; set; }
-		public DateTime FechaActualizacion { get; set; }
+		//public DateTime FechaActualizacion { get; set; }
 		public int IdUsuarioActualizacion  { get; set; }
         public string error { get; set; }
     }
+
 
     public class ResultadoOperacionPoblacionDto
     {

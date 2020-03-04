@@ -86,7 +86,7 @@ function GrabarAntecedentesPoblacionCapacidad()
                         MensajeERROR_App_Critico2(strError);
                     }
                 }
-                ActivarDesactivarBotonesGrabar(2, false);
+                //ActivarDesactivarBotonesGrabar(2, false);
             }
         );
 

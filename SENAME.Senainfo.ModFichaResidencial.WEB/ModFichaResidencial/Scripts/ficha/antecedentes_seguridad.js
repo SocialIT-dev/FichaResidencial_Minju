@@ -53,7 +53,7 @@ function CargaParSeguridad() {
         "bInfo": false,
         "bPaginate": false
     });
-    document.getElementById("seguridad_011_observaciones").disabled = false;
+    //document.getElementById("seguridad_011_observaciones").disabled = false;
 }
 
 function GrabarAntecedentesSeguridad() {
@@ -151,7 +151,10 @@ function GrabarAntecedentesSeguridad() {
                         MensajeERROR_App_Critico2(strError);
                     }
                 }
-                ActivarDesactivarBotonesGrabar(5, false);
+                //
+
+
+              //  ActivarDesactivarBotonesGrabar(5, false);
             }
         );
 
